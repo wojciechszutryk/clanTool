@@ -21,8 +21,14 @@ export interface ActionSetSelectedSatelliteName
     selectedSatelliteName: string
 }
 
+export interface ActionSetMapReference
+    extends Action<typeof types.SET_MAP_REFERENCE> {
+    mapReference: any
+}
+
 export type Actions =
     | ActionSetStationsNames
     | ActionSetSatellitesNames
     | ActionSetSelectedStationName
     | ActionSetSelectedSatelliteName
+    | ActionSetMapReference

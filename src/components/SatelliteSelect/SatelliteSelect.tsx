@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo } from 'react'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
-import { satelliteStationsBaseToNames } from '../../functions/stationsBaseToNames'
 import {
     setSelectedSatelliteName,
     setSatellitesNames,

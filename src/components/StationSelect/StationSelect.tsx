@@ -9,18 +9,20 @@ import {
     Select,
     SelectChangeEvent,
 } from '@mui/material'
-import stationsBaseToNames from '../../functions/stationsBaseToNames/stationsBaseToNames'
 import { setSelectedStationName, setStationsNames } from '../../state/actions'
+import stations from 'assets/StationsBase.json'
 
 const StationSelect = () => {
     const dispatch = useAppDispatch()
     const stationsNames = useAppSelector((state) => state.app.stationsNames)
+    const mapRef = useAppSelector((state) => state.app.mapReference)
     const selectedStationName = useAppSelector(
         (state) => state.app.selectedStationName
     )
     useEffect(() => {
-        stationsBaseToNames().then((r) => dispatch(setStationsNames(r)))
-    }, [dispatch])
+        const names = Object.keys(stations)
+        dispatch(setStationsNames(names))
+    }, [])
     const selectNameOptions = useMemo(() => {
         return stationsNames.map((name: string) => (
             <MenuItem key={name} value={name}>
@@ -28,9 +30,24 @@ const StationSelect = () => {
             </MenuItem>
         ))
     }, [stationsNames])
+    const panTo = React.useCallback(
+        (name: string) => {
+            // @ts-ignore
+            const lat = stations[name].Latitude as number
+            // @ts-ignore
+            const lng = stations[name].Longitude as number
+            console.log(mapRef)
+            mapRef.panTo({ lat, lng })
+            mapRef.setZoom(14)
+        },
+        [mapRef]
+    )
 
     const handleChange = (event: SelectChangeEvent) => {
-        dispatch(setSelectedStationName(event.target.value as string))
+        console.log(mapRef)
+        const name = event.target.value as string
+        dispatch(setSelectedStationName(name))
+        panTo(name)
     }
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', m: 3 }}>

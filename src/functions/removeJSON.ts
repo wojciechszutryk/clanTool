@@ -1,0 +1,167 @@
+import data from 'assets/StationsBase.json'
+const removeJSON = () => {
+    const names = [
+        `BRUX`,
+        `ABMF`,
+        `AIRA`,
+        `ALIC`,
+        `AMU2`,
+        `ANKR`,
+        `AREG`,
+        `ASCG`,
+        `AUCK`,
+        `AXPV`,
+        `BADG`,
+        `BAKE`,
+        `BBYS`,
+        `BOR1`,
+        `BRAZ`,
+        `BRST`,
+        `BSHM`,
+        `CAS1`,
+        `CCJ2`,
+        `CEDU`,
+        `CHPI`,
+        `CHTI`,
+        `CHUR`,
+        `CORD`,
+        `CPVG`,
+        `CRO1`,
+        `CUT0`,
+        `DAEJ`,
+        `DARW`,
+        `DAV1`,
+        `DGAR`,
+        `DLF1`,
+        `DRAO`,
+        `DUBO`,
+        `FAIR`,
+        `FLIN`,
+        `FLRS`,
+        `FTNA`,
+        `FUNC`,
+        `GANP`,
+        `GLSV`,
+        `GMSD`,
+        `GODZ`,
+        `GUAM`,
+        `HOB2`,
+        `HOFN`,
+        `HRAO`,
+        `IENG`,
+        `IISC`,
+        `IQAL`,
+        `IRKJ`,
+        `JOG2`,
+        `JPLM`,
+        `KERG`,
+        `KIR8`,
+        `KIT3`,
+        `KOKV`,
+        `KOUG`,
+        `KRGG`,
+        `LAMA`,
+        `LHAZ`,
+        `LMMF`,
+        `LPAL`,
+        `LPGS`,
+        `MAC1`,
+        `MAJU`,
+        `MAL2`,
+        `MAR7`,
+        `MAS1`,
+        `MAT1`,
+        `MAW1`,
+        `MAYG`,
+        `MCM4`,
+        `MDVJ`,
+        `METG`,
+        `MGUE`,
+        `MIZU`,
+        `MKEA`,
+        `MOBS`,
+        `MRO1`,
+        `MYVA`,
+        `NANO`,
+        `NICO`,
+        `NIST`,
+        `NKLG`,
+        `NOT1`,
+        `NOVM`,
+        `NTUS`,
+        `NYA2`,
+        `OHI3`,
+        `ONS1`,
+        `OPMT`,
+        `OUS2`,
+        `PADO`,
+        `PARK`,
+        `PDEL`,
+        `PIMO`,
+        `POTS`,
+        `PTBB`,
+        `RAMO`,
+        `REUN`,
+        `REYK`,
+        `RGDG`,
+        `RIO2`,
+        `SCH2`,
+        `SCRZ`,
+        `SEYG`,
+        `SGOC`,
+        `SOFI`,
+        `STFU`,
+        `STHL`,
+        `STJ3`,
+        `STK2`,
+        `SUTH`,
+        `SYDN`,
+        `TASH`,
+        `THTG`,
+        `TID1`,
+        `TLSE`,
+        `TN22`,
+        `TOW2`,
+        `TSKB`,
+        `ULAB`,
+        `UNB3`,
+        `UNSA`,
+        `USUD`,
+        `VALD`,
+        `VILL`,
+        `VOIM`,
+        `WAB2`,
+        `WHIT`,
+        `WTZA`,
+        `WUH2`,
+        `YARR`,
+        `YEL2`,
+    ]
+    const r = Object.entries(data)
+    const newr: any[] = []
+    r.map((rdata) => {
+        const newkey = rdata[0].slice(0, 4)
+        if (names.includes(newkey)) {
+            rdata[0] = newkey
+            newr.push(rdata)
+        }
+    })
+    const toreturn: {
+        [key: string]: any
+    } = {}
+    newr.forEach((arr) => {
+        const key = arr[0]
+        const value = arr[1]
+        const lat = value['Latitude']
+        const long = value['Longitude']
+        const height = value['Height']
+        value['Latitude'] = parseFloat(lat)
+        value['Longitude'] = parseFloat(long)
+        value['Height'] = parseFloat(height)
+        value['Name'] = key
+        toreturn[key] = value
+    })
+    console.log(toreturn)
+}
+removeJSON()
+export default removeJSON
