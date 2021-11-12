@@ -1,22 +1,28 @@
-// export interface ActionSetStationsSatellitesNames{
-//     type: string;
-//     payload: string[]
-// }
-//
-// export interface ActionSetSelectedStationsSatellitesName{
-//     type: string;
-//     payload: string
-// }
-
-import {Action} from "redux";
+import { Action } from 'redux'
 import * as types from '../constans'
 
-export interface ActionSetStationsSatellitesNames extends Action<typeof types.SET_STATIONS_SATELLITES_NAMES> {
-    stationsSatellitesNames: string[]
+export interface ActionSetStationsNames
+    extends Action<typeof types.SET_STATIONS_NAMES> {
+    stationsNames: string[]
 }
 
-export interface ActionSetSelectedStationsSatellitesName extends Action<typeof types.SET_SELECTED_STATIONS_SATELLITES_NAME> {
-    selectedStationsSatellitesName: string
+export interface ActionSetSatellitesNames
+    extends Action<typeof types.SET_SATELLITES_NAMES> {
+    satellitesNames: string[]
 }
 
-export type Actions = ActionSetStationsSatellitesNames | ActionSetSelectedStationsSatellitesName
+export interface ActionSetSelectedStationName
+    extends Action<typeof types.SET_SELECTED_STATION_NAME> {
+    selectedStationName: string
+}
+
+export interface ActionSetSelectedSatelliteName
+    extends Action<typeof types.SET_SELECTED_SATELLITE_NAME> {
+    selectedSatelliteName: string
+}
+
+export type Actions =
+    | ActionSetStationsNames
+    | ActionSetSatellitesNames
+    | ActionSetSelectedStationName
+    | ActionSetSelectedSatelliteName
