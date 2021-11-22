@@ -26,9 +26,21 @@ export interface ActionSetMapReference
     mapReference: any
 }
 
+export interface ActionSetStartDate
+    extends Action<typeof types.SET_START_DATE> {
+    startDate: Date
+}
+
+export interface ActionSetEndDate
+    extends Action<typeof types.SET_END_DATE> {
+    endDate: Date
+}
+
 export type Actions =
     | ActionSetStationsNames
     | ActionSetSatellitesNames
     | ActionSetSelectedStationName
     | ActionSetSelectedSatelliteName
     | ActionSetMapReference
+    | ActionSetStartDate
+    | ActionSetEndDate

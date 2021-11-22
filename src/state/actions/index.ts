@@ -35,3 +35,17 @@ export const setMapReference = (
     type: types.SET_MAP_REFERENCE,
     mapReference,
 })
+
+export const setStartDate = (
+    startDate: Date
+): actions.ActionSetStartDate => ({
+    type: types.SET_START_DATE,
+    startDate,
+})
+
+export const setEndDate = (
+    endDate: Date
+): actions.ActionSetEndDate => ({
+    type: types.SET_END_DATE,
+    endDate,
+})

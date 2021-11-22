@@ -16,5 +16,3 @@ const getStationSatelliteDataFromFile = async (name: string) => {
 }
 
 export default getStationSatelliteDataFromFile
-
-// getStationSatelliteDataFromFile();
