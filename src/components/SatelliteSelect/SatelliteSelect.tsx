@@ -15,9 +15,21 @@ import {
 } from '@mui/material'
 import SatelliteBase from 'assets/SatelliteBase'
 
-const SatelliteSelect = () => {
+const systems = {
+    G: 'GPS',
+    R: 'GLONASS',
+    C: "Beidou",
+    E: 'Galieo',
+    J: 'QZSS'
+} as const
+
+interface Props {
+    system : 'G' | 'R' | 'C' | 'E' | 'J'
+}
+
+const SatelliteSelect = ({ system }: Props) => {
     const dispatch = useAppDispatch()
-    const satellitesNames = useAppSelector((state) => state.app.satellitesNames)
+    const satellitesNames = useAppSelector((state) => state.app.satellitesNames.filter(name => (name[0] === system)))
     const selectedSatelliteName = useAppSelector(
         (state) => state.app.selectedSatelliteName
     )
@@ -38,12 +50,12 @@ const SatelliteSelect = () => {
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', m: 3 }}>
             <FormControl sx={{ width: '300px' }}>
-                <InputLabel id="demo-simple-select-label">Satellite</InputLabel>
+                <InputLabel id="demo-simple-select-label">{systems[system] + " Satellite"}</InputLabel>
                 <Select
                     labelId="select station"
                     id="demo-simple-select"
                     value={selectedSatelliteName}
-                    label="Satellite"
+                    label={systems[system] + "Satellite"}
                     onChange={handleChange}
                 >
                     {selectNameOptions}

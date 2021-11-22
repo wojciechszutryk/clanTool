@@ -11,7 +11,11 @@ function App() {
     return (
         <div>
             <StationSelect />
-            <SatelliteSelect />
+            <SatelliteSelect system={'G'}/>
+            <SatelliteSelect system={'R'}/>
+            <SatelliteSelect system={'C'}/>
+            <SatelliteSelect system={'E'}/>
+            <SatelliteSelect system={'J'}/>
             <MyGoogleMaps />
             <DrawChart />
         </div>
