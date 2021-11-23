@@ -22,7 +22,7 @@ const StationSelect = () => {
     useEffect(() => {
         const names = Object.keys(stations)
         dispatch(setStationsNames(names))
-    }, [])
+    }, [dispatch])
     const selectNameOptions = useMemo(() => {
         return stationsNames.map((name: string) => (
             <MenuItem key={name} value={name}>
@@ -44,7 +44,6 @@ const StationSelect = () => {
     )
 
     const handleChange = (event: SelectChangeEvent) => {
-        console.log(mapRef)
         const name = event.target.value as string
         dispatch(setSelectedStationName(name))
         panTo(name)

@@ -121,14 +121,14 @@ const MyGoogleMaps = () => {
                             >
                                 Select
                             </Button>
-                            <p>{'latitude' + ' :' + selected.lat + '°'}</p>
-                            <p>{'longitude' + ' :' + selected.lng + '°'}</p>
-                            <p>{'height' + ' :' + selected.height + 'm'}</p>
-                            <p>{'receiver' + ' :' + selected.receiverName}</p>
-                            <p>{'antenna' + ' :' + selected.antennaName}</p>
-                            <p>{'x' + ' :' + selected.x + 'm'}</p>
-                            <p>{'y' + ' :' + selected.y + 'm'}</p>
-                            <p>{'z' + ' :' + selected.z + 'm'}</p>
+                            <p>{'latitude: ' + selected.lat + '°'}</p>
+                            <p>{'longitude: ' + selected.lng + '°'}</p>
+                            <p>{'height: ' + selected.height + 'm'}</p>
+                            <p>{'receiver: ' + selected.receiverName}</p>
+                            <p>{'antenna: ' + selected.antennaName}</p>
+                            <p>{'x: ' + selected.x + 'm'}</p>
+                            <p>{'y: ' + selected.y + 'm'}</p>
+                            <p>{'z: ' + selected.z + 'm'}</p>
                         </div>
                     </InfoWindow>
                 ) : null}

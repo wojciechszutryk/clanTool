@@ -1,5 +1,4 @@
 import React, { useEffect, useMemo, useState } from 'react'
-import { getStationSatelliteDataFromFile } from '../../functions/getStationSatelliteDataFromFile'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Chart, Line } from 'react-chartjs-2'
 import { Box } from '@mui/material'
@@ -19,9 +18,21 @@ const DrawChart = () => {
     })
 
     useMemo(async () => {
+        if (!selectedName) {
+            setLoading(false)
+            return;
+        }
         setLoading(true)
-        const r = await getStationSatelliteDataFromFile(selectedName)
-        await setData(r)
+        const JSONData = await import(`assets/${selectedName}`);
+        const stationSatelliteData = await JSONData.data;
+        console.log(stationSatelliteData)
+        setData(stationSatelliteData);
+        // const r = await getStationSatelliteDataFromFile(selectedName)
+        // await setData(r)
+
+        // else { // @ts-ignore
+        //     setData(jsonData[selectedName].data)
+        // }
         await setLoading(false)
     }, [selectedName])
 
@@ -30,7 +41,7 @@ const DrawChart = () => {
         datasets: [
             {
                 spanGaps: true,
-                label: '# of Votes',
+                label: 'value',
                 data: data,
                 fill: false,
                 backgroundColor: 'rgb(255, 99, 132)',

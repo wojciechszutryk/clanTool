@@ -11,6 +11,9 @@ import { toast, ToastContainer } from 'react-toastify/dist'
 import InfoIcon from '@mui/icons-material/Info';
 import 'react-toastify/dist/ReactToastify.css';
 
+// import convertRinexDataIntoJSON from './functions/convertRinexDataIntoJSON/convertRinexDataIntoJSON'
+// convertRinexDataIntoJSON('G12').then(r=> console.log(r))
+
 function App() {
     toast.configure()
     return (
