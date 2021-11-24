@@ -5,11 +5,21 @@ import {
     SolidFill,
     Themes,
 } from '@arction/lcjs'
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
+import { makeStyles } from '@mui/styles'
 import React, { useRef, useEffect } from 'react'
+import { useAppSelector } from '../../functions/hooks/useAppSelector'
+
+const useStyles = makeStyles({
+    wrapper: { display: 'flex', flexDirection: 'column' },
+    chart: { height: '50vh' },
+})
 
 const DataChart = ({ data, id }: { data: any; id: string }) => {
     const chartRef = useRef<any>(undefined)
+    const classes = useStyles()
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
 
     useEffect(() => {
         console.log('create chart')
@@ -18,7 +28,7 @@ const DataChart = ({ data, id }: { data: any; id: string }) => {
                 container: id,
                 theme: Themes.light,
             })
-            .setTitle('Phase')
+            .setTitle(id)
             // .setTitleFillStyle(
             //     new SolidFill({
             //         color: ColorRGBA(255, 255, 255),
@@ -55,7 +65,7 @@ const DataChart = ({ data, id }: { data: any; id: string }) => {
             .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
                 return builder
                     .addRow('Date:', '', new Date(xValue).toLocaleString())
-                    .addRow('Phase:', undefined, yValue.toString())
+                    .addRow(id + ' :', undefined, yValue.toString())
             })
         //     .setStrokeStyle(
         //     new SolidLine({
@@ -78,19 +88,24 @@ const DataChart = ({ data, id }: { data: any; id: string }) => {
         if (!components) return
 
         const { series } = components
-        console.log('set chart data', data)
         series.clear().add(data)
     }, [data, chartRef])
 
     function handleChartSave() {
-        chartRef.current.chart.saveToFile('chart')
+        const filename =
+            id +
+            '-' +
+            new Date(startDate).toJSON().slice(0, 10).replaceAll('-', '.') +
+            '-' +
+            new Date(endDate).toJSON().slice(0, 10).replaceAll('-', '.')
+        chartRef.current.chart.saveToFile(filename)
     }
 
     return (
-        <>
-            <div id={id} className="chart" />
+        <Box className={classes.wrapper}>
+            <div id={id} className={classes.chart} />
             <Button onClick={handleChartSave}>Save chart to file</Button>
-        </>
+        </Box>
     )
 }
 
