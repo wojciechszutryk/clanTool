@@ -5,7 +5,7 @@ import { createStyles, makeStyles } from '@mui/styles'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import stations from 'assets/StationsBase.json'
 import { setMapReference, setSelectedStationName } from '../../state/actions'
-import { Button } from '@mui/material'
+import { Box, Button } from '@mui/material'
 
 const useStyles = makeStyles(() => {
     return createStyles({
@@ -15,15 +15,10 @@ const useStyles = makeStyles(() => {
     })
 })
 
-const mapContainerStyle =
-    window.innerWidth < 900
-        ? {
+const mapContainerStyle = {
               width: '100%',
-              height: '50vh',
-          }
-        : {
-              width: '100%',
-              height: '35vh',
+              height: '100%',
+                minHeight: '300px'
           }
 
 const center = {
@@ -82,7 +77,7 @@ const MyGoogleMaps = () => {
     )
 
     return (
-        <div>
+        <Box sx={{ m: 1, height: '100%' }}>
             <GoogleMap
                 mapContainerStyle={mapContainerStyle}
                 zoom={3}
@@ -133,7 +128,7 @@ const MyGoogleMaps = () => {
                     </InfoWindow>
                 ) : null}
             </GoogleMap>
-        </div>
+        </Box>
     )
 }
 

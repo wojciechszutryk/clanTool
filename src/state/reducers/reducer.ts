@@ -8,8 +8,8 @@ interface State {
     selectedSatelliteName: string
     selectedStationName: string
     mapReference: any
-    startDate: Date
-    endDate: Date
+    startDate: number
+    endDate: number
 }
 
 const initialState: State = {
@@ -18,8 +18,8 @@ const initialState: State = {
     selectedSatelliteName: '',
     selectedStationName: '',
     mapReference: null,
-    startDate: new Date(Date.now()),
-    endDate: new Date(Date.now() - 604800000),
+    startDate: +new Date(2014,0,1,0,0,0,0),
+    endDate: +new Date(2014,0,7,0,0,0,0),
 }
 
 const reducer: Reducer<State, Actions> = (

@@ -49,8 +49,8 @@ const StationSelect = () => {
         panTo(name)
     }
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', m: 3 }}>
-            <FormControl sx={{ width: '300px' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', m: 1 }}>
+            <FormControl sx={{ minWidth: '220px' }}>
                 <InputLabel id="station-select-label">Station</InputLabel>
                 <Select
                     labelId="select station"

@@ -28,12 +28,12 @@ export interface ActionSetMapReference
 
 export interface ActionSetStartDate
     extends Action<typeof types.SET_START_DATE> {
-    startDate: Date
+    startDate: number
 }
 
 export interface ActionSetEndDate
     extends Action<typeof types.SET_END_DATE> {
-    endDate: Date
+    endDate: number
 }
 
 export type Actions =

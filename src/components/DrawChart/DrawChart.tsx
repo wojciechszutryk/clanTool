@@ -4,10 +4,12 @@ import { Chart, Line } from 'react-chartjs-2'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import zoom from 'chartjs-plugin-zoom'
+import { DataChart } from 'components'
 
 const DrawChart = () => {
     const [data, setData] = useState<number[]>([])
     const [loading, setLoading] = useState(true)
+    const startDate = useAppSelector((state) => state.app.startDate)
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
             ? state.app.selectedSatelliteName
@@ -20,13 +22,16 @@ const DrawChart = () => {
     useMemo(async () => {
         if (!selectedName) {
             setLoading(false)
-            return;
+            return
         }
         setLoading(true)
-        const JSONData = await import(`assets/${selectedName}`);
-        const stationSatelliteData = await JSONData.data;
-        console.log(stationSatelliteData)
-        setData(stationSatelliteData);
+        const JSONData = await import(`assets/${selectedName}`)
+        const stationSatelliteData = await JSONData.data
+        const chartData = stationSatelliteData.map((point: any) => ({
+            x: point.date,
+            y: point.phase,
+        }))
+        setData(chartData)
         // const r = await getStationSatelliteDataFromFile(selectedName)
         // await setData(r)
 
@@ -103,7 +108,8 @@ const DrawChart = () => {
             {loading ? (
                 <ClipLoader loading={loading} size={150} />
             ) : (
-                <Line data={chartsData} options={options} />
+                // <Line data={chartsData} options={options} />
+                <DataChart data={data} id={'phase'} />
             )}
         </Box>
     )

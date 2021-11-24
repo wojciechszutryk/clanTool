@@ -48,8 +48,8 @@ const SatelliteSelect = ({ system }: Props) => {
         dispatch(setSelectedSatelliteName(event.target.value as string))
     }
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', m: 3 }}>
-            <FormControl sx={{ width: '300px' }}>
+        <Box sx={{ display: 'flex', justifyContent: 'center', m: 1 }}>
+            <FormControl sx={{ minWidth: '220px' }}>
                 <InputLabel id="demo-simple-select-label">{systems[system] + " Satellite"}</InputLabel>
                 <Select
                     labelId="select station"

@@ -1,3 +1,4 @@
+import { Grid } from '@mui/material'
 import React from 'react'
 import './App.css'
 import {
@@ -17,19 +18,27 @@ import 'react-toastify/dist/ReactToastify.css';
 function App() {
     toast.configure()
     return (
-        <div>
-            <StationSelect />
-            <SatelliteSelect system={'G'}/>
-            <SatelliteSelect system={'R'}/>
-            <SatelliteSelect system={'C'}/>
-            <SatelliteSelect system={'E'}/>
-            <SatelliteSelect system={'J'}/>
-            <DatePicker startEnd={'start'}/>
-            <DatePicker startEnd={'end'}/>
-            <MyGoogleMaps />
-            <DrawChart />
-            <ToastContainer icon={<InfoIcon color="primary" />} />
-        </div>
+        <Grid container spacing={2}>
+            <Grid item md={6} lg={4} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', flexWrap: 'wrap'}}>
+                <SatelliteSelect system={'G'}/>
+                <SatelliteSelect system={'R'}/>
+                <SatelliteSelect system={'C'}/>
+                <SatelliteSelect system={'E'}/>
+                <SatelliteSelect system={'J'}/>
+                <StationSelect />
+            </Grid>
+            <Grid item xs={12} md={6} lg={8}>
+                <MyGoogleMaps />
+            </Grid>
+            <Grid item xs={12} sx={{ display: 'flex', justifyContent: 'center'}}>
+                <DatePicker startEnd={'start'}/>
+                <DatePicker startEnd={'end'}/>
+            </Grid>
+            <Grid item xs={12}>
+                <DrawChart />
+                <ToastContainer icon={<InfoIcon color="primary" />} />
+            </Grid>
+        </Grid>
     )
 }
 

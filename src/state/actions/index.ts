@@ -37,14 +37,14 @@ export const setMapReference = (
 })
 
 export const setStartDate = (
-    startDate: Date
+    startDate: number
 ): actions.ActionSetStartDate => ({
     type: types.SET_START_DATE,
     startDate,
 })
 
 export const setEndDate = (
-    endDate: Date
+    endDate: number
 ): actions.ActionSetEndDate => ({
     type: types.SET_END_DATE,
     endDate,
