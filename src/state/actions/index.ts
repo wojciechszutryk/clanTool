@@ -1,5 +1,6 @@
 import * as types from '../constans'
 import * as actions from '../actions/actionsInterfaces'
+import { charts } from '../constans/types'
 
 export const setSatellitesNames = (
     satellitesNames: string[]
@@ -43,9 +44,14 @@ export const setStartDate = (
     startDate,
 })
 
-export const setEndDate = (
-    endDate: number
-): actions.ActionSetEndDate => ({
+export const setEndDate = (endDate: number): actions.ActionSetEndDate => ({
     type: types.SET_END_DATE,
     endDate,
+})
+
+export const setChartsToShow = (
+    chartsToShow: charts[]
+): actions.ActionSetChartsToShow => ({
+    type: types.SET_CHARTS_TO_SHOW,
+    chartsToShow,
 })

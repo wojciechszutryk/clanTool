@@ -22,7 +22,6 @@ const DataChart = ({ data, id }: { data: any; id: string }) => {
     const endDate = useAppSelector((state) => state.app.endDate)
 
     useEffect(() => {
-        console.log('create chart')
         const chart = lightningChart()
             .ChartXY({
                 container: id,

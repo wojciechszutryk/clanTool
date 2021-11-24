@@ -1,6 +1,7 @@
 import * as types from '../constans'
 import { Actions } from '../actions/actionsInterfaces'
 import { Reducer } from 'redux'
+import { charts } from '../constans/types'
 
 interface State {
     satellitesNames: string[]
@@ -10,6 +11,7 @@ interface State {
     mapReference: any
     startDate: number
     endDate: number
+    chartsToShow: charts[]
 }
 
 const initialState: State = {
@@ -18,8 +20,9 @@ const initialState: State = {
     selectedSatelliteName: '',
     selectedStationName: '',
     mapReference: null,
-    startDate: +new Date(2014,0,1,0,0,0,0),
-    endDate: +new Date(2014,0,7,0,0,0,0),
+    startDate: +new Date(2014, 0, 1, 0, 0, 0, 0),
+    endDate: +new Date(2014, 0, 7, 0, 0, 0, 0),
+    chartsToShow: [],
 }
 
 const reducer: Reducer<State, Actions> = (
@@ -63,6 +66,11 @@ const reducer: Reducer<State, Actions> = (
             return {
                 ...state,
                 endDate: action.endDate,
+            }
+        case types.SET_CHARTS_TO_SHOW:
+            return {
+                ...state,
+                chartsToShow: action.chartsToShow,
             }
         default:
             return state

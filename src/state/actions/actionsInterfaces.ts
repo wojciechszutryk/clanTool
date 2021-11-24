@@ -1,5 +1,6 @@
 import { Action } from 'redux'
 import * as types from '../constans'
+import { charts } from '../constans/types'
 
 export interface ActionSetStationsNames
     extends Action<typeof types.SET_STATIONS_NAMES> {
@@ -31,9 +32,13 @@ export interface ActionSetStartDate
     startDate: number
 }
 
-export interface ActionSetEndDate
-    extends Action<typeof types.SET_END_DATE> {
+export interface ActionSetEndDate extends Action<typeof types.SET_END_DATE> {
     endDate: number
+}
+
+export interface ActionSetChartsToShow
+    extends Action<typeof types.SET_CHARTS_TO_SHOW> {
+    chartsToShow: charts[]
 }
 
 export type Actions =
@@ -44,3 +49,4 @@ export type Actions =
     | ActionSetMapReference
     | ActionSetStartDate
     | ActionSetEndDate
+    | ActionSetChartsToShow
