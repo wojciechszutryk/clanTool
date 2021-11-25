@@ -1,6 +1,7 @@
 export { default as SatelliteSelect } from './SatelliteSelect'
 export { default as StationSelect } from './StationSelect'
-export { default as DrawChart } from './DrawChart'
+export { DrawChart } from './DrawChart'
+export { DrawFrequencyChartChart } from './DrawChart'
 export { default as MyGoogleMaps } from './MyGoogleMap'
 export { default as DatePicker } from './DatePicker'
 export { default as DataChart } from './DataChart'

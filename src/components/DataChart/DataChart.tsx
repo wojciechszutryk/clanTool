@@ -15,7 +15,15 @@ const useStyles = makeStyles({
     chart: { height: '50vh' },
 })
 
-const DataChart = ({ data, id }: { data: any; id: string }) => {
+const DataChart = ({
+    data,
+    id,
+    xType = 'Tau',
+}: {
+    data: any
+    id: string
+    xType?: 'Date' | 'Tau'
+}) => {
     const chartRef = useRef<any>(undefined)
     const classes = useStyles()
     const startDate = useAppSelector((state) => state.app.startDate)
@@ -63,8 +71,13 @@ const DataChart = ({ data, id }: { data: any; id: string }) => {
             .addLineSeries()
             .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
                 return builder
-                    .addRow('Date:', '', new Date(xValue).toLocaleString())
-                    .addRow(id + ' :', undefined, yValue.toString())
+                    .addRow(
+                        xType === 'Date' ? xType + ': ' : 'τ: ',
+                        xType === 'Date'
+                            ? new Date(xValue).toLocaleString()
+                            : xValue.toFixed().toString()
+                    )
+                    .addRow(id + ': ', yValue.toString())
             })
         //     .setStrokeStyle(
         //     new SolidLine({
