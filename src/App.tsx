@@ -5,7 +5,7 @@ import {
     ChartsToShowSelect,
     DatePicker,
     DrawCharts,
-    MyGoogleMaps,
+    MyMaps,
     SatelliteSelect,
     StationSelect,
 } from './components'
@@ -39,7 +39,7 @@ function App() {
                 <StationSelect />
             </Grid>
             <Grid item xs={12} md={6} lg={8}>
-                <MyGoogleMaps />
+                <MyMaps />
             </Grid>
             <Grid
                 item
