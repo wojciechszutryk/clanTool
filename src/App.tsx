@@ -44,10 +44,15 @@ function App() {
             <Grid
                 item
                 xs={12}
-                sx={{ display: 'flex', justifyContent: 'center' }}
+                sx={{ display: 'flex', justifyContent: 'center', flexWrap: 'wrap' }}
             >
                 <DatePicker startEnd={'start'} />
                 <DatePicker startEnd={'end'} />
+            </Grid>
+            <Grid
+                item
+                xs={12}
+            >
                 <ChartsToShowSelect />
             </Grid>
             <Grid item xs={12}>

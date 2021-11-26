@@ -3,7 +3,7 @@ import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import { phaseToFreq } from 'functions/phaseToFreq'
+import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
 
 const DrawFrequencyChart = () => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])

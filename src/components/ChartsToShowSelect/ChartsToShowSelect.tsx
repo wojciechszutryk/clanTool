@@ -4,6 +4,12 @@ import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { setChartsToShow } from '../../state/actions'
 import { charts } from '../../state/constans/types'
+import { makeStyles } from '@mui/styles'
+
+const useStyles = makeStyles({
+    wrapper: { display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center', maxWidth: '90%', margin: '0 auto' },
+    item: { margin: '0 10px' }
+})
 
 const availableCharts = [
     'Phase',
@@ -18,6 +24,7 @@ const availableCharts = [
 const ChartsToShowSelect = () => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const dispatch = useAppDispatch()
+    const classes = useStyles();
 
     const handleChartCheck = useCallback(
         (chart) => {
@@ -37,6 +44,7 @@ const ChartsToShowSelect = () => {
         return availableCharts.map((chart) => (
             <FormControlLabel
                 key={chart}
+                className={classes.item}
                 control={
                     <Checkbox
                         checked={chartsToShow.includes(chart)}
@@ -49,7 +57,7 @@ const ChartsToShowSelect = () => {
         ))
     }, [chartsToShow, handleChartCheck])
 
-    return <FormGroup>{checkboxes}</FormGroup>
+    return <FormGroup className={classes.wrapper}>{checkboxes}</FormGroup>
 }
 
 export default ChartsToShowSelect
