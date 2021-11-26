@@ -38,7 +38,16 @@ const DrawADEVChart = () => {
             }}
         >
             {loading ? (
-                <ClipLoader loading={loading} size={150} />
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '50vh',
+                    }}
+                >
+                    <ClipLoader loading={loading} size={150} />
+                </Box>
             ) : (
                 <DataChart data={data} id={'ADEV'} />
             )}

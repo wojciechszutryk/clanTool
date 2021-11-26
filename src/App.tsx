@@ -14,7 +14,7 @@ import InfoIcon from '@mui/icons-material/Info'
 import 'react-toastify/dist/ReactToastify.css'
 
 // import convertRinexDataIntoJSON from './functions/convertRinexDataIntoJSON/convertRinexDataIntoJSON'
-// convertRinexDataIntoJSON('G12').then(r=> console.log(r))
+// convertRinexDataIntoJSON('R20').then((r) => console.log(r))
 
 function App() {
     toast.configure()
@@ -44,16 +44,28 @@ function App() {
             <Grid
                 item
                 xs={12}
-                sx={{ display: 'flex', justifyContent: 'center' }}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexWrap: 'wrap',
+                }}
             >
                 <DatePicker startEnd={'start'} />
                 <DatePicker startEnd={'end'} />
+            </Grid>
+            <Grid
+                item
+                xs={12}
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                    flexDirection: 'column',
+                }}
+            >
                 <ChartsToShowSelect />
-            </Grid>
-            <Grid item xs={12}>
                 <DrawCharts />
-                <ToastContainer icon={<InfoIcon color="primary" />} />
             </Grid>
+            <ToastContainer icon={<InfoIcon color="primary" />} />
         </Grid>
     )
 }

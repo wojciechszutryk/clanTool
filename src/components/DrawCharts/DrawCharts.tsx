@@ -4,14 +4,18 @@ import { Box } from '@mui/material'
 import DrawADEVChart from '../DrawChart/DrawADEVChart'
 import DrawFrequencyChart from '../DrawChart/DrawFrequencyChart'
 import DrawODEVChart from '../DrawChart/DrawODEVChart'
-import { DrawChart } from '../index'
+import { DrawPhaseChart } from '../index'
 
 const DrawCharts = () => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
 
     return (
         <Box>
-            {chartsToShow.includes('Phase') && <DrawChart />}
+            {chartsToShow.includes('Phase') && (
+                <DrawPhaseChart startDate={startDate} endDate={endDate} />
+            )}
             {chartsToShow.includes('Frequency') && <DrawFrequencyChart />}
             {chartsToShow.includes('ADEV') && <DrawADEVChart />}
             {chartsToShow.includes('ODEV') && <DrawODEVChart />}
