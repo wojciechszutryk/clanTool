@@ -5,7 +5,13 @@ import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
 
-const DrawADEVChart = () => {
+const DrawADEVChart = ({
+    startDate,
+    endDate,
+}: {
+    startDate: number
+    endDate: number
+}) => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
     const selectedName = useAppSelector((state) =>
@@ -21,13 +27,16 @@ const DrawADEVChart = () => {
         }
         setLoading(true)
         const JSONData = await import(`assets/${selectedName}`)
-        const data = await JSONData.data
+        const data = await JSONData.data.filter(
+            (obj: { date: number; phase: number }) =>
+                obj.date <= endDate && obj.date >= startDate
+        )
         const allanDevData = allanDev(
             data.map((obj: { date: number; phase: number }) => obj.phase)
         )
         setData(allanDevData)
         await setLoading(false)
-    }, [selectedName])
+    }, [endDate, selectedName, startDate])
 
     return (
         <Box

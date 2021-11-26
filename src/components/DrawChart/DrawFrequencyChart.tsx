@@ -5,7 +5,13 @@ import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
 import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
 
-const DrawFrequencyChart = () => {
+const DrawFrequencyChart = ({
+    startDate,
+    endDate,
+}: {
+    startDate: number
+    endDate: number
+}) => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
     const selectedName = useAppSelector((state) =>
@@ -21,7 +27,10 @@ const DrawFrequencyChart = () => {
         }
         setLoading(true)
         const JSONData = await import(`assets/${selectedName}`)
-        const data = await JSONData.data
+        const data = await JSONData.data.filter(
+            (obj: { date: number; phase: number }) =>
+                obj.date <= endDate && obj.date >= startDate
+        )
         const freq = phaseToFreq({
             data: data.map((obj: { date: number; phase: number }) => obj.phase),
             tau: (data[1].date - data[0].date) / 1000,
@@ -35,7 +44,7 @@ const DrawFrequencyChart = () => {
         })
         setData(chartData)
         await setLoading(false)
-    }, [selectedName])
+    }, [endDate, selectedName, startDate])
 
     return (
         <Box

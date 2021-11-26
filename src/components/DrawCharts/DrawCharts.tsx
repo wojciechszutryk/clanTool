@@ -16,9 +16,9 @@ const DrawCharts = () => {
             {chartsToShow.includes('Phase') && (
                 <DrawPhaseChart startDate={startDate} endDate={endDate} />
             )}
-            {chartsToShow.includes('Frequency') && <DrawFrequencyChart />}
-            {chartsToShow.includes('ADEV') && <DrawADEVChart />}
-            {chartsToShow.includes('ODEV') && <DrawODEVChart />}
+            {chartsToShow.includes('Frequency') && <DrawFrequencyChart startDate={startDate} endDate={endDate} />}
+            {chartsToShow.includes('ADEV') && <DrawADEVChart startDate={startDate} endDate={endDate} />}
+            {chartsToShow.includes('ODEV') && <DrawODEVChart startDate={startDate} endDate={endDate} />}
         </Box>
     )
 }

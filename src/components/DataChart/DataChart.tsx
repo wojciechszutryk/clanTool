@@ -93,7 +93,7 @@ const DataChart = ({
             chart.dispose()
             chartRef.current = undefined
         }
-    }, [id])
+    }, [id, xType])
 
     useEffect(() => {
         const components = chartRef.current

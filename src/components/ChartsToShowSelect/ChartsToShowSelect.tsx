@@ -65,7 +65,7 @@ const ChartsToShowSelect = () => {
                 label={chart}
             />
         ))
-    }, [chartsToShow, handleChartCheck])
+    }, [chartsToShow, classes.item, handleChartCheck])
 
     return <FormGroup className={classes.wrapper}>{checkboxes}</FormGroup>
 }
