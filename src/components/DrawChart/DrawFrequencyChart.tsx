@@ -46,9 +46,18 @@ const DrawFrequencyChart = () => {
             }}
         >
             {loading ? (
-                <ClipLoader loading={loading} size={150} />
+                <Box
+                    sx={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                        height: '50vh',
+                    }}
+                >
+                    <ClipLoader loading={loading} size={150} />
+                </Box>
             ) : (
-                <DataChart data={data} id={'Frequency'} />
+                <DataChart data={data} id={'Frequency'} xType={'Date'} />
             )}
         </Box>
     )

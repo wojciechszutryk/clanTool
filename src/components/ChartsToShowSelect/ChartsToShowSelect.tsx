@@ -7,8 +7,18 @@ import { charts } from '../../state/constans/types'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
-    wrapper: { display: 'flex', flexWrap: 'wrap', flexDirection: 'row', justifyContent: 'center', maxWidth: '90%', margin: '0 auto' },
-    item: { margin: '0 10px' }
+    wrapper: {
+        display: 'flex',
+        flexWrap: 'wrap',
+        width: '90%',
+        margin: '0 auto',
+        flexDirection: 'row',
+        justifyContent: 'center',
+    },
+    item: { textAlign: 'center', marginRight: 50 },
+    'item *': {
+        width: '100%',
+    },
 })
 
 const availableCharts = [
@@ -24,7 +34,7 @@ const availableCharts = [
 const ChartsToShowSelect = () => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const dispatch = useAppDispatch()
-    const classes = useStyles();
+    const classes = useStyles()
 
     const handleChartCheck = useCallback(
         (chart) => {
@@ -43,8 +53,8 @@ const ChartsToShowSelect = () => {
     const checkboxes = useMemo(() => {
         return availableCharts.map((chart) => (
             <FormControlLabel
-                key={chart}
                 className={classes.item}
+                key={chart}
                 control={
                     <Checkbox
                         checked={chartsToShow.includes(chart)}
