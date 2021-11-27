@@ -66,7 +66,10 @@ const DataChart = ({
                     )
                 )
             )
-        chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
+
+        if (xType === 'Date')
+            chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
+
         const series = chart
             .addLineSeries()
             .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
