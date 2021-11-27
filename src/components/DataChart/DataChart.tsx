@@ -78,7 +78,7 @@ const DataChart = ({
                         xType === 'Date' ? xType + ': ' : 'τ: ',
                         xType === 'Date'
                             ? new Date(xValue).toLocaleString()
-                            : xValue.toFixed().toString()
+                            : xValue.toFixed(2).toString()
                     )
                     .addRow(id + ': ', yValue.toString())
             })
