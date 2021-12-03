@@ -1,7 +1,7 @@
 import {
     AxisTickStrategies,
-    ColorRGBA,
-    lightningChart,
+    ColorRGBA, FormattingFunction,
+    lightningChart, NumericTickStrategy,
     SolidFill,
     Themes,
 } from '@arction/lcjs'
@@ -34,30 +34,16 @@ const DataChart = ({
             .ChartXY({
                 container: id,
                 theme: Themes.light,
+                defaultAxisX: {
+                    type: 'logarithmic',
+                    base: 10,
+                },
+                // defaultAxisY: {
+                //     type: 'logarithmic',
+                //     base: 10,
+                // }
             })
             .setTitle(id)
-            // .setTitleFillStyle(
-            //     new SolidFill({
-            //         color: ColorRGBA(255, 255, 255),
-            //     })
-            // )
-            // .setBackgroundFillStyle(
-            //     new SolidFill({ color: ColorRGBA(255, 255, 255) })
-            // )
-            // .setSeriesBackgroundFillStyle(
-            //     new SolidFill({ color: ColorRGBA(255, 255, 255) })
-            // )
-            // .setBackgroundStrokeStyle(
-            //     new SolidLine({
-            //         thickness: 2,
-            //         fillStyle: new SolidFill({ color: ColorRGBA(0, 255, 0) }),
-            //     })
-            // )
-            // .setTitleFillStyle(
-            //     new SolidFill({
-            //         color: ColorRGBA(0, 0, 0),
-            //     })
-            // )
             .setPadding({ left: 8, right: 50, top: 8, bottom: 8 })
             .setAutoCursor((autoCursor) =>
                 autoCursor.setResultTable((resultTable) =>
@@ -66,9 +52,28 @@ const DataChart = ({
                     )
                 )
             )
+            .setAnimationsEnabled(false)
 
         if (xType === 'Date')
             chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
+
+        chart.getDefaultAxisY().formatValue(0.0E+00);
+        chart.getDefaultAxisY().setTickStrategy(
+            AxisTickStrategies.Numeric,
+            ( tickStrategy: NumericTickStrategy ) => tickStrategy
+                .setMinorFormattingFunction( ( value, range ) => {
+                    return value.toExponential(3).toString()
+                })
+                .setMajorTickStyle( ( tickStyle ) => tickStyle
+                    .setLabelFont( ( font ) => font
+                        .setWeight( 'bold' )
+                    )
+                )
+                .setMajorFormattingFunction( ( value, range ) => {
+                    return value.toExponential(4).toString()
+                })
+        )
+        chart.getDefaultAxisY().setTickStrategy(AxisTickStrategies.Numeric, (numericTicks) => numericTicks)
 
         const series = chart
             .addLineSeries()
@@ -80,16 +85,8 @@ const DataChart = ({
                             ? new Date(xValue).toLocaleString()
                             : xValue.toFixed(2).toString()
                     )
-                    .addRow(id + ': ', yValue.toString())
+                    .addRow(id + ': ', yValue.toExponential(7).toString())
             })
-        //     .setStrokeStyle(
-        //     new SolidLine({
-        //         thickness: 1,
-        //         fillStyle: new SolidFill({
-        //             color: ColorRGBA(255, 0, 0),
-        //         }),
-        //     })
-        // )
         chartRef.current = { chart, series }
 
         return () => {
