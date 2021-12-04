@@ -1,5 +1,6 @@
 import { generateLogTauData } from './helpers'
 
+const CHART_ZOOM_FIX = 1000000000000
 const SMALLEST_SIZE_VALUE = 3
 
 function calculateAllanPhase(
@@ -17,14 +18,14 @@ function calculateAllanPhase(
     }
 
     if (size < SMALLEST_SIZE_VALUE) {
-        return null
+        return 0
     }
 
     let mult = 2 * size * tau ** 2
     return Math.sqrt(sigma / mult)
 }
 
-export function allanDev(data: number[], rate = 1, tau_data = 300) {
+export function allanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
@@ -36,17 +37,16 @@ export function allanDev(data: number[], rate = 1, tau_data = 300) {
 
     for (let m of tauLogData) {
         let tau = m * tau0
-        let dev = calculateAllanPhase(data, m, tau, false)
+        let dev = calculateAllanPhase(data, m, tau, false)*zoomFix
         if (dev !== null) {
             result.push({ x: tau, y: dev })
         }
     }
 
-    console.log(result)
     return result
 }
 
-export function overAllanDev(data: number[], rate = 1, tau_data = 300) {
+export function overAllanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
@@ -58,7 +58,7 @@ export function overAllanDev(data: number[], rate = 1, tau_data = 300) {
 
     for (let m of tauLogData) {
         let tau = m * tau0
-        let dev = calculateAllanPhase(data, m, tau, true)
+        let dev = calculateAllanPhase(data, m, tau, true)*zoomFix
         if (dev !== null) {
             result.push({ x: tau, y: dev })
         }
@@ -67,7 +67,7 @@ export function overAllanDev(data: number[], rate = 1, tau_data = 300) {
     return result
 }
 
-export function modAllanDev(data: number[], rate = 1, tau_data = 300) {
+export function modAllanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
@@ -99,7 +99,7 @@ export function modAllanDev(data: number[], rate = 1, tau_data = 300) {
         let mult = 2 * size * m ** 2 * tau ** 2
 
         if (size >= SMALLEST_SIZE_VALUE)
-            result.push({ x: tau, y: Math.sqrt(sigma / mult) })
+            result.push({ x: tau, y: Math.sqrt(sigma / mult)*zoomFix })
     }
     return result
 }

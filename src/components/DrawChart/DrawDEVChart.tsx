@@ -34,25 +34,25 @@ const DrawDEVChart = ({
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
         )
+        const phases = data.map((obj: { date: number; phase: number }) => obj.phase);
         if (DEVs.includes('ADEV')){
             const allanDevData = allanDev(
-                data.map((obj: { date: number; phase: number }) => obj.phase)
+                phases
             )
             DEVsObjects.push({'ADEV': allanDevData })
         }
         if (DEVs.includes('MDEV')){
             const modAllanDevData = modAllanDev(
-                data.map((obj: { date: number; phase: number }) => obj.phase)
+                phases
             )
             DEVsObjects.push({'MDEV': modAllanDevData })
         }
         if (DEVs.includes('ODEV')){
             const overAllanDevData = overAllanDev(
-                data.map((obj: { date: number; phase: number }) => obj.phase)
+                phases
             )
             DEVsObjects.push({'ODEV': overAllanDevData })
         }
-        console.log(DEVsObjects)
 
         setData(DEVsObjects)
         await setLoading(false)

@@ -9,7 +9,7 @@ const MyMaps = () => {
     const dispatch = useAppDispatch()
     const markers = useMemo(() => {
         return Object.values(stations).map((station) => (
-            <Marker position={[station.Latitude, station.Longitude]}>
+            <Marker key={station.Name} position={[station.Latitude, station.Longitude]}>
                 <Popup>
                     <h2>{station.Name}</h2>
                     <Button

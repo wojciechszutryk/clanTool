@@ -3,7 +3,6 @@ import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { DrawDEVChart, DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
 
-
 const DrawCharts = () => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const startDate = useAppSelector((state) => state.app.startDate)
