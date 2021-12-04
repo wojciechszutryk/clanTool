@@ -2,7 +2,7 @@ export { default as SatelliteSelect } from './SatelliteSelect'
 export { default as StationSelect } from './StationSelect'
 export { default as MyMaps } from './MyMaps'
 export { default as DatePicker } from './DatePicker'
-export { default as DataChart } from './DataChart'
+export { DataChart, DEVChart } from './Chart'
 export { default as ChartsToShowSelect } from './ChartsToShowSelect'
 export { default as DrawCharts } from './DrawCharts'
 

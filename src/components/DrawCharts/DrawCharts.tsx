@@ -1,16 +1,15 @@
-import React from 'react'
+import React, { useMemo } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
-import DrawADEVChart from '../DrawChart/DrawADEVChart'
-import DrawFrequencyChart from '../DrawChart/DrawFrequencyChart'
-import DrawODEVChart from '../DrawChart/DrawODEVChart'
-import { DrawPhaseChart } from '../index'
-import { DrawMDEVChart } from '../DrawChart'
+import { DrawDEVChart, DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
+
 
 const DrawCharts = () => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
+
+    const DEVs = useMemo(() => chartsToShow.filter(chart => (chart.includes('DEV'))), [chartsToShow])
 
     return (
         <Box>
@@ -20,15 +19,10 @@ const DrawCharts = () => {
             {chartsToShow.includes('Frequency') && (
                 <DrawFrequencyChart startDate={startDate} endDate={endDate} />
             )}
-            {chartsToShow.includes('ADEV') && (
-                <DrawADEVChart startDate={startDate} endDate={endDate} />
-            )}
-
-            {chartsToShow.includes('MDEV') && (
-                <DrawMDEVChart startDate={startDate} endDate={endDate} />
-            )}
-            {chartsToShow.includes('ODEV') && (
-                <DrawODEVChart startDate={startDate} endDate={endDate} />
+            {(chartsToShow.includes('ADEV') ||
+            chartsToShow.includes('MDEV') ||
+            chartsToShow.includes('ODEV')) && (
+                <DrawDEVChart startDate={startDate} endDate={endDate} DEVs={DEVs}/>
             )}
         </Box>
     )

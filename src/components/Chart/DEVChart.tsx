@@ -1,6 +1,6 @@
 import {
     AxisTickStrategies,
-    ColorRGBA, FormattingFunction,
+    ColorRGBA,
     lightningChart, NumericTickStrategy,
     SolidFill,
     Themes,
@@ -8,7 +8,6 @@ import {
 import { Box, Button } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React, { useRef, useEffect } from 'react'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
 
 const useStyles = makeStyles({
     wrapper: { display: 'flex', flexDirection: 'column' },
@@ -18,16 +17,12 @@ const useStyles = makeStyles({
 const DataChart = ({
     data,
     id,
-    xType = 'Tau',
 }: {
-    data: any
+    data: any[]
     id: string
-    xType?: 'Date' | 'Tau'
 }) => {
     const chartRef = useRef<any>(undefined)
     const classes = useStyles()
-    const startDate = useAppSelector((state) => state.app.startDate)
-    const endDate = useAppSelector((state) => state.app.endDate)
 
     useEffect(() => {
         const chart = lightningChart()
@@ -54,9 +49,6 @@ const DataChart = ({
             )
             .setAnimationsEnabled(false)
 
-        if (xType === 'Date')
-            chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
-
         chart.getDefaultAxisY().formatValue(0.0E+00);
         chart.getDefaultAxisY().setTickStrategy(
             AxisTickStrategies.Numeric,
@@ -80,10 +72,9 @@ const DataChart = ({
             .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
                 return builder
                     .addRow(
-                        xType === 'Date' ? xType + ': ' : 'τ: ',
-                        xType === 'Date'
-                            ? new Date(xValue).toLocaleString()
-                            : xValue.toFixed(2).toString()
+                         'τ: ',
+
+                             xValue.toFixed(2).toString()
                     )
                     .addRow(id + ': ', yValue.toExponential(7).toString())
             })
@@ -93,7 +84,7 @@ const DataChart = ({
             chart.dispose()
             chartRef.current = undefined
         }
-    }, [id, xType])
+    }, [id])
 
     useEffect(() => {
         const components = chartRef.current
@@ -105,11 +96,7 @@ const DataChart = ({
 
     function handleChartSave() {
         const filename =
-            id +
-            '-' +
-            new Date(startDate).toJSON().slice(0, 10).replaceAll('-', '.') +
-            '-' +
-            new Date(endDate).toJSON().slice(0, 10).replaceAll('-', '.')
+            Object.keys(data.join('-'))
         chartRef.current.chart.saveToFile(filename)
     }
 
