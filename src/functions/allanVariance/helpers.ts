@@ -13,6 +13,7 @@ export function getAveragedSignal(arr: number[], n: number, stride = 1) {
 
 export function generateLogTauData(a: number, b: number, n: number) {
     let arr = new Set<number>()
+    console.log(b)
 
     let start = Math.log10(a)
     let end = Math.log10(b)
@@ -23,6 +24,12 @@ export function generateLogTauData(a: number, b: number, n: number) {
         arr.add(Math.round(Math.pow(10, start + delta * (i / div))))
     }
     return Array.from(arr)
+    // let arr: number[] = [];
+    // for (let i = a; i < b; i=i*2) {
+    //     arr.push(i)
+    // }
+    //
+    // return arr;
 }
 
 // export function arrayOfEveryNthElements(arr: number[], S: number, N: number) {

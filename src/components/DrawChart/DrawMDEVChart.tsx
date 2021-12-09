@@ -32,7 +32,9 @@ const DrawMDEVChart = ({
                 obj.date <= endDate && obj.date >= startDate
         )
         const allanDevData = modAllanDev(
-            data.map((obj: { date: number; phase: number }) => obj.phase)
+            data.map((obj: { date: number; phase: number }) => obj.phase),
+            startDate,
+            endDate,
         )
         setData(allanDevData)
         await setLoading(false)

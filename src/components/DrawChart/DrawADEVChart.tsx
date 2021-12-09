@@ -32,7 +32,9 @@ const DrawADEVChart = ({
                 obj.date <= endDate && obj.date >= startDate
         )
         const allanDevData = allanDev(
-            data.map((obj: { date: number; phase: number }) => obj.phase)
+            data.map((obj: { date: number; phase: number }) => obj.phase),
+            startDate,
+            endDate,
         )
         setData(allanDevData)
         await setLoading(false)

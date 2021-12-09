@@ -25,9 +25,10 @@ function calculateAllanPhase(
     return Math.sqrt(sigma / mult)
 }
 
-export function allanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
+export function allanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
+        // Math.floor( (endDate - startDate) / 5),
         Math.floor(data.length / 5),
         Number(tau_data)
     )
@@ -46,7 +47,7 @@ export function allanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART
     return result
 }
 
-export function overAllanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
+export function overAllanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
@@ -67,7 +68,7 @@ export function overAllanDev(data: number[], rate = 1, tau_data = 300, zoomFix=C
     return result
 }
 
-export function modAllanDev(data: number[], rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
+export function modAllanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
