@@ -12,24 +12,25 @@ export function getAveragedSignal(arr: number[], n: number, stride = 1) {
 }
 
 export function generateLogTauData(a: number, b: number, n: number) {
-    let arr = new Set<number>()
-    console.log(b)
-
-    let start = Math.log10(a)
-    let end = Math.log10(b)
-    let div = n - 1
-    let delta = end - start
-
-    for (let i = 0; i < n; i++) {
-        arr.add(Math.round(Math.pow(10, start + delta * (i / div))))
-    }
-    return Array.from(arr)
-    // let arr: number[] = [];
-    // for (let i = a; i < b; i=i*2) {
-    //     arr.push(i)
-    // }
+    // console.log('start'+a)
+    // console.log('end' + b)
+    // let arr = new Set<number>()
     //
-    // return arr;
+    // let start = Math.log10(a)
+    // let end = Math.log10(b)
+    // let div = n - 1
+    // let delta = end - start
+    //
+    // for (let i = 0; i < n; i++) {
+    //     arr.add(Math.round(Math.pow(10, start + delta * (i / div))))
+    // }
+    // console.log(arr)
+    // return Array.from(arr)
+    let arr: number[] = [];
+    for (let i = a; i < b; i=i*2) {
+        arr.push(i)
+    }
+    return arr;
 }
 
 // export function arrayOfEveryNthElements(arr: number[], S: number, N: number) {

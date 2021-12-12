@@ -2,6 +2,7 @@ import { generateLogTauData } from './helpers'
 
 const CHART_ZOOM_FIX = 1000000000000
 const SMALLEST_SIZE_VALUE = 3
+const MILISECOND_TO_SECOND = 1000
 
 function calculateAllanPhase(
     data: number[],
@@ -28,7 +29,7 @@ function calculateAllanPhase(
 export function allanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
     const tauLogData = generateLogTauData(
         1,
-        // Math.floor( (endDate - startDate) / 5),
+        // Math.floor( (endDate - startDate) / 5 / MILISECOND_TO_SECOND ),
         Math.floor(data.length / 5),
         Number(tau_data)
     )
@@ -43,6 +44,7 @@ export function allanDev(data: number[], startDate: number, endDate: number, rat
             result.push({ x: tau, y: dev })
         }
     }
+    console.log(result)
 
     return result
 }

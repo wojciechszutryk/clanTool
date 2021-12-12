@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx">
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/allanVariance/allanVariance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/allanVariance/allanVariance.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/allanVariance/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/allanVariance/helpers.ts" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="devThauChangedToTime" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="21lvYefmi5sLpDfT1QjRM2zdMGu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/DrawChart" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\node_modules\prettier" />
+    <property name="ts.external.directory.path" value="G:\Program Files\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components\DrawChart" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components\DataChart" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="" />
+      <created>1638528540884</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1638528540884</updated>
+      <workItem from="1638528545968" duration="8758000" />
+      <workItem from="1638605967303" duration="6156000" />
+      <workItem from="1638616574793" duration="4364000" />
+      <workItem from="1638628329128" duration="7284000" />
+      <workItem from="1638697032038" duration="1478000" />
+      <workItem from="1638717535391" duration="6000" />
+      <workItem from="1638730963036" duration="1406000" />
+      <workItem from="1638786624319" duration="174000" />
+      <workItem from="1638957018656" duration="37000" />
+      <workItem from="1638968946912" duration="14000" />
+      <workItem from="1639075925636" duration="4438000" />
+      <workItem from="1639330544693" duration="2040000" />
+    </task>
+    <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
+      <created>1638568368745</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1638568368745</updated>
+    </task>
+    <task id="LOCAL-00002" summary="add DEVChart">
+      <created>1638612162354</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1638612162354</updated>
+    </task>
+    <task id="LOCAL-00003" summary="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx">
+      <created>1638643568867</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1638643568867</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="change y axis to exponential, remove animation, set x axis to logarithm" />
+    <MESSAGE value="add DEVChart" />
+    <MESSAGE value="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx" />
+  </component>
+</project>
