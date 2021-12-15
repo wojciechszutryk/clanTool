@@ -44,7 +44,6 @@ export function allanDev(data: number[], startDate: number, endDate: number, rat
             result.push({ x: tau, y: dev })
         }
     }
-    console.log(result)
 
     return result
 }

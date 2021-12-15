@@ -41,6 +41,11 @@ export interface ActionSetChartsToShow
     chartsToShow: charts[]
 }
 
+export interface ActionSetMADMultiply
+    extends Action<typeof types.SET_MAD_MULTIPLY> {
+    MADMultiply: number
+}
+
 export type Actions =
     | ActionSetStationsNames
     | ActionSetSatellitesNames
@@ -50,3 +55,4 @@ export type Actions =
     | ActionSetStartDate
     | ActionSetEndDate
     | ActionSetChartsToShow
+    | ActionSetMADMultiply

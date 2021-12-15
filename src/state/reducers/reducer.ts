@@ -11,7 +11,9 @@ interface State {
     mapReference: any
     startDate: number
     endDate: number
-    chartsToShow: charts[]
+    chartsToShow: charts[],
+    MADMultiply: number,
+    zoomFix: number, //
 }
 
 const initialState: State = {
@@ -23,6 +25,8 @@ const initialState: State = {
     startDate: +new Date(2014, 0, 1, 0, 0, 0, 0),
     endDate: +new Date(2014, 0, 7, 0, 0, 0, 0),
     chartsToShow: [],
+    MADMultiply: 3,
+    zoomFix: 1000000000000,
 }
 
 const reducer: Reducer<State, Actions> = (
@@ -71,6 +75,11 @@ const reducer: Reducer<State, Actions> = (
             return {
                 ...state,
                 chartsToShow: action.chartsToShow,
+            }
+        case types.SET_MAD_MULTIPLY:
+            return {
+                ...state,
+                MADMultiply: action.MADMultiply,
             }
         default:
             return state

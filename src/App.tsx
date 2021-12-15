@@ -1,4 +1,4 @@
-import { Grid } from '@mui/material'
+import { Grid, Box } from '@mui/material'
 import React from 'react'
 import './App.css'
 import {
@@ -8,6 +8,7 @@ import {
     MyMaps,
     SatelliteSelect,
     StationSelect,
+    MADMultiplyInput
 } from './components'
 import { toast, ToastContainer } from 'react-toastify/dist'
 import InfoIcon from '@mui/icons-material/Info'

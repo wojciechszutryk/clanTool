@@ -5,6 +5,7 @@ export { default as DatePicker } from './DatePicker'
 export { DataChart, DEVChart } from './Chart'
 export { default as ChartsToShowSelect } from './ChartsToShowSelect'
 export { default as DrawCharts } from './DrawCharts'
+export { default as MADMultiplyInput } from './MADMultiplyInput'
 
 export { DrawPhaseChart } from './DrawChart'
 export { DrawFrequencyChart } from './DrawChart'

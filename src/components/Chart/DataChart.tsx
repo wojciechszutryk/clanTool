@@ -26,6 +26,7 @@ const DataChart = ({
 }) => {
     const chartRef = useRef<any>(undefined)
     const classes = useStyles()
+    const zoomFix = useAppSelector((state) => state.app.zoomFix);
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
 
@@ -62,7 +63,7 @@ const DataChart = ({
             AxisTickStrategies.Numeric,
             ( tickStrategy: NumericTickStrategy ) => tickStrategy
                 .setMinorFormattingFunction( ( value, range ) => {
-                    return value.toExponential(3).toString()
+                    return (value/zoomFix).toExponential(3).toString()
                 })
                 .setMajorTickStyle( ( tickStyle ) => tickStyle
                     .setLabelFont( ( font ) => font
@@ -70,7 +71,7 @@ const DataChart = ({
                     )
                 )
                 .setMajorFormattingFunction( ( value, range ) => {
-                    return value.toExponential(4).toString()
+                    return (value/zoomFix).toExponential(4).toString()
                 })
         )
         chart.getDefaultAxisY().setTickStrategy(AxisTickStrategies.Numeric, (numericTicks) => numericTicks)
@@ -85,7 +86,7 @@ const DataChart = ({
                             ? new Date(xValue).toLocaleString()
                             : xValue.toFixed(2).toString()
                     )
-                    .addRow(id + ': ', yValue.toExponential(7).toString())
+                    .addRow(id + ': ', (yValue/zoomFix).toExponential(7).toString())
             })
         chartRef.current = { chart, series }
 

@@ -1,9 +1,10 @@
-import { Checkbox, FormControlLabel, FormGroup } from '@mui/material'
+import { Checkbox, FormControlLabel, FormGroup, Box } from '@mui/material'
 import React, { useCallback, useMemo } from 'react'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { setChartsToShow } from '../../state/actions'
 import { charts } from '../../state/constans/types'
+import { MADMultiplyInput } from 'components'
 import { makeStyles } from '@mui/styles'
 
 const useStyles = makeStyles({
@@ -67,7 +68,12 @@ const ChartsToShowSelect = () => {
         ))
     }, [chartsToShow, classes.item, handleChartCheck])
 
-    return <FormGroup className={classes.wrapper}>{checkboxes}</FormGroup>
+    return <FormGroup className={classes.wrapper}>
+        <Box className={classes.item}>
+            <MADMultiplyInput/>
+        </Box>
+        {checkboxes}
+    </FormGroup>
 }
 
 export default ChartsToShowSelect

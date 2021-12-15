@@ -1,10 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx">
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="fix thau callculation">
+      <change afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/freqToPhase/freqToPhase.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart/DEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/DEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart/DataChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/DataChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions/allanVariance/allanVariance.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/allanVariance/allanVariance.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/allanVariance/helpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/allanVariance/helpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/actions/actionsInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/actions/actionsInterfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/actions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/constans/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/constans/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/reducers/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,17 +43,19 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/DrawChart" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/functions" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="prettierjs.PrettierConfiguration.Package" value="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\node_modules\prettier" />
-    <property name="ts.external.directory.path" value="G:\Program Files\WebStorm 2020.3.2\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
+    <property name="ts.external.directory.path" value="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\functions" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components\DrawChart" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components\DataChart" />
     </key>
@@ -63,7 +79,9 @@
       <workItem from="1638957018656" duration="37000" />
       <workItem from="1638968946912" duration="14000" />
       <workItem from="1639075925636" duration="4438000" />
-      <workItem from="1639330544693" duration="2040000" />
+      <workItem from="1639330544693" duration="2557000" />
+      <workItem from="1639466751083" duration="304000" />
+      <workItem from="1639600699897" duration="8294000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -86,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1638643568867</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="fix thau callculation">
+      <created>1639332639621</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1639332639621</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -108,6 +133,7 @@
     <MESSAGE value="change y axis to exponential, remove animation, set x axis to logarithm" />
     <MESSAGE value="add DEVChart" />
     <MESSAGE value="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx" />
+    <MESSAGE value="fix thau callculation" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix thau callculation" />
   </component>
 </project>

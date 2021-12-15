@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../functions/allanVariance/allanVariance'
+import freqToPhase from '../../functions/freqToPhase/freqToPhase'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
+import phaseToFreq from '../../functions/phaseToFreq/phaseToFreq'
 import { DEVChart } from '../Chart'
 
 const DrawDEVChart = ({
@@ -34,7 +36,15 @@ const DrawDEVChart = ({
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
         )
-        const phases = data.map((obj: { date: number; phase: number }) => obj.phase);
+
+        //outlier recognition - remove MAD in phaseToFreq
+        const tau0 = (data[1].date - data[0].date) / 1000;
+        const rawPhases = data.map((obj: { date: number; phase: number }) => obj.phase);
+        const freq = phaseToFreq(
+            rawPhases,  tau0
+        )
+        const phases = freqToPhase({data: freq, tau: tau0})
+
         if (DEVs.includes('ADEV')){
             const allanDevData = allanDev(
                 phases,

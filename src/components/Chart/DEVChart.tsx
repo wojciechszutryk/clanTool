@@ -12,6 +12,7 @@ import {
 import { Box, Button } from '@mui/material'
 import { makeStyles } from '@mui/styles'
 import React, { useEffect, useRef } from 'react'
+import { useAppSelector } from '../../functions/hooks/useAppSelector'
 
 const useStyles = makeStyles({
     wrapper: { display: 'flex', flexDirection: 'column' },
@@ -25,7 +26,7 @@ const DEVChart = ({
     data: {[key: string]: { x: number; y: number }[]}[]
     id: string
 }) => {
-    const zoomFix = 1000000000000;
+    const zoomFix = useAppSelector((state) => state.app.zoomFix);
     const chartRef = useRef<any>(undefined)
     const classes = useStyles()
 

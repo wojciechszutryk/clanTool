@@ -55,3 +55,10 @@ export const setChartsToShow = (
     type: types.SET_CHARTS_TO_SHOW,
     chartsToShow,
 })
+
+export const setMADMultiply = (
+    MADMultiply: number
+): actions.ActionSetMADMultiply => ({
+    type: types.SET_MAD_MULTIPLY,
+    MADMultiply,
+})

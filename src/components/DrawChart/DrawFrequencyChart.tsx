@@ -31,10 +31,11 @@ const DrawFrequencyChart = ({
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
         )
-        const freq = phaseToFreq({
-            data: data.map((obj: { date: number; phase: number }) => obj.phase),
-            tau: (data[1].date - data[0].date) / 1000,
-        })
+        const freq = phaseToFreq(
+            data.map((obj: { date: number; phase: number }) => obj.phase),
+            (data[1].date - data[0].date) / 1000,
+            true
+        );
         const chartData: { x: number; y: number }[] = []
         freq.forEach((fr, index) => {
             chartData.push({
