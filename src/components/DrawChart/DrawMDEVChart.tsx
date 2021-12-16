@@ -19,6 +19,7 @@ const DrawMDEVChart = ({
             ? state.app.selectedSatelliteName
             : state.app.selectedStationName
     )
+    const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
 
     useMemo(async () => {
         if (!selectedName) {
@@ -38,7 +39,7 @@ const DrawMDEVChart = ({
         )
         setData(allanDevData)
         await setLoading(false)
-    }, [endDate, selectedName, startDate])
+    }, [endDate, selectedName, startDate, MADMultiply])
 
     return (
         <Box

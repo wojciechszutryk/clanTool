@@ -2,6 +2,7 @@ import React, { useMemo } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { DrawDEVChart, DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
+import DrawFrequencyDriftChart from '../DrawChart/DrawFrequencyDriftChart'
 
 const DrawCharts = () => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
@@ -17,6 +18,9 @@ const DrawCharts = () => {
             )}
             {chartsToShow.includes('Frequency') && (
                 <DrawFrequencyChart startDate={startDate} endDate={endDate} />
+            )}
+            {chartsToShow.includes('Frequency Drift') && (
+                <DrawFrequencyDriftChart startDate={startDate} endDate={endDate} />
             )}
             {(chartsToShow.includes('ADEV') ||
             chartsToShow.includes('MDEV') ||

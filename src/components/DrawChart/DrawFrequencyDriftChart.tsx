@@ -3,9 +3,9 @@ import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
+import phaseToFreqDrift from 'functions/phaseToFreqDrift/phaseToFreqDrift'
 
-const DrawFrequencyChart = ({
+const DrawFrequencyDriftChart = ({
     startDate,
     endDate,
 }: {
@@ -32,13 +32,12 @@ const DrawFrequencyChart = ({
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
         )
-        const freq = phaseToFreq(
+        const freqDrift = phaseToFreqDrift(
             data.map((obj: { date: number; phase: number }) => obj.phase),
-            (data[1].date - data[0].date) / 1000,
-            true
+            (data[1].date - data[0].date) / 1000
         );
         const chartData: { x: number; y: number }[] = []
-        freq.forEach((fr, index) => {
+        freqDrift.forEach((fr, index) => {
             chartData.push({
                 x: data[index].date,
                 y: fr,
@@ -68,10 +67,10 @@ const DrawFrequencyChart = ({
                     <ClipLoader loading={loading} size={150} />
                 </Box>
             ) : (
-                <DataChart data={data} id={'Frequency'} xType={'Date'} />
+                <DataChart data={data} id={'Frequency Drift'} xType={'Date'} />
             )}
         </Box>
     )
 }
 
-export default DrawFrequencyChart
+export default DrawFrequencyDriftChart
