@@ -3,7 +3,7 @@ import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import {
     setSelectedSatelliteName,
-    setSatellitesNames,
+    setSatellitesNames, setGlobalLoader,
 } from '../../state/actions'
 import {
     Box,
@@ -45,6 +45,7 @@ const SatelliteSelect = ({ system }: Props) => {
     }, [satellitesNames])
 
     const handleChange = (event: SelectChangeEvent) => {
+        dispatch(setGlobalLoader(true))
         dispatch(setSelectedSatelliteName(event.target.value as string))
     }
     return (

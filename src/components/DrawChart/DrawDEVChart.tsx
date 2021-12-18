@@ -2,10 +2,12 @@ import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../functions/allanVariance/allanVariance'
 import freqToPhase from '../../functions/freqToPhase/freqToPhase'
+import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import phaseToFreq from '../../functions/phaseToFreq/phaseToFreq'
+import { setGlobalLoader } from '../../state/actions'
 import { DEVChart } from '../Chart'
 
 const DrawDEVChart = ({
@@ -18,6 +20,7 @@ const DrawDEVChart = ({
 }) => {
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
     const [loading, setLoading] = useState(true)
+    const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
             ? state.app.selectedSatelliteName
@@ -73,7 +76,8 @@ const DrawDEVChart = ({
 
         setData(DEVsObjects)
         await setLoading(false)
-    }, [DEVs, endDate, selectedName, startDate, MADMultiply])
+        await dispatch(setGlobalLoader(false))
+    }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply])
 
     return (
         <Box

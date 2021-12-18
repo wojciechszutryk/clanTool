@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react'
+import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
+import phaseToFreqWithObjectOutput from 'functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput'
+import { setGlobalLoader } from '../../state/actions'
 
 const DrawFrequencyChart = ({
     startDate,
@@ -14,6 +16,7 @@ const DrawFrequencyChart = ({
 }) => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
+    const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
             ? state.app.selectedSatelliteName
@@ -32,21 +35,28 @@ const DrawFrequencyChart = ({
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
         )
-        const freq = phaseToFreq(
-            data.map((obj: { date: number; phase: number }) => obj.phase),
+        // const freq = phaseToFreq(
+        //     data.map((obj: { date: number; phase: number }) => obj.phase),
+        //     (data[1].date - data[0].date) / 1000,
+        //     true
+        // );
+        // const chartData: { x: number; y: number }[] = []
+        // freq.forEach((fr, index) => {
+        //     chartData.push({
+        //         x: data[index].date,
+        //         y: fr,
+        //     })
+        // })
+        //
+        const chartData = phaseToFreqWithObjectOutput(
+            data,
             (data[1].date - data[0].date) / 1000,
             true
         );
-        const chartData: { x: number; y: number }[] = []
-        freq.forEach((fr, index) => {
-            chartData.push({
-                x: data[index].date,
-                y: fr,
-            })
-        })
         setData(chartData)
         await setLoading(false)
-    }, [endDate, selectedName, startDate, MADMultiply])
+        await dispatch(setGlobalLoader(false))
+    }, [dispatch, endDate, selectedName, startDate, MADMultiply])
 
     return (
         <Box

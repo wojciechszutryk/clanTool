@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add Oulter Recognition">
-      <change afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/medianOfArray/medianOfArray.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/phaseToFreqDrift/phaseToFreqDrift.ts" afterDir="false" />
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add MAD">
+      <change afterPath="$PROJECT_DIR$/src/components/GlobalLoader/GlobalLoader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/GlobalLoader/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawADEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawADEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawMDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawMDEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawODEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawODEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SatelliteSelect/SatelliteSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SatelliteSelect/SatelliteSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StationSelect/StationSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StationSelect/StationSelect.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreqDrift/phaseToFreqDrift.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/actions/actionsInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/actions/actionsInterfaces.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/actions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/constans/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/constans/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state/reducers/reducer.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/reducers/reducer.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,6 +32,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -85,7 +93,8 @@
       <workItem from="1639330544693" duration="2557000" />
       <workItem from="1639466751083" duration="304000" />
       <workItem from="1639600699897" duration="8394000" />
-      <workItem from="1639689085193" duration="5019000" />
+      <workItem from="1639689085193" duration="5098000" />
+      <workItem from="1639816710409" duration="7008000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -122,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639609137824</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add MAD">
+      <created>1639694214171</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1639694214171</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +162,7 @@
     <MESSAGE value="add zoomFix to allanVariance.ts functions and DEVChart.tsx&#10;change DEVChart.tsx" />
     <MESSAGE value="fix thau callculation" />
     <MESSAGE value="add Oulter Recognition" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Oulter Recognition" />
+    <MESSAGE value="add MAD" />
+    <option name="LAST_COMMIT_MESSAGE" value="add MAD" />
   </component>
 </project>

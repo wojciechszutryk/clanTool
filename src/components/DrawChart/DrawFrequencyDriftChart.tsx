@@ -1,9 +1,11 @@
 import React, { useMemo, useState } from 'react'
+import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import phaseToFreqDrift from 'functions/phaseToFreqDrift/phaseToFreqDrift'
+import phaseToFreqDriftWithObjectOutput from 'functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput'
+import { setGlobalLoader } from '../../state/actions'
 
 const DrawFrequencyDriftChart = ({
     startDate,
@@ -14,6 +16,7 @@ const DrawFrequencyDriftChart = ({
 }) => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
+    const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
             ? state.app.selectedSatelliteName
@@ -32,20 +35,14 @@ const DrawFrequencyDriftChart = ({
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
         )
-        const freqDrift = phaseToFreqDrift(
-            data.map((obj: { date: number; phase: number }) => obj.phase),
+        const chartData = phaseToFreqDriftWithObjectOutput(
+            data,
             (data[1].date - data[0].date) / 1000
         );
-        const chartData: { x: number; y: number }[] = []
-        freqDrift.forEach((fr, index) => {
-            chartData.push({
-                x: data[index].date,
-                y: fr,
-            })
-        })
         setData(chartData)
         await setLoading(false)
-    }, [endDate, selectedName, startDate, MADMultiply])
+        await dispatch(setGlobalLoader(false))
+    }, [dispatch, endDate, selectedName, startDate, MADMultiply])
 
     return (
         <Box

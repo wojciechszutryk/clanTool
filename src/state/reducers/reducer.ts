@@ -14,6 +14,7 @@ interface State {
     chartsToShow: charts[],
     MADMultiply: number,
     zoomFix: number, //
+    globalLoader: boolean, //
 }
 
 const initialState: State = {
@@ -27,6 +28,7 @@ const initialState: State = {
     chartsToShow: [],
     MADMultiply: 3,
     zoomFix: 1000000000000,
+    globalLoader: false,
 }
 
 const reducer: Reducer<State, Actions> = (
@@ -80,6 +82,11 @@ const reducer: Reducer<State, Actions> = (
             return {
                 ...state,
                 MADMultiply: action.MADMultiply,
+            }
+        case types.SET_GLOBAL_LOADER:
+            return {
+                ...state,
+                globalLoader: action.globalLoader,
             }
         default:
             return state

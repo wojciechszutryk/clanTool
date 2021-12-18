@@ -2,7 +2,7 @@ import { Checkbox, FormControlLabel, FormGroup, Box } from '@mui/material'
 import React, { useCallback, useMemo } from 'react'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
-import { setChartsToShow } from '../../state/actions'
+import { setChartsToShow, setGlobalLoader } from '../../state/actions'
 import { charts } from '../../state/constans/types'
 import { MADMultiplyInput } from 'components'
 import { makeStyles } from '@mui/styles'
@@ -39,6 +39,7 @@ const ChartsToShowSelect = () => {
 
     const handleChartCheck = useCallback(
         (chart) => {
+            dispatch(setGlobalLoader(true))
             const chartsToShowCopy = [...chartsToShow]
             if (chartsToShowCopy.includes(chart)) {
                 chartsToShowCopy.splice(chartsToShowCopy.indexOf(chart), 1)

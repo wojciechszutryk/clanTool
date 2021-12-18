@@ -46,6 +46,11 @@ export interface ActionSetMADMultiply
     MADMultiply: number
 }
 
+export interface ActionSetGlobalLoader
+    extends Action<typeof types.SET_GLOBAL_LOADER> {
+    globalLoader: boolean
+}
+
 export type Actions =
     | ActionSetStationsNames
     | ActionSetSatellitesNames
@@ -56,3 +61,4 @@ export type Actions =
     | ActionSetEndDate
     | ActionSetChartsToShow
     | ActionSetMADMultiply
+    | ActionSetGlobalLoader

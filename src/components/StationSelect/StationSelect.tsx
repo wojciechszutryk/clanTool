@@ -9,7 +9,7 @@ import {
     Select,
     SelectChangeEvent,
 } from '@mui/material'
-import { setSelectedStationName, setStationsNames } from '../../state/actions'
+import { setGlobalLoader, setSelectedStationName, setStationsNames } from '../../state/actions'
 import stations from 'assets/StationsBase.json'
 
 const StationSelect = () => {
@@ -44,6 +44,7 @@ const StationSelect = () => {
     )
 
     const handleChange = (event: SelectChangeEvent) => {
+        dispatch(setGlobalLoader(true))
         const name = event.target.value as string
         dispatch(setSelectedStationName(name))
         panTo(name)

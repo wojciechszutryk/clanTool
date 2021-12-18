@@ -3,6 +3,8 @@ import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
+import { useAppDispatch } from '../../functions/hooks/useAppDispach'
+import { setGlobalLoader } from '../../state/actions'
 
 const DrawPhaseChart = ({
     startDate,
@@ -13,6 +15,7 @@ const DrawPhaseChart = ({
 }) => {
     const [data, setData] = useState<number[]>([])
     const [loading, setLoading] = useState(true)
+    const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
             ? state.app.selectedSatelliteName
@@ -36,7 +39,8 @@ const DrawPhaseChart = ({
         }))
         setData(chartData)
         await setLoading(false)
-    }, [selectedName, startDate, endDate])
+        await dispatch(setGlobalLoader(false))
+    }, [dispatch,selectedName, startDate, endDate])
 
     return (
         <Box
