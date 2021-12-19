@@ -4,7 +4,6 @@ import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
-import { setGlobalLoader } from '../../state/actions'
 
 const DrawPhaseChart = ({
     startDate,
@@ -39,7 +38,6 @@ const DrawPhaseChart = ({
         }))
         setData(chartData)
         await setLoading(false)
-        await dispatch(setGlobalLoader(false))
     }, [dispatch,selectedName, startDate, endDate])
 
     return (

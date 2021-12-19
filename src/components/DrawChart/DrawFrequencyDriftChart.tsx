@@ -5,7 +5,6 @@ import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
 import phaseToFreqDriftWithObjectOutput from 'functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput'
-import { setGlobalLoader } from '../../state/actions'
 
 const DrawFrequencyDriftChart = ({
     startDate,
@@ -41,7 +40,6 @@ const DrawFrequencyDriftChart = ({
         );
         setData(chartData)
         await setLoading(false)
-        await dispatch(setGlobalLoader(false))
     }, [dispatch, endDate, selectedName, startDate, MADMultiply])
 
     return (

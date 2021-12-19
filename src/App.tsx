@@ -12,16 +12,12 @@ import {
 import { toast, ToastContainer } from 'react-toastify/dist'
 import InfoIcon from '@mui/icons-material/Info'
 import 'react-toastify/dist/ReactToastify.css'
-import GlobalLoader from './components/GlobalLoader'
 import { useAppSelector } from './functions/hooks/useAppSelector'
 
 // import convertRinexDataIntoJSON from './functions/convertRinexDataIntoJSON/convertRinexDataIntoJSON'
 // convertRinexDataIntoJSON('R20').then((r) => console.log(r))
 
 function App() {
-    const globalLoader = useAppSelector((state) =>
-        state.app.globalLoader
-    )
     toast.configure()
     return (
         <Grid container spacing={2}>
@@ -71,7 +67,6 @@ function App() {
                 <DrawCharts />
             </Grid>
             <ToastContainer icon={<InfoIcon color="primary" />} />
-            {/*{globalLoader && <GlobalLoader/>}*/}
         </Grid>
     )
 }

@@ -7,7 +7,6 @@ import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import phaseToFreq from '../../functions/phaseToFreq/phaseToFreq'
-import { setGlobalLoader } from '../../state/actions'
 import { DEVChart } from '../Chart'
 
 const DrawDEVChart = ({
@@ -76,7 +75,6 @@ const DrawDEVChart = ({
 
         setData(DEVsObjects)
         await setLoading(false)
-        await dispatch(setGlobalLoader(false))
     }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply])
 
     return (

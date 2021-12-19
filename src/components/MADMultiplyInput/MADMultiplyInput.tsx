@@ -3,7 +3,7 @@ import { makeStyles } from '@mui/styles'
 import React, { useCallback } from 'react'
 import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { useAppDispatch } from 'functions/hooks/useAppDispach'
-import { setGlobalLoader, setMADMultiply } from '../../state/actions'
+import { setMADMultiply } from '../../state/actions'
 
 const useStyles = makeStyles({
     input: { maxWidth: 100 },
@@ -16,7 +16,6 @@ const MADMultiplyInput = () => {
 
     const handleInputChange = useCallback(
         (e) => {
-            dispatch(setGlobalLoader(true))
             dispatch(setMADMultiply(e.target.value))
         },
         [dispatch]

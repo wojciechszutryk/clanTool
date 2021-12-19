@@ -7,7 +7,7 @@ import DateTimePicker from '@mui/lab/DateTimePicker';
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { showToast } from '../../functions/showToast'
-import { setEndDate, setGlobalLoader, setStartDate } from '../../state/actions'
+import { setEndDate, setStartDate } from '../../state/actions'
 
 const DatePicker = ({startEnd}: {startEnd: 'start' | 'end'}) => {
     const startDate = useAppSelector((state) => state.app.startDate)
@@ -15,7 +15,6 @@ const DatePicker = ({startEnd}: {startEnd: 'start' | 'end'}) => {
     const dispatch = useAppDispatch()
 
     const handleChange = (newValue: Date | null) => {
-        dispatch(setGlobalLoader(true))
         if (startEnd === 'start' && newValue){
             if (+newValue > endDate) {
                 showToast('Set date later than the end date')

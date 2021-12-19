@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add MAD">
-      <change afterPath="$PROJECT_DIR$/src/components/GlobalLoader/GlobalLoader.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/GlobalLoader/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput.ts" afterDir="false" />
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="fix MAD, add global loader">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" afterDir="false" />
@@ -13,11 +10,11 @@
       <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalLoader/GlobalLoader.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/GlobalLoader/index.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/SatelliteSelect/SatelliteSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SatelliteSelect/SatelliteSelect.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/StationSelect/StationSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/StationSelect/StationSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreqDrift/phaseToFreqDrift.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/actions/actionsInterfaces.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/actions/actionsInterfaces.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/actions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/actions/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/state/constans/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/state/constans/index.ts" afterDir="false" />

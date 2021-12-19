@@ -62,10 +62,3 @@ export const setMADMultiply = (
     type: types.SET_MAD_MULTIPLY,
     MADMultiply,
 })
-
-export const setGlobalLoader = (
-    globalLoader: boolean
-): actions.ActionSetGlobalLoader => ({
-    type: types.SET_GLOBAL_LOADER,
-    globalLoader,
-})
