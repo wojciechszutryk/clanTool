@@ -1,5 +1,4 @@
 import React, { useMemo, useState } from 'react'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
@@ -15,13 +14,11 @@ const DrawFrequencyDriftChart = ({
 }) => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
-    const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
             ? state.app.selectedSatelliteName
             : state.app.selectedStationName
     )
-    const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
 
     useMemo(async () => {
         if (!selectedName) {
@@ -40,7 +37,7 @@ const DrawFrequencyDriftChart = ({
         );
         setData(chartData)
         await setLoading(false)
-    }, [dispatch, endDate, selectedName, startDate, MADMultiply])
+    }, [endDate, selectedName, startDate])
 
     return (
         <Box
