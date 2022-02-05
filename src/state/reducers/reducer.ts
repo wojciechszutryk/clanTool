@@ -1,24 +1,26 @@
 import * as types from '../constans'
 import { Actions } from '../actions/actionsInterfaces'
 import { Reducer } from 'redux'
-import { charts } from '../constans/types'
+import { charts, TauType } from '../constans/types'
 
 interface State {
     satellitesNames: string[]
     stationsNames: string[]
+    tauType: TauType
     selectedSatelliteName: string
     selectedStationName: string
     mapReference: any
     startDate: number
     endDate: number
-    chartsToShow: charts[],
-    MADMultiply: number,
-    zoomFix: number, //
+    chartsToShow: charts[]
+    MADMultiply: number
+    zoomFix: number //
 }
 
 const initialState: State = {
     stationsNames: [],
     satellitesNames: [],
+    tauType: TauType.powerOfTwo,
     selectedSatelliteName: '',
     selectedStationName: '',
     mapReference: null,
@@ -55,6 +57,11 @@ const reducer: Reducer<State, Actions> = (
                 ...state,
                 selectedSatelliteName: action.selectedSatelliteName,
                 selectedStationName: '',
+            }
+        case types.SET_TAU_TYPE:
+            return {
+                ...state,
+                tauType: action.tauType,
             }
         case types.SET_MAP_REFERENCE:
             return {

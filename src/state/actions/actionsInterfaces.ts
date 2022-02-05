@@ -1,6 +1,6 @@
 import { Action } from 'redux'
 import * as types from '../constans'
-import { charts } from '../constans/types'
+import { charts, TauType } from '../constans/types'
 
 export interface ActionSetStationsNames
     extends Action<typeof types.SET_STATIONS_NAMES> {
@@ -10,6 +10,9 @@ export interface ActionSetStationsNames
 export interface ActionSetSatellitesNames
     extends Action<typeof types.SET_SATELLITES_NAMES> {
     satellitesNames: string[]
+}
+export interface ActionSetTauType extends Action<typeof types.SET_TAU_TYPE> {
+    tauType: TauType
 }
 
 export interface ActionSetSelectedStationName
@@ -56,3 +59,4 @@ export type Actions =
     | ActionSetEndDate
     | ActionSetChartsToShow
     | ActionSetMADMultiply
+    | ActionSetTauType

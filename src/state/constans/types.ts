@@ -6,3 +6,9 @@ export type charts =
     | 'MDEV'
     | 'ODEV'
     | 'HDEV'
+
+export enum TauType {
+    powerOfTwo = 'POWER_OF_TWO',
+    powerOfTen = 'POWER_OF_TEN',
+    logarithmLike = 'LOGARITHM_LIKE',
+}

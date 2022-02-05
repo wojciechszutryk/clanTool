@@ -1,4 +1,5 @@
 export { default as SatelliteSelect } from './SatelliteSelect'
+export { default as TauTypeSelect } from './TauTypeSelect'
 export { default as StationSelect } from './StationSelect'
 export { default as MyMaps } from './MyMaps'
 export { default as DatePicker } from './DatePicker'

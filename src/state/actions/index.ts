@@ -1,6 +1,6 @@
 import * as types from '../constans'
 import * as actions from '../actions/actionsInterfaces'
-import { charts } from '../constans/types'
+import { charts, TauType } from '../constans/types'
 
 export const setSatellitesNames = (
     satellitesNames: string[]
@@ -28,6 +28,11 @@ export const setSelectedStationName = (
 ): actions.ActionSetSelectedStationName => ({
     type: types.SET_SELECTED_STATION_NAME,
     selectedStationName,
+})
+
+export const setTauType = (tauType: TauType): actions.ActionSetTauType => ({
+    type: types.SET_TAU_TYPE,
+    tauType,
 })
 
 export const setMapReference = (
