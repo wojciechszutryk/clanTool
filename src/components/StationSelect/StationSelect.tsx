@@ -36,7 +36,6 @@ const StationSelect = () => {
             const lat = stations[name].Latitude as number
             // @ts-ignore
             const lng = stations[name].Longitude as number
-            console.log(mapRef)
             mapRef.panTo({ lat, lng })
             mapRef.setZoom(14)
         },

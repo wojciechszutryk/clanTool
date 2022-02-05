@@ -87,7 +87,7 @@ const DEVChart = ({
         const series = data.map((dev, index) => {
             const devName = Object.keys(dev)[0];
             // const series = chart.addSplineSeries({
-            const series = chart.addSplineSeries({
+            const series = chart.addPointLineSeries({
                 xAxis: chart.getDefaultAxisX(),
                 yAxis: axisY
             })
