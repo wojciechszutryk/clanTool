@@ -15,8 +15,8 @@ const DrawFrequencyDriftChart = ({
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
     const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteName
-            ? state.app.selectedSatelliteName
+        state.app.selectedSatelliteNames[0]
+            ? state.app.selectedSatelliteNames[0]
             : state.app.selectedStationName
     )
 

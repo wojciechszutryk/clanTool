@@ -22,7 +22,7 @@ const DrawDEVChart = ({
     const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteName
-            ? state.app.selectedSatelliteName
+            ? state.app.selectedSatelliteNames
             : state.app.selectedStationName
     )
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)

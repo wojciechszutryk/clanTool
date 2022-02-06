@@ -2,8 +2,7 @@ import React, { useEffect, useMemo } from 'react'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import {
-    setSelectedSatelliteName,
-    setSatellitesNames,
+    setSatellitesNames, setSelectedSatelliteNames,
 } from '../../state/actions'
 import {
     Box,
@@ -15,23 +14,11 @@ import {
 } from '@mui/material'
 import SatelliteBase from 'assets/SatelliteBase'
 
-const systems = {
-    G: 'GPS',
-    R: 'GLONASS',
-    C: "Beidou",
-    E: 'Galieo',
-    J: 'QZSS'
-} as const
-
-interface Props {
-    system : 'G' | 'R' | 'C' | 'E' | 'J'
-}
-
-const SatelliteSelect = ({ system }: Props) => {
+const SatellitesAutocomplete = () => {
     const dispatch = useAppDispatch()
-    const satellitesNames = useAppSelector((state) => state.app.satellitesNames.filter(name => (name[0] === system)))
-    const selectedSatelliteName = useAppSelector(
-        (state) => state.app.selectedSatelliteName
+    const satellitesNames = useAppSelector((state) => state.app.satellitesNames);
+    const selectedSatelliteNames = useAppSelector(
+        (state) => state.app.selectedSatelliteNames
     )
     useEffect(() => {
         dispatch(setSatellitesNames(SatelliteBase))
@@ -45,17 +32,17 @@ const SatelliteSelect = ({ system }: Props) => {
     }, [satellitesNames])
 
     const handleChange = (event: SelectChangeEvent) => {
-        dispatch(setSelectedSatelliteName(event.target.value as string))
+        dispatch(setSelectedSatelliteNames(event.target.value as string[]))
     }
+
     return (
         <Box sx={{ display: 'flex', justifyContent: 'center', m: 1 }}>
             <FormControl sx={{ minWidth: '220px' }}>
-                <InputLabel id="demo-simple-select-label">{systems[system] + " Satellite"}</InputLabel>
+                <InputLabel id="setallites-autocomplete-label">Satellites</InputLabel>
                 <Select
-                    labelId="select station"
-                    id="demo-simple-select"
-                    value={selectedSatelliteName}
-                    label={systems[system] + "Satellite"}
+                    labelId="setallites-autocomplete-label"
+                    id="setallites-autocomplete"
+                    value={selectedSatelliteNames}
                     onChange={handleChange}
                 >
                     {selectNameOptions}
@@ -65,4 +52,4 @@ const SatelliteSelect = ({ system }: Props) => {
     )
 }
 
-export default SatelliteSelect
+export default SatellitesAutocomplete

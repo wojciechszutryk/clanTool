@@ -16,11 +16,11 @@ export const setStationsNames = (
     stationsNames,
 })
 
-export const setSelectedSatelliteName = (
-    selectedSatelliteName: string
-): actions.ActionSetSelectedSatelliteName => ({
-    type: types.SET_SELECTED_SATELLITE_NAME,
-    selectedSatelliteName,
+export const setSelectedSatelliteNames = (
+    selectedSatelliteNames: string[]
+): actions.ActionSetSelectedSatelliteNames => ({
+    type: types.SET_SELECTED_SATELLITE_NAMES,
+    selectedSatelliteNames,
 })
 
 export const setSelectedStationName = (

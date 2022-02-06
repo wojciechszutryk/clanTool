@@ -7,7 +7,7 @@ interface State {
     satellitesNames: string[]
     stationsNames: string[]
     tauType: TauType
-    selectedSatelliteName: string
+    selectedSatelliteNames: string[]
     selectedStationName: string
     mapReference: any
     startDate: number
@@ -21,7 +21,7 @@ const initialState: State = {
     stationsNames: [],
     satellitesNames: [],
     tauType: TauType.powerOfTwo,
-    selectedSatelliteName: '',
+    selectedSatelliteNames: [],
     selectedStationName: '',
     mapReference: null,
     startDate: +new Date(2014, 0, 1, 0, 0, 0, 0),
@@ -50,12 +50,12 @@ const reducer: Reducer<State, Actions> = (
             return {
                 ...state,
                 selectedStationName: action.selectedStationName,
-                selectedSatelliteName: '',
+                selectedSatelliteNames: [],
             }
-        case types.SET_SELECTED_SATELLITE_NAME:
+        case types.SET_SELECTED_SATELLITE_NAMES:
             return {
                 ...state,
-                selectedSatelliteName: action.selectedSatelliteName,
+                selectedSatelliteNames: action.selectedSatelliteNames,
                 selectedStationName: '',
             }
         case types.SET_TAU_TYPE:

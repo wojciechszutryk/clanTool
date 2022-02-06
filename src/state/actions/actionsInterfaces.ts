@@ -20,9 +20,9 @@ export interface ActionSetSelectedStationName
     selectedStationName: string
 }
 
-export interface ActionSetSelectedSatelliteName
-    extends Action<typeof types.SET_SELECTED_SATELLITE_NAME> {
-    selectedSatelliteName: string
+export interface ActionSetSelectedSatelliteNames
+    extends Action<typeof types.SET_SELECTED_SATELLITE_NAMES> {
+    selectedSatelliteNames: string[]
 }
 
 export interface ActionSetMapReference
@@ -53,7 +53,7 @@ export type Actions =
     | ActionSetStationsNames
     | ActionSetSatellitesNames
     | ActionSetSelectedStationName
-    | ActionSetSelectedSatelliteName
+    | ActionSetSelectedSatelliteNames
     | ActionSetMapReference
     | ActionSetStartDate
     | ActionSetEndDate

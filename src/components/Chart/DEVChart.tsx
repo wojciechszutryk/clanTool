@@ -128,16 +128,30 @@ const DEVChart = ({
         }
     }, [data, id])
 
-    function handleChartSave() {
+    function handleChartSaveToImage() {
         const filename =
             Object.keys(data.join('-'))
         chartRef.current.chart.saveToFile(filename)
     }
 
+    function handleChartSaveToCSV() {
+//         import {CSVLink, CSVDownload} from 'react-csv';
+
+// const csvData =[
+//   ['firstname', 'lastname', 'email'] ,
+//   ['John', 'Doe' , 'john.doe@xyz.com'] ,
+//   ['Jane', 'Doe' , 'jane.doe@xyz.com']
+// ];
+// <CSVLink data={csvData} >Download me</CSVLink>
+// // or
+// <CSVDownload data={csvData} target="_blank" />
+    }
+
     return (
         <Box className={classes.wrapper}>
             <div id={id} className={classes.chart} />
-            <Button onClick={handleChartSave}>Save chart to file</Button>
+            <Button onClick={handleChartSaveToImage}>Save chart to .png file</Button>
+            <Button onClick={handleChartSaveToCSV}>Save chart to .csv file</Button>
         </Box>
     )
 }
