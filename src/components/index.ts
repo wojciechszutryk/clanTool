@@ -1,4 +1,4 @@
-export { default as SatelliteSelect } from './SatelliteSelect'
+export { default as SatellitesAutocomplete } from './SatellitesAutocomplete'
 export { default as TauTypeSelect } from './TauTypeSelect'
 export { default as StationSelect } from './StationSelect'
 export { default as MyMaps } from './MyMaps'
@@ -10,5 +10,4 @@ export { default as MADMultiplyInput } from './MADMultiplyInput'
 
 export { DrawPhaseChart } from './DrawChart'
 export { DrawFrequencyChart } from './DrawChart'
-export { DrawADEVChart } from './DrawChart'
-export { DrawODEVChart } from './DrawChart'
+export { DrawDEVChart } from './DrawChart'

@@ -6,7 +6,7 @@ import {
     DatePicker,
     DrawCharts,
     MyMaps,
-    SatelliteSelect,
+    SatellitesAutocomplete,
     StationSelect,
     TauTypeSelect,
 } from './components'
@@ -32,11 +32,7 @@ function App() {
                     flexWrap: 'wrap',
                 }}
             >
-                <SatelliteSelect system={'G'} />
-                <SatelliteSelect system={'R'} />
-                <SatelliteSelect system={'C'} />
-                <SatelliteSelect system={'E'} />
-                <SatelliteSelect system={'J'} />
+                <SatellitesAutocomplete/>
                 <StationSelect />
             </Grid>
             <Grid item xs={12} md={6} lg={8}>
