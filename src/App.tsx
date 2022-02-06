@@ -8,11 +8,11 @@ import {
     MyMaps,
     SatelliteSelect,
     StationSelect,
+    TauTypeSelect,
 } from './components'
 import { toast, ToastContainer } from 'react-toastify/dist'
 import InfoIcon from '@mui/icons-material/Info'
 import 'react-toastify/dist/ReactToastify.css'
-import { useAppSelector } from './functions/hooks/useAppSelector'
 
 // import convertRinexDataIntoJSON from './functions/convertRinexDataIntoJSON/convertRinexDataIntoJSON'
 // convertRinexDataIntoJSON('R20').then((r) => console.log(r))
@@ -64,6 +64,7 @@ function App() {
                 }}
             >
                 <ChartsToShowSelect />
+                <TauTypeSelect/>
                 <DrawCharts />
             </Grid>
             <ToastContainer icon={<InfoIcon color="primary" />} />
