@@ -38,7 +38,7 @@ const DrawPhaseChart = ({
         }))
         setData(chartData)
         await setLoading(false)
-    }, [dispatch,selectedName, startDate, endDate])
+    }, [dispatch, selectedName, startDate, endDate])
 
     return (
         <Box

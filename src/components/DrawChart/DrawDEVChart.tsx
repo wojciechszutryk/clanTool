@@ -26,6 +26,7 @@ const DrawDEVChart = ({
             : state.app.selectedStationName
     )
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
+    const tauType = useAppSelector((state) => state.app.tauType)
 
     useMemo(async () => {
         if (!selectedName) {
@@ -72,10 +73,9 @@ const DrawDEVChart = ({
             )
             DEVsObjects.push({'ODEV': overAllanDevData })
         }
-
         setData(DEVsObjects)
         await setLoading(false)
-    }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply])
+    }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply, tauType])
 
     return (
         <Box

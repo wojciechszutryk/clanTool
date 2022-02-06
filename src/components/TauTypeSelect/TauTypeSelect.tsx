@@ -37,13 +37,11 @@ const TauTypeSelect = () => {
     tauDisplayOptions[TauType.logarithmLike] = <div>10,20,30...100,200... - nazwa robocza</div> 
     
 
-    const selectTauOptions = useMemo(() => {
-        return Object.values(TauType).map((name: string) => (
-            <MenuItem key={name} value={name}>
-                {tauDisplayOptions[name]}
-            </MenuItem>
-        ))
-    }, [tauDisplayOptions])
+    const selectTauOptions = Object.values(TauType).map((name: string) => (
+        <MenuItem key={name} value={name}>
+            {tauDisplayOptions[name]}
+        </MenuItem>
+    ))
 
     const handleChange = (event: SelectChangeEvent) => {
         const type = event.target.value as TauType
