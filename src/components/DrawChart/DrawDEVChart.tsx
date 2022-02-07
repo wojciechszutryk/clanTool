@@ -21,7 +21,7 @@ const DrawDEVChart = ({
     const [loading, setLoading] = useState(true)
     const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteName
+        state.app.selectedSatelliteNames
             ? state.app.selectedSatelliteNames
             : state.app.selectedStationName
     )
