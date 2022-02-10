@@ -8,12 +8,7 @@ import {
     Autocomplete,
     Box,
     FormControl,
-    InputLabel,
-    MenuItem,
-    Select,
-    SelectChangeEvent,
     TextField,
-    TextFieldProps,
 } from '@mui/material'
 import SatelliteBase from 'assets/SatelliteBase'
 
@@ -33,8 +28,6 @@ const SatellitesAutocomplete = () => {
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
     )
-
-    console.log(selectedSatelliteNames)
 
     useEffect(() => {
         dispatch(setSatellitesNames(SatelliteBase))
@@ -67,6 +60,7 @@ const SatellitesAutocomplete = () => {
                     getOptionLabel={(option) => option.name}
                     sx={{ width: 300 }}
                     multiple
+                    open
                     onChange={handleChange}
                     renderInput={(params) => <TextField {...params} label="Satellites" />}
                 />
