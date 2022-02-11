@@ -1,11 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add footer, add header, add router">
-      <change afterPath="$PROJECT_DIR$/src/helpers/theme.ts" afterDir="false" />
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add theme">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/style.reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.reset.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +78,8 @@
       <workItem from="1639600699897" duration="8394000" />
       <workItem from="1639689085193" duration="5098000" />
       <workItem from="1639816710409" duration="7008000" />
-      <workItem from="1644566356134" duration="18766000" />
+      <workItem from="1644566356134" duration="18953000" />
+      <workItem from="1644587518209" duration="441000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -138,7 +137,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644586429765</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add theme">
+      <created>1644587399624</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1644587399624</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -165,6 +171,7 @@
     <MESSAGE value="add MAD" />
     <MESSAGE value="remove global loader" />
     <MESSAGE value="add footer, add header, add router" />
-    <option name="LAST_COMMIT_MESSAGE" value="add footer, add header, add router" />
+    <MESSAGE value="add theme" />
+    <option name="LAST_COMMIT_MESSAGE" value="add theme" />
   </component>
 </project>

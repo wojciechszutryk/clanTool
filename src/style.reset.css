@@ -85,3 +85,20 @@ blockquote, q {
     quotes: "" "";
 
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #ebf7fd;
+    box-shadow: inset 0 0 5px grey;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #314960;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #47688d;
+}
