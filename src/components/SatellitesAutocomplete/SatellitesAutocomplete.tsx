@@ -60,7 +60,6 @@ const SatellitesAutocomplete = () => {
                     getOptionLabel={(option) => option.name}
                     sx={{ width: 300 }}
                     multiple
-                    open
                     onChange={handleChange}
                     renderInput={(params) => <TextField {...params} label="Satellites" />}
                 />

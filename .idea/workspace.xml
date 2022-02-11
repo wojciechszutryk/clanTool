@@ -1,22 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="remove global loader">
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Footer/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/Header/styles.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/style.reset.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/styles.ts" afterDir="false" />
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add footer, add header, add router">
+      <change afterPath="$PROJECT_DIR$/src/helpers/theme.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart copy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart copy.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -92,7 +80,7 @@
       <workItem from="1639600699897" duration="8394000" />
       <workItem from="1639689085193" duration="5098000" />
       <workItem from="1639816710409" duration="7008000" />
-      <workItem from="1644566356134" duration="17697000" />
+      <workItem from="1644566356134" duration="18766000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -143,7 +131,14 @@
       <option name="project" value="LOCAL" />
       <updated>1639919780808</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add footer, add header, add router">
+      <created>1644586429765</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1644586429765</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +164,7 @@
     <MESSAGE value="add Oulter Recognition" />
     <MESSAGE value="add MAD" />
     <MESSAGE value="remove global loader" />
-    <option name="LAST_COMMIT_MESSAGE" value="remove global loader" />
+    <MESSAGE value="add footer, add header, add router" />
+    <option name="LAST_COMMIT_MESSAGE" value="add footer, add header, add router" />
   </component>
 </project>
