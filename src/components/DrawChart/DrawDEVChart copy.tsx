@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo, useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../functions/allanVariance/allanVariance'
 import freqToPhase from '../../functions/freqToPhase/freqToPhase'
@@ -25,10 +25,11 @@ const DrawDEVChart = ({
             // ? state.app.selectedSatelliteNames
             // : state.app.selectedStationName
     )
+
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
     const tauType = useAppSelector((state) => state.app.tauType)
 
-    const getDEVsDataForSatellie = async (selectedName: string) => {
+    const getDEVsDataForSatellite = async (selectedName: string) => {
         if (!selectedName) {
             setLoading(false)
             return
@@ -54,7 +55,9 @@ const DrawDEVChart = ({
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({`${selectedName}-ADEV` : allanDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-ADEV`] = allanDevData;
+            DEVsObjects.push(obj)
         }
         if (DEVs.includes('MDEV')){
             const modAllanDevData = modAllanDev(
@@ -62,7 +65,9 @@ const DrawDEVChart = ({
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({`${selectedName}-MDEV`: modAllanDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-MDEV`] = modAllanDevData;
+            DEVsObjects.push(obj)
         }
         if (DEVs.includes('ODEV')){
             const overAllanDevData = overAllanDev(
@@ -70,21 +75,26 @@ const DrawDEVChart = ({
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({`${selectedName}-ODEV`: overAllanDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-ODEV`] = overAllanDevData;
+            DEVsObjects.push(obj)
         }
         return DEVsObjects;
     };
 
     useMemo(async () => {
         setLoading(true)
-        const SatelitesDEVsObjects = {};
-        selectedNames.forEach(selectedName => {
-            const data = await getDEVsDataForSatellie(selectedName);
-
-        })
-        setData(DEVsObjects)
+        let SatellitesDEVsObjects: {[key: string]: { x: number; y: number }[]}[] = [];
+        for await (let selectedName of selectedNames){
+            const data = await getDEVsDataForSatellite(selectedName);
+            if (data) SatellitesDEVsObjects = [...SatellitesDEVsObjects, ...data];
+        }
+        console.log(SatellitesDEVsObjects)
+        setData(SatellitesDEVsObjects)
         await setLoading(false)
-    }, [DEVs, dispatch, endDate, selectedNames, startDate, MADMultiply, tauType])
+    // }, [])
+    // }, [DEVs, dispatch, getDEVsDataForSatellite, endDate, selectedNames, startDate, MADMultiply, tauType])
+    }, [DEVs, endDate, selectedNames, startDate, MADMultiply, tauType])
 
     return (
         <Box

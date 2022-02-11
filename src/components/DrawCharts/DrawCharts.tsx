@@ -1,7 +1,8 @@
 import React, { useMemo } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
-import { DrawDEVChart, DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
+import { DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
+import DrawDEVChart from '../DrawChart/DrawDEVChart copy'
 import DrawFrequencyDriftChart from '../DrawChart/DrawFrequencyDriftChart'
 
 const DrawCharts = () => {

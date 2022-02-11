@@ -1,70 +1,36 @@
-import { Grid } from '@mui/material'
-import React from 'react'
-import './App.css'
-import {
-    ChartsToShowSelect,
-    DatePicker,
-    DrawCharts,
-    MyMaps,
-    SatellitesAutocomplete,
-    StationSelect,
-    TauTypeSelect,
-} from './components'
-import { toast, ToastContainer } from 'react-toastify/dist'
 import InfoIcon from '@mui/icons-material/Info'
+import { Box } from '@mui/material'
+import React from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
+import { toast, ToastContainer } from 'react-toastify/dist'
+import { Footer } from './components/Footer'
+import { useStyles } from './styles'
+import { Header } from './components/Header'
+import SatellitesPage from './pages/SatellitesPage'
 
 // import convertRinexDataIntoJSON from './functions/convertRinexDataIntoJSON/convertRinexDataIntoJSON'
 // convertRinexDataIntoJSON('R20').then((r) => console.log(r))
 
 function App() {
     toast.configure()
+    const classes = useStyles();
     return (
-        <Grid container spacing={2}>
-            <Grid
-                item
-                md={6}
-                lg={4}
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    alignItems: 'center',
-                    flexWrap: 'wrap',
-                }}
-            >
-                <SatellitesAutocomplete/>
-                <StationSelect />
-            </Grid>
-            <Grid item xs={12} md={6} lg={8}>
-                <MyMaps />
-            </Grid>
-            <Grid
-                item
-                xs={12}
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexWrap: 'wrap',
-                }}
-            >
-                <DatePicker startEnd={'start'} />
-                <DatePicker startEnd={'end'} />
-            </Grid>
-            <Grid
-                item
-                xs={12}
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                }}
-            >
-                <ChartsToShowSelect />
-                <TauTypeSelect/>
-                <DrawCharts />
-            </Grid>
+        <>
+            <Header/>
+            <Box className={classes.wrapper}>
+                <Routes>
+                    <Route path="*" element={<Navigate to="/" replace />} />
+                    <Route path="/" element={<SatellitesPage/>} />
+                    <Route path="satellites" element={<SatellitesPage/>} />
+                    <Route path="stations" element={<SatellitesPage/>} />
+                    <Route path="instructions" element={<SatellitesPage/>} />
+                    <Route path="about" element={<SatellitesPage/>} />
+                </Routes>
+            </Box>
             <ToastContainer icon={<InfoIcon color="primary" />} />
-        </Grid>
+            <Footer/>
+        </>
     )
 }
 
