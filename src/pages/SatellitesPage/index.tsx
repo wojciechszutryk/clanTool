@@ -1,16 +1,29 @@
-import { Box, Grid, Typography } from '@mui/material'
-import React from 'react'
-
+import { Box, Button, Grid, Typography } from '@mui/material'
+import React, { useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
 import {
-    ChartsToShowSelect, DatePicker,
-    DrawCharts, MADMultiplyInput,
+    DatePicker,
+    MADMultiplyInput,
     SatellitesAutocomplete,
     TauTypeSelect,
 } from '../../components'
-import { ChartsTypes } from '../../helpers/models'
+import { useAppDispatch } from '../../functions/hooks/useAppDispach'
+import { setChartsToShow } from '../../state/actions'
+import { charts } from '../../state/constans/types'
+import DrawSatellitesCharts from './components/DrawSatellitesCharts'
+import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSelect'
 
 function SatellitesPage() {
+    const [recalculate, setRecalculate] = useState(false); //used to rerender chars components on button click
+    const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<charts[]>([]);
+    const [errorNoSatellitesSelected, setErrorNoSatellitesSelected] = useState(false);
+    const dispatch = useAppDispatch()
+
+    const handleDrawCharts = () => {
+        setRecalculate(!recalculate)
+        dispatch(setChartsToShow(chartsSelectedToBeVisible))
+    }
+
     return (
         <Grid container spacing={{ md: 3 }}>
             <Grid
@@ -28,6 +41,7 @@ function SatellitesPage() {
                         backgroundColor: '#fff',
                         borderRadius: 2,
                         paddingTop: '0 !important',
+                        paddingLeft: '0 !important',
                         boxShadow: '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
                     },
                 }}
@@ -40,7 +54,8 @@ function SatellitesPage() {
                     <TauTypeSelect/>
                     <MADMultiplyInput/>
                 </Box>
-                <ChartsToShowSelect />
+                <SatellitesChartsToShowSelect setChartsSelectedToBeVisible={setChartsSelectedToBeVisible} chartsSelectedToBeVisible={chartsSelectedToBeVisible}/>
+                <Button variant={'contained'} sx={{backgroundColor: '#25374a', width: 300, '&:hover': { backgroundColor: '#7E8995'} }} onClick={handleDrawCharts}>Calculate</Button>
             </Grid>
             <Grid
                 item
@@ -56,7 +71,7 @@ function SatellitesPage() {
                     },
                 }}
             >
-                <DrawCharts chartType={ChartsTypes.Stations}/>
+                <DrawSatellitesCharts recalculate={recalculate}/>
             </Grid>
         </Grid>
     )

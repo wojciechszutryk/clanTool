@@ -1,9 +1,6 @@
 import { Checkbox, FormControlLabel, FormGroup, FormLabel } from '@mui/material'
 import React, { useCallback, useMemo } from 'react'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
-import { setChartsToShow } from '../../state/actions'
-import { charts } from '../../state/constans/types'
+import { charts } from '../../../../state/constans/types'
 
 const availableCharts = [
     'Phase',
@@ -15,22 +12,24 @@ const availableCharts = [
     'HDEV',
 ] as charts[]
 
-const ChartsToShowSelect = () => {
-    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
-    const dispatch = useAppDispatch()
+const SatellitesChartsToShowSelect = ({
+        setChartsSelectedToBeVisible,chartsSelectedToBeVisible
+    }: {
+        setChartsSelectedToBeVisible:  React.Dispatch<React.SetStateAction<charts[]>>, chartsSelectedToBeVisible: charts[]
+    }) => {
 
     const handleChartCheck = useCallback(
         (chart) => {
-            const chartsToShowCopy = [...chartsToShow]
+            const chartsToShowCopy = [...chartsSelectedToBeVisible];
             if (chartsToShowCopy.includes(chart)) {
                 chartsToShowCopy.splice(chartsToShowCopy.indexOf(chart), 1)
-                dispatch(setChartsToShow(chartsToShowCopy))
+                setChartsSelectedToBeVisible(chartsToShowCopy)
             } else {
                 chartsToShowCopy.push(chart)
-                dispatch(setChartsToShow(chartsToShowCopy))
+                setChartsSelectedToBeVisible(chartsToShowCopy)
             }
         },
-        [chartsToShow, dispatch]
+        [chartsSelectedToBeVisible, setChartsSelectedToBeVisible]
     )
 
     const checkboxes = useMemo(() => {
@@ -39,7 +38,7 @@ const ChartsToShowSelect = () => {
                 key={chart}
                 control={
                     <Checkbox
-                        checked={chartsToShow.includes(chart)}
+                        checked={chartsSelectedToBeVisible.includes(chart)}
                         onChange={() => handleChartCheck(chart)}
                         inputProps={{ 'aria-label': 'controlled' }}
                     />
@@ -47,7 +46,7 @@ const ChartsToShowSelect = () => {
                 label={chart}
             />
         ))
-    }, [chartsToShow, handleChartCheck])
+    }, [chartsSelectedToBeVisible, handleChartCheck])
 
     return <FormGroup sx={{
         display: 'flex',
@@ -65,4 +64,4 @@ const ChartsToShowSelect = () => {
     </FormGroup>
 }
 
-export default ChartsToShowSelect
+export default SatellitesChartsToShowSelect

@@ -1,22 +1,16 @@
+import { Box } from '@mui/material'
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
-import { modAllanDev } from '../../functions/allanVariance/allanVariance'
-import freqToPhase from '../../functions/freqToPhase/freqToPhase'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
-import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
-import phaseToFreq from '../../functions/phaseToFreq/phaseToFreq'
-import { DEVChart } from '../Chart'
+import { DEVChart } from '../../../../components'
+import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
+import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
+import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
+import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
+import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
 
-const DrawDEVChart = ({
-    startDate,
-    endDate, DEVs
-}: {
-    startDate: number
-    endDate: number
-    DEVs: string[]
-}) => {
+
+const DrawSatellitesDEVChart = () => {
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
     const [loading, setLoading] = useState(true)
     const dispatch = useAppDispatch()
@@ -27,6 +21,10 @@ const DrawDEVChart = ({
     )
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
     const tauType = useAppSelector((state) => state.app.tauType)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
+    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const DEVs = useMemo(() => chartsToShow.filter(chart => (chart.includes('DEV'))), [chartsToShow])
 
     useMemo(async () => {
         if (!selectedName) {
@@ -103,4 +101,4 @@ const DrawDEVChart = ({
     )
 }
 
-export default DrawDEVChart
+export default DrawSatellitesDEVChart

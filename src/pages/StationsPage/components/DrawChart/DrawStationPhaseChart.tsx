@@ -3,17 +3,13 @@ import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
+import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 
-const DrawPhaseChart = ({
-    startDate,
-    endDate,
-}: {
-    startDate: number
-    endDate: number
-}) => {
+const DrawStationPhaseChart = () => {
     const [data, setData] = useState<number[]>([])
     const [loading, setLoading] = useState(true)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
     const dispatch = useAppDispatch()
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteNames[0]
@@ -66,4 +62,4 @@ const DrawPhaseChart = ({
     )
 }
 
-export default DrawPhaseChart
+export default DrawStationPhaseChart

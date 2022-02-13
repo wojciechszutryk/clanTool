@@ -9,29 +9,29 @@ import { ClipLoader } from 'react-spinners'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
 import { DEVChart } from '../../../../components/Chart'
 
-const DrawStationsDEVChart = ({
-    startDate,
-    endDate, DEVs,
-}: {
-    startDate: number
-    endDate: number
-    DEVs: string[],
-}) => {
+const DrawStationDEVChart = () => {
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
     const [loading, setLoading] = useState(true)
-    const selectedNames = useAppSelector((state) =>
+    const dispatch = useAppDispatch()
+    const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteNames
+            ? state.app.selectedSatelliteNames
+            : state.app.selectedStationName
     )
-
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
     const tauType = useAppSelector((state) => state.app.tauType)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
+    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const DEVs = useMemo(() => chartsToShow.filter(chart => (chart.includes('DEV'))), [chartsToShow])
 
-    const getDEVsDataForSatellite = async (selectedName: string) => {
+    useMemo(async () => {
         if (!selectedName) {
             setLoading(false)
             return
         }
         const DEVsObjects: {[key: string]: { x: number; y: number }[]}[] = []
+        setLoading(true)
         const JSONData = await import(`assets/${selectedName}`)
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
@@ -52,9 +52,7 @@ const DrawStationsDEVChart = ({
                 startDate,
                 endDate,
             )
-            const obj = {} as {[key: string]: { x: number; y: number }[]};
-            obj[`${selectedName}-ADEV`] = allanDevData;
-            DEVsObjects.push(obj)
+            DEVsObjects.push({'ADEV': allanDevData })
         }
         if (DEVs.includes('MDEV')){
             const modAllanDevData = modAllanDev(
@@ -62,9 +60,7 @@ const DrawStationsDEVChart = ({
                 startDate,
                 endDate,
             )
-            const obj = {} as {[key: string]: { x: number; y: number }[]};
-            obj[`${selectedName}-MDEV`] = modAllanDevData;
-            DEVsObjects.push(obj)
+            DEVsObjects.push({'MDEV': modAllanDevData })
         }
         if (DEVs.includes('ODEV')){
             const overAllanDevData = overAllanDev(
@@ -72,25 +68,11 @@ const DrawStationsDEVChart = ({
                 startDate,
                 endDate,
             )
-            const obj = {} as {[key: string]: { x: number; y: number }[]};
-            obj[`${selectedName}-ODEV`] = overAllanDevData;
-            DEVsObjects.push(obj)
+            DEVsObjects.push({'ODEV': overAllanDevData })
         }
-        return DEVsObjects;
-    };
-
-    useMemo(async () => {
-        setLoading(true)
-        let SatellitesDEVsObjects: {[key: string]: { x: number; y: number }[]}[] = [];
-        for await (let selectedName of selectedNames){
-            const data = await getDEVsDataForSatellite(selectedName);
-            if (data) SatellitesDEVsObjects = [...SatellitesDEVsObjects, ...data];
-        }
-        console.log(SatellitesDEVsObjects)
-        setData(SatellitesDEVsObjects)
+        setData(DEVsObjects)
         await setLoading(false)
-    // }, [])
-    }, [DEVs, getDEVsDataForSatellite, endDate, selectedNames, startDate, MADMultiply, tauType])
+    }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply, tauType])
 
     return (
         <Box
@@ -118,4 +100,4 @@ const DrawStationsDEVChart = ({
     )
 }
 
-export default DrawStationsDEVChart
+export default DrawStationDEVChart

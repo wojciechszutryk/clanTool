@@ -8,22 +8,20 @@ import { ClipLoader } from 'react-spinners'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
 import { DEVChart } from '../../../../components/Chart'
 
-const DrawSatellitesDEVChart = ({
-    startDate,
-    endDate, DEVs
+const DrawSatellitesDEVCharts = ({
+    rerender
 }: {
-    startDate: number
-    endDate: number
-    DEVs: string[]
+    rerender: boolean,
 }) => {
+    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
     const [loading, setLoading] = useState(true)
     const selectedNames = useAppSelector((state) =>
         state.app.selectedSatelliteNames
     )
-
-    const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
-    const tauType = useAppSelector((state) => state.app.tauType)
+    const DEVs = useMemo(() => chartsToShow.filter(chart => (chart.includes('DEV'))), [chartsToShow])
 
     const getDEVsDataForSatellite = async (selectedName: string) => {
         if (!selectedName) {
@@ -89,8 +87,9 @@ const DrawSatellitesDEVChart = ({
         setData(SatellitesDEVsObjects)
         await setLoading(false)
     // }, [])
-    // }, [DEVs, dispatch, getDEVsDataForSatellite, endDate, selectedNames, startDate, MADMultiply, tauType])
-    }, [DEVs, endDate, selectedNames, startDate, MADMultiply, tauType])
+    // }, [DEVs, getDEVsDataForSatellite, endDate, selectedNames, startDate, MADMultiply, tauType, dispatch])
+    // }, [DEVs, endDate, selectedNames, startDate, MADMultiply, tauType])
+    }, [rerender])
 
     return (
         <Box
@@ -118,4 +117,4 @@ const DrawSatellitesDEVChart = ({
     )
 }
 
-export default DrawSatellitesDEVChart
+export default DrawSatellitesDEVCharts

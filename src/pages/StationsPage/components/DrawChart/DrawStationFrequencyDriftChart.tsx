@@ -1,19 +1,15 @@
 import React, { useMemo, useState } from 'react'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
+import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
 import phaseToFreqDriftWithObjectOutput from 'functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput'
 
-const DrawFrequencyDriftChart = ({
-    startDate,
-    endDate,
-}: {
-    startDate: number
-    endDate: number
-}) => {
+const DrawStationFrequencyDriftChart = () => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
     const selectedName = useAppSelector((state) =>
         state.app.selectedSatelliteNames[0]
             ? state.app.selectedSatelliteNames[0]
@@ -65,4 +61,4 @@ const DrawFrequencyDriftChart = ({
     )
 }
 
-export default DrawFrequencyDriftChart
+export default DrawStationFrequencyDriftChart

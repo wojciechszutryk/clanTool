@@ -1,1 +1,1 @@
-export { default as DrawSatellitesDEVChart } from './DrawSatellitesDEVChart'
+export { default } from './DrawSatellitesCharts'

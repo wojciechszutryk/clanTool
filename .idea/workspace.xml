@@ -2,33 +2,41 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add theme">
-      <change afterPath="$PROJECT_DIR$/src/helpers/models.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/DrawStationsDEVChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/SatellitesAutocomplete/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/AboutPage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/InstructionsPage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesDEVChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyDriftChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesPhaseChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesDEVCharts/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesChartsToShowSelect/SatellitesChartsToShowSelect.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesChartsToShowSelect/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/_DrawADEVChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/_DrawMDEVChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/_DrawODEVChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawCharts/DrawStationCharts.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chart/DEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/DEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Chart/DataChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/DataChart.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart copy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesDEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Footer/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/styles.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesAutocomplete/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StationSelect/StationSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/StationSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/StationSelect/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/TauTypeSelect/TauTypeSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TauTypeSelect/TauTypeSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyDriftChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationPhaseChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/_DrawADEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/_DrawADEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/_DrawMDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/_DrawMDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/_DrawODEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/_DrawODEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesCharts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawCharts/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/helpers/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesDEVCharts/DrawSatellitesDEVCharts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/DrawStationsDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/DrawStationsDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/StationSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/StationSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +69,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/SatellitesPage" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pages/SatellitesPage/components" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -72,11 +80,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage\components" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage\components\DrawSatellitesCharts" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components" />
-      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\functions" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\StationsPage\components" />
@@ -111,6 +119,8 @@
       <workItem from="1644566356134" duration="18953000" />
       <workItem from="1644587518209" duration="483000" />
       <workItem from="1644748801124" duration="12281000" />
+      <workItem from="1644769531193" duration="1503000" />
+      <workItem from="1644774071012" duration="10759000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>

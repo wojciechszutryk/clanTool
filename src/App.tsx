@@ -5,6 +5,9 @@ import { Navigate, Route, Routes } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
 import { toast, ToastContainer } from 'react-toastify/dist'
 import { Footer } from './components/Footer'
+import AboutPage from './pages/AboutPage'
+import InstructionsPage from './pages/InstructionsPage'
+import StationsPage from './pages/StationsPage'
 import { useStyles } from './styles'
 import { Header } from './components/Header'
 import SatellitesPage from './pages/SatellitesPage'
@@ -24,9 +27,9 @@ function App() {
                         <Route path="*" element={<Navigate to="/" replace />} />
                         <Route path="/" element={<SatellitesPage/>} />
                         <Route path="satellites" element={<SatellitesPage/>} />
-                        <Route path="stations" element={<SatellitesPage/>} />
-                        <Route path="instructions" element={<SatellitesPage/>} />
-                        <Route path="about" element={<SatellitesPage/>} />
+                        <Route path="stations" element={<StationsPage/>} />
+                        <Route path="instructions" element={<InstructionsPage/>} />
+                        <Route path="about" element={<AboutPage/>} />
                     </Routes>
                 </Container>
             </Box>
