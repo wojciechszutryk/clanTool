@@ -1,11 +1,13 @@
 import React, { useMemo } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
+import { ChartsTypes } from '../../helpers/models'
+import { DrawStationsDEVChart } from '../../pages/StationsPage/components/DrawStationsDEVChart'
 import { DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
-import DrawDEVChart from '../DrawChart/DrawDEVChart copy'
+import DrawSatellitesDEVChart from '../../pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesDEVChart'
 import DrawFrequencyDriftChart from '../DrawChart/DrawFrequencyDriftChart'
 
-const DrawCharts = () => {
+const DrawCharts = (props : { chartType: ChartsTypes }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
@@ -14,6 +16,14 @@ const DrawCharts = () => {
 
     return (
         <Box>
+            {(chartsToShow.includes('ADEV') ||
+                chartsToShow.includes('MDEV') ||
+                chartsToShow.includes('ODEV')) && (
+                props.chartType === ChartsTypes.Satellites ?
+                    <DrawSatellitesDEVChart startDate={startDate} endDate={endDate} DEVs={DEVs}/>
+                    : <DrawStationsDEVChart startDate={startDate} endDate={endDate} DEVs={DEVs}/>
+
+            )}
             {chartsToShow.includes('Phase') && (
                 <DrawPhaseChart startDate={startDate} endDate={endDate} />
             )}
@@ -22,11 +32,6 @@ const DrawCharts = () => {
             )}
             {chartsToShow.includes('Frequency Drift') && (
                 <DrawFrequencyDriftChart startDate={startDate} endDate={endDate} />
-            )}
-            {(chartsToShow.includes('ADEV') ||
-            chartsToShow.includes('MDEV') ||
-            chartsToShow.includes('ODEV')) && (
-                <DrawDEVChart startDate={startDate} endDate={endDate} DEVs={DEVs}/>
             )}
         </Box>
     )

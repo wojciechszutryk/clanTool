@@ -1,6 +1,6 @@
-export { default as SatellitesAutocomplete } from './SatellitesAutocomplete'
+export { default as SatellitesAutocomplete } from '../pages/SatellitesPage/components/SatellitesAutocomplete'
 export { default as TauTypeSelect } from './TauTypeSelect'
-export { default as StationSelect } from './StationSelect'
+export { default as StationSelect } from '../pages/StationsPage/components/StationSelect'
 export { default as MyMaps } from './MyMaps'
 export { default as DatePicker } from './DatePicker'
 export { DataChart, DEVChart } from './Chart'

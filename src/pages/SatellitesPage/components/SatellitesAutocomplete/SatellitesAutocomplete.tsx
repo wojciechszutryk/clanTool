@@ -1,12 +1,11 @@
-import React, { useEffect, useMemo } from 'react'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
+import React, { useCallback, useEffect, useMemo, useState } from 'react'
+import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
+import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import {
     setSatellitesNames, setSelectedSatelliteNames,
-} from '../../state/actions'
+} from '../../../../state/actions'
 import {
     Autocomplete,
-    Box,
     FormControl,
     TextField,
 } from '@mui/material'
@@ -25,9 +24,10 @@ const systems = {
 const SatellitesAutocomplete = () => {
     const dispatch = useAppDispatch()
     const satellitesNames = useAppSelector((state) => state.app.satellitesNames);
-    const selectedSatelliteNames = useAppSelector(
-        (state) => state.app.selectedSatelliteNames
-    )
+    const selectedSatelliteNames = useAppSelector((state) => state.app.selectedSatelliteNames);
+    const [limitReached, setLimitReached] = useState(false);
+
+    const checkDisable = useCallback(option => limitReached && selectedSatelliteNames.length > 4, [limitReached, selectedSatelliteNames]);
 
     useEffect(() => {
         dispatch(setSatellitesNames(SatelliteBase))
@@ -48,23 +48,24 @@ const SatellitesAutocomplete = () => {
         name: string;
     }[] ) => {
         dispatch(setSelectedSatelliteNames(value.map(val => val.name)))
+        setLimitReached(selectedSatelliteNames.length >= 4);
     }
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', m: 1 }}>
-            <FormControl sx={{ minWidth: '220px' }}>
-                <Autocomplete
-                    id="grouped-demo"
-                    options={selectNameOptions.sort((a, b) => -b.system.localeCompare(a.system))}
-                    groupBy={(option) => option.system}
-                    getOptionLabel={(option) => option.name}
-                    sx={{ width: 300 }}
-                    multiple
-                    onChange={handleChange}
-                    renderInput={(params) => <TextField {...params} label="Satellites" />}
-                />
-            </FormControl>
-        </Box>
+        <FormControl>
+            <Autocomplete
+                id="grouped-demo"
+                getOptionDisabled={checkDisable}
+                options={selectNameOptions.sort((a, b) => -b.system.localeCompare(a.system))}
+                disableCloseOnSelect
+                groupBy={(option) => option.system}
+                getOptionLabel={(option) => option.name}
+                sx={{ width: 300 }}
+                multiple
+                onChange={handleChange}
+                renderInput={(params) => <TextField {...params} label="Satellites" />}
+            />
+        </FormControl>
     )
 }
 

@@ -31,7 +31,7 @@ const DatePicker = ({startEnd}: {startEnd: 'start' | 'end'}) => {
 
     return (
         <LocalizationProvider dateAdapter={AdapterDateFns}>
-            <Stack spacing={3} sx={{ minWidth: '220px', m:2}}>
+            <Stack spacing={3} sx={{ width: 300}}>
                 <DateTimePicker
                     minDate={startEnd === 'start' ? new Date(2014,0,1,0,0,0,0) : new Date(startDate)}
                     maxDate={startEnd === 'start' ? new Date(endDate) : new Date(2021,0,1,0,0,0,0)}

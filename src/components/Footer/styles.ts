@@ -16,7 +16,6 @@ export const useStyles = makeStyles({
       height: 200,
     },
   },
-
   logo: {
     width: '100%',
     height: 60,

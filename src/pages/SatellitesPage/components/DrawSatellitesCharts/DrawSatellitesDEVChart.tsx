@@ -1,15 +1,14 @@
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
-import { modAllanDev } from '../../functions/allanVariance/allanVariance'
-import freqToPhase from '../../functions/freqToPhase/freqToPhase'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
+import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
+import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
+import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
-import phaseToFreq from '../../functions/phaseToFreq/phaseToFreq'
-import { DEVChart } from '../Chart'
+import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
+import { DEVChart } from '../../../../components/Chart'
 
-const DrawDEVChart = ({
+const DrawSatellitesDEVChart = ({
     startDate,
     endDate, DEVs
 }: {
@@ -19,11 +18,8 @@ const DrawDEVChart = ({
 }) => {
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
     const [loading, setLoading] = useState(true)
-    const dispatch = useAppDispatch()
     const selectedNames = useAppSelector((state) =>
         state.app.selectedSatelliteNames
-            // ? state.app.selectedSatelliteNames
-            // : state.app.selectedStationName
     )
 
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
@@ -99,7 +95,7 @@ const DrawDEVChart = ({
     return (
         <Box
             sx={{
-                m: '10px auto',
+                m: '0px auto 30px',
                 display: 'flex',
                 justifyContent: 'center',
             }}
@@ -122,4 +118,4 @@ const DrawDEVChart = ({
     )
 }
 
-export default DrawDEVChart
+export default DrawSatellitesDEVChart

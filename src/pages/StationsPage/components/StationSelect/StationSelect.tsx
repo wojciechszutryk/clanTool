@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo } from 'react'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
+import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
+import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import {
     Box,
     FormControl,
@@ -9,7 +9,7 @@ import {
     Select,
     SelectChangeEvent,
 } from '@mui/material'
-import { setSelectedStationName, setStationsNames } from '../../state/actions'
+import { setSelectedStationName, setStationsNames } from '../../../../state/actions'
 import stations from 'assets/StationsBase.json'
 
 const StationSelect = () => {

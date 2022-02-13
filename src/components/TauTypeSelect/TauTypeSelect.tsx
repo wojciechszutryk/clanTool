@@ -1,9 +1,8 @@
-import React, { useMemo } from 'react'
+import React from 'react'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { makeStyles } from '@mui/styles'
 import {
-    Box,
     FormControl,
     InputLabel,
     MenuItem,
@@ -49,20 +48,18 @@ const TauTypeSelect = () => {
     }
 
     return (
-        <Box sx={{ display: 'flex', justifyContent: 'center', m: 1 }}>
-            <FormControl sx={{ minWidth: '220px' }}>
-                <InputLabel id="station-select-label">Tau types</InputLabel>
-                <Select
-                    labelId="select tau"
-                    id="tau-select"
-                    value={tauType}
-                    label="Tau Type"
-                    onChange={handleChange}
-                >
-                    {selectTauOptions}
-                </Select>
-            </FormControl>
-        </Box>
+        <FormControl sx={{ width: 140, marginRight: '20px' }}>
+            <InputLabel id="station-select-label">Tau types</InputLabel>
+            <Select
+                labelId="select tau"
+                id="tau-select"
+                value={tauType}
+                label="Tau Type"
+                onChange={handleChange}
+            >
+                {selectTauOptions}
+            </Select>
+        </FormControl>
     )
 }
 

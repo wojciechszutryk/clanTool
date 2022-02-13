@@ -2,7 +2,6 @@ import {
     AxisTickStrategies,
     ColorPalettes,
     ColorRGBA,
-    LegendBoxBuilders,
     lightningChart,
     NumericTickStrategy,
     SolidFill,
@@ -10,14 +9,9 @@ import {
     Themes,
 } from '@arction/lcjs'
 import { Box, Button } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import React, { useEffect, useRef } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
-
-const useStyles = makeStyles({
-    wrapper: { display: 'flex', flexDirection: 'column' },
-    chart: { height: '50vh' },
-})
+import {CSVLink, CSVDownload} from 'react-csv';
 
 const DEVChart = ({
     data,
@@ -28,12 +22,11 @@ const DEVChart = ({
 }) => {
     const zoomFix = useAppSelector((state) => state.app.zoomFix);
     const chartRef = useRef<any>(undefined)
-    const classes = useStyles()
 
     useEffect(() => {
         const palette = ColorPalettes.arction(10)
-        const colors = [6, 9, 0, 3, 11].map(palette)
-        const axisYColors = [colors[0], colors[1], colors[2], colors[3], colors[4]]
+        const colors = [ 7, 24, 14, 19, 4, 9, 17, 18, 3, 22, 25, 5, 12, 16, 11, 10, 21, 23, 15, 13, 1, 8, 6, 2, 20].map(palette)
+        const axisYColors = colors.map((color,index) => colors[index]);
         const axisYStyles = axisYColors.map((color) => new SolidFill({ color }))
         const seriesStrokeStyles = axisYStyles.map((fillStyle) => new SolidLine({ fillStyle, thickness: 2 }))
         const fittingRectangleStrokeStyle = new SolidLine({ fillStyle: new SolidFill({ color: ColorRGBA(255, 255, 255, 100) }), thickness: 2 })
@@ -106,11 +99,12 @@ const DEVChart = ({
             return series
         })
 
-        const legend = chart.addLegendBox(LegendBoxBuilders.HorizontalLegendBox)
-            .setAutoDispose({
-                type: 'max-width',
-                maxWidth: 0.80,
-            })
+        const legend = chart.addLegendBox()
+        // const legend = chart.addLegendBox(LegendBoxBuilders.HorizontalLegendBox.setAlignment("vertical"))
+            // .setAutoDispose({
+            //     // type: 'max-width',
+            //     // maxWidth: 0.80,
+            // })
 
         legend.add(chart)
 
@@ -135,7 +129,6 @@ const DEVChart = ({
     }
 
     function handleChartSaveToCSV() {
-//         import {CSVLink, CSVDownload} from 'react-csv';
 
 // const csvData =[
 //   ['firstname', 'lastname', 'email'] ,
@@ -148,8 +141,17 @@ const DEVChart = ({
     }
 
     return (
-        <Box className={classes.wrapper}>
-            <div id={id} className={classes.chart} />
+        <Box sx={{
+            '@media only screen and (min-width: 900px)': {
+                display: 'flex',
+                flexDirection: 'column',
+                backgroundColor: '#fff',
+                borderRadius: 2,
+                paddingTop: 2,
+                boxShadow: '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
+            },
+        }}>
+            <Box id={id} sx={{height: '50vh'}} />
             <Button onClick={handleChartSaveToImage}>Save chart to .png file</Button>
             <Button onClick={handleChartSaveToCSV}>Save chart to .csv file</Button>
         </Box>

@@ -2,8 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add theme">
+      <change afterPath="$PROJECT_DIR$/src/helpers/models.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/DrawStationsDEVChart.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/SatellitesAutocomplete/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/style.reset.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/style.reset.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart/DEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/DEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Chart/DataChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Chart/DataChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DatePicker/DatePicker.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart copy.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Footer/styles.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Footer/styles.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesAutocomplete/SatellitesAutocomplete.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/SatellitesAutocomplete/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesAutocomplete/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StationSelect/StationSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/StationSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/StationSelect/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/TauTypeSelect/TauTypeSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TauTypeSelect/TauTypeSelect.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,10 +73,15 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage\components\DrawSatellitesCharts" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components" />
       <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\functions" />
-      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components\DrawChart" />
-      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\components\DataChart" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\StationsPage\components" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage\components\DrawSatellitesCharts" />
+      <recent name="C:\Users\szutryk\Desktop\RinexCharts\RinexCharts\src\pages\SatellitesPage\components" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -79,7 +109,8 @@
       <workItem from="1639689085193" duration="5098000" />
       <workItem from="1639816710409" duration="7008000" />
       <workItem from="1644566356134" duration="18953000" />
-      <workItem from="1644587518209" duration="441000" />
+      <workItem from="1644587518209" duration="483000" />
+      <workItem from="1644748801124" duration="12281000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -144,7 +175,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644587399624</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="add styles to scrollbar">
+      <created>1644587996941</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1644587996941</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,6 +210,7 @@
     <MESSAGE value="remove global loader" />
     <MESSAGE value="add footer, add header, add router" />
     <MESSAGE value="add theme" />
-    <option name="LAST_COMMIT_MESSAGE" value="add theme" />
+    <MESSAGE value="add styles to scrollbar" />
+    <option name="LAST_COMMIT_MESSAGE" value="add styles to scrollbar" />
   </component>
 </project>

@@ -1,5 +1,5 @@
 import InfoIcon from '@mui/icons-material/Info'
-import { Box } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import React from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
@@ -19,14 +19,16 @@ function App() {
         <>
             <Header/>
             <Box className={classes.wrapper}>
-                <Routes>
-                    <Route path="*" element={<Navigate to="/" replace />} />
-                    <Route path="/" element={<SatellitesPage/>} />
-                    <Route path="satellites" element={<SatellitesPage/>} />
-                    <Route path="stations" element={<SatellitesPage/>} />
-                    <Route path="instructions" element={<SatellitesPage/>} />
-                    <Route path="about" element={<SatellitesPage/>} />
-                </Routes>
+                <Container sx={{marginTop: '56px', maxWidth: '1600px', padding: '50px 0'}}>
+                    <Routes>
+                        <Route path="*" element={<Navigate to="/" replace />} />
+                        <Route path="/" element={<SatellitesPage/>} />
+                        <Route path="satellites" element={<SatellitesPage/>} />
+                        <Route path="stations" element={<SatellitesPage/>} />
+                        <Route path="instructions" element={<SatellitesPage/>} />
+                        <Route path="about" element={<SatellitesPage/>} />
+                    </Routes>
+                </Container>
             </Box>
             <ToastContainer icon={<InfoIcon color="primary" />} />
             <Footer/>

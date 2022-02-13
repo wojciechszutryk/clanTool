@@ -6,14 +6,8 @@ import {
     Themes,
 } from '@arction/lcjs'
 import { Box, Button } from '@mui/material'
-import { makeStyles } from '@mui/styles'
 import React, { useRef, useEffect } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
-
-const useStyles = makeStyles({
-    wrapper: { display: 'flex', flexDirection: 'column' },
-    chart: { height: '50vh' },
-})
 
 const DataChart = ({
     data,
@@ -25,7 +19,6 @@ const DataChart = ({
     xType?: 'Date' | 'Tau'
 }) => {
     const chartRef = useRef<any>(undefined)
-    const classes = useStyles()
     const zoomFix = useAppSelector((state) => state.app.zoomFix);
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
@@ -115,8 +108,18 @@ const DataChart = ({
     }
 
     return (
-        <Box className={classes.wrapper}>
-            <div id={id} className={classes.chart} />
+        <Box
+             sx={{
+                 '@media only screen and (min-width: 900px)': {
+                     display: 'flex',
+                     flexDirection: 'column',
+                     backgroundColor: '#fff',
+                     borderRadius: 2,
+                     paddingTop: 2,
+                     boxShadow: '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
+                 },
+             }}>
+            <Box id={id} sx={{ height: '50vh' }} />
             <Button onClick={handleChartSave}>Save chart to file</Button>
         </Box>
     )

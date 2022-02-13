@@ -59,7 +59,7 @@ const DrawFrequencyChart = ({
     return (
         <Box
             sx={{
-                m: '10px auto',
+                m: '0px auto 30px',
                 display: 'flex',
                 justifyContent: 'center',
             }}
