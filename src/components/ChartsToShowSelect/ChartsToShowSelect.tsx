@@ -15,7 +15,7 @@ const availableCharts = [
     'HDEV',
 ] as charts[]
 
-const ChartsToShowSelect = () => {
+const ChartsToShowSelect = (props: {disabled?: boolean}) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const dispatch = useAppDispatch()
 
@@ -39,6 +39,7 @@ const ChartsToShowSelect = () => {
                 key={chart}
                 control={
                     <Checkbox
+                        disabled={ props.disabled || false }
                         checked={chartsToShow.includes(chart)}
                         onChange={() => handleChartCheck(chart)}
                         inputProps={{ 'aria-label': 'controlled' }}
@@ -47,7 +48,7 @@ const ChartsToShowSelect = () => {
                 label={chart}
             />
         ))
-    }, [chartsToShow, handleChartCheck])
+    }, [chartsToShow, handleChartCheck, props.disabled])
 
     return <FormGroup sx={{
         display: 'flex',

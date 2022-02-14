@@ -7,6 +7,7 @@ import { setSelectedStationName } from '../../state/actions'
 
 const MyMaps = () => {
     const dispatch = useAppDispatch()
+    
     const markers = useMemo(() => {
         return Object.values(stations).map((station) => (
             <Marker key={station.Name} position={[station.Latitude, station.Longitude]}>

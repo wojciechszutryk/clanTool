@@ -1,6 +1,6 @@
 import { Box, Grid, Typography } from '@mui/material'
-import React from 'react'
-
+import React, { useEffect } from 'react'
+import { setChartsToShow } from '../../state/actions'
 import 'react-toastify/dist/ReactToastify.css'
 import {
     ChartsToShowSelect, DatePicker,
@@ -10,8 +10,19 @@ import {
     TauTypeSelect,
 } from '../../components'
 import DrawStationCharts from './components/DrawCharts'
+import { useAppDispatch } from 'functions/hooks/useAppDispach'
+import { useAppSelector } from 'functions/hooks/useAppSelector'
 
 function StationsPage() {
+    const selectedStationName = useAppSelector((state) => state.app.selectedStationName);
+    const dispatch = useAppDispatch()
+
+    useEffect(() =>{
+        return () => {
+            dispatch(setChartsToShow([]))
+        }
+    },[dispatch])
+
     return (
         <Grid container spacing={{ md: 3 }}>
             <Grid
@@ -45,7 +56,7 @@ function StationsPage() {
                     <TauTypeSelect/>
                     <MADMultiplyInput/>
                 </Box>
-                <ChartsToShowSelect />
+                <ChartsToShowSelect disabled={selectedStationName.length === 0}/>
             </Grid>
             <Grid
                 item

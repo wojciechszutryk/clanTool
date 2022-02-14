@@ -30,23 +30,12 @@ const StationSelect = () => {
             </MenuItem>
         ))
     }, [stationsNames])
-    const panTo = React.useCallback(
-        (name: string) => {
-            // @ts-ignore
-            const lat = stations[name].Latitude as number
-            // @ts-ignore
-            const lng = stations[name].Longitude as number
-            mapRef.panTo({ lat, lng })
-            mapRef.setZoom(14)
-        },
-        [mapRef]
-    )
 
     const handleChange = (event: SelectChangeEvent) => {
         const name = event.target.value as string
         dispatch(setSelectedStationName(name))
-        panTo(name)
     }
+
     return (
         <FormControl sx={{ width: '300px' }}>
             <InputLabel id="station-select-label">Station</InputLabel>

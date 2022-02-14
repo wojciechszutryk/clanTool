@@ -1,5 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
 import {
     DatePicker,
@@ -16,13 +16,19 @@ import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSel
 function SatellitesPage() {
     const [recalculate, setRecalculate] = useState(false); //used to rerender chars components on button click
     const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<charts[]>([]);
-    const [errorNoSatellitesSelected, setErrorNoSatellitesSelected] = useState(false);
+
     const dispatch = useAppDispatch()
 
     const handleDrawCharts = () => {
         setRecalculate(!recalculate)
         dispatch(setChartsToShow(chartsSelectedToBeVisible))
     }
+
+    useEffect(() =>{
+        return () => {
+            dispatch(setChartsToShow([]))
+        }
+    },[dispatch])
 
     return (
         <Grid container spacing={{ md: 3 }}>
@@ -47,7 +53,7 @@ function SatellitesPage() {
                 }}
             >
                 <Typography variant={'h2'} sx={{fontSize:30, color: '#25374a'}}>Parameters</Typography>
-                <SatellitesAutocomplete/>
+                <SatellitesAutocomplete />
                 <DatePicker startEnd={'start'} />
                 <DatePicker startEnd={'end'} />
                 <Box>
