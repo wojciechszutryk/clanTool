@@ -9,9 +9,9 @@ import {
     Themes,
 } from '@arction/lcjs'
 import { Box, Button } from '@mui/material'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useMemo, useRef } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
-import {CSVLink, CSVDownload} from 'react-csv';
+import {CSVLink} from 'react-csv';
 
 const DEVChart = ({
     data,
@@ -128,17 +128,18 @@ const DEVChart = ({
         chartRef.current.chart.saveToFile(filename)
     }
 
-    function handleChartSaveToCSV() {
+    const csvData = useMemo(()=> {
+        if(data.length === 0) return [];
+        const csvArray: (string | number)[][] = [];
+        const tauValues = Object.values(data[0])[0].map(xyData => xyData.x);
+        csvArray.push(['tau', ...tauValues])
 
-// const csvData =[
-//   ['firstname', 'lastname', 'email'] ,
-//   ['John', 'Doe' , 'john.doe@xyz.com'] ,
-//   ['Jane', 'Doe' , 'jane.doe@xyz.com']
-// ];
-// <CSVLink data={csvData} >Download me</CSVLink>
-// // or
-// <CSVDownload data={csvData} target="_blank" />
-    }
+        for(let i=0 ; i < data.length ; i++){
+            const devValues = Object.values(data[i])[0].map(xyData => xyData.y)
+            csvArray.push([Object.keys(data[i])[0], ...devValues])
+        }
+        return csvArray
+    }, [data]);
 
     return (
         <Box sx={{
@@ -151,9 +152,40 @@ const DEVChart = ({
                 boxShadow: '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
             },
         }}>
-            <Box id={id} sx={{height: '50vh'}} />
-            <Button onClick={handleChartSaveToImage}>Save chart to .png file</Button>
-            <Button onClick={handleChartSaveToCSV}>Save chart to .csv file</Button>
+            <Box id={id} sx={{ height: '50vh' }} />
+            <Box 
+                sx={{
+                    display: 'flex',
+                    justifyContent: 'center',
+                }} 
+            >
+                <Button 
+                    variant={'outlined'} 
+                    onClick={handleChartSaveToImage} 
+                    sx={{
+                        width: '50%',
+                        margin: 2, 
+                    }}
+                >
+                    Save chart to .png file
+                </Button>
+                <Button
+                    variant={'outlined'} 
+                    sx={{
+                        width: '50%',
+                        margin: 2,
+                        '& a': { color: '#25374a', textDecoration: 'none' } 
+                    }}
+                >
+                    <CSVLink
+                        data={csvData}
+                        filename={id+".csv"}
+                        target="_blank"
+                        >
+                        Save chart to .CSV file
+                    </CSVLink>
+                </Button>
+            </Box>
         </Box>
     )
 }
