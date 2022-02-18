@@ -7,6 +7,7 @@ export { DataChart, DEVChart } from './Chart'
 export { default as ChartsToShowSelect } from './ChartsToShowSelect'
 export { default as DrawCharts } from '../pages/StationsPage/components/DrawCharts'
 export { default as MADMultiplyInput } from './MADMultiplyInput'
+export { default as ClockNoises } from './ClockNoises'
 
 export { DrawPhaseChart } from '../pages/StationsPage/components/DrawChart'
 export { DrawFrequencyChart } from '../pages/StationsPage/components/DrawChart'

@@ -12,6 +12,7 @@ import { Box, Button } from '@mui/material'
 import React, { useEffect, useMemo, useRef } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import {CSVLink} from 'react-csv';
+import {ClockNoises} from 'components';
 
 const DEVChart = ({
     data,
@@ -21,6 +22,8 @@ const DEVChart = ({
     id: string
 }) => {
     const zoomFix = useAppSelector((state) => state.app.zoomFix);
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
     const chartRef = useRef<any>(undefined)
 
     useEffect(() => {
@@ -153,6 +156,7 @@ const DEVChart = ({
             },
         }}>
             <Box id={id} sx={{ height: '50vh' }} />
+            <ClockNoises data={data} />
             <Box 
                 sx={{
                     display: 'flex',
@@ -179,7 +183,14 @@ const DEVChart = ({
                 >
                     <CSVLink
                         data={csvData}
-                        filename={id+".csv"}
+                        filename={                            
+                            id +
+                            '-' +
+                            new Date(startDate).toJSON().slice(0, 10).replaceAll('-', '.') +
+                            '-' +
+                            new Date(endDate).toJSON().slice(0, 10).replaceAll('-', '.') +
+                            ".csv"
+                        }
                         target="_blank"
                         >
                         Save chart to .CSV file
