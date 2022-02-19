@@ -13,6 +13,28 @@ export enum SquaresColors {
     'Border' = '#667586',
 }
 
+export const Title = styled('h2')({
+    marginTop: 10,
+    textAlign: 'center',
+    fontFamily: 'arial, sans-serif',
+})
+
+export const Header = styled('p')({
+    marginRight: 10,
+    lineHeight: '5vh',
+    textAlign: 'center',
+    fontFamily: 'monospace, sans-serif',
+    fontWeight: 300,
+})
+
+export const Wrapper = styled('div')({
+    margin: '10px 20px 5px 10px',
+    display: 'flex',
+    '& > div': {
+        flexGrow: 1,
+    },
+})
+
 export const LessThanMinusOneSquare = styled('div')<{
     widthPercentage: number
 }>(({ widthPercentage }) => ({

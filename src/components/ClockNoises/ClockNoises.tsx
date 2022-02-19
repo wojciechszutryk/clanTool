@@ -1,17 +1,17 @@
-import { Box, Tooltip } from '@mui/material';
+import { Tooltip } from '@mui/material';
 import React, { useMemo } from 'react'
-import { BetweenMinusOneAndZeroSquare, BetweenZeroAndOneSquare, LessThanMinusOneSquare, MoreThanOneSquare } from './styles';
+import { BetweenMinusOneAndZeroSquare, BetweenZeroAndOneSquare, Header, LessThanMinusOneSquare, MoreThanOneSquare, Title, Wrapper } from './styles';
 
 const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[]}) => {
 
     const squres = useMemo(()=> {
         return data.map(devObj => (
-            <Box key={Object.keys(devObj)[0]}>
+            <Wrapper key={Object.keys(devObj)[0]}>
+                <Header>{Object.keys(devObj)[0]}</Header>
                 {Object.values(devObj).map((xyValueArray) => {
                     const yValuesArr = xyValueArray.map(obj => obj.y);
                     const xyValueArrayLengyhMinusOne = yValuesArr.length - 1;
                     const deltaY = (Math.max(...yValuesArr) - Math.min(...yValuesArr))/(xyValueArrayLengyhMinusOne)
-                    console.log(deltaY)
                     return xyValueArray.map((xyValue, index) => {
                         if(index === xyValueArray.length-1) return null;
                         const aParameter = (xyValueArray[index+1].y - xyValueArray[index].y) / deltaY
@@ -61,12 +61,13 @@ const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[
                         )
                     })
                 })}
-            </Box>
+            </Wrapper>
         ))
     }, [data]);
 
     return (
         <div>
+            <Title>Clock Noises</Title>
             {squres}
         </div>
     );
