@@ -1,42 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add theme">
-      <change afterPath="$PROJECT_DIR$/src/pages/AboutPage/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/InstructionsPage/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesDEVChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyDriftChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesPhaseChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesDEVCharts/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesChartsToShowSelect/SatellitesChartsToShowSelect.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/SatellitesChartsToShowSelect/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/_DrawADEVChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/_DrawMDEVChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/_DrawODEVChart.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawCharts/DrawStationCharts.tsx" afterDir="false" />
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="refactor project structure">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ChartsToShowSelect/ChartsToShowSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationDEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyDriftChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/DrawPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationPhaseChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/_DrawADEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/_DrawADEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/_DrawMDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/_DrawMDEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/_DrawODEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/_DrawODEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawChart/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/DrawCharts.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesCharts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/DrawCharts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawCharts/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/helpers/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/helpers/theme.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/DrawSatellitesDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesDEVCharts/DrawSatellitesDEVCharts.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawSatellitesCharts/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/DrawStationsDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawStationsDEVChart/DrawStationsDEVChart.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/StationSelect.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/StationSelect/StationSelect.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/C12-.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/R20-.txt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +88,11 @@
       <workItem from="1644587518209" duration="483000" />
       <workItem from="1644748801124" duration="12281000" />
       <workItem from="1644769531193" duration="1503000" />
-      <workItem from="1644774071012" duration="10759000" />
+      <workItem from="1644774071012" duration="10950000" />
+      <workItem from="1645194303108" duration="651000" />
+      <workItem from="1645263745494" duration="669000" />
+      <workItem from="1645276576284" duration="597000" />
+      <workItem from="1645277229525" duration="2493000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -192,7 +164,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644587996941</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="refactor project structure">
+      <created>1644788418890</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1644788418890</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -221,6 +200,7 @@
     <MESSAGE value="add footer, add header, add router" />
     <MESSAGE value="add theme" />
     <MESSAGE value="add styles to scrollbar" />
-    <option name="LAST_COMMIT_MESSAGE" value="add styles to scrollbar" />
+    <MESSAGE value="refactor project structure" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor project structure" />
   </component>
 </project>
