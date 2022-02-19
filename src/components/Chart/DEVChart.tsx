@@ -123,11 +123,14 @@ const DEVChart = ({
             chart.dispose()
             chartRef.current = undefined
         }
-    }, [data, id])
+    }, [data, id, zoomFix])
 
     function handleChartSaveToImage() {
-        const filename =
-            Object.keys(data.join('-'))
+        const filename = id +
+            '-' +
+            new Date(startDate).toJSON().slice(0, 10).replaceAll('-', '.') +
+            '-' +
+            new Date(endDate).toJSON().slice(0, 10).replaceAll('-', '.')
         chartRef.current.chart.saveToFile(filename)
     }
 
@@ -138,11 +141,11 @@ const DEVChart = ({
         csvArray.push(['tau', ...tauValues])
 
         for(let i=0 ; i < data.length ; i++){
-            const devValues = Object.values(data[i])[0].map(xyData => xyData.y)
+            const devValues = Object.values(data[i])[0].map(xyData => xyData.y/zoomFix)
             csvArray.push([Object.keys(data[i])[0], ...devValues])
         }
         return csvArray
-    }, [data]);
+    }, [data, zoomFix]);
 
     return (
         <Box sx={{

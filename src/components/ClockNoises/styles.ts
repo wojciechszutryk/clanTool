@@ -24,6 +24,7 @@ export const Header = styled('p')({
     lineHeight: '5vh',
     textAlign: 'center',
     fontFamily: 'monospace, sans-serif',
+    whiteSpace: 'nowrap',
     fontWeight: 300,
 })
 
