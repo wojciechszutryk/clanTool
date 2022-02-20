@@ -1,6 +1,5 @@
 import { mad } from 'mathjs'
 import store from 'state/store'
-import { medianOfArr } from '../medianOfArray/medianOfArray'
 
 export default function phaseToFreqDriftWithObjectOutput(
     data: { date: number; phase: number }[],

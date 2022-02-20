@@ -2,7 +2,7 @@ import { generateLogTauData } from '../varianceHelpers'
 
 const CHART_ZOOM_FIX = 1000000000000
 const SMALLEST_SIZE_VALUE = 3
-const MILISECOND_TO_SECOND = 1000
+// const MILISECOND_TO_SECOND = 1000
 
 function calculateAllanPhase(
     data: number[],

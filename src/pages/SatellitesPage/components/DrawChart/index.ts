@@ -1,6 +1,7 @@
 export { default as DrawPhaseChart } from './DrawSatellitesPhaseChart'
 export { default as DrawFrequencyChart } from './DrawSatellitesFrequencyChart'
+export { default as DrawFrequencyDriftChart } from './DrawSatellitesFrequencyDriftChart'
+export { default as DrawDEVChart } from './DrawSatellitesDEVChart'
 // export { default as DrawODEVChart } from './_DrawODEVChart'
 // export { default as DrawADEVChart } from './_DrawADEVChart'
 // export { default as DrawMDEVChart } from './_DrawMDEVChart'
-export { default as DrawDEVChart } from './DrawSatellitesDEVChart'

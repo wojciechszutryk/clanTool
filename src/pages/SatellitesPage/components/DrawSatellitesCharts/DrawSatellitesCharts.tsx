@@ -1,9 +1,8 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import { Box } from '@mui/material'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
-import { DrawPhaseChart, DrawFrequencyChart } from '../DrawChart';
+import { DrawPhaseChart, DrawFrequencyChart, DrawDEVChart } from '../DrawChart';
 import DrawSatellitesFrequencyDriftChart from '../DrawChart/DrawSatellitesFrequencyDriftChart'
-import { DrawSatellitesDEVChart } from '../DrawSatellitesDEVCharts'
 
 const DrawSatellitesCharts = (props : { recalculate: boolean }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
@@ -12,9 +11,10 @@ const DrawSatellitesCharts = (props : { recalculate: boolean }) => {
         <Box>
             {(chartsToShow.includes('ADEV') ||
                 chartsToShow.includes('MDEV') ||
+                chartsToShow.includes('HDEV') ||
                 chartsToShow.includes('ODEV')) && (
                 // props.chartType === ChartsTypes.Satellites ?
-                    <DrawSatellitesDEVChart rerender={props.recalculate}/>
+                    <DrawDEVChart rerender={props.recalculate}/>
                     // : <DrawStationsDEVChart startDate={startDate} endDate={endDate} DEVs={DEVs} />
 
             )}

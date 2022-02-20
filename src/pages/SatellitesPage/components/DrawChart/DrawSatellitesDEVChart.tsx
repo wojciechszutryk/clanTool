@@ -1,39 +1,35 @@
-import { Box } from '@mui/material'
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
-import { ClipLoader } from 'react-spinners'
-import { DEVChart } from '../../../../components'
 import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
 import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
-import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
+import { Box } from '@mui/material'
+import { ClipLoader } from 'react-spinners'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
+import { DEVChart } from '../../../../components/Chart'
 import { hadamardDev } from 'functions/hadamardVariance'
 
-
-const DrawSatellitesDEVChart = () => {
-    const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
-    const [loading, setLoading] = useState(true)
-    const dispatch = useAppDispatch()
-    const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteNames
-            ? state.app.selectedSatelliteNames
-            : state.app.selectedStationName
-    )
-    const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
-    const tauType = useAppSelector((state) => state.app.tauType)
+const DrawSatellitesDEVCharts = ({
+    rerender
+}: {
+    rerender: boolean,
+}) => {
+    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
-    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
+    const [loading, setLoading] = useState(true)
+    const selectedNames = useAppSelector((state) =>
+        state.app.selectedSatelliteNames
+    )
     const DEVs = useMemo(() => chartsToShow.filter(chart => (chart.includes('DEV'))), [chartsToShow])
 
-    useMemo(async () => {
+    const getDEVsDataForSatellite = async (selectedName: string) => {
         if (!selectedName) {
             setLoading(false)
             return
         }
         const DEVsObjects: {[key: string]: { x: number; y: number }[]}[] = []
-        setLoading(true)
         const JSONData = await import(`assets/${selectedName}`)
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
@@ -54,7 +50,9 @@ const DrawSatellitesDEVChart = () => {
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({'ADEV': allanDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-ADEV`] = allanDevData;
+            DEVsObjects.push(obj)
         }
         if (DEVs.includes('MDEV')){
             const modAllanDevData = modAllanDev(
@@ -62,7 +60,9 @@ const DrawSatellitesDEVChart = () => {
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({'MDEV': modAllanDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-MDEV`] = modAllanDevData;
+            DEVsObjects.push(obj)
         }
         if (DEVs.includes('ODEV')){
             const overAllanDevData = overAllanDev(
@@ -70,7 +70,9 @@ const DrawSatellitesDEVChart = () => {
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({'ODEV': overAllanDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-ODEV`] = overAllanDevData;
+            DEVsObjects.push(obj)
         }
         if (DEVs.includes('HDEV')){
             const hadamardDevData = hadamardDev(
@@ -78,18 +80,28 @@ const DrawSatellitesDEVChart = () => {
                 startDate,
                 endDate,
             )
-            DEVsObjects.push({'HDEV': hadamardDevData })
+            const obj = {} as {[key: string]: { x: number; y: number }[]};
+            obj[`${selectedName}-HDEV`] = hadamardDevData;
+            DEVsObjects.push(obj)
         }
-        setData(DEVsObjects)
-        await setLoading(false)
-    }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply, tauType])
+        return DEVsObjects;
+    };
 
-    console.log(data);
+    useMemo(async () => {
+        setLoading(true)
+        let SatellitesDEVsObjects: {[key: string]: { x: number; y: number }[]}[] = [];
+        for await (let selectedName of selectedNames){
+            const data = await getDEVsDataForSatellite(selectedName);
+            if (data) SatellitesDEVsObjects = [...SatellitesDEVsObjects, ...data];
+        }
+        setData(SatellitesDEVsObjects)
+        await setLoading(false)
+    }, [rerender])
 
     return (
         <Box
             sx={{
-                m: '10px auto',
+                m: '0px auto 30px',
                 display: 'flex',
                 justifyContent: 'center',
             }}
@@ -112,4 +124,4 @@ const DrawSatellitesDEVChart = () => {
     )
 }
 
-export default DrawSatellitesDEVChart
+export default DrawSatellitesDEVCharts

@@ -8,6 +8,7 @@ import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
 import { DEVChart } from '../../../../components/Chart'
+import { hadamardDev } from 'functions/hadamardVariance'
 
 const DrawStationDEVChart = () => {
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
@@ -69,6 +70,15 @@ const DrawStationDEVChart = () => {
                 endDate,
             )
             DEVsObjects.push({'ODEV': overAllanDevData })
+        }
+        setData(DEVsObjects)
+        if (DEVs.includes('HDEV')){
+            const hadamardDevData = hadamardDev(
+                phases,
+                startDate,
+                endDate,
+            )
+            DEVsObjects.push({'HDEV': hadamardDevData })
         }
         setData(DEVsObjects)
         await setLoading(false)

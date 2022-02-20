@@ -86,12 +86,12 @@ export const Header = (): JSX.Element => {
             <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' }, justifyContent: 'flex-end' }}>
               {pages.map((page) => (
                   <NavLink
+                      key={page.name}
                       to={page.url}
                       style={{textDecoration: 'none'}}
                   >
                     <Button
                         className={location.pathname.includes(page.url) ? classes.linkActive : classes.link}
-                        key={page.name}
                         sx={{ my: 2, color: 'white', display: 'block' }}
                     >
                       {page.name}
