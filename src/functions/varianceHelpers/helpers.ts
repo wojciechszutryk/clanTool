@@ -1,19 +1,6 @@
 import { TauType } from 'state/constans/types'
 import store from 'state/store'
 
-export function getAveragedSignal(arr: number[], n: number, stride = 1) {
-    let result = []
-    let cur_avg = 0
-    for (let i = 0; i <= Math.floor((arr.length - n) / stride); i++) {
-        cur_avg = 0
-        for (let j = 0; j < n; j++) {
-            cur_avg += arr[i * stride + j]
-        }
-        result.push(cur_avg / n)
-    }
-    return result
-}
-
 export function generateLogTauData(a: number, b: number, n: number) {
     // console.log('start'+a)
     // console.log('end' + b)

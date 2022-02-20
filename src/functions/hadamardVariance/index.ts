@@ -1,0 +1,1 @@
+export { hadamardDev } from './hadamardVariance'

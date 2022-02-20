@@ -8,6 +8,7 @@ import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
+import { hadamardDev } from 'functions/hadamardVariance'
 
 
 const DrawSatellitesDEVChart = () => {
@@ -71,9 +72,19 @@ const DrawSatellitesDEVChart = () => {
             )
             DEVsObjects.push({'ODEV': overAllanDevData })
         }
+        if (DEVs.includes('HDEV')){
+            const hadamardDevData = hadamardDev(
+                phases,
+                startDate,
+                endDate,
+            )
+            DEVsObjects.push({'HDEV': hadamardDevData })
+        }
         setData(DEVsObjects)
         await setLoading(false)
     }, [DEVs, dispatch, endDate, selectedName, startDate, MADMultiply, tauType])
+
+    console.log(data);
 
     return (
         <Box

@@ -1,4 +1,4 @@
-import { generateLogTauData } from './helpers'
+import { generateLogTauData } from '../varianceHelpers'
 
 const CHART_ZOOM_FIX = 1000000000000
 const SMALLEST_SIZE_VALUE = 3
@@ -26,7 +26,14 @@ function calculateAllanPhase(
     return Math.sqrt(sigma / mult)
 }
 
-export function allanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
+export function allanDev(
+    data: number[],
+    startDate: number,
+    endDate: number,
+    rate = 1,
+    tau_data = 300,
+    zoomFix = CHART_ZOOM_FIX
+) {
     const tauLogData = generateLogTauData(
         1,
         // Math.floor( (endDate - startDate) / 5 / MILISECOND_TO_SECOND ),
@@ -39,7 +46,7 @@ export function allanDev(data: number[], startDate: number, endDate: number, rat
 
     for (let m of tauLogData) {
         let tau = m * tau0
-        let dev = calculateAllanPhase(data, m, tau, false)*zoomFix
+        let dev = calculateAllanPhase(data, m, tau, false) * zoomFix
         if (dev !== null) {
             result.push({ x: tau, y: dev })
         }
@@ -48,7 +55,14 @@ export function allanDev(data: number[], startDate: number, endDate: number, rat
     return result
 }
 
-export function overAllanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
+export function overAllanDev(
+    data: number[],
+    startDate: number,
+    endDate: number,
+    rate = 1,
+    tau_data = 300,
+    zoomFix = CHART_ZOOM_FIX
+) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
@@ -60,7 +74,7 @@ export function overAllanDev(data: number[], startDate: number, endDate: number,
 
     for (let m of tauLogData) {
         let tau = m * tau0
-        let dev = calculateAllanPhase(data, m, tau, true)*zoomFix
+        let dev = calculateAllanPhase(data, m, tau, true) * zoomFix
         if (dev !== null) {
             result.push({ x: tau, y: dev })
         }
@@ -69,7 +83,14 @@ export function overAllanDev(data: number[], startDate: number, endDate: number,
     return result
 }
 
-export function modAllanDev(data: number[], startDate: number, endDate: number, rate = 1, tau_data = 300, zoomFix=CHART_ZOOM_FIX) {
+export function modAllanDev(
+    data: number[],
+    startDate: number,
+    endDate: number,
+    rate = 1,
+    tau_data = 300,
+    zoomFix = CHART_ZOOM_FIX
+) {
     const tauLogData = generateLogTauData(
         1,
         Math.floor(data.length / 5),
@@ -101,7 +122,7 @@ export function modAllanDev(data: number[], startDate: number, endDate: number, 
         let mult = 2 * size * m ** 2 * tau ** 2
 
         if (size >= SMALLEST_SIZE_VALUE)
-            result.push({ x: tau, y: Math.sqrt(sigma / mult)*zoomFix })
+            result.push({ x: tau, y: Math.sqrt(sigma / mult) * zoomFix })
     }
     return result
 }
