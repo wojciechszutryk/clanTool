@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
+import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
 import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
@@ -30,7 +31,9 @@ const DrawSatellitesDEVCharts = ({
             return
         }
         const DEVsObjects: {[key: string]: { x: number; y: number }[]}[] = []
-        const JSONData = await import(`assets/${selectedName}`)
+        // const JSONData = await import(`assets/${selectedName}`)
+        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
+        // @ts-ignore
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

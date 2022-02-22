@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="refactor project structure">
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add G01 asset">
+      <change afterPath="$PROJECT_DIR$/public/data.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/functions/fetchDataFromPublicDir/fetchDataFromPublicDir.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/C12-.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/R20-.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/C12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/G12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/R20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesDEVChart.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +97,8 @@
       <workItem from="1645194303108" duration="651000" />
       <workItem from="1645263745494" duration="669000" />
       <workItem from="1645276576284" duration="597000" />
-      <workItem from="1645277229525" duration="2493000" />
+      <workItem from="1645277229525" duration="2524000" />
+      <workItem from="1645474956988" duration="4059000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -171,7 +177,14 @@
       <option name="project" value="LOCAL" />
       <updated>1644788418890</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="add G01 asset">
+      <created>1645279764985</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1645279764985</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -201,6 +214,7 @@
     <MESSAGE value="add theme" />
     <MESSAGE value="add styles to scrollbar" />
     <MESSAGE value="refactor project structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor project structure" />
+    <MESSAGE value="add G01 asset" />
+    <option name="LAST_COMMIT_MESSAGE" value="add G01 asset" />
   </component>
 </project>
