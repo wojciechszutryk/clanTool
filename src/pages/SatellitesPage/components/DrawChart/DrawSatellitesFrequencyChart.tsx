@@ -3,6 +3,7 @@ import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
 import phaseToFreqWithObjectOutput from 'functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput'
+import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 
 const DrawSatellitesFrequencyChart = ({
@@ -26,7 +27,7 @@ const DrawSatellitesFrequencyChart = ({
             return
         }
         setLoading(true)
-        const JSONData = await import(`assets/${selectedName}`)
+        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

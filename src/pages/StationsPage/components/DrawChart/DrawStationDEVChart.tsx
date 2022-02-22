@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
+import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
 import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
@@ -33,7 +34,7 @@ const DrawStationDEVChart = () => {
         }
         const DEVsObjects: {[key: string]: { x: number; y: number }[]}[] = []
         setLoading(true)
-        const JSONData = await import(`assets/${selectedName}`)
+        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

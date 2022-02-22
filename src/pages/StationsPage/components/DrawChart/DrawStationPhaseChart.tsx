@@ -3,6 +3,7 @@ import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
+import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 
 const DrawStationPhaseChart = () => {
@@ -23,7 +24,7 @@ const DrawStationPhaseChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await import(`assets/${selectedName}`)
+        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
         const stationSatelliteData = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

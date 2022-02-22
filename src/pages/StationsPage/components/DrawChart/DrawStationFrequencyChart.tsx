@@ -1,4 +1,5 @@
 import React, { useMemo, useState } from 'react'
+import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
@@ -25,7 +26,7 @@ const DrawStationFrequencyChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await import(`assets/${selectedName}`)
+        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

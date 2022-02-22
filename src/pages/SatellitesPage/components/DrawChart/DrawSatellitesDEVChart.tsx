@@ -31,7 +31,6 @@ const DrawSatellitesDEVCharts = ({
             return
         }
         const DEVsObjects: {[key: string]: { x: number; y: number }[]}[] = []
-        // const JSONData = await import(`assets/${selectedName}`)
         const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
         // @ts-ignore
         const data = await JSONData.data.filter(
