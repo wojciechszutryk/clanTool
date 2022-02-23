@@ -3,20 +3,16 @@ import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
+import { fetchAndConcatByDateDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 
 const DrawStationPhaseChart = () => {
-    const [data, setData] = useState<number[]>([])
+    const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
     const dispatch = useAppDispatch()
-    const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteNames[0]
-            ? state.app.selectedSatelliteNames[0]
-            : state.app.selectedStationName
-    )
+    const selectedName = useAppSelector((state) =>state.app.selectedStationName)
 
     useMemo(async () => {
         if (!selectedName) {
@@ -24,7 +20,7 @@ const DrawStationPhaseChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
         const stationSatelliteData = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

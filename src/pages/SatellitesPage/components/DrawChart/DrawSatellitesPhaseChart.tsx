@@ -3,14 +3,14 @@ import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
 import { DataChart } from 'components'
-import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
+import { fetchAndConcatByDateDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir'
 
 const DrawSatellitesPhaseChart = ({
         rerender
     }: {
     rerender: boolean,
 }) => {
-    const [data, setData] = useState<number[]>([])
+    const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
@@ -26,7 +26,7 @@ const DrawSatellitesPhaseChart = ({
             return
         }
         setLoading(true)
-        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
         const stationSatelliteData = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

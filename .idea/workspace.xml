@@ -1,8 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="change data getter function">
+    <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="add git lfs">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G01.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G02.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G03.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G04.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G05.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/fetchDataFromPublicDir/fetchDataFromPublicDir.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyDriftChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesPhaseChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationDEVChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationDEVChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyDriftChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationFrequencyDriftChart.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationPhaseChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/StationsPage/components/DrawChart/DrawStationPhaseChart.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,7 +107,8 @@
       <workItem from="1645276576284" duration="597000" />
       <workItem from="1645277229525" duration="2524000" />
       <workItem from="1645474956988" duration="4059000" />
-      <workItem from="1645562283423" duration="1235000" />
+      <workItem from="1645562283423" duration="2637000" />
+      <workItem from="1645635943556" duration="6940000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>
@@ -192,7 +208,14 @@
       <option name="project" value="LOCAL" />
       <updated>1645562759242</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="add git lfs">
+      <created>1645563604113</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1645563604113</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -225,6 +248,7 @@
     <MESSAGE value="add G01 asset" />
     <MESSAGE value="move assets to public" />
     <MESSAGE value="change data getter function" />
-    <option name="LAST_COMMIT_MESSAGE" value="change data getter function" />
+    <MESSAGE value="add git lfs" />
+    <option name="LAST_COMMIT_MESSAGE" value="add git lfs" />
   </component>
 </project>

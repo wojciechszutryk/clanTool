@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
-import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
+import { fetchAndConcatByDateDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir'
 import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
@@ -15,11 +15,7 @@ const DrawStationDEVChart = () => {
     const [data, setData] = useState<{[key: string]: { x: number; y: number }[]}[]>([])
     const [loading, setLoading] = useState(true)
     const dispatch = useAppDispatch()
-    const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteNames
-            ? state.app.selectedSatelliteNames
-            : state.app.selectedStationName
-    )
+    const selectedName = useAppSelector((state) => state.app.selectedStationName)
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
     const tauType = useAppSelector((state) => state.app.tauType)
     const startDate = useAppSelector((state) => state.app.startDate)
@@ -34,7 +30,7 @@ const DrawStationDEVChart = () => {
         }
         const DEVsObjects: {[key: string]: { x: number; y: number }[]}[] = []
         setLoading(true)
-        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

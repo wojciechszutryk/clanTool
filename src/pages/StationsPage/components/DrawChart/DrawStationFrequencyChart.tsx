@@ -1,5 +1,5 @@
 import React, { useMemo, useState } from 'react'
-import { fetchDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchDataFromPublicDir'
+import { fetchAndConcatByDateDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
@@ -13,11 +13,7 @@ const DrawStationFrequencyChart = () => {
     const dispatch = useAppDispatch()
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
-    const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteNames[0]
-            ? state.app.selectedSatelliteNames[0]
-            : state.app.selectedStationName
-    )
+    const selectedName = useAppSelector((state) =>state.app.selectedStationName)
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
 
     useMemo(async () => {
@@ -26,7 +22,7 @@ const DrawStationFrequencyChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await fetchDataFromPublicDir(`data/${selectedName}.json`);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
