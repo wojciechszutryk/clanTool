@@ -14,6 +14,8 @@ import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import {CSVLink} from 'react-csv';
 import {ClockNoises} from 'components';
 
+const TAU_VALUE = 300; //current tau value, set to multiply x axis values | to be changed when data sets changes
+
 const DEVChart = ({
     data,
     id,
@@ -80,11 +82,21 @@ const DEVChart = ({
         )
         axisY.setTickStrategy(AxisTickStrategies.Numeric, (numericTicks) => numericTicks)
 
+        
+        const axisX = chart.getDefaultAxisX()
+        axisX.setTickStrategy(
+            AxisTickStrategies.Numeric,
+            ( tickStrategy: NumericTickStrategy ) => tickStrategy
+                .setMajorFormattingFunction( ( value, range ) => {
+                    return (value*TAU_VALUE).toString()
+                })
+        )
+
         const series = data.map((dev, index) => {
             const devName = Object.keys(dev)[0];
             // const series = chart.addSplineSeries({
             const series = chart.addPointLineSeries({
-                xAxis: chart.getDefaultAxisX(),
+                xAxis: axisX,
                 yAxis: axisY
             })
                     .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
