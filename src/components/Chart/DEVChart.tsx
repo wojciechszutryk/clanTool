@@ -87,6 +87,9 @@ const DEVChart = ({
         axisX.setTickStrategy(
             AxisTickStrategies.Numeric,
             ( tickStrategy: NumericTickStrategy ) => tickStrategy
+                .setMinorFormattingFunction( ( value, range ) => {
+                    return (value*TAU_VALUE).toString()
+                })
                 .setMajorFormattingFunction( ( value, range ) => {
                     return (value*TAU_VALUE).toString()
                 })
@@ -103,7 +106,7 @@ const DEVChart = ({
                         return builder
                             .addRow(
                                  'τ: ',
-                                     xValue.toFixed(2).toString()
+                                     (xValue*TAU_VALUE).toFixed(2).toString()
                             )
                             .addRow(devName + ': ', (yValue/zoomFix).toExponential(7).toString())
                     })

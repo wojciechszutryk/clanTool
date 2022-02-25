@@ -24,8 +24,7 @@ function App() {
             <Box className={classes.wrapper}>
                 <Container sx={{marginTop: '56px', maxWidth: '1600px', padding: '50px 0'}}>
                     <Routes>
-                        <Route path="*" element={<Navigate to="/" replace />} />
-                        <Route path="/" element={<SatellitesPage/>} />
+                        <Route path="*" element={<Navigate to="/satellites" replace />} />
                         <Route path="satellites" element={<SatellitesPage/>} />
                         <Route path="stations" element={<StationsPage/>} />
                         <Route path="instructions" element={<InstructionsPage/>} />

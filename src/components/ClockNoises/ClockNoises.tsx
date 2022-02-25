@@ -2,6 +2,8 @@ import { Tooltip } from '@mui/material';
 import React, { useMemo } from 'react'
 import { BetweenMinusOneAndZeroSquare, BetweenZeroAndOneSquare, Header, LessThanMinusOneSquare, MoreThanOneSquare, Title, Wrapper } from './styles';
 
+const TAU_VALUE = 300; //current tau value, set to multiply x axis values | to be changed when data sets changes
+
 const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[]}) => {
 
     const squres = useMemo(()=> {
@@ -19,7 +21,7 @@ const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[
                             <Tooltip 
                                 key={index}
                                 title={`
-                                    range: ${xyValueArray[index].x} - ${xyValueArray[index+1].x}
+                                    range: ${xyValueArray[index].x*TAU_VALUE} - ${xyValueArray[index+1].x*TAU_VALUE}
                                     value: ${aParameter}
                                 `}
                                 placement="top-start">
@@ -30,7 +32,7 @@ const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[
                             <Tooltip 
                                 key={index}
                                 title={`
-                                    range: ${xyValueArray[index].x} - ${xyValueArray[index+1].x}
+                                    range: ${xyValueArray[index].x*TAU_VALUE} - ${xyValueArray[index+1].x*TAU_VALUE}
                                     value: ${aParameter}
                                 `}
                                 placement="top-start">
@@ -41,7 +43,7 @@ const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[
                             <Tooltip 
                                 key={index}
                                 title={`
-                                    range: ${xyValueArray[index].x} - ${xyValueArray[index+1].x}
+                                    range: ${xyValueArray[index].x*TAU_VALUE} - ${xyValueArray[index+1].x*TAU_VALUE}
                                     value: ${aParameter}
                                 `}
                                 placement="top-start">
@@ -52,7 +54,7 @@ const ClockNoises = ({data}: {data: {[key: string]: { x: number; y: number }[]}[
                             <Tooltip 
                                 key={index}
                                 title={`
-                                    range: ${xyValueArray[index].x} - ${xyValueArray[index+1].x}
+                                    range: ${xyValueArray[index].x*TAU_VALUE} - ${xyValueArray[index+1].x*TAU_VALUE}
                                     value: ${aParameter}
                                 `}
                                 placement="top-start">
