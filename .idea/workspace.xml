@@ -2,7 +2,31 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0801eff4-69ef-4f70-83ee-86d2c3de4bd3" name="Default Changelist" comment="fetchAndConcatByDateDataFromPublicDir changes">
+      <change afterPath="$PROJECT_DIR$/public/data/E01.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/E02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/E03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/G02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/G03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/G04.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/G05.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/J01.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/J02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/J03.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/R01.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/R02.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/data/R03.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/C12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G01.json" beforeDir="false" afterPath="$PROJECT_DIR$/public/data/G01.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/G12.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/data/R20.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/MADMultiplyInput/MADMultiplyInput.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreq/phaseToFreq.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput.ts" beforeDir="false" afterPath="$PROJECT_DIR$/src/functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyChart.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SatellitesPage/components/DrawChart/DrawSatellitesFrequencyChart.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -99,6 +123,15 @@
       <workItem from="1646034950069" duration="42000" />
       <workItem from="1646065343038" duration="1987000" />
       <workItem from="1646074792645" duration="594000" />
+      <workItem from="1646303381492" duration="4000" />
+      <workItem from="1646770860940" duration="594000" />
+      <workItem from="1651352460922" duration="15000" />
+      <workItem from="1653831162999" duration="1519000" />
+      <workItem from="1653844420462" duration="696000" />
+      <workItem from="1653933728697" duration="595000" />
+      <workItem from="1654018027512" duration="3217000" />
+      <workItem from="1654104743086" duration="1038000" />
+      <workItem from="1654183970860" duration="3525000" />
     </task>
     <task id="LOCAL-00001" summary="change y axis to exponential, remove animation, set x axis to logarithm">
       <created>1638568368745</created>

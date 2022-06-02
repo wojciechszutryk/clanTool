@@ -21,14 +21,14 @@ export default function phaseToFreqWithObjectOutput(
         })
     }
 
-    const onlyFreqArray = newData.map((obj: { x: number; y: number }) => obj.y)
+    //MAD temp removed
+    // const onlyFreqArray = newData.map((obj: { x: number; y: number }) => obj.y)
 
-    const MADMultiply = store.getState().app.MADMultiply ? store.getState().app.MADMultiply : 3;
+    // const MADMultiply = store.getState().app.MADMultiply ? store.getState().app.MADMultiply : 3;
     // const MADValue = medianOfArr(newData) / 0.6745 * MADMultiply
-    const MADValue = mad(onlyFreqArray) / 0.6745 * MADMultiply
-    // console.log(MADValue2)
+    // const MADValue = mad(onlyFreqArray) / 0.6745 * MADMultiply
 
-    newData = newData.filter(dateAndFreqObj => Math.abs(dateAndFreqObj.y) < Math.abs(MADValue))
+    // newData = newData.filter(dateAndFreqObj => Math.abs(dateAndFreqObj.y) < Math.abs(MADValue))
 
     return newData
 }

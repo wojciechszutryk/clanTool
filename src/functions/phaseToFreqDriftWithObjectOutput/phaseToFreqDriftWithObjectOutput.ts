@@ -22,19 +22,20 @@ export default function phaseToFreqDriftWithObjectOutput(
         })
     }
 
-    const onlyFreqDriftArray = freqDriftData.map(
-        (obj: { x: number; y: number }) => obj.y
-    )
-
-    const MADMultiply = store.getState().app.MADMultiply
-        ? store.getState().app.MADMultiply
-        : 3
-    const MADValue = (mad(onlyFreqDriftArray) / 0.6745) * MADMultiply
-
-    freqDriftData = freqDriftData.filter(
-        (dateAndFreqDriftObj) =>
-            Math.abs(dateAndFreqDriftObj.y) < Math.abs(MADValue)
-    )
+    //MAD temp removed
+    // const onlyFreqDriftArray = freqDriftData.map(
+    //     (obj: { x: number; y: number }) => obj.y
+    // )
+    //
+    // const MADMultiply = store.getState().app.MADMultiply
+    //     ? store.getState().app.MADMultiply
+    //     : 3
+    // const MADValue = (mad(onlyFreqDriftArray) / 0.6745) * MADMultiply
+    //
+    // freqDriftData = freqDriftData.filter(
+    //     (dateAndFreqDriftObj) =>
+    //         Math.abs(dateAndFreqDriftObj.y) < Math.abs(MADValue)
+    // )
 
     return freqDriftData
 }

@@ -14,12 +14,11 @@ export default function phaseToFreq(
             newData.push((data[i + 1] - data[i]) / tau)
     }
 
-    const MADMultiply = store.getState().app.MADMultiply ? store.getState().app.MADMultiply : 3;
+    // const MADMultiply = store.getState().app.MADMultiply ? store.getState().app.MADMultiply : 3;
     // const MADValue = medianOfArr(newData) / 0.6745 * MADMultiply
-    const MADValue = mad(newData) / 0.6745 * MADMultiply
-    // console.log(MADValue2)
-
-    newData = newData.filter(freq => Math.abs(freq) < Math.abs(MADValue))
+    // const MADValue = mad(newData) / 0.6745 * MADMultiply
+    //
+    // newData = newData.filter(freq => Math.abs(freq) < Math.abs(MADValue))
 
 
     return newData

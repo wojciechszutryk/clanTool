@@ -53,7 +53,7 @@ const DrawSatellitesFrequencyChart = ({
         setData(chartData)
         await setLoading(false)
     // }, [dispatch, endDate, selectedName, startDate, MADMultiply])
-    }, [rerender])
+    }, [endDate, selectedName, startDate])
 
     return (
         <Box
