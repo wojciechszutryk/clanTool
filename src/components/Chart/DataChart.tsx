@@ -88,7 +88,7 @@ const DataChart = ({
             chart.dispose()
             chartRef.current = undefined
         }
-    }, [id, xType, zoomFix])
+    }, [])
 
     useEffect(() => {
         const components = chartRef.current
@@ -96,7 +96,7 @@ const DataChart = ({
 
         const { series } = components
         series.clear().add(data)
-    }, [data, chartRef])
+    }, [])
 
     function handleChartSaveToImage() {
         const filename =
@@ -119,7 +119,7 @@ const DataChart = ({
             ])
         }
         return csvArray
-    }, [data, id, zoomFix]);
+    }, []);
 
     return (
         <Box
