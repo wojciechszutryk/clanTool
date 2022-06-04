@@ -1,3 +1,4735 @@
-version https://git-lfs.github.com/spec/v1
-oid sha256:5c9f4ebc590331fff7c476cbe8eddc34f0b8175b1f0856397459a1b3ce57b9c4
-size 121185
+{
+  "ABMF": {
+    "X": 2919786,
+    "Y": -5383745,
+    "Z": 1774604,
+    "Latitude": 16.262,
+    "Longitude": -61.528,
+    "Height": -25.268,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "3013312",
+      "FirmwareVersion": "5.3.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-02-07T10:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM57971.00",
+      "Radome": "NONE",
+      "SerialNumber": "1441112501",
+      "ARP": "BAM",
+      "MarkerUp": "0.00",
+      "MarkerNorth": "0.00",
+      "MarkerEast": "0.00",
+      "DateInstalled": "2012-01-24T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2008-07-15/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "ABMF00GLP0": {
+        "GPS": "1019,1074",
+        "GLO": "1020,1084",
+        "GAL": "1045,1046,1094",
+        "QZSS": "1114",
+        "BDS": "1042,1124"
+      }
+    },
+    "Name": "ABMF"
+  },
+  "AIRA": {
+    "X": -3530185.489,
+    "Y": 4118797.337,
+    "Z": 3344036.931,
+    "Latitude": 31.824,
+    "Longitude": 130.6,
+    "Height": 315.056,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+QZSS",
+      "SerialNumber": "6042R40081",
+      "FirmwareVersion": "6.10",
+      "ElevCutoff": "5",
+      "DateInstalled": "2021-08-16T11:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "4938353451",
+      "ARP": "BPA",
+      "MarkerUp": "0.0",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2012-08-01T01:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL ",
+      "InputFrequency": "",
+      "EffectiveDates": "2004-11-19"
+    },
+    "Name": "AIRA"
+  },
+  "ALIC": {
+    "X": -4052052.7301,
+    "Y": 4212835.9796,
+    "Z": -2545104.587,
+    "Latitude": -23.67,
+    "Longitude": 133.886,
+    "Height": 603.645,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+QZSS+GLO+GAL+BDS",
+      "SerialNumber": "3061704",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-02-25T23:43Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "NONE",
+      "SerialNumber": "09370001",
+      "ARP": "BPA",
+      "MarkerUp": "000.0015",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2011-07-20T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1994-05-15/(CCYY-MM-DD)"
+    },
+    "Name": "ALIC"
+  },
+  "ANKR": {
+    "X": 4121934.26,
+    "Y": 2652189.812,
+    "Z": 4069034.911,
+    "Latitude": 39.888,
+    "Longitude": 32.759,
+    "Height": 975.191,
+    "Receiver": {
+      "Name": "LEICA GR30",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "1705608",
+      "FirmwareVersion": "4.31/7.403",
+      "ElevCutoff": "0",
+      "DateInstalled": "2019-10-28T13:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR10",
+      "Radome": "NONE",
+      "SerialNumber": "19353039",
+      "ARP": "BAM",
+      "MarkerUp": "0.0700",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2017-06-24T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-06-21/CCYY-MM-DD"
+    },
+    "Name": "ANKR"
+  },
+  "AREG": {
+    "X": 1942816.3653,
+    "Y": -5804077.1395,
+    "Z": -1796884.4383,
+    "Latitude": -16.465,
+    "Longitude": -71.493,
+    "Height": 2489.742,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "17323022499",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T08:50Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5129354209",
+      "ARP": "BPA",
+      "MarkerUp": "0.4291",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "-0.0006",
+      "DateInstalled": "2013-01-11T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL RUBIDIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2014-10-17/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "AREG00PER0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "AREG"
+  },
+  "ASCG": {
+    "X": 6121151.5493,
+    "Y": -1563978.9235,
+    "Z": -872615.3556,
+    "Latitude": -7.916,
+    "Longitude": -14.333,
+    "Height": 38.354,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5945R40128",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-03-23T10:25Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5311354626",
+      "ARP": "BPA",
+      "MarkerUp": "0.4080",
+      "MarkerNorth": "-0.0007",
+      "MarkerEast": "0.0001",
+      "DateInstalled": "2021-08-19T16:15Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2015-07-24T00:00Z/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "ASCG00SHN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "ASCG"
+  },
+  "AUCK": {
+    "X": -5105681,
+    "Y": 461564,
+    "Z": -3782181.7,
+    "Latitude": -36.603,
+    "Longitude": 174.834,
+    "Height": 133.092,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "5921R40146",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-09-22T09:53Z"
+    },
+    "Antenna": {
+      "Name": "TRM115000.00",
+      "Radome": "NONE",
+      "SerialNumber": "1551016656",
+      "ARP": "BAM",
+      "MarkerUp": "0.0550",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2019-10-23T23:34Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-09-18/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "AUCK00NZL0": {
+        "GPS": "1074",
+        "GLO": "1084",
+        "GAL": "1045,1046,1094",
+        "QZSS": "1044,1114",
+        "BDS": "1042,1124"
+      }
+    },
+    "Name": "AUCK"
+  },
+  "BADG": {
+    "X": -838281.513,
+    "Y": 3865777.334,
+    "Z": 4987624.632,
+    "Latitude": 51.77,
+    "Longitude": 102.235,
+    "Height": 811.838,
+    "Receiver": {
+      "Name": "JAVAD TRE_3 DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "02682",
+      "FirmwareVersion": "3.7.10 Oct,22,2020",
+      "ElevCutoff": "3",
+      "DateInstalled": "2020-11-17T13:00Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "JVDM",
+      "SerialNumber": "00328",
+      "ARP": "BPA",
+      "MarkerUp": "000.0280",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2010-03-15T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER CH1-80",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2010-03-15/CCYY-MM-DD"
+    },
+    "Name": "BADG"
+  },
+  "BAKE": {
+    "X": -289833.93,
+    "Y": -2756501.06,
+    "Z": 5725162.22,
+    "Latitude": 64.318,
+    "Longitude": -96.002,
+    "Height": 4.854,
+    "Receiver": {
+      "Name": "TPS NET-G3A",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "618-02373",
+      "FirmwareVersion": "4.7 Nov,23,2017 p6",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-02-19T22:53Z"
+    },
+    "Antenna": {
+      "Name": "TPSCR.G3",
+      "Radome": "NONE",
+      "SerialNumber": "383-0416",
+      "ARP": "BPA",
+      "MarkerUp": "000.1000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2018-07-26T03:36Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2001-11-30"
+    },
+    "RealTime": {
+      "BAKE00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087"
+      }
+    },
+    "Name": "BAKE"
+  },
+  "BOR1": {
+    "X": 3738358.833,
+    "Y": 1148173.963,
+    "Z": 5021816.113,
+    "Latitude": 52.277,
+    "Longitude": 17.073,
+    "Height": 125.335,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "5420R48510",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-09-18T10:20Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5421355014",
+      "ARP": "BPA",
+      "MarkerUp": "0.0622",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2016-10-05T11:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2016-10-05/CCYY-MM-DD"
+    },
+    "Name": "BOR1"
+  },
+  "BRAZ": {
+    "X": 4115014.1128,
+    "Y": -4550641.5225,
+    "Z": -1741444.0984,
+    "Latitude": -15.947,
+    "Longitude": -47.878,
+    "Height": 1106.445,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "5607R50135",
+      "FirmwareVersion": "5.52",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-10-20T18:56Z"
+    },
+    "Antenna": {
+      "Name": "TRM57971.00",
+      "Radome": "NONE",
+      "SerialNumber": "2612117300",
+      "ARP": "BAM",
+      "MarkerUp": "0.008",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2016-09-28T13:30Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-03-03/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "BRAZ00BRA0": {
+        "GPS": "1019,1074",
+        "GLO": "1020,1084",
+        "GAL": "1045,1046,1094"
+      }
+    },
+    "Name": "BRAZ"
+  },
+  "BRST": {
+    "X": 4231162,
+    "Y": -332747,
+    "Z": 4745131,
+    "Latitude": 48.38,
+    "Longitude": -4.497,
+    "Height": 65.952,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5818R40023",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-09-30T15:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM57971.00",
+      "Radome": "NONE",
+      "SerialNumber": "1441017048",
+      "ARP": "BAM",
+      "MarkerUp": "2.0431",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-04-19T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1998-10-31/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "BRST00FRA0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "BRST"
+  },
+  "BRUX": {
+    "X": 4027881.628,
+    "Y": 306998.537,
+    "Z": 4919498.984,
+    "Latitude": 50.798,
+    "Longitude": 4.359,
+    "Height": 158.694,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "3057609",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-02-04T09:40Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "SCIS",
+      "SerialNumber": "00464",
+      "ARP": "BPA",
+      "MarkerUp": "0.4689",
+      "MarkerNorth": "0.0010",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2021-04-20T08:33Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CH1-75A MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2018-02-01/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "BRUX00BEL0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "BRUX"
+  },
+  "BSHM": {
+    "X": 4396111.1752,
+    "Y": 3080477.64191,
+    "Z": 3433499.46187,
+    "Latitude": 32.779,
+    "Longitude": 35.02,
+    "Height": 225.516,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3013570",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-24T11:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "4811A47089",
+      "ARP": "BPA",
+      "MarkerUp": "0.00",
+      "MarkerNorth": "0.00",
+      "MarkerEast": "0.00",
+      "DateInstalled": "2009-07-20T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2009-07-20/CCYY-MM-DD"
+    },
+    "Name": "BSHM"
+  },
+  "CAS1": {
+    "X": -901776.221,
+    "Y": 2409383.497,
+    "Z": -5816748.487,
+    "Latitude": -66.283,
+    "Longitude": 110.52,
+    "Height": 22.999,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+QZSS+GLO+GAL+BDS",
+      "SerialNumber": "5950R40131",
+      "FirmwareVersion": "6.10",
+      "ElevCutoff": "",
+      "DateInstalled": "2021-07-07T04:29Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "9310002",
+      "ARP": "BPA",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2013-12-11T03:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "1998-01-09/(CCYY-MM-DD)"
+    },
+    "Name": "CAS1"
+  },
+  "CCJ2": {
+    "X": -4490605.4013,
+    "Y": 3483894.7513,
+    "Z": 2884928.2222,
+    "Latitude": 27.068,
+    "Longitude": 142.195,
+    "Height": 104.626,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+QZSS",
+      "SerialNumber": "5035K69995",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "5",
+      "DateInstalled": "2020-06-08T00:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "5015353788",
+      "ARP": "BPA",
+      "MarkerUp": "0.0",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2016-06-23T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2017-09-01"
+    },
+    "Name": "CCJ2"
+  },
+  "CEDU": {
+    "X": -3753473.19,
+    "Y": 3912741.0266,
+    "Z": -3347959.6946,
+    "Latitude": -31.867,
+    "Longitude": 133.81,
+    "Height": 145.13,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3012278",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-11T06:17Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "NONE",
+      "SerialNumber": "194",
+      "ARP": "BPA",
+      "MarkerUp": "000.0060",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2016-10-17T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2020-01-15/(CCYY-MM-DD)"
+    },
+    "Name": "CEDU"
+  },
+  "CHPI": {
+    "X": 4164613.89,
+    "Y": -4162456.91,
+    "Z": -2445028.76,
+    "Latitude": -22.687,
+    "Longitude": -44.985,
+    "Height": 617.826,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "3013580",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-02-01T22:31Z"
+    },
+    "Antenna": {
+      "Name": "TPSCR.G3",
+      "Radome": "NONE",
+      "SerialNumber": "3830153",
+      "ARP": "BPA",
+      "MarkerUp": "0.0792",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2018-05-03T14:30Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2001-04-17/CCYY-MM-DD"
+    },
+    "Name": "CHPI"
+  },
+  "CHTI": {
+    "X": -4607855.9,
+    "Y": -272375.8,
+    "Z": -4386954.5,
+    "Latitude": -43.735,
+    "Longitude": -176.617,
+    "Height": 76.101,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "5921R40133",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-09-22T07:52Z"
+    },
+    "Antenna": {
+      "Name": "TRM115000.00",
+      "Radome": "NONE",
+      "SerialNumber": "1441052895",
+      "ARP": "BAM",
+      "MarkerUp": "0.0020",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-10-31T00:35Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2007-12-10/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "CHTI00NZL0": {
+        "GPS": "1074",
+        "GLO": "1084",
+        "GAL": "1045,1046,1094",
+        "QZSS": "1044,1114",
+        "BDS": "1042,1124"
+      }
+    },
+    "Name": "CHTI"
+  },
+  "CHUR": {
+    "X": -236438.7,
+    "Y": -3307616.7,
+    "Z": 5430049.1,
+    "Latitude": 58.759,
+    "Longitude": -94.089,
+    "Height": -19.1,
+    "Receiver": {
+      "Name": "TPS NET-G3A",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "618-00844",
+      "FirmwareVersion": "4.7 Nov,23,2017 p6",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-03-19T16:50Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945E_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR620045037",
+      "ARP": "BPA",
+      "MarkerUp": "000.1000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2010-09-02T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL RUBIDIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2016-07-21"
+    },
+    "RealTime": {
+      "CHUR00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087"
+      }
+    },
+    "Name": "CHUR"
+  },
+  "CORD": {
+    "X": 2345503.9452,
+    "Y": -4910842.9601,
+    "Z": -3316365.5474,
+    "Latitude": -31.528,
+    "Longitude": -64.47,
+    "Height": 747.481,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "00892",
+      "FirmwareVersion": "4.1.01",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-15T00:36Z"
+    },
+    "Antenna": {
+      "Name": "TPSCR.G3",
+      "Radome": "NONE",
+      "SerialNumber": "383-0362",
+      "ARP": "BPA",
+      "MarkerUp": "0.0922",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-08-28T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1999-07-27/CCYY-MM-DD"
+    },
+    "Name": "CORD"
+  },
+  "CPVG": {
+    "X": 5626883.4267,
+    "Y": -2380932.5096,
+    "Z": 1824483.8747,
+    "Latitude": 16.732,
+    "Longitude": -22.935,
+    "Height": 94.494,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "6023R40120",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-09-20T11:45Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5138354328",
+      "ARP": "BPA",
+      "MarkerUp": "0.4300",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-10-22T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-10-22/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "CPVG00CPV0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "CPVG"
+  },
+  "CRO1": {
+    "X": 2607771.494,
+    "Y": -5488076.997,
+    "Z": 1932768.0602,
+    "Latitude": 17.757,
+    "Longitude": -64.584,
+    "Height": -31.092,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "3222540",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-03-12T17:00Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "SCIS",
+      "SerialNumber": "00843",
+      "ARP": "BPA",
+      "MarkerUp": "0.6435",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2015-09-24T17:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2021-03-12/CCYY-MM-DD"
+    },
+    "Name": "CRO1"
+  },
+  "CUT0": {
+    "X": -2364337.2699,
+    "Y": 4870285.5624,
+    "Z": -3360809.8398,
+    "Latitude": -32.004,
+    "Longitude": 115.895,
+    "Height": 24.403,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "5023K67889",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-04-30T03:30Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "4928353386",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-02-02T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2010-07-29/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "CUT000AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "CUT0"
+  },
+  "DAEJ": {
+    "X": -3120041.821,
+    "Y": 4084615.221,
+    "Z": 3764027.013,
+    "Latitude": 36.399,
+    "Longitude": 127.374,
+    "Height": 117.458,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "5412K48145",
+      "FirmwareVersion": "5.44",
+      "ElevCutoff": "5",
+      "DateInstalled": "2020-03-31T05:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "4923363230",
+      "ARP": "BPA",
+      "MarkerUp": "0.0",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2011-01-12T12:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10",
+      "EffectiveDates": "2010-09-15/CCYY-MM-DD"
+    },
+    "Name": "DAEJ"
+  },
+  "DARW": {
+    "X": -4091359.6122,
+    "Y": 4684606.4228,
+    "Z": -1408579.1258,
+    "Latitude": -12.844,
+    "Longitude": 131.133,
+    "Height": 125.51,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+BDS+IRNSS+GLO+GAL+QZSS",
+      "SerialNumber": "3070967",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "",
+      "DateInstalled": "2021-06-16T05:00Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "NONE",
+      "SerialNumber": "00687",
+      "ARP": "BPA",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2017-07-05T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2008-02-26/(CCYY-MM-DD)"
+    },
+    "Name": "DARW"
+  },
+  "DAV1": {
+    "X": 486854.4996,
+    "Y": 2285099.3657,
+    "Z": -5914955.7712,
+    "Latitude": -68.577,
+    "Longitude": 77.973,
+    "Height": 44.953,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+IRNSS+QZSS",
+      "SerialNumber": "3012255",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-09T23:27Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "09310018",
+      "ARP": "BPA",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2011-02-21T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2009-01-07/(CCYY-MM-DD)"
+    },
+    "Name": "DAV1"
+  },
+  "DGAR": {
+    "X": 1916269.343,
+    "Y": 6029977.689,
+    "Z": -801719.821,
+    "Latitude": -7.27,
+    "Longitude": 72.37,
+    "Height": -64.345,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3018561",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-28T00:52Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945E_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR620024214",
+      "ARP": "BPA",
+      "MarkerUp": "0.0814",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2004-05-18T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1996-04-20/CCYY-MM-DD"
+    },
+    "Name": "DGAR"
+  },
+  "DLF1": {
+    "X": 3924697.942,
+    "Y": 301124.893,
+    "Z": 5001905.154,
+    "Latitude": 51.986,
+    "Longitude": 4.387,
+    "Height": 76.283,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "5039K70764",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-16T15:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "10030006",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2011-04-15T10:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2011-06-22/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "DLF100NLD0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "DLF1"
+  },
+  "DRAO": {
+    "X": -2059164.682,
+    "Y": -3621108.388,
+    "Z": 4814432.366,
+    "Latitude": 49.323,
+    "Longitude": -119.625,
+    "Height": 542.291,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "3022792",
+      "FirmwareVersion": "5.2.0",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-05-31T05:00Z"
+    },
+    "Antenna": {
+      "Name": "TWIVC6050",
+      "Radome": "SCIS",
+      "SerialNumber": "710152202004170097",
+      "ARP": "BPA",
+      "MarkerUp": "0.100",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2021-09-02T22:45Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2019-05-31/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "DRAO00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1097"
+      }
+    },
+    "Name": "DRAO"
+  },
+  "DUBO": {
+    "X": -417603.6,
+    "Y": -4064529.8,
+    "Z": 4881432.16,
+    "Latitude": 50.259,
+    "Longitude": -95.866,
+    "Height": 245.695,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "3015989",
+      "FirmwareVersion": "5.2.0",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-02-07T00:10Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "NONE",
+      "SerialNumber": "464",
+      "ARP": "BPA",
+      "MarkerUp": "000.1000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2015-10-23T20:22Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL RUBIDIUM SYMMETRICOM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2014-03-26"
+    },
+    "RealTime": {
+      "DUBO00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1097"
+      }
+    },
+    "Name": "DUBO"
+  },
+  "FAIR": {
+    "X": -2281621.7717,
+    "Y": -1453595.9493,
+    "Z": 5756961.9444,
+    "Latitude": 64.978,
+    "Longitude": -147.499,
+    "Height": 319.623,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "3025777",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-04-14T00:00Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945G_M",
+      "Radome": "JPLA",
+      "SerialNumber": "CR5200348003",
+      "ARP": "BPA",
+      "MarkerUp": "0.0863",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2016-08-26T21:30Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2005-12-20/CCYY-MM-DD"
+    },
+    "Name": "FAIR"
+  },
+  "FLIN": {
+    "X": -766174.46,
+    "Y": -3611375.32,
+    "Z": 5184056.22,
+    "Latitude": 54.726,
+    "Longitude": -101.978,
+    "Height": 311.932,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "3024870",
+      "FirmwareVersion": "5.2.0",
+      "ElevCutoff": "5",
+      "DateInstalled": "2020-02-18T15:53Z"
+    },
+    "Antenna": {
+      "Name": "NOV750.R4",
+      "Radome": "NOVS",
+      "SerialNumber": "9470003",
+      "ARP": "BPA",
+      "MarkerUp": "000.1500",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2018-08-30T15:20Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1996-06-05"
+    },
+    "Name": "FLIN"
+  },
+  "FLRS": {
+    "X": 4221530.01,
+    "Y": -2549242.33,
+    "Z": 4031397.8,
+    "Latitude": 39.454,
+    "Longitude": -31.126,
+    "Height": 80.286,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "5923R40189",
+      "FirmwareVersion": "6.05",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-10-20T15:45Z"
+    },
+    "Antenna": {
+      "Name": "TRM159900.00",
+      "Radome": "NONE",
+      "SerialNumber": "5925338547",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2021-10-20T15:45Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2008-04-09/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "FLRS00PRT0": {
+        "GPS": "1004",
+        "GLO": "1012"
+      }
+    },
+    "Name": "FLRS"
+  },
+  "FTNA": {
+    "X": -6178322.4459,
+    "Y": -202694.9925,
+    "Z": -1566024.4684,
+    "Latitude": -14.308,
+    "Longitude": -178.121,
+    "Height": 85.262,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "5134K77907",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-25T12:05Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5112364069",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-05-20T08:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2012-05-20/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "FTNA00WLF0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "FTNA"
+  },
+  "FUNC": {
+    "X": 5143339.43,
+    "Y": -1563412.87,
+    "Z": 3421191.44,
+    "Latitude": 32.648,
+    "Longitude": -16.908,
+    "Height": 78.917,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "5923R40269",
+      "FirmwareVersion": "6.05",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-11-25T13:05Z"
+    },
+    "Antenna": {
+      "Name": "TRM159900.00",
+      "Radome": "NONE",
+      "SerialNumber": "5925338548",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2021-01-23T09:18Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2006-07-21/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "FUNC00PRT0": {
+        "GPS": "1075",
+        "GLO": "1085",
+        "GAL": "1095"
+      }
+    },
+    "Name": "FUNC"
+  },
+  "GANP": {
+    "X": 3929181.5,
+    "Y": 1455236.8,
+    "Z": 4793653.9,
+    "Latitude": 49.035,
+    "Longitude": 20.323,
+    "Height": 746.453,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "5813R40021",
+      "FirmwareVersion": "6.12",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-11-03T09:54Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "5620361622",
+      "ARP": "BPA",
+      "MarkerUp": "0.3830",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2017-02-06T10:40Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2002-09-04/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "GANP00SVK0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1095",
+        "QZSS": "1115",
+        "BDS": "1125"
+      }
+    },
+    "Name": "GANP"
+  },
+  "GLSV": {
+    "X": 3512889.29,
+    "Y": 2068980.654,
+    "Z": 4888903.261,
+    "Latitude": 50.364,
+    "Longitude": 30.497,
+    "Height": 227.227,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "5821R50277",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-07T17:40Z"
+    },
+    "Antenna": {
+      "Name": "TRM115000.00",
+      "Radome": "NONE",
+      "SerialNumber": "1551038935",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-06-24T08:05Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2008-11-04/CCYY-MM-DD"
+    },
+    "Name": "GLSV"
+  },
+  "GODZ": {
+    "X": 1130773.867,
+    "Y": -4831253.583,
+    "Z": 3994200.409,
+    "Latitude": 39.022,
+    "Longitude": -76.827,
+    "Height": 14.947,
+    "Receiver": {
+      "Name": "JPS EGGDT",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "LT2078",
+      "FirmwareVersion": "2.7.0",
+      "ElevCutoff": "0.0",
+      "DateInstalled": "2008-06-27T14:54Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "JPLA",
+      "SerialNumber": "129",
+      "ARP": "BPA",
+      "MarkerUp": "0.0614",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-01-30T18:15Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2011-03-02T18:10Z/CCYY-MM-DD"
+    },
+    "Name": "GODZ"
+  },
+  "GUAM": {
+    "X": -5071312.6574,
+    "Y": 3568363.6347,
+    "Z": 1488904.402,
+    "Latitude": 13.589,
+    "Longitude": 144.868,
+    "Height": 202.317,
+    "Receiver": {
+      "Name": "JAVAD TRE_3 DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "02327",
+      "FirmwareVersion": "4.1.01",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-27T02:45Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "SCIS",
+      "SerialNumber": "00842",
+      "ARP": "BPA",
+      "MarkerUp": "0.6229",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2019-03-07T00:58Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-01-20/CCYY-MM-DD"
+    },
+    "Name": "GUAM"
+  },
+  "HOB2": {
+    "X": -3950072.2469,
+    "Y": 2522415.3633,
+    "Z": -4311637.4024,
+    "Latitude": -42.805,
+    "Longitude": 147.439,
+    "Height": 41.458,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+IRNSS+QZSS",
+      "SerialNumber": "3012296",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-05T16:00Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "NONE",
+      "SerialNumber": "203",
+      "ARP": "BPA",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "1994-07-11T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2021-07-06/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "HOB200AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "HOB2"
+  },
+  "HOFN": {
+    "X": 2679689.848,
+    "Y": -727951.343,
+    "Z": 5722788.898,
+    "Latitude": 64.267,
+    "Longitude": -15.198,
+    "Height": 82.741,
+    "Receiver": {
+      "Name": "LEICA GR50",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+IRNSS+SBAS",
+      "SerialNumber": "1870639",
+      "FirmwareVersion": "4.50/7.710",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-19T10:30Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "725283",
+      "ARP": "BPA",
+      "MarkerUp": "0.0319",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-05-05T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1997-05-27/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "HOFN00ISL0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "HOFN"
+  },
+  "HRAO": {
+    "X": 5085352.597,
+    "Y": 2668395.992,
+    "Z": -2768731.551,
+    "Latitude": -25.89,
+    "Longitude": 27.687,
+    "Height": 1414.744,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS+IRNSS",
+      "SerialNumber": "3222770",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-03T17:14Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945E_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR6200610005",
+      "ARP": "BPA",
+      "MarkerUp": "0.0814",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-02-21T10:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2003-11-17/CCYY-MM-DD"
+    },
+    "Name": "HRAO"
+  },
+  "IENG": {
+    "X": 4476537.4,
+    "Y": 600431.46,
+    "Z": 4488761.34,
+    "Latitude": 45.015,
+    "Longitude": 7.639,
+    "Height": 317.049,
+    "Receiver": {
+      "Name": "SEPT POLARX4TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "3102220",
+      "FirmwareVersion": "2.9.6-patch2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2019-07-19T11:30Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_MC",
+      "Radome": "NONE",
+      "SerialNumber": "5261",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-04-11T07:05Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2018-04-10/CCYY-MM-DD"
+    },
+    "Name": "IENG"
+  },
+  "IISC": {
+    "X": 1337936.455,
+    "Y": 6070317.1261,
+    "Z": 1427876.7852,
+    "Latitude": 13.021,
+    "Longitude": 77.57,
+    "Height": 844.117,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3013572",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-29T19:43Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945E_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR6200548032",
+      "ARP": "BPA",
+      "MarkerUp": "0.078",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2008-07-10T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-10-01/CCYY-MM-DD"
+    },
+    "Name": "IISC"
+  },
+  "IQAL": {
+    "X": 1036001.02,
+    "Y": -2631455.56,
+    "Z": 5697819.69,
+    "Latitude": 63.756,
+    "Longitude": -68.51,
+    "Height": 92.142,
+    "Receiver": {
+      "Name": "TPS NET-G3A",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "618-00821",
+      "FirmwareVersion": "4.7 Nov,23,2017 p6",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-03-22T14:29Z"
+    },
+    "Antenna": {
+      "Name": "TPSCR.G3",
+      "Radome": "NONE",
+      "SerialNumber": "383-0408",
+      "ARP": "BPA",
+      "MarkerUp": "000.0500",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2009-09-26T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "10",
+      "EffectiveDates": "2013-08-19"
+    },
+    "RealTime": {
+      "IQAL00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087"
+      }
+    },
+    "Name": "IQAL"
+  },
+  "IRKJ": {
+    "X": -968328.35,
+    "Y": 3794426.541,
+    "Z": 5018167.196,
+    "Latitude": 52.219,
+    "Longitude": 104.316,
+    "Height": 502.409,
+    "Receiver": {
+      "Name": "JPS LEGACY",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "00517",
+      "FirmwareVersion": "2.6.0 OCT,24,2007",
+      "ElevCutoff": "0",
+      "DateInstalled": "2007-10-31"
+    },
+    "Antenna": {
+      "Name": "JPSREGANT_SD_E1",
+      "Radome": "NONE",
+      "SerialNumber": "RA0225",
+      "ARP": "BPA",
+      "MarkerUp": "0.1280",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2001-07-24T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5",
+      "EffectiveDates": "2019-01-27/CCYY-MM-DD"
+    },
+    "Name": "IRKJ"
+  },
+  "JOG2": {
+    "X": -2200208.0871,
+    "Y": 5924895.6273,
+    "Z": -855929.2334,
+    "Latitude": -7.764,
+    "Longitude": 110.372,
+    "Height": 174.776,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL+QZSS",
+      "SerialNumber": "212",
+      "FirmwareVersion": "3.7.10",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-11-11T12:39Z"
+    },
+    "Antenna": {
+      "Name": "JAV_RINGANT_G3T",
+      "Radome": "NONE",
+      "SerialNumber": "323",
+      "ARP": "BAM",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-02-06T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2004-12-08/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "JOG200IDN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1117"
+      }
+    },
+    "Name": "JOG2"
+  },
+  "JPLM": {
+    "X": -2493304.6796,
+    "Y": -4655215.1032,
+    "Z": 3565497.5918,
+    "Latitude": 34.205,
+    "Longitude": -118.173,
+    "Height": 424.456,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "3025665",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-02-02T21:30Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "NONE",
+      "SerialNumber": "422",
+      "ARP": "BPA",
+      "MarkerUp": "0.061",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "1994-06-14T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2018-11-30/CCYY-MM-DD"
+    },
+    "Name": "JPLM"
+  },
+  "KERG": {
+    "X": 1406337,
+    "Y": 3918161,
+    "Z": -4816167,
+    "Latitude": -49.351,
+    "Longitude": 70.256,
+    "Height": 73.049,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5048K71849",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-25T16:05Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945E_M",
+      "Radome": "SNOW",
+      "SerialNumber": "CR6200539022",
+      "ARP": "BPA",
+      "MarkerUp": "0.4200",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2008-09-05T11:40Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2011-01-24/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "KERG00ATF0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "KERG"
+  },
+  "KIR8": {
+    "X": 2248127.371,
+    "Y": 865685.468,
+    "Z": 5886424.301,
+    "Latitude": 67.878,
+    "Longitude": 21.06,
+    "Height": 498.43,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "5818R40021",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-06-17T13:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "09030016",
+      "ARP": "BPA",
+      "MarkerUp": "0.0030",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2011-08-12"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2018-08-02/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "KIR800SWE0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "KIR8"
+  },
+  "KIT3": {
+    "X": 1944944.8306,
+    "Y": 4556652.418,
+    "Z": 4004326.1235,
+    "Latitude": 39.135,
+    "Longitude": 66.885,
+    "Height": 623.025,
+    "Receiver": {
+      "Name": "SEPT ASTERX4",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "3047011",
+      "FirmwareVersion": "4.8.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-20T11:24Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5478",
+      "ARP": "BPA",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-08-28T06:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1994-10-14/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "KIT300UZB0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "KIT3"
+  },
+  "KOKV": {
+    "X": -5543838.3609,
+    "Y": -2054586.6103,
+    "Z": 2387810.1225,
+    "Latitude": 22.126,
+    "Longitude": -159.665,
+    "Height": 1167.93,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO+BDS+QZSS",
+      "SerialNumber": "01517",
+      "FirmwareVersion": "4.1.01",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-29T22:31Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945G_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR6200342010",
+      "ARP": "BPA",
+      "MarkerUp": "0.0614",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2021-03-25T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2007-07-18/CCYY-MM-DD"
+    },
+    "Name": "KOKV"
+  },
+  "KOUG": {
+    "X": 3855263,
+    "Y": -5049731,
+    "Z": 563040,
+    "Latitude": 5.098,
+    "Longitude": -52.64,
+    "Height": 106.614,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "17323022503",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T14:03Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "10180007",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-03-25T14:37Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "KOUG00GUF0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "KOUG"
+  },
+  "KRGG": {
+    "X": 1406336.2099,
+    "Y": 3918154.6213,
+    "Z": -4816172.8453,
+    "Latitude": -49.352,
+    "Longitude": 70.256,
+    "Height": 73.4,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS+IRNSS",
+      "SerialNumber": "5829R40084",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-18T07:20Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "10301029",
+      "ARP": "BPA",
+      "MarkerUp": "  1.0332",
+      "MarkerNorth": "  0.0004",
+      "MarkerEast": "  0.0034",
+      "DateInstalled": "2017-02-02T10:58Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2012-03-27/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "KRGG00ATF0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "KRGG"
+  },
+  "LAMA": {
+    "X": 3524523,
+    "Y": 1329693,
+    "Z": 5129846,
+    "Latitude": 53.892,
+    "Longitude": 20.67,
+    "Height": 187.09,
+    "Receiver": {
+      "Name": "LEICA GRX1200+GNSS",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "351072",
+      "FirmwareVersion": "9.20/6.112",
+      "ElevCutoff": "0",
+      "DateInstalled": "2018-08-17T14:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAT504GG",
+      "Radome": "LEIS",
+      "SerialNumber": "200033",
+      "ARP": "BPA",
+      "MarkerUp": "0.0600",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2007-11-17T19:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2001-07-24/CCYY-MM-DD"
+    },
+    "Name": "LAMA"
+  },
+  "LHAZ": {
+    "X": -106943.5,
+    "Y": 5549296.14,
+    "Z": 3139212.6,
+    "Latitude": 29.657,
+    "Longitude": 91.104,
+    "Height": 3646.671,
+    "Receiver": {
+      "Name": "LEICA GR25",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1831026",
+      "FirmwareVersion": "4.50/6.713",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-21T11:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "08430006",
+      "ARP": "BPA",
+      "MarkerUp": "000.1330",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2016-03-16T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1999-09-22/CCYY-MM-DD"
+    },
+    "Name": "LHAZ"
+  },
+  "LMMF": {
+    "X": 2993387.952,
+    "Y": -5399363.731,
+    "Z": 1596748.042,
+    "Latitude": 14.595,
+    "Longitude": -60.996,
+    "Height": -26.566,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5813R40029",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-09-30T15:30Z"
+    },
+    "Antenna": {
+      "Name": "TRM57971.00",
+      "Radome": "NONE",
+      "SerialNumber": "5311118262",
+      "ARP": "BAM",
+      "MarkerUp": "0.00",
+      "MarkerNorth": "0.00",
+      "MarkerEast": "0.00",
+      "DateInstalled": "2013-06-24T13:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2008-07-11/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "LMMF00MTQ0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "LMMF"
+  },
+  "LPAL": {
+    "X": 5326648,
+    "Y": -1719828,
+    "Z": 3052056,
+    "Latitude": 28.764,
+    "Longitude": -17.894,
+    "Height": 2207.444,
+    "Receiver": {
+      "Name": "LEICA GRX1200GGPRO",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "355499",
+      "FirmwareVersion": "8.71/3.822",
+      "ElevCutoff": "0",
+      "DateInstalled": "2013-05-14T11:07Z"
+    },
+    "Antenna": {
+      "Name": "LEIAT504GG",
+      "Radome": "NONE",
+      "SerialNumber": "200625",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2008-07-09T10:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2001-05-17/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "LPAL00ESP0": {
+        "GPS": "1004,1019",
+        "GLO": "1012,1020"
+      }
+    },
+    "Name": "LPAL"
+  },
+  "LPGS": {
+    "X": 2780102.9896,
+    "Y": -4437418.9149,
+    "Z": -3629404.5253,
+    "Latitude": -34.907,
+    "Longitude": -57.932,
+    "Height": 30.286,
+    "Receiver": {
+      "Name": "JAVAD TRE_3",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "02074",
+      "FirmwareVersion": "4.1.01-210527",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-06-24T07:37Z"
+    },
+    "Antenna": {
+      "Name": "JAV_RINGANT_G3T",
+      "Radome": "NONE",
+      "SerialNumber": "349",
+      "ARP": "BAM",
+      "MarkerUp": "0.0690",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2021-05-12T15:45Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2012-03-15/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "LPGS00ARG0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "LPGS"
+  },
+  "MAC1": {
+    "X": -3464038.4875,
+    "Y": 1334172.7432,
+    "Z": -5169224.4229,
+    "Latitude": -54.5,
+    "Longitude": 158.936,
+    "Height": -6.259,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3012260",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-10T00:02Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "SCIS",
+      "SerialNumber": "01514",
+      "ARP": "BPA",
+      "MarkerUp": "000.0530",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2016-11-29T04:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-06-27/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "MAC100AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "MAC1"
+  },
+  "MAJU": {
+    "X": -6257572.5057,
+    "Y": 950332.3662,
+    "Z": 785215.1556,
+    "Latitude": 7.119,
+    "Longitude": 171.365,
+    "Height": 34.252,
+    "Receiver": {
+      "Name": "SEPT POLARX4TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "3007661",
+      "FirmwareVersion": "2.9.6",
+      "ElevCutoff": "0",
+      "DateInstalled": "2017-04-27T00:00Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "NONE",
+      "SerialNumber": "01513",
+      "ARP": "BPA",
+      "MarkerUp": "000.0016",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2015-06-10T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2007-05-22/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "MAJU00MHL0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1127"
+      }
+    },
+    "Name": "MAJU"
+  },
+  "MAL2": {
+    "X": 4865385.694,
+    "Y": 4110717.189,
+    "Z": -331137.637,
+    "Latitude": -2.996,
+    "Longitude": 40.194,
+    "Height": -20.507,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "4502482",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-19T12:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "NONE",
+      "SerialNumber": "725234",
+      "ARP": "BPA",
+      "MarkerUp": "0.000",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2013-04-04T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL ",
+      "InputFrequency": "",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "MAL200KEN0": {
+        "GPS": "1019,1077"
+      }
+    },
+    "Name": "MAL2"
+  },
+  "MAR7": {
+    "X": 2998198.758,
+    "Y": 931449.71,
+    "Z": 5533392.638,
+    "Latitude": 60.595,
+    "Longitude": 17.258,
+    "Height": 74.701,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5813R40025",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-06-17T13:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "09040009",
+      "ARP": "BPA",
+      "MarkerUp": "0.0030",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2011-04-27"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2018-02-09/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "MAR700SWE0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "MAR7"
+  },
+  "MAS1": {
+    "X": 5439192.263,
+    "Y": -1522055.61,
+    "Z": 2953454.72,
+    "Latitude": 27.764,
+    "Longitude": -15.633,
+    "Height": 197.57,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "4503021",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-19T12:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "NONE",
+      "SerialNumber": "725055",
+      "ARP": "BPA",
+      "MarkerUp": "0.0330",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-06-18T14:20Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2012-09-27/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "MAS100ESP0": {
+        "GPS": "1019,1077"
+      }
+    },
+    "Name": "MAS1"
+  },
+  "MAT1": {
+    "X": 4641951.507,
+    "Y": 1393053.602,
+    "Z": 4133280.821,
+    "Latitude": 40.649,
+    "Longitude": 16.705,
+    "Height": 534.947,
+    "Receiver": {
+      "Name": "LEICA GR30",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1705344",
+      "FirmwareVersion": "4.20/7.300",
+      "ElevCutoff": "0",
+      "DateInstalled": "2018-07-25T08:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR20",
+      "Radome": "NONE",
+      "SerialNumber": "19203021",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2017-07-05T14:15Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-12-03/CCYY-MM-DD"
+    },
+    "Name": "MAT1"
+  },
+  "MAW1": {
+    "X": 1111287.138,
+    "Y": 2168911.297,
+    "Z": -5874493.644,
+    "Latitude": -67.605,
+    "Longitude": 62.871,
+    "Height": 59.633,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3015977",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-13T07:42Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "AUST",
+      "SerialNumber": "275",
+      "ARP": "BPA",
+      "MarkerUp": "000.0035",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "1994-01-01T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1994-01-01/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "MAW100ATA0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "MAW1"
+  },
+  "MAYG": {
+    "X": 4379104.6069,
+    "Y": 4418744.4751,
+    "Z": -1401897.9428,
+    "Latitude": -12.782,
+    "Longitude": 45.258,
+    "Height": -15.947,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS+IRNSS",
+      "SerialNumber": "5945R40081",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-09-24T07:25Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5316354663",
+      "ARP": "BPA",
+      "MarkerUp": "3.0356",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-11-21T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-11-21/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "MAYG00MYT0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "MAYG"
+  },
+  "MCM4": {
+    "X": -1311703.172,
+    "Y": 310814.982,
+    "Z": -6213255.16,
+    "Latitude": -77.838,
+    "Longitude": 166.669,
+    "Height": 98.476,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL+QZSS",
+      "SerialNumber": "01705",
+      "FirmwareVersion": "4.1.01",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-15T23:54Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "JPLA",
+      "SerialNumber": "363",
+      "ARP": "BPA",
+      "MarkerUp": "0.0814",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-01-24T22:45Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2009-07-30/CCYY-MM-DD"
+    },
+    "Name": "MCM4"
+  },
+  "MDVJ": {
+    "X": 2845456.3,
+    "Y": 2160954.3,
+    "Z": 5265993.4,
+    "Latitude": 56.021,
+    "Longitude": 37.215,
+    "Height": 257.815,
+    "Receiver": {
+      "Name": "TPS NETG3",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "401",
+      "FirmwareVersion": "4.0 Mar,20,2019 p7",
+      "ElevCutoff": "0",
+      "DateInstalled": "2019-04-04T09:15Z"
+    },
+    "Antenna": {
+      "Name": "JPSREGANT_DD_E1",
+      "Radome": "NONE",
+      "SerialNumber": "RA0195",
+      "ARP": "BPA",
+      "MarkerUp": "0.1660",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2001-07-18"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2001-07-18/CCYY-MM-DD"
+    },
+    "Name": "MDVJ"
+  },
+  "METG": {
+    "X": 2890652.5,
+    "Y": 1310295.548,
+    "Z": 5513958.877,
+    "Latitude": 60.242,
+    "Longitude": 24.384,
+    "Height": 60.115,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS+IRNSS",
+      "SerialNumber": "19363057616",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T13:20Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "5208354398",
+      "ARP": "BPA",
+      "MarkerUp": "2.0352",
+      "MarkerNorth": "0.0046",
+      "MarkerEast": "0.0020",
+      "DateInstalled": "2016-10-19T07:31Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2012-07-03/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "METG00FIN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "METG"
+  },
+  "MGUE": {
+    "X": 1823327.909,
+    "Y": -4850352.447,
+    "Z": -3709085.536,
+    "Latitude": -35.777,
+    "Longitude": -69.398,
+    "Height": 1554.141,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "3025427",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "",
+      "DateInstalled": "2021-01-19T13:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "NONE",
+      "SerialNumber": "725120",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-06-21"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2013-10-28/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "MGUE00ARG0": {
+        "GPS": "1019,1077"
+      }
+    },
+    "Name": "MGUE"
+  },
+  "MIZU": {
+    "X": -3857167.6484,
+    "Y": 3108694.9138,
+    "Z": 4004041.6876,
+    "Latitude": 39.135,
+    "Longitude": 141.133,
+    "Height": 117.427,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "3051468",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-04-23T01:15Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5474",
+      "ARP": "BPA",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-09-18T13:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2016-02-11/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "MIZU00JPN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "MIZU"
+  },
+  "MKEA": {
+    "X": -5464105.317,
+    "Y": -2495165.842,
+    "Z": 2148291.476,
+    "Latitude": 19.801,
+    "Longitude": -155.456,
+    "Height": 3755.067,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "3013571",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-02-02T18:33Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "SCIS",
+      "SerialNumber": "00983",
+      "ARP": "BPA",
+      "MarkerUp": "0.00",
+      "MarkerNorth": "0.00",
+      "MarkerEast": "0.00",
+      "DateInstalled": "2020-01-23T21:20Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2019-12-17/CCYY-MM-DD)"
+    },
+    "Name": "MKEA"
+  },
+  "MOBS": {
+    "X": -4130636.754,
+    "Y": 2894953.14,
+    "Z": -3890530.236,
+    "Latitude": -37.829,
+    "Longitude": 144.975,
+    "Height": 40.989,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+QZSS+GLO+GAL+IRNSS+BDS",
+      "SerialNumber": "3062371",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-04-21T01:29Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_DM",
+      "Radome": "NONE",
+      "SerialNumber": "02178",
+      "ARP": "BPA",
+      "MarkerUp": "000.0021",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2021-10-27T22:38Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2002-10-29/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "MOBS00AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "MOBS"
+  },
+  "MRO1": {
+    "X": -2556630.0377,
+    "Y": 5097138.2766,
+    "Z": -2848384.7814,
+    "Latitude": -26.697,
+    "Longitude": 116.637,
+    "Height": 354.463,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+QZSS+GLO+GAL+BDS",
+      "SerialNumber": "5207K82181",
+      "FirmwareVersion": "5.44",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-04-03T05:44Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5220354494",
+      "ARP": "BPA",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2013-10-23T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-10-23/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "MRO100AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "MRO1"
+  },
+  "NANO": {
+    "X": -2335726.73,
+    "Y": -3451608.329,
+    "Z": 4812009.971,
+    "Latitude": 49.295,
+    "Longitude": -124.086,
+    "Height": 6.989,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "3016115",
+      "FirmwareVersion": "5.3.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-03-29T00:00Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "SPKE",
+      "SerialNumber": "5149",
+      "ARP": "BPA",
+      "MarkerUp": "0.0771",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2018-02-14T22:38Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL CLOCK STEERING",
+      "InputFrequency": "",
+      "EffectiveDates": "2003-01-09/CCYY-MM-DD"
+    },
+    "Name": "NANO"
+  },
+  "NICO": {
+    "X": 4359417.88,
+    "Y": 2874117.01,
+    "Z": 3650778.27,
+    "Latitude": 35.141,
+    "Longitude": 33.396,
+    "Height": 192.145,
+    "Receiver": {
+      "Name": "LEICA GR50",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1830231",
+      "FirmwareVersion": "4.50/7.710",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-20T12:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "725285",
+      "ARP": "BPA",
+      "MarkerUp": "0.0650",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-07-16T11:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1997-05-14/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "NICO00CYP0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "NICO"
+  },
+  "NIST": {
+    "X": -1288398.36,
+    "Y": -4721697.04,
+    "Z": 4078625.5,
+    "Latitude": 39.995,
+    "Longitude": -105.263,
+    "Height": 1648.912,
+    "Receiver": {
+      "Name": "NOV OEM4-G2",
+      "SatelliteSystem": "GPS",
+      "SerialNumber": "SWU04029169",
+      "FirmwareVersion": "2.200-L1L2W",
+      "ElevCutoff": "5.0",
+      "DateInstalled": "2006-05-10T00:00Z"
+    },
+    "Antenna": {
+      "Name": "NOV702",
+      "Radome": "NONE",
+      "SerialNumber": "04230007",
+      "ARP": "BAM",
+      "MarkerUp": "0.0",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2006-05-10T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2006-05-10/CCYY-MM-DD"
+    },
+    "Name": "NIST"
+  },
+  "NKLG": {
+    "X": 6287385.7333,
+    "Y": 1071574.6758,
+    "Z": 39132.0395,
+    "Latitude": 0.354,
+    "Longitude": 9.672,
+    "Height": 31.89,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS+IRNSS",
+      "SerialNumber": "17323022492",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T10:10Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "4811A48439",
+      "ARP": "BPA",
+      "MarkerUp": "  3.0430",
+      "MarkerNorth": "-0.0015",
+      "MarkerEast": "-0.0025",
+      "DateInstalled": "2013-03-29T11:40Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2010-05-05T16:00Z/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "NKLG00GAB0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "NKLG"
+  },
+  "NOT1": {
+    "X": 4934528.669,
+    "Y": 1321262.251,
+    "Z": 3806479.508,
+    "Latitude": 36.876,
+    "Longitude": 14.99,
+    "Height": 126.657,
+    "Receiver": {
+      "Name": "LEICA GR30",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1705437",
+      "FirmwareVersion": "4.20/7.300",
+      "ElevCutoff": "0",
+      "DateInstalled": "2018-07-26T07:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR20",
+      "Radome": "NONE",
+      "SerialNumber": "19203022",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2017-10-11T09:30Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2017-10-11/CCYY-MM-DD"
+    },
+    "Name": "NOT1"
+  },
+  "NOVM": {
+    "X": 452261.2,
+    "Y": 3635877.47,
+    "Z": 5203453.26,
+    "Latitude": 55.031,
+    "Longitude": 82.909,
+    "Height": 150.418,
+    "Receiver": {
+      "Name": "JPS LEGACY",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "00202",
+      "FirmwareVersion": "2.6.0 OCT,24,2007",
+      "ElevCutoff": "10",
+      "DateInstalled": "2011-08-18"
+    },
+    "Antenna": {
+      "Name": "JPSREGANT_SD_E1",
+      "Radome": "NONE",
+      "SerialNumber": "RA0038",
+      "ARP": "BPA",
+      "MarkerUp": "0.0800",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2006-11-07"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "5",
+      "EffectiveDates": "2001-07-24/CCYY-MM-DD"
+    },
+    "Name": "NOVM"
+  },
+  "NTUS": {
+    "X": -1508022,
+    "Y": 6195580,
+    "Z": 148800,
+    "Latitude": 1.346,
+    "Longitude": 103.68,
+    "Height": 78.867,
+    "Receiver": {
+      "Name": "LEICA GR50",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "1832415",
+      "FirmwareVersion": "4.20/7.300",
+      "ElevCutoff": "0",
+      "DateInstalled": "2018-04-18T02:50Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR20",
+      "Radome": "LEIM",
+      "SerialNumber": "20288014",
+      "ARP": "BAM",
+      "MarkerUp": "0.0776",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2018-04-18T02:50Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1997-06-26/CCYY-MM-DD"
+    },
+    "Name": "NTUS"
+  },
+  "NYA2": {
+    "X": 1202379.31,
+    "Y": 252474.654,
+    "Z": 6237786.542,
+    "Latitude": 78.93,
+    "Longitude": 11.859,
+    "Height": 81.914,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "3051453",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-20T10:41Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_G5T",
+      "Radome": "NONE",
+      "SerialNumber": "3231C",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-08-08T10:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-06-19/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "NYA200NOR0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "NYA2"
+  },
+  "OHI3": {
+    "X": 1525808.9,
+    "Y": -2432478.5,
+    "Z": -5676166,
+    "Latitude": -63.321,
+    "Longitude": -57.901,
+    "Height": 32.674,
+    "Receiver": {
+      "Name": "LEICA GR50",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1830508",
+      "FirmwareVersion": "4.50/7.710",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-19T09:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "725282",
+      "ARP": "BPA",
+      "MarkerUp": "000.0660",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2013-09-28T16:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-Maser",
+      "InputFrequency": "5",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "OHI300ATA0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "OHI3"
+  },
+  "ONS1": {
+    "X": 3370667.198,
+    "Y": 711818.723,
+    "Z": 5349787.879,
+    "Latitude": 57.395,
+    "Longitude": 11.925,
+    "Height": 44.858,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5841R40051",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-03-19T00:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "08520002",
+      "ARP": "BPA",
+      "MarkerUp": "0.0030",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-01-28"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2013-05-29/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "ONS100SWE0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "ONS1"
+  },
+  "OPMT": {
+    "X": 4202777.3831,
+    "Y": 171367.9881,
+    "Z": 4778660.1844,
+    "Latitude": 48.836,
+    "Longitude": 2.335,
+    "Height": 123.015,
+    "Receiver": {
+      "Name": "ASHTECH Z-XII3T",
+      "SatelliteSystem": "GPS",
+      "SerialNumber": "02942",
+      "FirmwareVersion": "1L01-1D04",
+      "ElevCutoff": "5",
+      "DateInstalled": "2001-07-01T00:00Z"
+    },
+    "Antenna": {
+      "Name": "3S-02-TSADM",
+      "Radome": "NONE",
+      "SerialNumber": "00019",
+      "ARP": "TOP",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2001-07-01T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL UTC(OP)",
+      "InputFrequency": "1 PPS and 20 ",
+      "EffectiveDates": "2015-08-26/CCYY-MM-DD"
+    },
+    "Name": "OPMT"
+  },
+  "OUS2": {
+    "X": -4387890.8367,
+    "Y": 733420.3903,
+    "Z": -4555176.3706,
+    "Latitude": -45.869,
+    "Longitude": 170.511,
+    "Height": 26.545,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "3051412",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-03T20:45Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5395",
+      "ARP": "BPA",
+      "MarkerUp": "0.0711",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-09-25T08:30Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2006-06-19/CCYY-MM-DD"
+    },
+    "Name": "OUS2"
+  },
+  "PADO": {
+    "X": 4388882.41,
+    "Y": 924567.03,
+    "Z": 4519588.45,
+    "Latitude": 45.411,
+    "Longitude": 11.896,
+    "Height": 65.126,
+    "Receiver": {
+      "Name": "STONEX SC2200",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+IRNSS+SBAS",
+      "SerialNumber": "SC22A9071007E",
+      "FirmwareVersion": "2.12-210201-STX",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-03-11T09:15Z"
+    },
+    "Antenna": {
+      "Name": "STXSA1500",
+      "Radome": "STXG",
+      "SerialNumber": "C18119000473",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-11-23T09:35Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2001-11-21/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "PADO00ITA0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "PADO"
+  },
+  "PARK": {
+    "X": -4554255.2187,
+    "Y": 2816652.4462,
+    "Z": -3454059.7028,
+    "Latitude": -32.999,
+    "Longitude": 148.265,
+    "Height": 397.79,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+QZSS+GLO+GAL+BDS",
+      "SerialNumber": "3055081",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-11T03:36Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945C_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR620011902",
+      "ARP": "BPA",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2005-07-18T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2006-07-18/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "PARK00AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "PARK"
+  },
+  "PDEL": {
+    "X": 4551596.139,
+    "Y": -2186893.415,
+    "Z": 3883410.679,
+    "Latitude": 37.748,
+    "Longitude": -25.663,
+    "Height": 111.18,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "5841R40011",
+      "FirmwareVersion": "6.05",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-10-18T13:29Z"
+    },
+    "Antenna": {
+      "Name": "TRM159900.00",
+      "Radome": "NONE",
+      "SerialNumber": "5925338556",
+      "ARP": "BPA",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2021-10-15T10:27Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2000-01-16/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "PDEL00PRT0": {
+        "GPS": "1075",
+        "GLO": "1085",
+        "GAL": "1095"
+      }
+    },
+    "Name": "PDEL"
+  },
+  "PIMO": {
+    "X": -3186293.8,
+    "Y": 5286624.28,
+    "Z": 1601158.31,
+    "Latitude": 14.636,
+    "Longitude": 121.078,
+    "Height": 95.936,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO+BDS+QZSS",
+      "SerialNumber": "01524",
+      "FirmwareVersion": "4.1.01",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-07-08T17:29Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945C_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR620010502",
+      "ARP": "BPA",
+      "MarkerUp": "0.0792",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2005-09-22T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1998-07-01/CCYY-MM-DD"
+    },
+    "Name": "PIMO"
+  },
+  "POTS": {
+    "X": 3800689.634,
+    "Y": 882077.386,
+    "Z": 5028791.318,
+    "Latitude": 52.379,
+    "Longitude": 13.066,
+    "Height": 144.853,
+    "Receiver": {
+      "Name": "JAVAD TRE_3",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "4171773",
+      "FirmwareVersion": "4.1.03-210713",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-10-07T13:26Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_G5T",
+      "Radome": "NONE",
+      "SerialNumber": "6077C",
+      "ARP": "BAM",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-10-06T08:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2012-08-08/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "POTS00DEU0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "POTS"
+  },
+  "PTBB": {
+    "X": 3844060.11,
+    "Y": 709661.2,
+    "Z": 5023129.46,
+    "Latitude": 52.296,
+    "Longitude": 10.46,
+    "Height": 130.681,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+IRNSS+SBAS",
+      "SerialNumber": "3034575",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-02-02T08:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "726333",
+      "ARP": "BPA",
+      "MarkerUp": "0.0590",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-03-26T14:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL ACTIVE H-MASER",
+      "InputFrequency": "20 ",
+      "EffectiveDates": "2010-01-28/CCYY-MM-DD"
+    },
+    "Name": "PTBB"
+  },
+  "RAMO": {
+    "X": 4514719.1,
+    "Y": 3133506,
+    "Z": 3228042.6,
+    "Latitude": 30.598,
+    "Longitude": 34.763,
+    "Height": 893.501,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "02628",
+      "FirmwareVersion": "3.6.14",
+      "ElevCutoff": "0",
+      "DateInstalled": "2019-01-15"
+    },
+    "Antenna": {
+      "Name": "ASH701945B_M",
+      "Radome": "SNOW",
+      "SerialNumber": "CR20014604",
+      "ARP": "BPA",
+      "MarkerUp": "0.0030",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2004-03-18T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1998-06-10/CCYY-MM-DD"
+    },
+    "Name": "RAMO"
+  },
+  "REUN": {
+    "X": 3364099.1673,
+    "Y": 4907944.4587,
+    "Z": -2293466.897,
+    "Latitude": -21.208,
+    "Longitude": 55.572,
+    "Height": 1558.807,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "3015948",
+      "FirmwareVersion": "5.3.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-02-13T10:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM55971.00",
+      "Radome": "NONE",
+      "SerialNumber": "30976568",
+      "ARP": "BAM",
+      "MarkerUp": "000.0610",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2008-12-03T12:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1997-10-14/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "REUN00REU0": {
+        "GPS": "1019,1074",
+        "GLO": "1020,1084",
+        "GAL": "1045,1046,1094",
+        "QZSS": "1044,1114",
+        "BDS": "1042,1124"
+      }
+    },
+    "Name": "REUN"
+  },
+  "REYK": {
+    "X": 2587384.533,
+    "Y": -1043033.497,
+    "Z": 5716564.008,
+    "Latitude": 64.139,
+    "Longitude": -21.955,
+    "Height": 93.54,
+    "Receiver": {
+      "Name": "LEICA GR50",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+IRNSS+SBAS",
+      "SerialNumber": "1830137",
+      "FirmwareVersion": "4.50/7.710",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-19T10:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "LEIT",
+      "SerialNumber": "725281",
+      "ARP": "BPA",
+      "MarkerUp": "0.0635",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2019-05-14T18:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-11-02/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "REYK00ISL0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "REYK"
+  },
+  "RGDG": {
+    "X": 1429870.3961,
+    "Y": -3495334.7685,
+    "Z": -5122723.0071,
+    "Latitude": -53.786,
+    "Longitude": -67.752,
+    "Height": 32.8,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5823R40011",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-25T09:32Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "5222354514",
+      "ARP": "BPA",
+      "MarkerUp": "0.4200",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2018-07-10T15:30Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-06-20/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "RGDG00ARG0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "RGDG"
+  },
+  "RIO2": {
+    "X": 1429907.7834,
+    "Y": -3495354.8119,
+    "Z": -5122698.6553,
+    "Latitude": -53.785,
+    "Longitude": -67.751,
+    "Height": 32.477,
+    "Receiver": {
+      "Name": "SEPT ASTERX4",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "3046694",
+      "FirmwareVersion": "4.8.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-20T11:38Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5482",
+      "ARP": "BPA",
+      "MarkerUp": "0.0690",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-02-20T15:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2007-04-28/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "RIO200ARG0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "RIO2"
+  },
+  "SCH2": {
+    "X": 1448636.93,
+    "Y": -3385243.67,
+    "Z": 5191046.95,
+    "Latitude": 54.832,
+    "Longitude": -66.833,
+    "Height": 498.624,
+    "Receiver": {
+      "Name": "JAVAD TRE_3N DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "02686",
+      "FirmwareVersion": "3.7.5p1 Jan,23,2019",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-04-02T18:44Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945E_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR620045048",
+      "ARP": "BPA",
+      "MarkerUp": "000.1000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2015-08-07T03:31Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2013-01-21"
+    },
+    "Name": "SCH2"
+  },
+  "SCRZ": {
+    "X": 2743005.924,
+    "Y": -5420745.291,
+    "Z": -1937117.112,
+    "Latitude": -17.797,
+    "Longitude": -63.16,
+    "Height": 442.51,
+    "Receiver": {
+      "Name": "LEICA GR10",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1700881",
+      "FirmwareVersion": "4.12/6.712",
+      "ElevCutoff": "0",
+      "DateInstalled": "2019-02-20T09:05Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR10",
+      "Radome": "NONE",
+      "SerialNumber": "14206107",
+      "ARP": "BAM",
+      "MarkerUp": "0.0000",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2012-11-17T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL ",
+      "InputFrequency": "",
+      "EffectiveDates": ""
+    },
+    "Name": "SCRZ"
+  },
+  "SEYG": {
+    "X": 3597836,
+    "Y": 5240884,
+    "Z": -516781,
+    "Latitude": -4.679,
+    "Longitude": 55.531,
+    "Height": -37.238,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS+IRNSS",
+      "SerialNumber": "19363057554",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T12:55Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5037353964",
+      "ARP": "BPA",
+      "MarkerUp": "0.5193",
+      "MarkerNorth": "-0.0011",
+      "MarkerEast": "-0.0010",
+      "DateInstalled": "2012-06-20T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2012-06-20/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "SEYG00SYC0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "SEYG"
+  },
+  "SGOC": {
+    "X": 1113280.0609,
+    "Y": 6233644.2886,
+    "Z": 760276.9549,
+    "Latitude": 6.892,
+    "Longitude": 79.874,
+    "Height": -78.095,
+    "Receiver": {
+      "Name": "JAVAD TRE_3",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "4171601",
+      "FirmwareVersion": "4.1.01-210527",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-06-21T08:30Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_G5T",
+      "Radome": "NONE",
+      "SerialNumber": "6076C",
+      "ARP": "BAM",
+      "MarkerUp": "0.1300",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2018-09-20T05:20Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2011-12-12/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "SGOC00LKA0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "SGOC"
+  },
+  "SOFI": {
+    "X": 4319372.39,
+    "Y": 1868687.57,
+    "Z": 4292063.8,
+    "Latitude": 42.556,
+    "Longitude": 23.395,
+    "Height": 1120.009,
+    "Receiver": {
+      "Name": "LEICA GR50",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "1831025",
+      "FirmwareVersion": "4.50/7.710",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-26T09:25Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "09160008",
+      "ARP": "BPA",
+      "MarkerUp": "0.2200",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2010-04-29T13:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1997-05-19/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "SOFI00BGR0": {
+        "GPS": "1019,1075",
+        "GLO": "1020,1085",
+        "GAL": "1045,1046,1095",
+        "BDS": "1042,1125"
+      }
+    },
+    "Name": "SOFI"
+  },
+  "STFU": {
+    "X": -2700404.18,
+    "Y": -4292605.52,
+    "Z": 3855137.41,
+    "Latitude": 37.427,
+    "Longitude": -122.173,
+    "Height": 20.834,
+    "Receiver": {
+      "Name": "JAVAD TRE_G3TH DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL+SBAS",
+      "SerialNumber": "00184",
+      "FirmwareVersion": "3.7.10",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-11-02T14:10Z"
+    },
+    "Antenna": {
+      "Name": "TRM57971.00",
+      "Radome": "NONE",
+      "SerialNumber": "30123268",
+      "ARP": "BAM",
+      "MarkerUp": "000.0000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2009-12-09T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL RUBIDIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2018-04-24/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "STFU00USA0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097"
+      }
+    },
+    "Name": "STFU"
+  },
+  "STHL": {
+    "X": 6104817.308,
+    "Y": -605827.996,
+    "Z": -1740738.865,
+    "Latitude": -15.943,
+    "Longitude": -5.667,
+    "Height": 453.695,
+    "Receiver": {
+      "Name": "JAVAD TRE_3 DELTA",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "02219",
+      "FirmwareVersion": "4.1.01",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-03T17:58Z"
+    },
+    "Antenna": {
+      "Name": "TPSCR.G3",
+      "Radome": "SCIS",
+      "SerialNumber": "383-0150",
+      "ARP": "BPA",
+      "MarkerUp": "0.0083",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2010-03-03T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2010-03-03/CCYY-MM-DD"
+    },
+    "Name": "STHL"
+  },
+  "STJ3": {
+    "X": 2612588.6706,
+    "Y": -3426820.6402,
+    "Z": 4686773.7555,
+    "Latitude": 47.595,
+    "Longitude": -52.678,
+    "Height": 154.946,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "17323022488",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T12:15Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "NONE",
+      "SerialNumber": "10231016",
+      "ARP": "BPA",
+      "MarkerUp": "0.0542",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2018-10-04T14:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL ",
+      "InputFrequency": "",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "STJ300CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "STJ3"
+  },
+  "STK2": {
+    "X": -3642161.206,
+    "Y": 2861487.883,
+    "Z": 4370351.333,
+    "Latitude": 43.529,
+    "Longitude": 141.845,
+    "Height": 118.965,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+QZSS",
+      "SerialNumber": "6016R40293",
+      "FirmwareVersion": "6.10",
+      "ElevCutoff": "5",
+      "DateInstalled": "2021-08-16T11:00Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "SCIS",
+      "SerialNumber": "5015353788",
+      "ARP": "BPA",
+      "MarkerUp": "0.0",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2012-02-14T01:12Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10",
+      "EffectiveDates": "2003-05-23"
+    },
+    "Name": "STK2"
+  },
+  "SUTH": {
+    "X": 5041274.8417,
+    "Y": 1916054.1204,
+    "Z": -3397075.9716,
+    "Latitude": -32.38,
+    "Longitude": 20.81,
+    "Height": 1800.182,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS",
+      "SerialNumber": "3013582",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-29T20:18Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945G_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR6200342011",
+      "ARP": "BPA",
+      "MarkerUp": "0.084",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "2004-06-01T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1997-12-05/CCYY-MM-DD"
+    },
+    "Name": "SUTH"
+  },
+  "SYDN": {
+    "X": -4648240.8542,
+    "Y": 2560636.4459,
+    "Z": -3526317.7896,
+    "Latitude": -33.781,
+    "Longitude": 151.15,
+    "Height": 85.987,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "QZSS+GPS+GLO+GAL+BDS",
+      "SerialNumber": "3055078",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-11T03:51Z"
+    },
+    "Antenna": {
+      "Name": "ASH701945C_M",
+      "Radome": "NONE",
+      "SerialNumber": "CR519994908",
+      "ARP": "BPA",
+      "MarkerUp": "000.0300",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2004-05-05T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2015-07-15/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "SYDN00AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "SYDN"
+  },
+  "TASH": {
+    "X": 1695945.1994,
+    "Y": 4487138.5684,
+    "Z": 4190140.6931,
+    "Latitude": 41.328,
+    "Longitude": 69.296,
+    "Height": 440.123,
+    "Receiver": {
+      "Name": "SEPT ASTERX4",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "3046856",
+      "FirmwareVersion": "4.8.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-20T11:39Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5483",
+      "ARP": "BPA",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-09-24T12:30Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL RUBIDIUM",
+      "InputFrequency": "5 ",
+      "EffectiveDates": "2003-05-15/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "TASH00UZB0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "TASH"
+  },
+  "THTG": {
+    "X": -5246414,
+    "Y": -3077260,
+    "Z": -1913842,
+    "Latitude": -17.577,
+    "Longitude": -149.606,
+    "Height": 97.107,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+SBAS",
+      "SerialNumber": "16283014247",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T12:55Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "LEIT",
+      "SerialNumber": "10210021",
+      "ARP": "BPA",
+      "MarkerUp": "1.0500",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2011-01-13T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "THTG00PYF0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "THTG"
+  },
+  "TID1": {
+    "X": -4460996.9496,
+    "Y": 2682557.084,
+    "Z": -3674442.6322,
+    "Latitude": -35.399,
+    "Longitude": 148.98,
+    "Height": 665.729,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "3012244",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-13T07:30Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "NONE",
+      "SerialNumber": "402",
+      "ARP": "BPA",
+      "MarkerUp": "000.0614",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2016-08-04T01:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2009-09-22/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "TID100AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "TID1"
+  },
+  "TLSE": {
+    "X": 4627851.899,
+    "Y": 119638.546,
+    "Z": 4372993.537,
+    "Latitude": 43.561,
+    "Longitude": 1.481,
+    "Height": 207.626,
+    "Receiver": {
+      "Name": "TRIMBLE NETR9",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5048K71845",
+      "FirmwareVersion": "5.45",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-05-18T07:05Z"
+    },
+    "Antenna": {
+      "Name": "TRM59800.00",
+      "Radome": "NONE",
+      "SerialNumber": "5129354206",
+      "ARP": "BPA",
+      "MarkerUp": "1.0530",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2016-03-21T11:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2009-10-23/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "TLSE00FRA0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "TLSE"
+  },
+  "TOW2": {
+    "X": -5054583.3956,
+    "Y": 3275504.1093,
+    "Z": -2091538.4702,
+    "Latitude": -19.269,
+    "Longitude": 147.056,
+    "Height": 88.503,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+QZSS+GLO+GAL+BDS",
+      "SerialNumber": "3048330",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-13T07:00Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R3",
+      "Radome": "NONE",
+      "SerialNumber": "09310016",
+      "ARP": "BPA",
+      "MarkerUp": "000.0033",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2013-01-22T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2008-09-29/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "TOW200AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "TOW2"
+  },
+  "TSKB": {
+    "X": -3957199.24,
+    "Y": 3310199.668,
+    "Z": 3737711.708,
+    "Latitude": 36.106,
+    "Longitude": 140.087,
+    "Height": 67.677,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+QZSS",
+      "SerialNumber": "6032R40037",
+      "FirmwareVersion": "6.10",
+      "ElevCutoff": "5",
+      "DateInstalled": "2021-09-14T11:00Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "DOME",
+      "SerialNumber": "312",
+      "ARP": "BPA",
+      "MarkerUp": "0.0",
+      "MarkerNorth": "0.0",
+      "MarkerEast": "0.0",
+      "DateInstalled": "2017-05-17T08:20Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10",
+      "EffectiveDates": "2017-04-24"
+    },
+    "Name": "TSKB"
+  },
+  "ULAB": {
+    "X": -1257408.9234,
+    "Y": 4099404.3974,
+    "Z": 4707992.6715,
+    "Latitude": 47.865,
+    "Longitude": 107.052,
+    "Height": 1576.101,
+    "Receiver": {
+      "Name": "JAVAD TRE_3",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "1480898",
+      "FirmwareVersion": "4.1.01-210527",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-06-23T09:12Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_G5T",
+      "Radome": "NONE",
+      "SerialNumber": "6090C",
+      "ARP": "BAM",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2018-09-20T05:22Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2000-11-11/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "ULAB00MNG0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "ULAB"
+  },
+  "UNB3": {
+    "X": 1761288.2,
+    "Y": -4078238.6,
+    "Z": 4561417.8,
+    "Latitude": 45.95,
+    "Longitude": -66.642,
+    "Height": 23.32,
+    "Receiver": {
+      "Name": "TRIMBLE ALLOY",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "5922R40051",
+      "FirmwareVersion": "6.10",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-06-10T02:04Z"
+    },
+    "Antenna": {
+      "Name": "TRM57971.00",
+      "Radome": "NONE",
+      "SerialNumber": "5311118062",
+      "ARP": "BAM",
+      "MarkerUp": "0.3145",
+      "MarkerNorth": "0.",
+      "MarkerEast": "0.",
+      "DateInstalled": "2012-06-01T14:30Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "UNB300CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "UNB3"
+  },
+  "UNSA": {
+    "X": 2412830.4245,
+    "Y": -5271936.73,
+    "Z": -2652209.0548,
+    "Latitude": -24.727,
+    "Longitude": -65.408,
+    "Height": 1258.213,
+    "Receiver": {
+      "Name": "SEPT ASTERX4",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "3046445",
+      "FirmwareVersion": "4.8.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-05-27T08:34Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5470",
+      "ARP": "BPA",
+      "MarkerUp": "0.1300",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-02-17T15:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "1995-01-26/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "UNSA00ARG0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "UNSA"
+  },
+  "USUD": {
+    "X": -3855263.0361,
+    "Y": 3427432.5571,
+    "Z": 3741020.2929,
+    "Latitude": 36.133,
+    "Longitude": 138.362,
+    "Height": 1509.039,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS",
+      "SerialNumber": "3025546",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-28T01:31Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "JPLA",
+      "SerialNumber": "121",
+      "ARP": "BPA",
+      "MarkerUp": "-0.035",
+      "MarkerNorth": "0.000",
+      "MarkerEast": "0.000",
+      "DateInstalled": "1993-07-20T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL H-MASER",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2019-02-15/CCYY-MM-DD"
+    },
+    "Name": "USUD"
+  },
+  "VALD": {
+    "X": 919075.83,
+    "Y": -4167766.23,
+    "Z": 4724323.53,
+    "Latitude": 48.097,
+    "Longitude": -77.564,
+    "Height": 313.205,
+    "Receiver": {
+      "Name": "TPS NET-G5",
+      "SatelliteSystem": "GPS+GLO",
+      "SerialNumber": "1294-11320",
+      "FirmwareVersion": "5.2.2 Dec,06,2018",
+      "ElevCutoff": "5",
+      "DateInstalled": "2019-03-14T18:46Z"
+    },
+    "Antenna": {
+      "Name": "TPSCR.G3",
+      "Radome": "NONE",
+      "SerialNumber": "383-0466",
+      "ARP": "BPA",
+      "MarkerUp": "000.1000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2017-06-07T13:50Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "5",
+      "EffectiveDates": "2001-12-04"
+    },
+    "RealTime": {
+      "VALD00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087"
+      }
+    },
+    "Name": "VALD"
+  },
+  "VILL": {
+    "X": 4849833.874,
+    "Y": -335049.255,
+    "Z": 4116014.809,
+    "Latitude": 40.444,
+    "Longitude": -3.952,
+    "Height": 647.835,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "4503035",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-19T12:00Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "NONE",
+      "SerialNumber": "5674",
+      "ARP": "BPA",
+      "MarkerUp": "0.0937",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2020-01-07T12:30Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "10 ",
+      "EffectiveDates": "2012-12-27/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "VILL00ESP0": {
+        "GPS": "1019,1077"
+      }
+    },
+    "Name": "VILL"
+  },
+  "VOIM": {
+    "X": 4054014.146,
+    "Y": 4316070.229,
+    "Z": -2365224.017,
+    "Latitude": -21.906,
+    "Longitude": 46.793,
+    "Height": 1163.786,
+    "Receiver": {
+      "Name": "JAVAD TR_G3TH",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "1278952",
+      "FirmwareVersion": "4.1.01-210527",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-06-23T12:43Z"
+    },
+    "Antenna": {
+      "Name": "JAV_RINGANT_G3T",
+      "Radome": "NONE",
+      "SerialNumber": "338",
+      "ARP": "BAM",
+      "MarkerUp": "0.1300",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-05-01T00:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2013-05-01/CCYY-MM-DD"
+    },
+    "Name": "VOIM"
+  },
+  "WAB2": {
+    "X": 4327318,
+    "Y": 566956,
+    "Z": 4636426,
+    "Latitude": 46.924,
+    "Longitude": 7.464,
+    "Height": 611.544,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GAL",
+      "SerialNumber": "3021141",
+      "FirmwareVersion": "5.3.2",
+      "ElevCutoff": "0",
+      "DateInstalled": "2020-03-03T11:13Z"
+    },
+    "Antenna": {
+      "Name": "SEPCHOKE_B3E6",
+      "Radome": "SPKE",
+      "SerialNumber": "5168",
+      "ARP": "BPA",
+      "MarkerUp": "1.3327",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2017-09-15T00:00Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL UTC(CH) Master Clock",
+      "InputFrequency": "10",
+      "EffectiveDates": ""
+    },
+    "Name": "WAB2"
+  },
+  "WHIT": {
+    "X": -2218337.85,
+    "Y": -2201205.06,
+    "Z": 5543057.57,
+    "Latitude": 60.751,
+    "Longitude": -135.222,
+    "Height": 1427.808,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL",
+      "SerialNumber": "3061628",
+      "FirmwareVersion": "5.3.2",
+      "ElevCutoff": "5",
+      "DateInstalled": "2021-06-22T18:13Z"
+    },
+    "Antenna": {
+      "Name": "AOAD/M_T",
+      "Radome": "NONE",
+      "SerialNumber": "289",
+      "ARP": "BPA",
+      "MarkerUp": "000.1000",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2011-06-28T18:03Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "5",
+      "EffectiveDates": "2020-08-08"
+    },
+    "RealTime": {
+      "WHIT00CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1097"
+      }
+    },
+    "Name": "WHIT"
+  },
+  "WTZA": {
+    "X": 4075578.494,
+    "Y": 931852.658,
+    "Z": 4801569.946,
+    "Latitude": 49.144,
+    "Longitude": 12.879,
+    "Height": 666.35,
+    "Receiver": {
+      "Name": "SEPT POLARX2",
+      "SatelliteSystem": "GPS",
+      "SerialNumber": "1219",
+      "FirmwareVersion": "2.6.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2017-08-03T14:50Z"
+    },
+    "Antenna": {
+      "Name": "ASH700936C_M",
+      "Radome": "SNOW",
+      "SerialNumber": "12118",
+      "ARP": "BPA",
+      "MarkerUp": "0.0450",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2021-06-08T09:30Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL CESIUM",
+      "InputFrequency": "20 ",
+      "EffectiveDates": "2004-02-03/CCYY-MM-DD"
+    },
+    "Name": "WTZA"
+  },
+  "WUH2": {
+    "X": -2267749,
+    "Y": 5009154,
+    "Z": 3221290,
+    "Latitude": 30.532,
+    "Longitude": 114.357,
+    "Height": 25.541,
+    "Receiver": {
+      "Name": "JAVAD TRE_3",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS+SBAS",
+      "SerialNumber": "1480954",
+      "FirmwareVersion": "4.1.01-210527",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-06-23T09:19Z"
+    },
+    "Antenna": {
+      "Name": "JAVRINGANT_G5T",
+      "Radome": "NONE",
+      "SerialNumber": "3354C",
+      "ARP": "BAM",
+      "MarkerUp": "0.1206",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2018-11-02T06:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2011-06-08/CCYY-MM-DD"
+    },
+    "RealTime": {
+      "WUH200CHN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "WUH2"
+  },
+  "YARR": {
+    "X": -2389025.5745,
+    "Y": 5043315.5343,
+    "Z": -3078532.9739,
+    "Latitude": -29.047,
+    "Longitude": 115.347,
+    "Height": 241.756,
+    "Receiver": {
+      "Name": "SEPT POLARX5",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+QZSS+IRNSS",
+      "SerialNumber": "3015945",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-08-11T04:58Z"
+    },
+    "Antenna": {
+      "Name": "LEIAT504",
+      "Radome": "NONE",
+      "SerialNumber": "103314",
+      "ARP": "BPA",
+      "MarkerUp": "000.0045",
+      "MarkerNorth": "000.0000",
+      "MarkerEast": "000.0000",
+      "DateInstalled": "2007-10-04T03:00Z"
+    },
+    "Clock": {
+      "Type": "INTERNAL",
+      "InputFrequency": "",
+      "EffectiveDates": "2014-12-24/(CCYY-MM-DD)"
+    },
+    "RealTime": {
+      "YARR00AUS0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "QZSS": "1044,1117",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "YARR"
+  },
+  "YEL2": {
+    "X": -1224441.9824,
+    "Y": -2689174.6494,
+    "Z": 5633660.3762,
+    "Latitude": 62.481,
+    "Longitude": -114.481,
+    "Height": 181.452,
+    "Receiver": {
+      "Name": "SEPT POLARX5TR",
+      "SatelliteSystem": "GPS+GLO+GAL+BDS+SBAS",
+      "SerialNumber": "17323022348",
+      "FirmwareVersion": "5.4.0",
+      "ElevCutoff": "0",
+      "DateInstalled": "2021-01-26T12:20Z"
+    },
+    "Antenna": {
+      "Name": "LEIAR25.R4",
+      "Radome": "NONE",
+      "SerialNumber": "10231042",
+      "ARP": "BPA",
+      "MarkerUp": "0.0500",
+      "MarkerNorth": "0.0000",
+      "MarkerEast": "0.0000",
+      "DateInstalled": "2013-07-19T10:15Z"
+    },
+    "Clock": {
+      "Type": "EXTERNAL VCH-1008 MASER",
+      "InputFrequency": "10",
+      "EffectiveDates": ""
+    },
+    "RealTime": {
+      "YEL200CAN0": {
+        "GPS": "1019,1077",
+        "GLO": "1020,1087",
+        "GAL": "1045,1046,1097",
+        "BDS": "1042,1127"
+      }
+    },
+    "Name": "YEL2"
+  }
+}
