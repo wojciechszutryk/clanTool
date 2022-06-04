@@ -1,9 +1,9 @@
 import { Checkbox, FormControlLabel, FormGroup, FormLabel } from '@mui/material'
 import React, { useCallback, useMemo } from 'react'
+import { Charts } from 'state/constans/types'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { setChartsToShow } from '../../state/actions'
-import { charts } from '../../state/constans/types'
 
 const availableCharts = [
     'Phase',
@@ -13,7 +13,7 @@ const availableCharts = [
     'MDEV',
     'ODEV',
     'HDEV',
-] as charts[]
+] as Charts[]
 
 const ChartsToShowSelect = (props: {disabled?: boolean}) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)

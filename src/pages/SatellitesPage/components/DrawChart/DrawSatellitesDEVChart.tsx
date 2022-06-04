@@ -7,14 +7,14 @@ import { Box } from '@mui/material'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
 import { DEVChart } from '../../../../components/Chart'
 import { hadamardDev } from 'functions/hadamardVariance'
-import { ChartData, PhaseData } from 'models/data.model'
+import { ChartData, PhasesData } from 'models/data.model'
 
 const DrawSatellitesDEVCharts = ({
     rerender,
-    phaseData,
+    phasesData,
 }: {
     rerender: boolean
-    phaseData: PhaseData
+    phasesData: PhasesData
 }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const startDate = useAppSelector((state) => state.app.startDate)
@@ -32,8 +32,8 @@ const DrawSatellitesDEVCharts = ({
         const DEVsObjects: { [key: string]: { x: number; y: number }[] }[] = []
 
         //outlier recognition - remove MAD in phaseToFreq
-        const tau0 = (phaseData[1].date - phaseData[0].date) / 1000
-        const rawPhases = phaseData.map(
+        const tau0 = (phasesData[selectedName][1].date - phasesData[selectedName][0].date) / 1000
+        const rawPhases = phasesData[selectedName].map(
             (obj: { date: number; phase: number }) => obj.phase
         )
         const freq = phaseToFreq(rawPhases, tau0)
@@ -76,6 +76,8 @@ const DrawSatellitesDEVCharts = ({
             if (data)
                 SatellitesDEVsObjects = [...SatellitesDEVsObjects, ...data]
         }
+        console.log(SatellitesDEVsObjects)
+
         setData(SatellitesDEVsObjects)
     }, [rerender])
 

@@ -1,6 +1,6 @@
 import * as types from '../constans'
 import * as actions from '../actions/actionsInterfaces'
-import { charts, TauType } from '../constans/types'
+import { Charts, TauType } from '../constans/types'
 
 export const setSatellitesNames = (
     satellitesNames: string[]
@@ -55,7 +55,7 @@ export const setEndDate = (endDate: number): actions.ActionSetEndDate => ({
 })
 
 export const setChartsToShow = (
-    chartsToShow: charts[]
+    chartsToShow: Charts[]
 ): actions.ActionSetChartsToShow => ({
     type: types.SET_CHARTS_TO_SHOW,
     chartsToShow,

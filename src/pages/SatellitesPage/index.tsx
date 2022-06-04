@@ -1,4 +1,5 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
+import { useAppSelector } from 'functions/hooks/useAppSelector'
 import React, { useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
 import {
@@ -9,26 +10,41 @@ import {
 } from '../../components'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { setChartsToShow } from '../../state/actions'
-import { charts } from '../../state/constans/types'
+import { Charts } from '../../state/constans/types'
 import DrawSatellitesCharts from './components/DrawSatellitesCharts'
 import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSelect'
 
 function SatellitesPage() {
-    const [recalculate, setRecalculate] = useState(false); //used to rerender chars components on button click
-    const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<charts[]>([]);
+    const [recalculate, setRecalculate] = useState(false) //used to rerender chars components on button click
+    const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<
+        Charts[]
+    >([])
+    const selectedSatelliteNames = useAppSelector(
+        (state) => state.app.selectedSatelliteNames
+    )
 
     const dispatch = useAppDispatch()
 
     const handleDrawCharts = () => {
         setRecalculate(!recalculate)
-        dispatch(setChartsToShow(chartsSelectedToBeVisible))
+
+        const chartsToDispach =
+            selectedSatelliteNames.length > 1
+                ? chartsSelectedToBeVisible.filter(
+                      (chartToShow) =>
+                          !['Phase', 'Frequency', 'Frequency Drift'].includes(
+                              chartToShow
+                          )
+                  )
+                : chartsSelectedToBeVisible
+        dispatch(setChartsToShow(chartsToDispach))
     }
 
-    useEffect(() =>{
+    useEffect(() => {
         return () => {
             dispatch(setChartsToShow([]))
         }
-    },[dispatch])
+    }, [dispatch])
 
     return (
         <Grid container spacing={{ md: 3 }}>
@@ -48,20 +64,40 @@ function SatellitesPage() {
                         borderRadius: 2,
                         paddingTop: '0 !important',
                         paddingLeft: '0 !important',
-                        boxShadow: '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
+                        boxShadow:
+                            '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
                     },
                 }}
             >
-                <Typography variant={'h2'} sx={{fontSize:30, color: '#25374a'}}>Parameters</Typography>
+                <Typography
+                    variant={'h2'}
+                    sx={{ fontSize: 30, color: '#25374a' }}
+                >
+                    Parameters
+                </Typography>
                 <SatellitesAutocomplete />
                 <DatePicker startEnd={'start'} />
                 <DatePicker startEnd={'end'} />
                 <Box>
-                    <TauTypeSelect/>
-                    <MADMultiplyInput/>
+                    <TauTypeSelect />
+                    <MADMultiplyInput />
                 </Box>
-                <SatellitesChartsToShowSelect setChartsSelectedToBeVisible={setChartsSelectedToBeVisible} chartsSelectedToBeVisible={chartsSelectedToBeVisible}/>
-                <Button variant={'contained'} sx={{backgroundColor: '#25374a', width: 300, '&:hover': { backgroundColor: '#7E8995'} }} onClick={handleDrawCharts}>Calculate</Button>
+                <SatellitesChartsToShowSelect
+                    setChartsSelectedToBeVisible={setChartsSelectedToBeVisible}
+                    chartsSelectedToBeVisible={chartsSelectedToBeVisible}
+                />
+                <Button
+                    variant={'contained'}
+                    sx={{
+                        backgroundColor: '#25374a',
+                        width: 300,
+                        '&:hover': { backgroundColor: '#7E8995' },
+                    }}
+                    onClick={handleDrawCharts}
+                    disabled={selectedSatelliteNames.length === 0}
+                >
+                    Calculate
+                </Button>
             </Grid>
             <Grid
                 item
@@ -77,7 +113,7 @@ function SatellitesPage() {
                     },
                 }}
             >
-                <DrawSatellitesCharts recalculate={recalculate}/>
+                <DrawSatellitesCharts recalculate={recalculate} />
             </Grid>
         </Grid>
     )

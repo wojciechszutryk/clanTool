@@ -1,4 +1,4 @@
-export type charts =
+export type Charts =
     | 'Phase'
     | 'Frequency'
     | 'Frequency Drift'

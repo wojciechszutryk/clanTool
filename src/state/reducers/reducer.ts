@@ -1,7 +1,7 @@
 import * as types from '../constans'
 import { Actions } from '../actions/actionsInterfaces'
 import { Reducer } from 'redux'
-import { charts, TauType } from '../constans/types'
+import { Charts, TauType } from '../constans/types'
 
 interface State {
     satellitesNames: string[]
@@ -12,7 +12,7 @@ interface State {
     mapReference: any
     startDate: number
     endDate: number
-    chartsToShow: charts[]
+    chartsToShow: Charts[]
     MADMultiply: number
     zoomFix: number //
 }

@@ -5,33 +5,39 @@ import { DrawPhaseChart, DrawFrequencyChart, DrawDEVChart } from '../DrawChart'
 import DrawSatellitesFrequencyDriftChart from '../DrawChart/DrawSatellitesFrequencyDriftChart'
 import { fetchAndConcatByDateDataFromPublicDir } from 'functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir'
 import { ClipLoader } from 'react-spinners'
-import { PhaseData, PhasePoint } from 'models/data.model'
+import { PhasesData, PhasePoint } from 'models/data.model'
 
 const DrawSatellitesCharts = (props: { recalculate: boolean }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
-    const [phaseData, setPhaseData] = useState<PhaseData>([])
+    const [phasesData, setPhasesData] = useState<PhasesData>({})
     const [loading, setLoading] = useState(true)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
-    const selectedName = useAppSelector((state) =>
-        state.app.selectedSatelliteNames[0]
-            ? state.app.selectedSatelliteNames[0]
-            : state.app.selectedStationName
+    const selectedNames = useAppSelector(
+        (state) => state.app.selectedSatelliteNames
     )
 
     useMemo(async () => {
-        if (!selectedName) {
+        if (!selectedNames) {
             setLoading(false)
             return
         }
+
+        const phaseObjectsData: PhasesData = {}
+
         setLoading(true)
-        const JSONData = await fetchAndConcatByDateDataFromPublicDir(
-            selectedName
-        )
-        const data = await JSONData.data.filter(
-            (obj: PhasePoint) => obj.date <= endDate && obj.date >= startDate
-        )
-        setPhaseData(data)
+
+        for (let selectedName of selectedNames) {
+            const JSONData = await fetchAndConcatByDateDataFromPublicDir(
+                selectedName
+            )
+            const data = await JSONData.data.filter(
+                (obj: PhasePoint) =>
+                    obj.date <= endDate && obj.date >= startDate
+            )
+            phaseObjectsData[selectedName] = data
+        }
+        setPhasesData(phaseObjectsData)
         setLoading(false)
     }, [props.recalculate])
 
@@ -54,48 +60,35 @@ const DrawSatellitesCharts = (props: { recalculate: boolean }) => {
                         chartsToShow.includes('MDEV') ||
                         chartsToShow.includes('HDEV') ||
                         chartsToShow.includes('ODEV')) && (
-                        // props.chartType === ChartsTypes.Satellites ?
                         <DrawDEVChart
                             rerender={props.recalculate}
-                            phaseData={phaseData}
-                        />
-                        // : <DrawStationsDEVChart startDate={startDate} endDate={endDate} DEVs={DEVs} />
-                    )}
-                    {chartsToShow.includes('Phase') && (
-                        <DrawPhaseChart
-                            rerender={props.recalculate || false}
-                            phaseData={phaseData}
+                            phasesData={phasesData}
                         />
                     )}
-                    {chartsToShow.includes('Frequency') && (
-                        <DrawFrequencyChart
-                            rerender={props.recalculate || false}
-                            phaseData={phaseData}
-                        />
-                    )}
-                    {chartsToShow.includes('Frequency Drift') && (
-                        <DrawSatellitesFrequencyDriftChart
-                            rerender={props.recalculate || false}
-                            phaseData={phaseData}
-                        />
-                    )}
+                    {chartsToShow.includes('Phase') &&
+                        selectedNames.length === 1 && (
+                            <DrawPhaseChart
+                                rerender={props.recalculate || false}
+                                phaseData={phasesData[selectedNames[0]]}
+                            />
+                        )}
+                    {chartsToShow.includes('Frequency') &&
+                        selectedNames.length === 1 && (
+                            <DrawFrequencyChart
+                                rerender={props.recalculate || false}
+                                phaseData={phasesData[selectedNames[0]]}
+                            />
+                        )}
+                    {chartsToShow.includes('Frequency Drift') &&
+                        selectedNames.length === 1 && (
+                            <DrawSatellitesFrequencyDriftChart
+                                rerender={props.recalculate || false}
+                                phaseData={phasesData[selectedNames[0]]}
+                            />
+                        )}
                 </Box>
             )}
         </>
-        // {loading ? (
-        //     <Box
-        //         sx={{
-        //             display: 'flex',
-        //             justifyContent: 'center',
-        //             alignItems: 'center',
-        //             height: '50vh',
-        //         }}
-        //     >
-        //         <ClipLoader loading={loading} size={150} />
-        //     </Box>
-        // ) : (
-
-        // )}
     )
 }
 
