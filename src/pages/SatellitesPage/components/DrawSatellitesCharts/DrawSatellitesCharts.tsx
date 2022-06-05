@@ -65,13 +65,12 @@ const DrawSatellitesCharts = (props: { recalculate: boolean }) => {
                             phasesData={phasesData}
                         />
                     )}
-                    {chartsToShow.includes('Phase') &&
-                        selectedNames.length === 1 && (
-                            <DrawPhaseChart
-                                rerender={props.recalculate || false}
-                                phaseData={phasesData[selectedNames[0]]}
-                            />
-                        )}
+                    {chartsToShow.includes('Phase') && (
+                        <DrawPhaseChart
+                            rerender={props.recalculate || false}
+                            phasesData={phasesData}
+                        />
+                    )}
                     {chartsToShow.includes('Frequency') &&
                         selectedNames.length === 1 && (
                             <DrawFrequencyChart

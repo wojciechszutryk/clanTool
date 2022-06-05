@@ -31,7 +31,8 @@ const DrawSatellitesFrequencyChart = ({
                 justifyContent: 'center',
             }}
         >
-            <DataChart data={data} id={'Frequency'} xType={'Date'} />
+            {/* <DataChart data={data} id={'Frequency'} xType={'Date'} /> */}
+            null
         </Box>
     )
 }

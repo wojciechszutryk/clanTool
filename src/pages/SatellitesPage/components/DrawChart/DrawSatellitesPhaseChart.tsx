@@ -1,23 +1,33 @@
 import React, { useMemo, useState } from 'react'
 import { Box } from '@mui/material'
 import { DataChart } from 'components'
-import { ChartData, PhaseData, PhasePoint } from 'models/data.model'
+import { ChartData, PhasesData, PhasePoint, DEVsData } from 'models/data.model'
 
 const DrawSatellitesPhaseChart = ({
     rerender,
-    phaseData,
+    phasesData,
 }: {
     rerender: boolean
-    phaseData: PhaseData
+    phasesData: PhasesData
 }) => {
-    const [data, setData] = useState<ChartData>([])
+    const [data, setData] = useState<DEVsData>([])
 
     useMemo(async () => {
-        const chartData = phaseData.map((point: PhasePoint) => ({
-            x: point.date,
-            y: point.phase,
-        }))
-        setData(chartData)
+        const dataToSet: DEVsData = []
+        console.log(Object.keys(phasesData)[0])
+
+        Object.values(phasesData).forEach((phase, index) => {
+            const chartData = phase.map((point: PhasePoint) => ({
+                x: point.date,
+                y: point.phase,
+            }))
+            const key = Object.keys(phasesData)[index]
+            dataToSet.push({ key: chartData })
+            // dataToSet[Object.keys(phasesData)[index]] = chartData
+        })
+        console.log(dataToSet);
+        
+        setData(dataToSet)
         // }, [dispatch, selectedName, startDate, endDate])
     }, [rerender])
 

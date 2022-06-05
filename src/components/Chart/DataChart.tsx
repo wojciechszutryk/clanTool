@@ -1,13 +1,15 @@
 import {
     AxisTickStrategies,
+    ColorPalettes,
     ColorRGBA,
     lightningChart,
     NumericTickStrategy,
     SolidFill,
+    SolidLine,
     Themes,
 } from '@arction/lcjs'
 import { Box, Button } from '@mui/material'
-import { ChartData } from 'models/data.model'
+import { DEVsData } from 'models/data.model'
 import React, { useRef, useEffect, useMemo } from 'react'
 import { CSVLink } from 'react-csv'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
@@ -17,7 +19,7 @@ const DataChart = ({
     id,
     xType = 'Tau',
 }: {
-    data: ChartData
+    data: DEVsData
     id: string
     xType?: 'Date' | 'Tau'
 }) => {
@@ -28,6 +30,14 @@ const DataChart = ({
     const endDate = useAppSelector((state) => state.app.endDate)
 
     useEffect(() => {
+        const palette = ColorPalettes.arction(10)
+        const colors = [7, 24, 14, 19, 4].map(palette)
+        const axisYColors = colors.map((color, index) => colors[index])
+        const axisYStyles = axisYColors.map((color) => new SolidFill({ color }))
+        const seriesStrokeStyles = axisYStyles.map(
+            (fillStyle) => new SolidLine({ fillStyle, thickness: 2 })
+        )
+
         const chart = lightningChart()
             .ChartXY({
                 container: id,
@@ -55,23 +65,6 @@ const DataChart = ({
         if (xType === 'Date')
             chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
 
-        chart.getDefaultAxisX().setInterval(
-            Math.min.apply(
-                Math,
-                data.map(function (o) {
-                    return o.x
-                })
-            ),
-            Math.max.apply(
-                Math,
-                data.map(function (o) {
-                    return o.x
-                })
-            ),
-            false,
-            true
-        )
-
         chart.getDefaultAxisY().formatValue(0.0)
         chart
             .getDefaultAxisY()
@@ -98,21 +91,40 @@ const DataChart = ({
                 (numericTicks) => numericTicks
             )
 
-        const series = chart
-            .addLineSeries()
-            .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
-                return builder
-                    .addRow(
-                        xType === 'Date' ? xType + ': ' : 'τ: ',
-                        xType === 'Date'
-                            ? new Date(xValue).toLocaleString()
-                            : xValue.toFixed(2).toString()
-                    )
-                    .addRow(
-                        id + ': ',
-                        (yValue / zoomFix).toExponential(7).toString()
-                    )
-            })
+        // const series = chart
+        //     .addLineSeries()
+        //     .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
+        //         return builder
+        //             .addRow(
+        //                 xType === 'Date' ? xType + ': ' : 'τ: ',
+        //                 xType === 'Date'
+        //                     ? new Date(xValue).toLocaleString()
+        //                     : xValue.toFixed(2).toString()
+        //             )
+        //             .addRow(id + ': ', (yValue/zoomFix).toExponential(7).toString())
+        //     })
+        const series = data.map((dev, index) => {
+            const devName = Object.keys(dev)[0]
+            const series = chart
+                .addLineSeries()
+                .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
+                    return builder
+                        .addRow(
+                            xType === 'Date' ? xType + ': ' : 'τ: ',
+                            xType === 'Date'
+                                ? new Date(xValue).toLocaleString()
+                                : xValue.toFixed(2).toString()
+                        )
+                        .addRow(
+                            id + ': ',
+                            (yValue / zoomFix).toExponential(7).toString()
+                        )
+                })
+                .setName(devName)
+                .setStrokeStyle(seriesStrokeStyles[index])
+            series.add(Object.values(data[index])[0])
+            return series
+        })
         chartRef.current = { chart, series }
 
         return () => {
@@ -121,13 +133,13 @@ const DataChart = ({
         }
     }, [])
 
-    useEffect(() => {
-        const components = chartRef.current
-        if (!components) return
+    // useEffect(() => {
+    //     const components = chartRef.current
+    //     if (!components) return
 
-        const { series } = components
-        series.clear().add(data)
-    }, [])
+    //     const { series } = components
+    //     series.clear().add(data)
+    // }, [])
 
     function handleChartSaveToImage() {
         const filename =
@@ -139,15 +151,29 @@ const DataChart = ({
         chartRef.current.chart.saveToFile(filename)
     }
 
+    // const csvData = useMemo(() => {
+    //     if (data.length === 0) return []
+    //     const csvArray: (string | number | Date)[][] = []
+    //     csvArray.push(['Date', id])
+    //     for (let i = 0; i < data.length; i++) {
+    //         csvArray.push([
+    //             new Date(data[i].x).toLocaleString(),
+    //             data[i].y / zoomFix,
+    //         ])
+    //     }
+    //     return csvArray
+    // }, [])
     const csvData = useMemo(() => {
         if (data.length === 0) return []
-        const csvArray: (string | number | Date)[][] = []
-        csvArray.push(['Date', id])
+        const csvArray: (string | number)[][] = []
+        const selectedName = Object.values(data[0])[0].map((xyData) => xyData.x)
+        csvArray.push(['tau', ...selectedName])
+
         for (let i = 0; i < data.length; i++) {
-            csvArray.push([
-                new Date(data[i].x).toLocaleString(),
-                data[i].y / zoomFix,
-            ])
+            const devValues = Object.values(data[i])[0].map(
+                (xyData) => xyData.y / zoomFix
+            )
+            csvArray.push([Object.keys(data[i])[0], ...devValues])
         }
         return csvArray
     }, [])

@@ -69,7 +69,8 @@ const DrawStationFrequencyChart = () => {
                     <ClipLoader loading={loading} size={150} />
                 </Box>
             ) : (
-                <DataChart data={data} id={'Frequency'} xType={'Date'} />
+                // <DataChart data={data} id={'Frequency'} xType={'Date'} />
+                null
             )}
         </Box>
     )

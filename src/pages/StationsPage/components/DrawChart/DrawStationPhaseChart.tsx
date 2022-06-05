@@ -53,7 +53,8 @@ const DrawStationPhaseChart = () => {
                     <ClipLoader loading={loading} size={150} />
                 </Box>
             ) : (
-                <DataChart data={data} id={'Phase'} xType={'Date'} />
+                // <DataChart data={data} id={'Phase'} xType={'Date'} />
+                null
             )}
         </Box>
     )

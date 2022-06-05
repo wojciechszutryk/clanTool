@@ -28,16 +28,17 @@ function SatellitesPage() {
     const handleDrawCharts = () => {
         setRecalculate(!recalculate)
 
-        const chartsToDispach =
-            selectedSatelliteNames.length > 1
-                ? chartsSelectedToBeVisible.filter(
-                      (chartToShow) =>
-                          !['Phase', 'Frequency', 'Frequency Drift'].includes(
-                              chartToShow
-                          )
-                  )
-                : chartsSelectedToBeVisible
-        dispatch(setChartsToShow(chartsToDispach))
+        // const chartsToDispach =
+        //     selectedSatelliteNames.length > 1
+        //         ? chartsSelectedToBeVisible.filter(
+        //               (chartToShow) =>
+        //                   !['Phase', 'Frequency', 'Frequency Drift'].includes(
+        //                       chartToShow
+        //                   )
+        //           )
+        //         : chartsSelectedToBeVisible
+        // dispatch(setChartsToShow(chartsToDispach))
+        dispatch(setChartsToShow(chartsSelectedToBeVisible))
     }
 
     useEffect(() => {
