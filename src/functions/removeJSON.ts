@@ -161,7 +161,6 @@ const removeJSON = () => {
         value['Name'] = key
         toreturn[key] = value
     })
-    console.log(toreturn)
 }
 // removeJSON()
 export default removeJSON

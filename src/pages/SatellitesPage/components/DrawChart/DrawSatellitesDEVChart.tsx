@@ -76,8 +76,6 @@ const DrawSatellitesDEVCharts = ({
             if (data)
                 SatellitesDEVsObjects = [...SatellitesDEVsObjects, ...data]
         }
-        console.log(SatellitesDEVsObjects)
-
         setData(SatellitesDEVsObjects)
     }, [rerender])
 

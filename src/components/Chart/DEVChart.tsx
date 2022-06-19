@@ -22,6 +22,9 @@ const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
     const chartRef = useRef<any>(undefined)
+    const selectedNames = useAppSelector(
+        (state) => state.app.selectedSatelliteNames
+    )
 
     useEffect(() => {
         const palette = ColorPalettes.arction(10)
@@ -157,6 +160,8 @@ const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
         const filename =
             id +
             '-' +
+            selectedNames.join('-') +
+            '-' +
             new Date(startDate).toJSON().slice(0, 10).replaceAll('-', '.') +
             '-' +
             new Date(endDate).toJSON().slice(0, 10).replaceAll('-', '.')
@@ -223,7 +228,7 @@ const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
                         filename={
                             id +
                             '-' +
-                            Object.keys(data).join('-') +
+                            selectedNames.join('-') +
                             '-' +
                             new Date(startDate)
                                 .toJSON()
