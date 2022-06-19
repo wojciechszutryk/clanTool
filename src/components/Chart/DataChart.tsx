@@ -196,6 +196,8 @@ const DataChart = ({
                         filename={
                             id +
                             '-' +
+                            Object.keys(data).join('-') +
+                            '-' +
                             new Date(startDate)
                                 .toJSON()
                                 .slice(0, 10)
