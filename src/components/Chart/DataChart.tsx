@@ -58,22 +58,22 @@ const DataChart = ({
         if (xType === 'Date')
             chart.getDefaultAxisX().setTickStrategy(AxisTickStrategies.DateTime)
 
-        chart.getDefaultAxisX().setInterval(
-            Math.min.apply(
-                Math,
-                data.map(function (o) {
-                    return o.x
-                })
-            ),
-            Math.max.apply(
-                Math,
-                data.map(function (o) {
-                    return o.x
-                })
-            ),
-            false,
-            true
-        )
+        // chart.getDefaultAxisX().setInterval(
+        //     Math.min.apply(
+        //         Math,
+        //         data.map(function (o) {
+        //             return o.x
+        //         })
+        //     ),
+        //     Math.max.apply(
+        //         Math,
+        //         data.map(function (o) {
+        //             return o.x
+        //         })
+        //     ),
+        //     false,
+        //     true
+        // )
 
         chart.getDefaultAxisY().formatValue(0.0)
         chart
