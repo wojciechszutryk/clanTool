@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import { allanDev, overAllanDev } from 'functions/allanVariance'
 import { modAllanDev } from '../../../../functions/allanVariance/allanVariance'
 import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
@@ -28,53 +28,58 @@ const DrawSatellitesDEVCharts = ({
         [chartsToShow]
     )
 
-    const getDEVsDataForSatellite = (selectedName: string) => {
-        const DEVsObjects: { [key: string]: { x: number; y: number }[] }[] = []
-
-        //outlier recognition - remove MAD in phaseToFreq
-        const tau0 = (phasesData[selectedName][1].date - phasesData[selectedName][0].date) / 1000
-        const rawPhases = phasesData[selectedName].map(
-            (obj: { date: number; phase: number }) => obj.phase
-        )
-        const freq = phaseToFreq(rawPhases, tau0)
-        const phases = freqToPhase({ data: freq, tau: tau0 })
-
-        if (DEVs.includes('ADEV')) {
-            const allanDevData = allanDev(phases, startDate, endDate)
-            const obj = {} as { [key: string]: { x: number; y: number }[] }
-            obj[`${selectedName}-ADEV`] = allanDevData
-            DEVsObjects.push(obj)
-        }
-        if (DEVs.includes('MDEV')) {
-            const modAllanDevData = modAllanDev(phases, startDate, endDate)
-            const obj = {} as { [key: string]: { x: number; y: number }[] }
-            obj[`${selectedName}-MDEV`] = modAllanDevData
-            DEVsObjects.push(obj)
-        }
-        if (DEVs.includes('ODEV')) {
-            const overAllanDevData = overAllanDev(phases, startDate, endDate)
-            const obj = {} as { [key: string]: { x: number; y: number }[] }
-            obj[`${selectedName}-ODEV`] = overAllanDevData
-            DEVsObjects.push(obj)
-        }
-        if (DEVs.includes('HDEV')) {
-            const hadamardDevData = hadamardDev(phases, startDate, endDate)
-            const obj = {} as { [key: string]: { x: number; y: number }[] }
-            obj[`${selectedName}-HDEV`] = hadamardDevData
-            DEVsObjects.push(obj)
-        }
-        return DEVsObjects
-    }
-
     useMemo(async () => {
         let SatellitesDEVsObjects: {
             [key: string]: ChartData
         }[] = []
 
         for (let selectedName of selectedNames) {
-            const data = getDEVsDataForSatellite(selectedName)
-            if (data)
-                SatellitesDEVsObjects = [...SatellitesDEVsObjects, ...data]
+            const tau0 =
+                (phasesData[selectedName][1].date -
+                    phasesData[selectedName][0].date) /
+                1000
+            const rawPhases = phasesData[selectedName].map(
+                (obj: { date: number; phase: number }) => obj.phase
+            )
+            const freq = phaseToFreq(rawPhases, tau0)
+            const phases = freqToPhase({ data: freq, tau: tau0 })
+
+            if (DEVs.includes('ADEV')) {
+                const allanDevData = allanDev(phases, startDate, endDate)
+                const obj = {} as {
+                    [key: string]: { x: number; y: number }[]
+                }
+                obj[`${selectedName}-ADEV`] = allanDevData
+                SatellitesDEVsObjects.push(obj)
+            }
+            if (DEVs.includes('MDEV')) {
+                const modAllanDevData = modAllanDev(phases, startDate, endDate)
+                const obj = {} as {
+                    [key: string]: { x: number; y: number }[]
+                }
+                obj[`${selectedName}-MDEV`] = modAllanDevData
+                SatellitesDEVsObjects.push(obj)
+            }
+            if (DEVs.includes('ODEV')) {
+                const overAllanDevData = overAllanDev(
+                    phases,
+                    startDate,
+                    endDate
+                )
+                const obj = {} as {
+                    [key: string]: { x: number; y: number }[]
+                }
+                obj[`${selectedName}-ODEV`] = overAllanDevData
+                SatellitesDEVsObjects.push(obj)
+            }
+            if (DEVs.includes('HDEV')) {
+                const hadamardDevData = hadamardDev(phases, startDate, endDate)
+                const obj = {} as {
+                    [key: string]: { x: number; y: number }[]
+                }
+                obj[`${selectedName}-HDEV`] = hadamardDevData
+                SatellitesDEVsObjects.push(obj)
+            }
         }
         setData(SatellitesDEVsObjects)
     }, [rerender])
@@ -92,4 +97,4 @@ const DrawSatellitesDEVCharts = ({
     )
 }
 
-export default DrawSatellitesDEVCharts
+export default memo(DrawSatellitesDEVCharts)

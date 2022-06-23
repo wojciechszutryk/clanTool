@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react'
+import React, { memo, useMemo, useState } from 'react'
 import { Box } from '@mui/material'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { DrawPhaseChart, DrawFrequencyChart, DrawDEVChart } from '../DrawChart'
@@ -92,4 +92,4 @@ const DrawSatellitesCharts = (props: { recalculate: boolean }) => {
     )
 }
 
-export default DrawSatellitesCharts
+export default memo(DrawSatellitesCharts)

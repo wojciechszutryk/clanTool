@@ -16,14 +16,13 @@ import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSel
 
 function SatellitesPage() {
     const [recalculate, setRecalculate] = useState(false) //used to rerender chars components on button click
+    const dispatch = useAppDispatch()
     const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<
         Charts[]
     >([])
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
     )
-
-    const dispatch = useAppDispatch()
 
     const handleDrawCharts = () => {
         setRecalculate(!recalculate)

@@ -9,7 +9,7 @@ import {
     Themes,
 } from '@arction/lcjs'
 import { Box, Button } from '@mui/material'
-import React, { useEffect, useMemo, useRef } from 'react'
+import React, { memo, useEffect, useMemo, useRef } from 'react'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { CSVLink } from 'react-csv'
 import { ClockNoises } from 'components'
@@ -251,4 +251,4 @@ const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
     )
 }
 
-export default DEVChart
+export default memo(DEVChart)

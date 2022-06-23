@@ -8,7 +8,7 @@ import {
 } from '@arction/lcjs'
 import { Box, Button } from '@mui/material'
 import { ChartData } from 'models/data.model'
-import React, { useRef, useEffect, useMemo } from 'react'
+import React, { useRef, useEffect, useMemo, memo } from 'react'
 import { CSVLink } from 'react-csv'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 
@@ -224,4 +224,4 @@ const DataChart = ({
     )
 }
 
-export default DataChart
+export default memo(DataChart)
