@@ -1,4 +1,3 @@
-import { mad } from 'mathjs'
 import store from 'state/store'
 
 export default function phaseToFreqWithObjectOutput(

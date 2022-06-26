@@ -1,10 +1,19 @@
 export function medianOfArr(arr: number[]) {
-    const middle = (arr.length + 1) / 2;
+    const L = arr.length,
+        halfL = L / 2
+    if (L % 2 === 1) return quickselect(arr, halfL)
+    else return 0.5 * (quickselect(arr, halfL - 1) + quickselect(arr, halfL))
+}
 
-    const sorted = [...arr].sort((a, b) => a - b);
-    const isEven = sorted.length % 2 === 0;
-
-    return isEven ? (sorted[middle - 1.5]
-        + sorted[middle - 0.5]) / 2 :
-        sorted[middle - 1];
-};
+function quickselect(arr: number[], k: number): number {
+    if (arr.length === 1) return arr[0]
+    else {
+        const pivot = arr[0]
+        const lows = arr.filter((e) => e < pivot)
+        const highs = arr.filter((e) => e > pivot)
+        const pivots = arr.filter((e) => e == pivot)
+        if (k < lows.length) return quickselect(lows, k)
+        else if (k < lows.length + pivots.length) return pivot
+        else return quickselect(highs, k - lows.length - pivots.length)
+    }
+}
