@@ -16,7 +16,6 @@ const MADMultiplyInput = () => {
     )
 
     return <TextField
-        disabled={true} //mad temp removed
         sx={{width: 140}}
         id="MADMultiplyInput"
         label="MAD multiply"

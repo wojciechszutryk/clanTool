@@ -1,3 +1,4 @@
+import { medianOfArr } from 'functions/medianOfArray/medianOfArray'
 import store from 'state/store'
 
 export default function phaseToFreqWithObjectOutput(
@@ -5,29 +6,43 @@ export default function phaseToFreqWithObjectOutput(
     tau: number,
     fixZoom?: boolean
 ) {
-    const zoomFix = store.getState().app.zoomFix ? store.getState().app.zoomFix : 1000000000000;
+    const zoomFix = store.getState().app.zoomFix
+        ? store.getState().app.zoomFix
+        : 1000000000000
 
-    let newData: { x: number; y: number }[] = [];
+    let freqData: { x: number; y: number }[] = []
 
     for (let i = 0; i < data.length - 1; i++) {
-        fixZoom ? newData.push({
-            y: ((data[i + 1].phase - data[i].phase) / tau) *zoomFix,
-            x: data[i].date
-        })
-        : newData.push({
-            y: ((data[i + 1].phase - data[i].phase) / tau),
-            x: data[i].date
-        })
+        fixZoom
+            ? freqData.push({
+                  y: ((data[i + 1].phase - data[i].phase) / tau) * zoomFix,
+                  x: data[i].date,
+              })
+            : freqData.push({
+                  y: (data[i + 1].phase - data[i].phase) / tau,
+                  x: data[i].date,
+              })
     }
 
-    //MAD temp removed
-    // const onlyFreqArray = newData.map((obj: { x: number; y: number }) => obj.y)
+    //Mad Filter
+    const onlyFreqArray = freqData.map((obj: { x: number; y: number }) => obj.y)
+    const medianOfNewData = medianOfArr(onlyFreqArray)
 
-    // const MADMultiply = store.getState().app.MADMultiply ? store.getState().app.MADMultiply : 3;
-    // const MADValue = medianOfArr(newData) / 0.6745 * MADMultiply
-    // const MADValue = mad(onlyFreqArray) / 0.6745 * MADMultiply
+    const madArrayValues = onlyFreqArray.map((e) =>
+        Math.abs((e - medianOfNewData) / 0.6745)
+    )
 
-    // newData = newData.filter(dateAndFreqObj => Math.abs(dateAndFreqObj.y) < Math.abs(MADValue))
+    const madValue = medianOfArr(madArrayValues)
+    const MADMultiply = store.getState().app.MADMultiply
+        ? store.getState().app.MADMultiply
+        : 3
+    const multipliedMadValue = madValue * MADMultiply
 
-    return newData
+    freqData = freqData.filter(
+        (dateAndFreqObj) =>
+            dateAndFreqObj.y < medianOfNewData + multipliedMadValue &&
+            dateAndFreqObj.y > medianOfNewData - multipliedMadValue
+    )
+
+    return freqData
 }

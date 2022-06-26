@@ -17,11 +17,4 @@ export default function phaseToFreq(
     }
 
     return madFilter(newData)
-
-
-
-    // const MADValue = medianOfArr(newData) / 0.6745 * MADMultiply
-    // const MADValue = mad(newData) / 0.6745 * MADMultiply
-    //
-    // newData = newData.filter(freq => Math.abs(freq) < Math.abs(MADValue))
 }

@@ -1,3 +1,4 @@
+import { medianOfArr } from 'functions/medianOfArray/medianOfArray'
 import store from 'state/store'
 
 export default function phaseToFreqDriftWithObjectOutput(
@@ -21,20 +22,27 @@ export default function phaseToFreqDriftWithObjectOutput(
         })
     }
 
-    //MAD temp removed
-    // const onlyFreqDriftArray = freqDriftData.map(
-    //     (obj: { x: number; y: number }) => obj.y
-    // )
-    //
-    // const MADMultiply = store.getState().app.MADMultiply
-    //     ? store.getState().app.MADMultiply
-    //     : 3
-    // const MADValue = (mad(onlyFreqDriftArray) / 0.6745) * MADMultiply
-    //
-    // freqDriftData = freqDriftData.filter(
-    //     (dateAndFreqDriftObj) =>
-    //         Math.abs(dateAndFreqDriftObj.y) < Math.abs(MADValue)
-    // )
+    //MAD Filter
+    const onlyFreqDriftArray = freqDriftData.map(
+        (obj: { x: number; y: number }) => obj.y
+    )
+    const medianOfNewData = medianOfArr(onlyFreqDriftArray)
+
+    const madArrayValues = onlyFreqDriftArray.map((e) =>
+        Math.abs((e - medianOfNewData) / 0.6745)
+    )
+
+    const madValue = medianOfArr(madArrayValues)
+    const MADMultiply = store.getState().app.MADMultiply
+        ? store.getState().app.MADMultiply
+        : 3
+    const multipliedMadValue = madValue * MADMultiply
+
+    freqDriftData = freqDriftData.filter(
+        (dateAndFreqObj) =>
+            dateAndFreqObj.y < medianOfNewData + multipliedMadValue &&
+            dateAndFreqObj.y > medianOfNewData - multipliedMadValue
+    )
 
     return freqDriftData
 }
