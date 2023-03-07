@@ -1,4 +1,5 @@
 import data from 'assets/StationsBase.json'
+
 const removeJSON = () => {
     const names = [
         `BRUX`,
