@@ -1,6 +1,6 @@
-### BudgetApp
+### CLAN TOOL
 
-DEMO: https://wojciechszutryk.github.io/RinexCharts/
+DEMO: TODO
 
 ## Project Status
 
@@ -13,6 +13,10 @@ TODO
 ## Features
 
 TODO
+
+## Reflection
+
+Application devloped on university purpouse
 
 ## Installation and Setup Instructions
 
@@ -29,7 +33,3 @@ To Start Server:
 To Visit App:
 
 `localhost:3000`  
-
-## Reflection
-
-Application devloped on university purpouse
