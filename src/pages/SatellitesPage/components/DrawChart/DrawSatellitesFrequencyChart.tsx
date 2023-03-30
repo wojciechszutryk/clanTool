@@ -1,8 +1,8 @@
 import React, { useMemo, useState } from 'react'
 import { Box } from '@mui/material'
-import { DataChart } from 'components'
 import phaseToFreqWithObjectOutput from 'functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput'
 import { ChartData, PhaseData } from 'models/data.model'
+import DataChart from 'components/Chart/DataChart'
 
 const DrawSatellitesFrequencyChart = ({
     rerender,

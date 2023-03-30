@@ -4,6 +4,7 @@ import { Charts } from 'state/constans/types'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { setChartsToShow } from '../../state/actions'
+import { StyledCheckboxesWrapper, StyledLabel } from './styles'
 
 const availableCharts = [
     'Phase',
@@ -15,7 +16,7 @@ const availableCharts = [
     'HDEV',
 ] as Charts[]
 
-const ChartsToShowSelect = (props: {disabled?: boolean}) => {
+const ChartsToShowSelect = (props: { disabled?: boolean }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const dispatch = useAppDispatch()
 
@@ -39,7 +40,7 @@ const ChartsToShowSelect = (props: {disabled?: boolean}) => {
                 key={chart}
                 control={
                     <Checkbox
-                        disabled={ props.disabled || false }
+                        disabled={props.disabled || false}
                         checked={chartsToShow.includes(chart)}
                         onChange={() => handleChartCheck(chart)}
                         inputProps={{ 'aria-label': 'controlled' }}
@@ -50,20 +51,12 @@ const ChartsToShowSelect = (props: {disabled?: boolean}) => {
         ))
     }, [chartsToShow, handleChartCheck, props.disabled])
 
-    return <FormGroup sx={{
-        display: 'flex',
-        flexWrap: 'wrap',
-        paddingLeft: 10,
-        paddingRight: 10,
-        flexDirection: 'row',
-        justifyContent: 'center',
-    }}>
-        <FormLabel component="legend" sx={{
-            width: '100%',
-            textAlign: 'center'
-        }}>Select chart types</FormLabel>
-        {checkboxes}
-    </FormGroup>
+    return (
+        <StyledCheckboxesWrapper>
+            <StyledLabel>Select chart types</StyledLabel>
+            {checkboxes}
+        </StyledCheckboxesWrapper>
+    )
 }
 
 export default ChartsToShowSelect

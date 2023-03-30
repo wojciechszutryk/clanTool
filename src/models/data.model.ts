@@ -7,7 +7,6 @@ export interface PhasePoint {
 //data with phase for single station/satellite
 export type PhaseData = PhasePoint[]
 
-
 //data with phases for many stations/satellites
 export type PhasesData = { [key: string]: PhaseData }
 

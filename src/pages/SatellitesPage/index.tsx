@@ -1,18 +1,16 @@
 import { Box, Button, Grid, Typography } from '@mui/material'
+import DatePicker from 'components/DatePicker'
+import MADMultiplyInput from 'components/MADMultiplyInput'
+import TauTypeSelect from 'components/TauTypeSelect'
 import { useAppSelector } from 'functions/hooks/useAppSelector'
 import React, { useEffect, useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
-import {
-    DatePicker,
-    MADMultiplyInput,
-    SatellitesAutocomplete,
-    TauTypeSelect,
-} from '../../components'
 import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { setChartsToShow } from '../../state/actions'
 import { Charts } from '../../state/constans/types'
 import DrawSatellitesCharts from './components/DrawSatellitesCharts'
-import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSelect'
+import SatellitesAutocomplete from './components/SatellitesAutocomplete'
+import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSelect/SatellitesChartsToShowSelect'
 
 function SatellitesPage() {
     const [recalculate, setRecalculate] = useState(false) //used to rerender chars components on button click

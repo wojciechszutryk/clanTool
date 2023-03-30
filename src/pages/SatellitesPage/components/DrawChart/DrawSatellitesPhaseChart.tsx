@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react'
 import { Box } from '@mui/material'
-import { DataChart } from 'components'
 import { ChartData, PhaseData, PhasePoint } from 'models/data.model'
+import DataChart from 'components/Chart/DataChart'
 
 const DrawSatellitesPhaseChart = ({
     rerender,

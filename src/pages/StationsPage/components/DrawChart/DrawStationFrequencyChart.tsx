@@ -4,8 +4,8 @@ import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
-import { DataChart } from 'components'
 import phaseToFreqWithObjectOutput from 'functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput'
+import DataChart from 'components/Chart/DataChart'
 
 const DrawStationFrequencyChart = () => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
@@ -13,7 +13,9 @@ const DrawStationFrequencyChart = () => {
     const dispatch = useAppDispatch()
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
-    const selectedName = useAppSelector((state) =>state.app.selectedStationName)
+    const selectedName = useAppSelector(
+        (state) => state.app.selectedStationName
+    )
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
 
     useMemo(async () => {
@@ -22,7 +24,9 @@ const DrawStationFrequencyChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(
+            selectedName
+        )
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
@@ -44,7 +48,7 @@ const DrawStationFrequencyChart = () => {
             data,
             (data[1].date - data[0].date) / 1000,
             true
-        );
+        )
         setData(chartData)
         await setLoading(false)
     }, [dispatch, endDate, selectedName, startDate, MADMultiply])

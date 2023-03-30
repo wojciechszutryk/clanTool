@@ -5,9 +5,9 @@ import freqToPhase from '../../../../functions/freqToPhase/freqToPhase'
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import phaseToFreq from '../../../../functions/phaseToFreq/phaseToFreq'
-import { DEVChart } from '../../../../components/Chart'
 import { hadamardDev } from 'functions/hadamardVariance'
 import { ChartData, PhasesData } from 'models/data.model'
+import DEVChart from 'components/Chart/DEVChart'
 
 const DrawSatellitesDEVCharts = ({
     rerender,

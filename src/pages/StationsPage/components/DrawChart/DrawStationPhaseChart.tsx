@@ -2,9 +2,9 @@ import React, { useMemo, useState } from 'react'
 import { useAppSelector } from 'functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
-import { DataChart } from 'components'
 import { fetchAndConcatByDateDataFromPublicDir } from '../../../../functions/fetchDataFromPublicDir/fetchAndConcatByDateDataFromPublicDir'
 import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
+import DataChart from 'components/Chart/DataChart'
 
 const DrawStationPhaseChart = () => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
@@ -12,7 +12,9 @@ const DrawStationPhaseChart = () => {
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
     const dispatch = useAppDispatch()
-    const selectedName = useAppSelector((state) =>state.app.selectedStationName)
+    const selectedName = useAppSelector(
+        (state) => state.app.selectedStationName
+    )
 
     useMemo(async () => {
         if (!selectedName) {
@@ -20,7 +22,9 @@ const DrawStationPhaseChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(
+            selectedName
+        )
         const stationSatelliteData = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate

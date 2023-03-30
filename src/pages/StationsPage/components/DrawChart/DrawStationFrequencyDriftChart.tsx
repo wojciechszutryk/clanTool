@@ -3,15 +3,17 @@ import { fetchAndConcatByDateDataFromPublicDir } from '../../../../functions/fet
 import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
 import { Box } from '@mui/material'
 import { ClipLoader } from 'react-spinners'
-import { DataChart } from 'components'
 import phaseToFreqDriftWithObjectOutput from 'functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput'
+import DataChart from 'components/Chart/DataChart'
 
 const DrawStationFrequencyDriftChart = () => {
     const [data, setData] = useState<{ x: number; y: number }[]>([])
     const [loading, setLoading] = useState(true)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
-    const selectedName = useAppSelector((state) =>state.app.selectedStationName)
+    const selectedName = useAppSelector(
+        (state) => state.app.selectedStationName
+    )
 
     useMemo(async () => {
         if (!selectedName) {
@@ -19,7 +21,9 @@ const DrawStationFrequencyDriftChart = () => {
             return
         }
         setLoading(true)
-        const JSONData = await fetchAndConcatByDateDataFromPublicDir(selectedName);
+        const JSONData = await fetchAndConcatByDateDataFromPublicDir(
+            selectedName
+        )
         const data = await JSONData.data.filter(
             (obj: { date: number; phase: number }) =>
                 obj.date <= endDate && obj.date >= startDate
@@ -27,7 +31,7 @@ const DrawStationFrequencyDriftChart = () => {
         const chartData = phaseToFreqDriftWithObjectOutput(
             data,
             (data[1].date - data[0].date) / 1000
-        );
+        )
         setData(chartData)
         await setLoading(false)
     }, [endDate, selectedName, startDate])

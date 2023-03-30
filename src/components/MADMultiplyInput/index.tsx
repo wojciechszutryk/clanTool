@@ -15,15 +15,17 @@ const MADMultiplyInput = () => {
         [dispatch]
     )
 
-    return <TextField
-        sx={{width: 140}}
-        id="MADMultiplyInput"
-        label="MAD multiply"
-        type="number"
-        value={MADMultiply}
-        onChange={(e) => handleInputChange(e)}
-        inputProps={{min:1}}
-    />
+    return (
+        <TextField
+            sx={{ width: 140 }}
+            id="MADMultiplyInput"
+            label="MAD multiply"
+            type="number"
+            value={MADMultiply}
+            onChange={(e) => handleInputChange(e)}
+            inputProps={{ min: 1 }}
+        />
+    )
 }
 
 export default MADMultiplyInput
