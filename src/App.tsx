@@ -11,30 +11,41 @@ import StationsPage from './pages/StationsPage'
 import { useStyles } from './styles'
 import { Header } from './components/Header'
 import SatellitesPage from './pages/SatellitesPage'
-
-// import convertRinexDataIntoJSON from './functions/convertRinexDataIntoJSON/convertRinexDataIntoJSON'
-// convertRinexDataIntoJSON('R20').then((r) => console.log(r))
+import { LocalizationProvider } from '@mui/x-date-pickers'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 
 function App() {
     toast.configure()
-    const classes = useStyles();
+    const classes = useStyles()
     return (
-        <>
-            <Header/>
+        <LocalizationProvider dateAdapter={AdapterDayjs}>
+            <Header />
             <Box className={classes.wrapper}>
-                <Container sx={{marginTop: '56px', maxWidth: '1600px', padding: '50px 0'}}>
+                <Container
+                    sx={{
+                        marginTop: '56px',
+                        maxWidth: '1600px',
+                        padding: '50px 0',
+                    }}
+                >
                     <Routes>
-                        <Route path="*" element={<Navigate to="/satellites" replace />} />
-                        <Route path="satellites" element={<SatellitesPage/>} />
-                        <Route path="stations" element={<StationsPage/>} />
-                        <Route path="instructions" element={<InstructionsPage/>} />
-                        <Route path="about" element={<AboutPage/>} />
+                        <Route
+                            path="*"
+                            element={<Navigate to="/satellites" replace />}
+                        />
+                        <Route path="satellites" element={<SatellitesPage />} />
+                        <Route path="stations" element={<StationsPage />} />
+                        <Route
+                            path="instructions"
+                            element={<InstructionsPage />}
+                        />
+                        <Route path="about" element={<AboutPage />} />
                     </Routes>
                 </Container>
             </Box>
             <ToastContainer icon={<InfoIcon color="primary" />} />
-            <Footer/>
-        </>
+            <Footer />
+        </LocalizationProvider>
     )
 }
 

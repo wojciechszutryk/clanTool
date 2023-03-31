@@ -1,12 +1,10 @@
-import Stack from '@mui/material/Stack'
 import TextField, { TextFieldProps } from '@mui/material/TextField'
-import AdapterDateFns from '@mui/lab/AdapterDateFns'
-import LocalizationProvider from '@mui/lab/LocalizationProvider'
-import DateTimePicker from '@mui/lab/DateTimePicker'
 import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { showToast } from '../../functions/showToast'
 import { setEndDate, setStartDate } from '../../state/actions'
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import dayjs from 'dayjs'
 
 const DatePicker = ({ startEnd }: { startEnd: 'start' | 'end' }) => {
     const startDate = useAppSelector((state) => state.app.startDate)
@@ -25,57 +23,31 @@ const DatePicker = ({ startEnd }: { startEnd: 'start' | 'end' }) => {
             } else dispatch(setEndDate(+newValue))
         }
     }
-    console.log(LocalizationProvider, Stack, AdapterDateFns)
 
     return (
         <DateTimePicker
-            minDate={
-                startEnd === 'start'
-                    ? new Date(2014, 0, 1, 0, 0, 0, 0)
-                    : new Date(startDate)
-            }
-            maxDate={
-                startEnd === 'start'
-                    ? new Date(endDate)
-                    : new Date(2021, 0, 1, 0, 0, 0, 0)
-            }
-            label={
-                startEnd === 'start'
-                    ? 'Start date and Time'
-                    : 'Start end and Time'
-            }
-            value={startEnd === 'start' ? startDate : endDate}
-            onChange={handleChange}
-            inputFormat="dd-MM-Y HH:mm:SS"
-            renderInput={(params: TextFieldProps) => <TextField {...params} />}
+            // minDate={
+            //     startEnd === 'start'
+            //         ? new Date(2014, 0, 1, 0, 0, 0, 0)
+            //         : new Date(startDate)
+            // }
+            // maxDate={
+            //     startEnd === 'start'
+            //         ? new Date(endDate)
+            //         : new Date(2021, 0, 1, 0, 0, 0, 0)
+            // }
+            // label={
+            //     startEnd === 'start'
+            //         ? 'Start date and Time'
+            //         : 'Start end and Time'
+            // }
+            // value={startEnd === 'start' ? startDate : endDate}
+            onChange={(value) => {
+                console.log(dayjs(value))
+            }}
+            // inputFormat="dd-MM-Y HH:mm:SS"
+            // renderInput={(params: TextFieldProps) => <TextField {...params} />}
         />
-        // <LocalizationProvider dateAdapter={AdapterDateFns}>
-        //     <Stack spacing={3} sx={{ width: 300 }}>
-        //         <DateTimePicker
-        //             minDate={
-        //                 startEnd === 'start'
-        //                     ? new Date(2014, 0, 1, 0, 0, 0, 0)
-        //                     : new Date(startDate)
-        //             }
-        //             maxDate={
-        //                 startEnd === 'start'
-        //                     ? new Date(endDate)
-        //                     : new Date(2021, 0, 1, 0, 0, 0, 0)
-        //             }
-        //             label={
-        //                 startEnd === 'start'
-        //                     ? 'Start date and Time'
-        //                     : 'Start end and Time'
-        //             }
-        //             value={startEnd === 'start' ? startDate : endDate}
-        //             onChange={handleChange}
-        //             inputFormat="dd-MM-Y HH:mm:SS"
-        //             renderInput={(params: TextFieldProps) => (
-        //                 <TextField {...params} />
-        //             )}
-        //         />
-        //     </Stack>
-        // </LocalizationProvider>
     )
 }
 
