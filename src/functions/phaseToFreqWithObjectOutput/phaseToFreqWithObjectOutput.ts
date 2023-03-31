@@ -1,4 +1,5 @@
-import { medianOfArr } from 'functions/medianOfArray/medianOfArray'
+import { medianOfArr } from 'functions/medianOfArray'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 import store from 'state/store'
 
 export default function phaseToFreqWithObjectOutput(
@@ -8,7 +9,7 @@ export default function phaseToFreqWithObjectOutput(
 ) {
     const zoomFix = store.getState().app.zoomFix
         ? store.getState().app.zoomFix
-        : 1000000000000
+        : CHART_ZOOM_FIX
 
     let freqData: { x: number; y: number }[] = []
 

@@ -1,12 +1,13 @@
 import * as types from '../constans'
-import { Actions } from '../actions/actionsInterfaces'
+import { Actions } from '../actions/actions.model'
 import { Reducer } from 'redux'
-import { Charts, TauType } from '../constans/types'
+import { Charts, TauTypes } from '../../models/inputData.model'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 
 interface State {
     satellitesNames: string[]
     stationsNames: string[]
-    tauType: TauType
+    tauType: TauTypes
     selectedSatelliteNames: string[]
     selectedStationName: string
     mapReference: any
@@ -14,13 +15,13 @@ interface State {
     endDate: number
     chartsToShow: Charts[]
     MADMultiply: number
-    zoomFix: number //
+    zoomFix: number
 }
 
 const initialState: State = {
     stationsNames: [],
     satellitesNames: [],
-    tauType: TauType.powerOfTwo,
+    tauType: TauTypes.powerOfTwo,
     selectedSatelliteNames: [],
     selectedStationName: '',
     mapReference: null,
@@ -28,7 +29,7 @@ const initialState: State = {
     endDate: +new Date(2014, 0, 7, 0, 0, 0, 0),
     chartsToShow: [],
     MADMultiply: 3,
-    zoomFix: 1000000000000,
+    zoomFix: CHART_ZOOM_FIX,
 }
 
 const reducer: Reducer<State, Actions> = (

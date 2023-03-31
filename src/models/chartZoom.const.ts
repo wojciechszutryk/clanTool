@@ -1,0 +1,1 @@
+export const CHART_ZOOM_FIX = 1000000000000

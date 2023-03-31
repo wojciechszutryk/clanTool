@@ -2,15 +2,15 @@ import { Box, Grid, Typography } from '@mui/material'
 import React, { useEffect } from 'react'
 import { setChartsToShow } from '../../state/actions'
 import 'react-toastify/dist/ReactToastify.css'
-import DrawStationCharts from './components/DrawCharts'
-import { useAppDispatch } from 'functions/hooks/useAppDispach'
-import { useAppSelector } from 'functions/hooks/useAppSelector'
+import DrawStationCharts from './components/DrawStationsCharts'
 import ChartsToShowSelect from 'components/ChartsToShowSelect'
 import MADMultiplyInput from 'components/MADMultiplyInput'
 import OpenStreetMap from 'components/OpenStreetMap'
 import TauTypeSelect from 'components/TauTypeSelect'
-import StationSelect from './components/StationSelect'
+import StationsSelect from './components/StationsSelect'
 import DatePicker from 'components/DatePicker'
+import { useAppDispatch } from 'hooks/useAppDispach'
+import { useAppSelector } from 'hooks/useAppSelector'
 
 function StationsPage() {
     const selectedStationName = useAppSelector(
@@ -56,7 +56,7 @@ function StationsPage() {
                 <Box sx={{ minWidth: 310, width: '95%' }}>
                     <OpenStreetMap />
                 </Box>
-                <StationSelect />
+                <StationsSelect />
                 <DatePicker startEnd={'start'} />
                 <DatePicker startEnd={'end'} />
                 <Box>

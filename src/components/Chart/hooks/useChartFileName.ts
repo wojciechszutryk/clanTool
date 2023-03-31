@@ -1,4 +1,4 @@
-import { useAppSelector } from 'functions/hooks/useAppSelector'
+import { useAppSelector } from 'hooks/useAppSelector'
 
 interface Args {
     id: string

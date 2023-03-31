@@ -1,6 +1,6 @@
 import * as types from '../constans'
-import * as actions from '../actions/actionsInterfaces'
-import { Charts, TauType } from '../constans/types'
+import * as actions from './actions.model'
+import { Charts, TauTypes } from '../../models/inputData.model'
 
 export const setSatellitesNames = (
     satellitesNames: string[]
@@ -30,7 +30,7 @@ export const setSelectedStationName = (
     selectedStationName,
 })
 
-export const setTauType = (tauType: TauType): actions.ActionSetTauType => ({
+export const setTauType = (tauType: TauTypes): actions.ActionSetTauType => ({
     type: types.SET_TAU_TYPE,
     tauType,
 })

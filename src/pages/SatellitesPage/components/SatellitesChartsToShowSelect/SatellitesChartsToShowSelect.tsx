@@ -1,7 +1,7 @@
 import { Checkbox, FormControlLabel, FormGroup, FormLabel } from '@mui/material'
-import { useAppSelector } from 'functions/hooks/useAppSelector'
+import { useAppSelector } from 'hooks/useAppSelector'
 import React, { useCallback, useMemo } from 'react'
-import { Charts } from '../../../../state/constans/types'
+import { Charts } from '../../../../models/inputData.model'
 
 const availableCharts = [
     'Phase',

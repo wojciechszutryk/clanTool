@@ -1,13 +1,8 @@
-import {
-    ChartXY,
-    PointMarker,
-    UIBackground,
-    LineSeries,
-} from '@arction/lcjs'
+import { ChartXY, PointMarker, UIBackground, LineSeries } from '@arction/lcjs'
+import { useAppSelector } from 'hooks/useAppSelector'
 import { ChartData } from 'models/data.model'
 import { useRef, useEffect, useMemo, memo } from 'react'
 import { CSVLink } from 'react-csv'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import useChartFileName from './hooks/useChartFileName'
 import useInitializeDataChart from './hooks/useInitializeDataChart'
 import useSaveChartToImage from './hooks/useSaveChartToImage'
@@ -19,15 +14,13 @@ import {
     StyledWrapper,
 } from './styles'
 
-const DataChart = ({
-    data,
-    id,
-    xType = 'Tau',
-}: {
+interface Props {
     data: ChartData
     id: string
     xType?: 'Date' | 'Tau'
-}) => {
+}
+
+const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
     const chartRef = useRef<
         | {
               chart: ChartXY<PointMarker, UIBackground>

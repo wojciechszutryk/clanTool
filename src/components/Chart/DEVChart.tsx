@@ -1,5 +1,4 @@
 import { memo, useMemo, useRef } from 'react'
-import { useAppSelector } from '../../functions/hooks/useAppSelector'
 import { CSVLink } from 'react-csv'
 import { DEVsData } from 'models/data.model'
 import {
@@ -19,6 +18,7 @@ import {
     PointLineSeries,
 } from '@arction/lcjs'
 import ClockNoises from 'components/ClockNoises'
+import { useAppSelector } from 'hooks/useAppSelector'
 
 const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
     const zoomFix = useAppSelector((state) => state.app.zoomFix)

@@ -1,4 +1,5 @@
-import { madFilter } from 'functions/madFilter/madFilter'
+import { madFilter } from 'functions/madFilter'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 import store from 'state/store'
 
 export default function phaseToFreq(
@@ -8,7 +9,7 @@ export default function phaseToFreq(
 ) {
     const zoomFix = store.getState().app.zoomFix
         ? store.getState().app.zoomFix
-        : 1000000000000
+        : CHART_ZOOM_FIX
     let newData = []
     for (let i = 0; i < data.length - 1; i++) {
         fixZoom

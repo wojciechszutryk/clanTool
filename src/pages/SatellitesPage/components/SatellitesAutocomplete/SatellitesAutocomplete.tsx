@@ -1,12 +1,13 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react'
-import { useAppDispatch } from '../../../../functions/hooks/useAppDispach'
-import { useAppSelector } from '../../../../functions/hooks/useAppSelector'
+
 import {
     setSatellitesNames,
     setSelectedSatelliteNames,
 } from '../../../../state/actions'
 import { Autocomplete, FormControl, TextField } from '@mui/material'
 import SatelliteBase from 'assets/SatelliteBase'
+import { useAppDispatch } from 'hooks/useAppDispach'
+import { useAppSelector } from 'hooks/useAppSelector'
 
 type System = 'G' | 'R' | 'C' | 'E' | 'J'
 

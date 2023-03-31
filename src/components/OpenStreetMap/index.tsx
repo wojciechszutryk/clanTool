@@ -1,8 +1,8 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import stations from '../../assets/StationsBase.json'
-import { useAppDispatch } from '../../functions/hooks/useAppDispach'
 import { Box, Button } from '@mui/material'
 import { setSelectedStationName } from '../../state/actions'
+import { useAppDispatch } from 'hooks/useAppDispach'
 
 const OpenStreetMap = () => {
     const dispatch = useAppDispatch()
