@@ -73,8 +73,8 @@ function SatellitesPage() {
                     Parameters
                 </Typography>
                 <SatellitesAutocomplete />
-                <DatePicker startEnd={'start'} />
-                <DatePicker startEnd={'end'} />
+                <DatePicker isStartDate />
+                <DatePicker />
                 <Box>
                     <TauTypeSelect />
                     <MADMultiplyInput />

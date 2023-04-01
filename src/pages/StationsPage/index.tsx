@@ -57,8 +57,8 @@ function StationsPage() {
                     <OpenStreetMap />
                 </Box>
                 <StationsSelect />
-                <DatePicker startEnd={'start'} />
-                <DatePicker startEnd={'end'} />
+                <DatePicker isStartDate />
+                <DatePicker />
                 <Box>
                     <TauTypeSelect />
                     <MADMultiplyInput />

@@ -1,23 +1,33 @@
-import TextField, { TextFieldProps } from '@mui/material/TextField'
 import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { showToast } from '../../functions/showToast'
 import { setEndDate, setStartDate } from '../../state/actions'
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
 import dayjs from 'dayjs'
+import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
 
-const DatePicker = ({ startEnd }: { startEnd: 'start' | 'end' }) => {
+/**coverts number to dayjs date  */
+const dayjsDate = (value: number) => dayjs(new Date(value))
+
+interface Props {
+    isStartDate?: boolean
+}
+
+const DatePicker = ({ isStartDate }: Props) => {
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
     const dispatch = useAppDispatch()
     console.log(startDate, endDate)
 
-    const handleChange = (newValue: Date | null) => {
-        if (startEnd === 'start' && newValue) {
+    const handleChange = (dayjsVlue: dayjs.Dayjs | null) => {
+        if (!dayjsVlue) return
+
+        const newValue = new Date(dayjsVlue.valueOf())
+
+        if (isStartDate) {
             if (+newValue > endDate) {
                 showToast('Set date later than the end date')
             } else dispatch(setStartDate(+newValue))
-        } else if (startEnd === 'end' && newValue) {
+        } else if (!isStartDate) {
             if (+newValue < startDate) {
                 showToast('Set date earlier than the start date')
             } else dispatch(setEndDate(+newValue))
@@ -26,27 +36,22 @@ const DatePicker = ({ startEnd }: { startEnd: 'start' | 'end' }) => {
 
     return (
         <DateTimePicker
-            // minDate={
-            //     startEnd === 'start'
-            //         ? new Date(2014, 0, 1, 0, 0, 0, 0)
-            //         : new Date(startDate)
-            // }
-            // maxDate={
-            //     startEnd === 'start'
-            //         ? new Date(endDate)
-            //         : new Date(2021, 0, 1, 0, 0, 0, 0)
-            // }
-            // label={
-            //     startEnd === 'start'
-            //         ? 'Start date and Time'
-            //         : 'Start end and Time'
-            // }
-            // value={startEnd === 'start' ? startDate : endDate}
-            onChange={(value) => {
-                console.log(dayjs(value))
-            }}
-            // inputFormat="dd-MM-Y HH:mm:SS"
-            // renderInput={(params: TextFieldProps) => <TextField {...params} />}
+            minDate={
+                isStartDate
+                    ? dayjs(new Date(2014, 0, 1, 0, 0, 0, 0))
+                    : dayjsDate(startDate)
+            }
+            maxDate={
+                isStartDate
+                    ? dayjsDate(endDate)
+                    : dayjs(new Date(2021, 0, 1, 0, 0, 0, 0))
+            }
+            label={isStartDate ? 'Start date and Time' : 'Start end and Time'}
+            defaultValue={
+                isStartDate ? dayjsDate(startDate) : dayjsDate(endDate)
+            }
+            value={isStartDate ? dayjsDate(startDate) : dayjsDate(endDate)}
+            onChange={handleChange}
         />
     )
 }
