@@ -12,7 +12,7 @@ import {
     PointMarker,
     UIBackground,
 } from '@arction/lcjs'
-import { DEVsData } from 'models/data.model'
+import { ChartsData } from 'models/data.model'
 import { useEffect } from 'react'
 
 const TAU_VALUE = 300 //current tau value, set to multiply x axis values | to be changed when data sets changes
@@ -27,7 +27,7 @@ const useInitializeDEVChart = (
           }
         | undefined
     >,
-    data: DEVsData
+    data: ChartsData
 ) => {
     useEffect(() => {
         const palette = ColorPalettes.arction(10)
@@ -108,10 +108,11 @@ const useInitializeDEVChart = (
                     })
         )
 
-        const series = data.map((dev, index) => {
-            const devName = Object.keys(dev)[0]
-            // const series = chart.addSplineSeries({
-            const series = chart
+        const series: PointLineSeries[] = []
+
+        let index = 0
+        data.forEach((chartPoints, devName) => {
+            const pointSeries = chart
                 .addPointLineSeries({
                     xAxis: axisX,
                     yAxis: axisY,
@@ -132,8 +133,54 @@ const useInitializeDEVChart = (
                 .setPointFillStyle(() =>
                     seriesStrokeStyles[index].getFillStyle()
                 )
-            series.add(Object.values(data[index])[0])
-            return series
+            index++
+
+            // pointSeries.add([
+            //     { x: 1, y: 1129494915.3 },
+            //     { x: 2, y: 8168111855.88 },
+            // ])
+            pointSeries.add([
+                {
+                    x: 7.201856811530576e-13,
+                    y: 112949491550673.3,
+                },
+                {
+                    x: 1.4403713623061152e-12,
+                    y: 81681118552810.88,
+                },
+                {
+                    x: 2.8807427246122305e-12,
+                    y: 61910407237320.13,
+                },
+                {
+                    x: 5.761485449224461e-12,
+                    y: 50732544952154.51,
+                },
+                {
+                    x: 1.1522970898448922e-11,
+                    y: 42122649516291.56,
+                },
+                {
+                    x: 2.3045941796897844e-11,
+                    y: 36151655969349.62,
+                },
+                {
+                    x: 4.609188359379569e-11,
+                    y: 41744116369106.72,
+                },
+                {
+                    x: 9.218376718759138e-11,
+                    y: 48534241237596.516,
+                },
+                {
+                    x: 1.8436753437518275e-10,
+                    y: 55901816274928.77,
+                },
+            ])
+            console.log(chartPoints)
+
+            pointSeries.add(chartPoints)
+            series.push(pointSeries)
         })
 
         const legend = chart.addLegendBox()
@@ -155,7 +202,7 @@ const useInitializeDEVChart = (
 
         return () => {
             chart.dispose()
-            chartRef.current = undefined
+            // chartRef.current = undefined
         }
     }, [])
 }

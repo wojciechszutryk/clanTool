@@ -3,7 +3,7 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react'
 import {
     setSatellitesNames,
     setSelectedSatelliteNames,
-} from '../../../../state/actions'
+} from '../../../../../state/actions'
 import { Autocomplete, FormControl, TextField } from '@mui/material'
 import SatelliteBase from 'assets/SatelliteBase'
 import { useAppDispatch } from 'hooks/useAppDispach'

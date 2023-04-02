@@ -9,17 +9,16 @@ export enum SquaresColors {
     'BetweenZeroAndOneHover' = '#91bceb',
     'MoreThanOne' = '#91bceb',
     'MoreThanOneHover' = '#a4cefc',
-
     'Border' = '#667586',
 }
 
-export const Title = styled('h2')({
+export const StyledTitle = styled('h2')({
     marginTop: 10,
     textAlign: 'center',
     fontFamily: 'arial, sans-serif',
 })
 
-export const Header = styled('p')({
+export const StyledHeader = styled('p')({
     marginRight: 10,
     lineHeight: '5vh',
     textAlign: 'center',
@@ -28,7 +27,7 @@ export const Header = styled('p')({
     fontWeight: 300,
 })
 
-export const Wrapper = styled('div')({
+export const StyledWrapper = styled('div')({
     margin: '10px 20px 5px 10px',
     display: 'flex',
     '& > div': {
@@ -36,50 +35,50 @@ export const Wrapper = styled('div')({
     },
 })
 
-export const LessThanMinusOneSquare = styled('div')<{
+export const StyledLessThanMinusOneSquare = styled('div')<{
     widthPercentage: number
 }>(({ widthPercentage }) => ({
     width: `${widthPercentage}%`,
     height: '5vh',
     backgroundColor: SquaresColors.LessThanMinusOne,
     border: `1px solid ${SquaresColors.Border}`,
-    '&:hvover': {
+    '&:hover': {
         backgroundColor: SquaresColors.LessThanMinusOneHover,
     },
 }))
 
-export const BetweenMinusOneAndZeroSquare = styled('div')<{
+export const StyledBetweenMinusOneAndZeroSquare = styled('div')<{
     widthPercentage: number
 }>(({ widthPercentage }) => ({
     width: `${widthPercentage}%`,
     height: '5vh',
     backgroundColor: SquaresColors.BetweenMinusOneAndZero,
     border: `1px solid ${SquaresColors.Border}`,
-    '&:hvover': {
+    '&:hover': {
         backgroundColor: SquaresColors.BetweenMinusOneAndZeroHover,
     },
 }))
 
-export const BetweenZeroAndOneSquare = styled('div')<{
+export const StyledBetweenZeroAndOneSquare = styled('div')<{
     widthPercentage: number
 }>(({ widthPercentage }) => ({
     width: `${widthPercentage}%`,
     height: '5vh',
     backgroundColor: SquaresColors.BetweenZeroAndOne,
     border: `1px solid ${SquaresColors.Border}`,
-    '&:hvover': {
+    '&:hover': {
         backgroundColor: SquaresColors.BetweenZeroAndOneHover,
     },
 }))
 
-export const MoreThanOneSquare = styled('div')<{
+export const StyledMoreThanOneSquare = styled('div')<{
     widthPercentage: number
 }>(({ widthPercentage }) => ({
     width: `${widthPercentage}%`,
     height: '5vh',
     backgroundColor: SquaresColors.MoreThanOne,
     border: `1px solid ${SquaresColors.Border}`,
-    '&:hvover': {
+    '&:hover': {
         backgroundColor: SquaresColors.MoreThanOneHover,
     },
 }))

@@ -8,7 +8,7 @@ export interface PhasePoint {
 export type PhaseData = PhasePoint[]
 
 //data with phases for many stations/satellites
-export type PhasesData = { [key: string]: PhaseData }
+export type PhasesData = Map<string, PhaseData>
 
 // single point on chart
 export interface ChartPoint {
@@ -18,7 +18,5 @@ export interface ChartPoint {
 
 export type ChartData = ChartPoint[]
 
-// chart data of single deviation
-export type DEVData = { [key: string]: ChartData }
-
-export type DEVsData = DEVData[]
+//data with phases for many stations/satellites
+export type ChartsData = Map<string, ChartData>

@@ -1,17 +1,18 @@
 import { medianOfArr } from 'functions/medianOfArray'
-import { CHART_ZOOM_FIX } from 'models/chartZoom.const';
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
+import { ChartData, PhaseData } from 'models/data.model'
 import store from 'state/store'
 
 export default function phaseToFreqDriftWithObjectOutput(
-    data: { date: number; phase: number }[],
+    data: PhaseData,
     tau: number
 ) {
     const zoomFix = store.getState().app.zoomFix
         ? store.getState().app.zoomFix
         : CHART_ZOOM_FIX
 
-    let freqArrayData: number[] = []
-    let freqDriftData: { x: number; y: number }[] = []
+    const freqArrayData: number[] = []
+    let freqDriftData: ChartData = []
 
     for (let i = 0; i < data.length - 1; i++) {
         freqArrayData.push((data[i + 1].phase - data[i].phase) / tau)

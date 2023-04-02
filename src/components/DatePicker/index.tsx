@@ -16,7 +16,6 @@ const DatePicker = ({ isStartDate }: Props) => {
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
     const dispatch = useAppDispatch()
-    console.log(startDate, endDate)
 
     const handleChange = (dayjsVlue: dayjs.Dayjs | null) => {
         if (!dayjsVlue) return

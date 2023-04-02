@@ -1,6 +1,6 @@
-import { memo, useMemo, useRef } from 'react'
+import { memo, useEffect, useMemo, useRef } from 'react'
 import { CSVLink } from 'react-csv'
-import { DEVsData } from 'models/data.model'
+import { ChartPoint, ChartsData } from 'models/data.model'
 import {
     StyledChartActionsWrapper,
     StyledChartBox,
@@ -20,7 +20,7 @@ import {
 import ClockNoises from 'components/ClockNoises'
 import { useAppSelector } from 'hooks/useAppSelector'
 
-const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
+const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {
     const zoomFix = useAppSelector((state) => state.app.zoomFix)
     const filename = useChartFileName({ id })
     const chartRef = useRef<
@@ -32,26 +32,33 @@ const DEVChart = ({ data, id }: { data: DEVsData; id: string }) => {
     >(undefined)
     const handleChartSaveToImage = useSaveChartToImage({ filename, chartRef })
 
+    console.log(data)
+
     useInitializeDEVChart(id, zoomFix, chartRef, data)
 
     const csvData = useMemo(() => {
-        if (data.length === 0) return []
+        if (data.size === 0) return []
         const csvArray: (string | number)[][] = []
-        const tauValues = Object.values(data[0])[0].map((xyData) => xyData.x)
+        const tauValues = data
+            .entries()
+            .next()
+            .value.map((chartData: ChartPoint) => chartData.x)
         csvArray.push(['tau', ...tauValues])
 
-        for (let i = 0; i < data.length; i++) {
-            const devValues = Object.values(data[i])[0].map(
-                (xyData) => xyData.y / zoomFix
+        data.forEach((chartData, key) => {
+            const devValues = chartData.map(
+                (chartData) => chartData.y / zoomFix
             )
-            csvArray.push([Object.keys(data[i])[0], ...devValues])
-        }
+            csvArray.push([key, ...devValues])
+        })
+
         return csvArray
-    }, [])
+    }, [data, zoomFix])
 
     return (
         <StyledWrapper>
             <StyledChartBox id={id} />
+            <div id={id}></div>
             <ClockNoises data={data} />
             <StyledChartActionsWrapper>
                 <StyledSaveToImageButton

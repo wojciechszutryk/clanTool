@@ -1,10 +1,10 @@
 import { Tooltip } from '@mui/material'
 import { memo } from 'react'
 import {
-    LessThanMinusOneSquare,
-    BetweenMinusOneAndZeroSquare,
-    BetweenZeroAndOneSquare,
-    MoreThanOneSquare,
+    StyledLessThanMinusOneSquare,
+    StyledBetweenMinusOneAndZeroSquare,
+    StyledBetweenZeroAndOneSquare,
+    StyledMoreThanOneSquare,
 } from './styles'
 
 interface Props {
@@ -25,25 +25,27 @@ const ClockNoiseSquare = ({
     let renderSquare = null
     if (aParameter < -1)
         renderSquare = (
-            <LessThanMinusOneSquare
+            <StyledLessThanMinusOneSquare
                 widthPercentage={xyValueArrayLengthMinusOne}
             />
         )
     else if (aParameter > -1 && aParameter < 0)
         renderSquare = (
-            <BetweenMinusOneAndZeroSquare
+            <StyledBetweenMinusOneAndZeroSquare
                 widthPercentage={xyValueArrayLengthMinusOne}
             />
         )
     else if (aParameter > -1 && aParameter < 0)
         renderSquare = (
-            <BetweenZeroAndOneSquare
+            <StyledBetweenZeroAndOneSquare
                 widthPercentage={xyValueArrayLengthMinusOne}
             />
         )
     else
         renderSquare = (
-            <MoreThanOneSquare widthPercentage={xyValueArrayLengthMinusOne} />
+            <StyledMoreThanOneSquare
+                widthPercentage={xyValueArrayLengthMinusOne}
+            />
         )
 
     return (

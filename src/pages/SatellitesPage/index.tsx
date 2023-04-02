@@ -1,117 +1,85 @@
-import { Box, Button, Grid, Typography } from '@mui/material'
-import DatePicker from 'components/DatePicker'
-import MADMultiplyInput from 'components/MADMultiplyInput'
-import TauTypeSelect from 'components/TauTypeSelect'
-import { useEffect, useState } from 'react'
+import { Grid, Typography } from '@mui/material'
+import { useState } from 'react'
 import 'react-toastify/dist/ReactToastify.css'
-import { setChartsToShow } from '../../state/actions'
 import { Charts } from '../../models/inputData.model'
-import DrawSatellitesCharts from './components/DrawSatellitesCharts'
-import SatellitesAutocomplete from './components/SatellitesAutocomplete'
-import SatellitesChartsToShowSelect from './components/SatellitesChartsToShowSelect/SatellitesChartsToShowSelect'
-import { useAppDispatch } from 'hooks/useAppDispach'
+import SatellitesCharts from './components/SatellitesCharts'
 import { useAppSelector } from 'hooks/useAppSelector'
+import SatelitesForm from './components/SatelitesForm'
+import {
+    StyledLoaderWrapper,
+    StyledSatellitesChartsWrapper,
+    StyledSatellitesFormWrapper,
+} from './styles'
+import useGetChartsData from 'hooks/useFetchPhasesData'
+import { ClipLoader } from 'react-spinners'
 
 function SatellitesPage() {
-    const [recalculate, setRecalculate] = useState(false) //used to rerender chars components on button click
-    const dispatch = useAppDispatch()
     const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<
         Charts[]
     >([])
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
     )
+    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
+    const { isLoading, downloadedPercentages, chartsData, createChartsData } =
+        useGetChartsData()
 
-    const handleDrawCharts = () => {
-        setRecalculate(!recalculate)
+    // console.log(isLoading, downloadedPercentages, chartsData)
 
-        const chartsToDispach =
+    const handleSubmit = () => {
+        const chartsDataToCreate =
             selectedSatelliteNames.length > 1
-                ? chartsSelectedToBeVisible.filter(
+                ? chartsToShow.filter(
                       (chartToShow) =>
-                          !['Phase', 'Frequency', 'Frequency Drift'].includes(
-                              chartToShow
-                          )
+                          ![
+                              Charts.Phase,
+                              Charts.Frequency,
+                              Charts.FrequencyDrift,
+                          ].includes(chartToShow)
                   )
-                : chartsSelectedToBeVisible
-        dispatch(setChartsToShow(chartsToDispach))
+                : chartsToShow
+
+        createChartsData(
+            selectedSatelliteNames,
+            startDate,
+            endDate,
+            chartsDataToCreate
+        )
     }
 
-    useEffect(() => {
-        return () => {
-            dispatch(setChartsToShow([]))
-        }
-    }, [dispatch])
+    // useEffect(() => {
+    //     return () => {
+    //         dispatch(setChartsToShow([]))
+    //     }
+    // }, [dispatch])
+
+    console.log(chartsData)
 
     return (
         <Grid container spacing={{ md: 3 }}>
-            <Grid
-                item
-                xs={12}
-                md={5}
-                lg={4}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-around',
-                    alignItems: 'center',
-                    height: 700,
-                    '@media only screen and (min-width: 900px)': {
-                        backgroundColor: '#fff',
-                        borderRadius: 2,
-                        paddingTop: '0 !important',
-                        paddingLeft: '0 !important',
-                        boxShadow:
-                            '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
-                    },
-                }}
-            >
-                <Typography
-                    variant={'h2'}
-                    sx={{ fontSize: 30, color: '#25374a' }}
-                >
-                    Parameters
-                </Typography>
-                <SatellitesAutocomplete />
-                <DatePicker isStartDate />
-                <DatePicker />
-                <Box>
-                    <TauTypeSelect />
-                    <MADMultiplyInput />
-                </Box>
-                <SatellitesChartsToShowSelect
-                    setChartsSelectedToBeVisible={setChartsSelectedToBeVisible}
-                    chartsSelectedToBeVisible={chartsSelectedToBeVisible}
-                />
-                <Button
-                    variant={'contained'}
-                    sx={{
-                        backgroundColor: '#25374a',
-                        width: 300,
-                        '&:hover': { backgroundColor: '#7E8995' },
-                    }}
-                    onClick={handleDrawCharts}
-                    disabled={selectedSatelliteNames.length === 0}
-                >
-                    Calculate
-                </Button>
-            </Grid>
-            <Grid
-                item
-                xs={12}
-                md={7}
-                lg={8}
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                    '@media only screen and (min-width: 900px)': {
-                        paddingTop: '0 !important',
-                    },
-                }}
-            >
-                <DrawSatellitesCharts recalculate={recalculate} />
-            </Grid>
+            <StyledSatellitesFormWrapper item xs={12} md={5} lg={4}>
+                <SatelitesForm handleSubmit={handleSubmit} />
+            </StyledSatellitesFormWrapper>
+            <StyledSatellitesChartsWrapper item xs={12} md={7} lg={8}>
+                {isLoading || !chartsData ? (
+                    <StyledLoaderWrapper>
+                        <ClipLoader loading={isLoading} size={150} />
+                        {downloadedPercentages &&
+                            Object.entries(downloadedPercentages).map(
+                                ([name, percentage]) => (
+                                    <Typography key={name}>
+                                        {name}: {percentage}%
+                                    </Typography>
+                                )
+                            )}
+                        <Typography></Typography>
+                    </StyledLoaderWrapper>
+                ) : (
+                    <SatellitesCharts chartsData={chartsData} />
+                )}
+            </StyledSatellitesChartsWrapper>
         </Grid>
     )
 }
