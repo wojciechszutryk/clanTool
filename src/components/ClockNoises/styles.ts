@@ -13,12 +13,20 @@ export enum SquaresColors {
 }
 
 export const StyledTitle = styled('h2')({
-    marginTop: 10,
+    margin: '10px 0',
+    flexBasis: '100%',
     textAlign: 'center',
     fontFamily: 'arial, sans-serif',
 })
 
-export const StyledHeader = styled('p')({
+export const StyledClockNoisesWrapper = styled('div')({
+    margin: '10px 20px 5px 10px',
+    display: 'flex',
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+})
+
+export const StyledRowHeader = styled('span')({
     marginRight: 10,
     lineHeight: '5vh',
     textAlign: 'center',
@@ -27,8 +35,9 @@ export const StyledHeader = styled('p')({
     fontWeight: 300,
 })
 
-export const StyledWrapper = styled('div')({
-    margin: '10px 20px 5px 10px',
+export const StyledSingleRow = styled('div')({
+    flexBasis: '100%',
+    flexGrow: 1,
     display: 'flex',
     '& > div': {
         flexGrow: 1,
