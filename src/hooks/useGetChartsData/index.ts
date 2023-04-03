@@ -120,44 +120,29 @@ const useGetChartsData = () => {
                 const phases = freqToPhase({ data: freq, tau: tau })
 
                 if (chartsToCreate.includes(Charts.ADEV)) {
-                    const allanDevChartData = allanDev(
-                        phases,
-                        startDate,
-                        endDate
-                    )
+                    const allanDevChartData = allanDev(phases)
+
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, Charts.ADEV),
                         allanDevChartData
                     )
                 }
                 if (chartsToCreate.includes(Charts.MDEV)) {
-                    const modAllanDevChartData = modAllanDev(
-                        phases,
-                        startDate,
-                        endDate
-                    )
+                    const modAllanDevChartData = modAllanDev(phases)
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, Charts.MDEV),
                         modAllanDevChartData
                     )
                 }
                 if (chartsToCreate.includes(Charts.ODEV)) {
-                    const overAllanDevChartData = overAllanDev(
-                        phases,
-                        startDate,
-                        endDate
-                    )
+                    const overAllanDevChartData = overAllanDev(phases)
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, Charts.ODEV),
                         overAllanDevChartData
                     )
                 }
                 if (chartsToCreate.includes(Charts.HDEV)) {
-                    const hadamardAllanDevChartData = hadamardDev(
-                        phases,
-                        startDate,
-                        endDate
-                    )
+                    const hadamardAllanDevChartData = hadamardDev(phases)
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, Charts.HDEV),
                         hadamardAllanDevChartData

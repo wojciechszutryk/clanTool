@@ -3,7 +3,7 @@ import { Box } from '@mui/material'
 import { ChartsData } from 'models/data.model'
 import { useAppSelector } from 'hooks/useAppSelector'
 import DEVChart from 'components/Chart/DEVChart'
-import { createDEVChartDataMap } from 'hooks/useFetchPhasesData/createDEVChartDataMap.helper'
+import { createDEVChartDataMap } from 'hooks/useGetChartsData/createDEVChartDataMap.helper'
 import { StyledChartWrapper } from './styles'
 import DataChart from 'components/Chart/DataChart'
 

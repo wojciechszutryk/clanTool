@@ -3,7 +3,7 @@ import { useAppSelector } from 'hooks/useAppSelector'
 import { showToast } from '../../functions/showToast'
 import { setEndDate, setStartDate } from '../../state/actions'
 import dayjs from 'dayjs'
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import { StyledDatePicker } from './styles'
 
 /**coverts number to dayjs date  */
 const dayjsDate = (value: number) => dayjs(new Date(value))
@@ -34,7 +34,7 @@ const DatePicker = ({ isStartDate }: Props) => {
     }
 
     return (
-        <DateTimePicker
+        <StyledDatePicker
             minDate={
                 isStartDate
                     ? dayjs(new Date(2014, 0, 1, 0, 0, 0, 0))
@@ -45,7 +45,7 @@ const DatePicker = ({ isStartDate }: Props) => {
                     ? dayjsDate(endDate)
                     : dayjs(new Date(2021, 0, 1, 0, 0, 0, 0))
             }
-            label={isStartDate ? 'Start date and Time' : 'Start end and Time'}
+            label={isStartDate ? 'Start date and Time' : 'Start date and Time'}
             defaultValue={
                 isStartDate ? dayjsDate(startDate) : dayjsDate(endDate)
             }

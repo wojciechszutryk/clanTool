@@ -1,5 +1,6 @@
 import { generateLogTauData } from 'functions/varianceHelpers'
 import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
+import { ChartData } from 'models/data.model'
 
 const SMALLEST_SIZE_VALUE = 3
 
@@ -38,7 +39,9 @@ export function allanDev(
     )
 
     let tau0 = 1 / rate
-    let result: { x: number; y: number }[] = []
+    let result: ChartData = []
+    console.log(tau0);
+    
 
     for (let m of tauLogData) {
         let tau = m * tau0
@@ -64,7 +67,7 @@ export function overAllanDev(
     )
 
     let tau0 = 1 / rate
-    let result: { x: number; y: number }[] = []
+    let result: ChartData = []
 
     for (let m of tauLogData) {
         let tau = m * tau0
@@ -90,7 +93,7 @@ export function modAllanDev(
     )
 
     let tau0 = 1 / rate
-    let result: { x: number; y: number }[] = []
+    let result: ChartData = []
 
     for (let m of tauLogData) {
         let tau = m * tau0

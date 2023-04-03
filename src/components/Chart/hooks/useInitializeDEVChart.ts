@@ -35,7 +35,7 @@ const useInitializeDEVChart = (
             7, 24, 14, 19, 4, 9, 17, 18, 3, 22, 25, 5, 12, 16, 11, 10, 21, 23,
             15, 13, 1, 8, 6, 2, 20,
         ].map(palette)
-        const axisYColors = colors.map((color, index) => colors[index])
+        const axisYColors = colors.map((_, index) => colors[index])
         const axisYStyles = axisYColors.map((color) => new SolidFill({ color }))
         const seriesStrokeStyles = axisYStyles.map(
             (fillStyle) => new SolidLine({ fillStyle, thickness: 2 })
@@ -62,7 +62,7 @@ const useInitializeDEVChart = (
                 },
             })
             .setTitle(id)
-            .setPadding({ left: 8, right: 50, top: 8, bottom: 8 })
+            .setPadding({ left: 10, right: 10, top: 8, bottom: 8 })
             .setAutoCursor((autoCursor) =>
                 autoCursor.setResultTable((resultTable) =>
                     resultTable.setTextFillStyle(
@@ -135,50 +135,6 @@ const useInitializeDEVChart = (
                 )
             index++
 
-            // pointSeries.add([
-            //     { x: 1, y: 1129494915.3 },
-            //     { x: 2, y: 8168111855.88 },
-            // ])
-            pointSeries.add([
-                {
-                    x: 7.201856811530576e-13,
-                    y: 112949491550673.3,
-                },
-                {
-                    x: 1.4403713623061152e-12,
-                    y: 81681118552810.88,
-                },
-                {
-                    x: 2.8807427246122305e-12,
-                    y: 61910407237320.13,
-                },
-                {
-                    x: 5.761485449224461e-12,
-                    y: 50732544952154.51,
-                },
-                {
-                    x: 1.1522970898448922e-11,
-                    y: 42122649516291.56,
-                },
-                {
-                    x: 2.3045941796897844e-11,
-                    y: 36151655969349.62,
-                },
-                {
-                    x: 4.609188359379569e-11,
-                    y: 41744116369106.72,
-                },
-                {
-                    x: 9.218376718759138e-11,
-                    y: 48534241237596.516,
-                },
-                {
-                    x: 1.8436753437518275e-10,
-                    y: 55901816274928.77,
-                },
-            ])
-            console.log(chartPoints)
-
             pointSeries.add(chartPoints)
             series.push(pointSeries)
         })
@@ -204,7 +160,7 @@ const useInitializeDEVChart = (
             chart.dispose()
             // chartRef.current = undefined
         }
-    }, [])
+    }, [chartRef, data, id, zoomFix])
 }
 
 export default useInitializeDEVChart

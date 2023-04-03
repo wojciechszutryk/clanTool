@@ -32,17 +32,12 @@ const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {
     >(undefined)
     const handleChartSaveToImage = useSaveChartToImage({ filename, chartRef })
 
-    console.log(data)
-
     useInitializeDEVChart(id, zoomFix, chartRef, data)
 
     const csvData = useMemo(() => {
         if (data.size === 0) return []
         const csvArray: (string | number)[][] = []
-        const tauValues = data
-            .entries()
-            .next()
-            .value.map((chartData: ChartPoint) => chartData.x)
+        const tauValues = Array.from(data.values())[0].map((point) => point.x)
         csvArray.push(['tau', ...tauValues])
 
         data.forEach((chartData, key) => {

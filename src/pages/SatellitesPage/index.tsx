@@ -10,13 +10,10 @@ import {
     StyledSatellitesChartsWrapper,
     StyledSatellitesFormWrapper,
 } from './styles'
-import useGetChartsData from 'hooks/useFetchPhasesData'
+import useGetChartsData from 'hooks/useGetChartsData'
 import { ClipLoader } from 'react-spinners'
 
 function SatellitesPage() {
-    const [chartsSelectedToBeVisible, setChartsSelectedToBeVisible] = useState<
-        Charts[]
-    >([])
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
     )
@@ -25,8 +22,6 @@ function SatellitesPage() {
     const endDate = useAppSelector((state) => state.app.endDate)
     const { isLoading, downloadedPercentages, chartsData, createChartsData } =
         useGetChartsData()
-
-    // console.log(isLoading, downloadedPercentages, chartsData)
 
     const handleSubmit = () => {
         const chartsDataToCreate =
@@ -48,14 +43,6 @@ function SatellitesPage() {
             chartsDataToCreate
         )
     }
-
-    // useEffect(() => {
-    //     return () => {
-    //         dispatch(setChartsToShow([]))
-    //     }
-    // }, [dispatch])
-
-    console.log(chartsData)
 
     return (
         <Grid container spacing={{ md: 3 }}>
