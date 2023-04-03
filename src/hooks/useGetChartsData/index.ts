@@ -9,12 +9,14 @@ import freqToPhase from 'functions/freqToPhase'
 import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
 import { hadamardDev } from 'functions/hadamardVariance'
 import { getChartsDataMapKey } from './getChartsDataMapKey.helper'
+import { IDownloadProgress } from './downloadProgress.model'
+
+const downloadFileSize = 100000000 // TODO: get this value from server
 
 const useGetChartsData = () => {
     const [isLoading, setIsLoading] = useState(false)
-    const [downloadedPercentages, setDownloadedPercentages] = useState<
-        Record<string, [number, number]> | undefined
-    >(undefined)
+    const [downloadPorgress, setDownloadPorgress] =
+        useState<IDownloadProgress>(undefined)
     const [chartsData, setChartsData] = useState<ChartsData | undefined>(
         undefined
     )
@@ -33,14 +35,26 @@ const useGetChartsData = () => {
                         // const current =
                         //     progressEvent.event.currentTarget.response.length
 
-                        setDownloadedPercentages((prev) => ({
+                        setDownloadPorgress((prev) => ({
                             ...prev,
-                            [resourceName]: [progressEvent.loaded, 0],
+                            [resourceName]: {
+                                completed: false,
+                                downloaded: progressEvent.loaded,
+                                total: downloadFileSize,
+                            },
                         }))
                     },
                 }
             )
             .then((res) => {
+                setDownloadPorgress((prev) => ({
+                    ...prev,
+                    [resourceName]: {
+                        completed: true,
+                        downloaded: downloadFileSize,
+                        total: downloadFileSize,
+                    },
+                }))
                 return res.data
             })
 
@@ -152,12 +166,13 @@ const useGetChartsData = () => {
         })
 
         setChartsData(resourcesMap)
-        setIsLoading(false) // todo move this to point where async operations are done and add different state to represent creating and calculating chart data
+        setIsLoading(false)
+        setDownloadPorgress(undefined)
     }
 
     return {
         isLoading,
-        downloadedPercentages,
+        downloadPorgress,
         chartsData,
         createChartsData,
     }

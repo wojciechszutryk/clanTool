@@ -1,0 +1,44 @@
+import { memo } from 'react'
+import {
+    StyledLoaderHeader,
+    StyledLoaderWrapper,
+    StyledResourceName,
+} from './styles'
+import LinearProgressLoader from './LinearProgressLoader'
+import { IDownloadProgress } from 'hooks/useGetChartsData/downloadProgress.model'
+import DownloadCompletedInfo from './DownloadCompletedInfo'
+
+interface Props {
+    downloadPorgress: IDownloadProgress
+}
+
+const ChartsLoaders = ({ downloadPorgress }: Props): JSX.Element => {
+    return (
+        <StyledLoaderWrapper>
+            <StyledLoaderHeader>Loading required data:</StyledLoaderHeader>
+            {downloadPorgress &&
+                Object.entries(downloadPorgress).map(
+                    ([resourceName, progress]) => (
+                        <>
+                            <StyledResourceName>
+                                {resourceName}
+                            </StyledResourceName>
+                            {progress.completed ? (
+                                <DownloadCompletedInfo />
+                            ) : (
+                                <LinearProgressLoader
+                                    value={Math.floor(
+                                        (progress.downloaded / progress.total) *
+                                            100
+                                    )}
+                                    resourceName={resourceName}
+                                />
+                            )}
+                        </>
+                    )
+                )}
+        </StyledLoaderWrapper>
+    )
+}
+
+export default memo(ChartsLoaders)

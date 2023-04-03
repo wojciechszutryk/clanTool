@@ -24,10 +24,3 @@ export const StyledSatellitesChartsWrapper = styled(Grid)({
         paddingTop: '0 !important',
     },
 })
-
-export const StyledLoaderWrapper = styled('div')({
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    height: '50vh',
-})

@@ -1,17 +1,15 @@
-import { Grid, Typography } from '@mui/material'
-import { useState } from 'react'
+import { Grid } from '@mui/material'
 import 'react-toastify/dist/ReactToastify.css'
 import { Charts } from '../../models/inputData.model'
 import SatellitesCharts from './components/SatellitesCharts'
 import { useAppSelector } from 'hooks/useAppSelector'
 import SatelitesForm from './components/SatelitesForm'
 import {
-    StyledLoaderWrapper,
     StyledSatellitesChartsWrapper,
     StyledSatellitesFormWrapper,
 } from './styles'
 import useGetChartsData from 'hooks/useGetChartsData'
-import { ClipLoader } from 'react-spinners'
+import ChartsLoaders from './components/ChartsLoaders'
 
 function SatellitesPage() {
     const selectedSatelliteNames = useAppSelector(
@@ -20,7 +18,7 @@ function SatellitesPage() {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)
-    const { isLoading, downloadedPercentages, chartsData, createChartsData } =
+    const { isLoading, downloadPorgress, chartsData, createChartsData } =
         useGetChartsData()
 
     const handleSubmit = () => {
@@ -50,21 +48,10 @@ function SatellitesPage() {
                 <SatelitesForm handleSubmit={handleSubmit} />
             </StyledSatellitesFormWrapper>
             <StyledSatellitesChartsWrapper item xs={12} md={7} lg={8}>
-                {isLoading || !chartsData ? (
-                    <StyledLoaderWrapper>
-                        <ClipLoader loading={isLoading} size={150} />
-                        {downloadedPercentages &&
-                            Object.entries(downloadedPercentages).map(
-                                ([name, percentage]) => (
-                                    <Typography key={name}>
-                                        {name}: {percentage}%
-                                    </Typography>
-                                )
-                            )}
-                        <Typography></Typography>
-                    </StyledLoaderWrapper>
+                {isLoading ? (
+                    <ChartsLoaders downloadPorgress={downloadPorgress} />
                 ) : (
-                    <SatellitesCharts chartsData={chartsData} />
+                    chartsData && <SatellitesCharts chartsData={chartsData} />
                 )}
             </StyledSatellitesChartsWrapper>
         </Grid>
