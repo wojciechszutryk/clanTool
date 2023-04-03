@@ -42,7 +42,7 @@ const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
 
         const { series } = components
         series.clear().add(data)
-    }, [])
+    }, [data])
 
     const csvData = useMemo(() => {
         if (data.length === 0) return []
@@ -55,7 +55,7 @@ const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
             ])
         }
         return csvArray
-    }, [])
+    }, [data, id, zoomFix])
 
     return (
         <StyledWrapper>

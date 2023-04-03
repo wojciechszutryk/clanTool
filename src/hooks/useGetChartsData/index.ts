@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react'
+import { useState } from 'react'
 import axios from 'axios'
 import { PhasePoint, ChartsData } from 'models/data.model'
 import phaseToFreqDriftWithObjectOutput from 'functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput'
@@ -27,14 +27,6 @@ const useGetChartsData = () => {
                 `${process.env.PUBLIC_URL}/data/${resourceName}.json`,
                 {
                     onDownloadProgress: (progressEvent) => {
-                        // const total = parseFloat(
-                        //     progressEvent.event.currentTarget.responseHeaders[
-                        //         'Content-Length'
-                        //     ]
-                        // )
-                        // const current =
-                        //     progressEvent.event.currentTarget.response.length
-
                         setDownloadPorgress((prev) => ({
                             ...prev,
                             [resourceName]: {
@@ -89,38 +81,44 @@ const useGetChartsData = () => {
                       )
                     : downloadedPhaseData
 
-            if (chartsToCreate.includes(Charts.Phase)) {
-                const phaseChartData = strippedPhaseData.map((data) => ({
-                    x: data.date,
-                    y: data.phase,
-                }))
+            //create Phase, Frequency, FrequencyDrift charts only for single resource
+            if (resourcesData.length === 1) {
+                if (chartsToCreate.includes(Charts.Phase)) {
+                    const phaseChartData = strippedPhaseData.map((data) => ({
+                        x: data.date,
+                        y: data.phase,
+                    }))
 
-                resourcesMap.set(
-                    getChartsDataMapKey(resourceName, Charts.Phase),
-                    phaseChartData
-                )
-            }
+                    resourcesMap.set(
+                        getChartsDataMapKey(resourceName, Charts.Phase),
+                        phaseChartData
+                    )
+                }
 
-            if (chartsToCreate.includes(Charts.Frequency)) {
-                const frequencyChartData = phaseToFreqWithObjectOutput(
-                    strippedPhaseData,
-                    tau
-                )
+                if (chartsToCreate.includes(Charts.Frequency)) {
+                    const frequencyChartData = phaseToFreqWithObjectOutput(
+                        strippedPhaseData,
+                        tau
+                    )
 
-                resourcesMap.set(
-                    getChartsDataMapKey(resourceName, Charts.Frequency),
-                    frequencyChartData
-                )
-            }
+                    resourcesMap.set(
+                        getChartsDataMapKey(resourceName, Charts.Frequency),
+                        frequencyChartData
+                    )
+                }
 
-            if (chartsToCreate.includes(Charts.FrequencyDrift)) {
-                const frequencyDriftChartData =
-                    phaseToFreqDriftWithObjectOutput(strippedPhaseData, tau)
+                if (chartsToCreate.includes(Charts.FrequencyDrift)) {
+                    const frequencyDriftChartData =
+                        phaseToFreqDriftWithObjectOutput(strippedPhaseData, tau)
 
-                resourcesMap.set(
-                    getChartsDataMapKey(resourceName, Charts.FrequencyDrift),
-                    frequencyDriftChartData
-                )
+                    resourcesMap.set(
+                        getChartsDataMapKey(
+                            resourceName,
+                            Charts.FrequencyDrift
+                        ),
+                        frequencyDriftChartData
+                    )
+                }
             }
 
             if (
