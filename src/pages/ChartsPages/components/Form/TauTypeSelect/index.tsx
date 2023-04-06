@@ -7,7 +7,7 @@ import {
     Select,
     SelectChangeEvent,
 } from '@mui/material'
-import { setTauType } from '../../state/actions'
+import { setTauType } from '../../../../state/actions'
 import { TauTypes } from 'models/inputData.model'
 import { useStyles } from './styles'
 

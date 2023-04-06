@@ -11,7 +11,7 @@ import {
 import {
     setSelectedStationName,
     setStationsNames,
-} from '../../../../state/actions'
+} from '../../../../../state/actions'
 import stations from 'assets/StationsBase.json'
 
 const StationsSelect = () => {

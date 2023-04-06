@@ -1,31 +1,39 @@
 import { Box } from '@mui/material'
-import DatePicker from 'components/DatePicker'
-import MADMultiplyInput from 'components/MADMultiplyInput'
-import TauTypeSelect from 'components/TauTypeSelect'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { memo } from 'react'
 import SatellitesAutocomplete from './SatellitesAutocomplete'
 import SatellitesChartsToShowSelect from './SatellitesChartsToShowSelect/SatellitesChartsToShowSelect'
-import {
-    StyledSatellitesFormHeader,
-    StyledSatellitesFormSubmitButton,
-} from './styles'
+import { StyledFormHeader, StyledSatellitesFormSubmitButton } from './styles'
+import StationsSelect from './StationsSelect'
+import { StyledStationsFormMapWrapper } from 'pages/ChartsPages/StationsPage/StationsForm/styles'
+import OpenStreetMap from './OpenStreetMap'
+import MADMultiplyInput from './MADMultiplyInput'
+import TauTypeSelect from './TauTypeSelect'
+import DatePicker from './DatePicker'
 
 interface Props {
     handleSubmit: () => void
+    isStationPage?: boolean
 }
 
-const SatelitesForm = ({ handleSubmit }: Props): JSX.Element => {
+const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
     )
 
     return (
         <>
-            <StyledSatellitesFormHeader variant={'h2'}>
-                Parameters
-            </StyledSatellitesFormHeader>
-            <SatellitesAutocomplete />
+            <StyledFormHeader variant={'h2'}>Parameters</StyledFormHeader>
+            {isStationPage ? (
+                <SatellitesAutocomplete />
+            ) : (
+                <>
+                    <StyledStationsFormMapWrapper>
+                        <OpenStreetMap />
+                    </StyledStationsFormMapWrapper>
+                    <StationsSelect />
+                </>
+            )}
             <DatePicker isStartDate />
             <DatePicker />
             <Box>
@@ -44,4 +52,4 @@ const SatelitesForm = ({ handleSubmit }: Props): JSX.Element => {
     )
 }
 
-export default memo(SatelitesForm)
+export default memo(ChartsForm)

@@ -17,7 +17,7 @@ import {
     UIBackground,
     PointLineSeries,
 } from '@arction/lcjs'
-import ClockNoises from 'components/ClockNoises'
+import ClockNoises from 'pages/ChartsPages/components/ClockNoises'
 import { useAppSelector } from 'hooks/useAppSelector'
 
 const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {

@@ -2,7 +2,7 @@ import { Checkbox, FormControlLabel } from '@mui/material'
 import { useCallback, useMemo } from 'react'
 import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
-import { setChartsToShow } from '../../state/actions'
+import { setChartsToShow } from '../../../../../state/actions'
 import { StyledCheckboxesWrapper, StyledLabel } from './styles'
 import { Charts } from 'models/inputData.model'
 

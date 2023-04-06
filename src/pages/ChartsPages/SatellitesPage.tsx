@@ -1,15 +1,15 @@
 import { Grid } from '@mui/material'
 import 'react-toastify/dist/ReactToastify.css'
 import { Charts } from '../../models/inputData.model'
-import SatellitesCharts from './components/SatellitesCharts'
+import SatellitesCharts from './components/Charts'
 import { useAppSelector } from 'hooks/useAppSelector'
-import SatelitesForm from './components/SatelitesForm'
+import ChartsForm from './components/Form'
 import {
     StyledSatellitesChartsWrapper,
     StyledSatellitesFormWrapper,
 } from './styles'
 import useGetChartsData from 'hooks/useGetChartsData'
-import ChartsLoaders from './components/ChartsLoaders'
+import ChartsLoaders from './components/Charts/ChartsLoaders'
 
 function SatellitesPage() {
     const selectedSatelliteNames = useAppSelector(
@@ -45,7 +45,7 @@ function SatellitesPage() {
     return (
         <Grid container spacing={{ md: 3 }}>
             <StyledSatellitesFormWrapper item xs={12} md={5} lg={4}>
-                <SatelitesForm handleSubmit={handleSubmit} />
+                <ChartsForm handleSubmit={handleSubmit} />
             </StyledSatellitesFormWrapper>
             <StyledSatellitesChartsWrapper item xs={12} md={7} lg={8}>
                 {isLoading ? (

@@ -2,10 +2,10 @@ import { memo, useMemo } from 'react'
 import { Box } from '@mui/material'
 import { ChartsData } from 'models/data.model'
 import { useAppSelector } from 'hooks/useAppSelector'
-import DEVChart from 'components/Chart/DEVChart'
+import DEVChart from 'pages/ChartsPages/components/Charts/Chart/DEVChart'
 import { createDEVChartDataMap } from 'hooks/useGetChartsData/createDEVChartDataMap.helper'
 import { StyledChartWrapper } from './styles'
-import DataChart from 'components/Chart/DataChart'
+import DataChart from 'pages/ChartsPages/components/Charts/Chart/DataChart'
 
 interface Props {
     chartsData: ChartsData

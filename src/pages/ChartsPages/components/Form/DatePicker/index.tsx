@@ -1,7 +1,7 @@
 import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
-import { showToast } from '../../functions/showToast'
-import { setEndDate, setStartDate } from '../../state/actions'
+import { showToast } from '../../../../functions/showToast'
+import { setEndDate, setStartDate } from '../../../../state/actions'
 import dayjs from 'dayjs'
 import { StyledDatePicker } from './styles'
 
