@@ -3,7 +3,7 @@ import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
 import React, { useCallback } from 'react'
 import { setChartsToShow } from 'state/actions'
-import { Charts } from '../../../../../models/inputData.model'
+import { ChartTypes } from '../../../../../models/inputData.model'
 
 const availableCharts = [
     'Phase',
@@ -13,7 +13,7 @@ const availableCharts = [
     'MDEV',
     'ODEV',
     'HDEV',
-] as Charts[]
+] as ChartTypes[]
 
 const SatellitesChartsToShowSelect = () => {
     const selectedNames = useAppSelector(
@@ -37,7 +37,12 @@ const SatellitesChartsToShowSelect = () => {
 
     const chartsThatCanBeDisplayed =
         selectedNames.length > 1
-            ? [Charts.ADEV, Charts.MDEV, Charts.ODEV, Charts.HDEV]
+            ? [
+                  ChartTypes.ADEV,
+                  ChartTypes.MDEV,
+                  ChartTypes.ODEV,
+                  ChartTypes.HDEV,
+              ]
             : availableCharts
 
     return (

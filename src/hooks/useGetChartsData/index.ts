@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { PhasePoint, ChartsData } from 'models/data.model'
-import phaseToFreqDriftWithObjectOutput from 'functions/phaseToFreqDriftWithObjectOutput/phaseToFreqDriftWithObjectOutput'
-import { Charts } from 'models/inputData.model'
-import phaseToFreqWithObjectOutput from 'functions/phaseToFreqWithObjectOutput/phaseToFreqWithObjectOutput'
+import phaseToFreqDriftWithObjectOutput from 'functions/phaseDataToFreqDriftChartData'
+import { ChartTypes } from 'models/inputData.model'
+import phaseToFreqWithObjectOutput from 'functions/phaseDataToFreqChartData'
 import { allanDev, modAllanDev, overAllanDev } from 'functions/allanVariance'
 import freqToPhase from 'functions/freqToPhase'
 import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
@@ -12,9 +12,12 @@ import { getChartsDataMapKey } from './getChartsDataMapKey.helper'
 import { IDownloadProgress } from './downloadProgress.model'
 
 const downloadFileSize = 100000000 // TODO: get this value from server
+const downloadedDataTimeDiff = 300000 // 5 minutes
 
 const useGetChartsData = () => {
     const [isLoading, setIsLoading] = useState(false)
+    const [error, setError] = useState<string | undefined>(undefined)
+    const [warning, setWarning] = useState<string | undefined>(undefined)
     const [downloadPorgress, setDownloadPorgress] =
         useState<IDownloadProgress>(undefined)
     const [chartsData, setChartsData] = useState<ChartsData | undefined>(
@@ -57,8 +60,10 @@ const useGetChartsData = () => {
         resourcesNames: string[],
         startDate: number,
         endDate: number,
-        chartsToCreate: Charts[]
+        chartsToCreate: ChartTypes[]
     ) => {
+        setError(undefined)
+        setWarning(undefined)
         setIsLoading(true)
 
         const resourcesData = await Promise.all(
@@ -81,40 +86,68 @@ const useGetChartsData = () => {
                       )
                     : downloadedPhaseData
 
+            console.log('strippedPhaseData', strippedPhaseData)
+
+            if (strippedPhaseData.length === 0) {
+                setError(
+                    `No data for ${resourceName} in selected time range. Available data from ${new Date(
+                        downloadedPhaseData[0].date
+                    ).toLocaleString()} to ${new Date(
+                        downloadedPhaseData[downloadedPhaseData.length - 1].date
+                    )}`
+                )
+                return
+            }
+
+            if (
+                strippedPhaseData.length <
+                (endDate - startDate) / downloadedDataTimeDiff
+            ) {
+                setWarning(
+                    `Loaded data for resource ${resourceName} does not contain all points in time range from ${new Date(
+                        downloadedPhaseData[0].date
+                    ).toLocaleString()} to ${new Date(
+                        downloadedPhaseData[downloadedPhaseData.length - 1].date
+                    )}. Found ${strippedPhaseData.length} points, expected ${
+                        (endDate - startDate) / downloadedDataTimeDiff
+                    } points. Please report this issue to the administrator.`
+                )
+            }
+
             //create Phase, Frequency, FrequencyDrift charts only for single resource
             if (resourcesData.length === 1) {
-                if (chartsToCreate.includes(Charts.Phase)) {
+                if (chartsToCreate.includes(ChartTypes.Phase)) {
                     const phaseChartData = strippedPhaseData.map((data) => ({
                         x: data.date,
                         y: data.phase,
                     }))
 
                     resourcesMap.set(
-                        getChartsDataMapKey(resourceName, Charts.Phase),
+                        getChartsDataMapKey(resourceName, ChartTypes.Phase),
                         phaseChartData
                     )
                 }
 
-                if (chartsToCreate.includes(Charts.Frequency)) {
+                if (chartsToCreate.includes(ChartTypes.Frequency)) {
                     const frequencyChartData = phaseToFreqWithObjectOutput(
                         strippedPhaseData,
                         tau
                     )
 
                     resourcesMap.set(
-                        getChartsDataMapKey(resourceName, Charts.Frequency),
+                        getChartsDataMapKey(resourceName, ChartTypes.Frequency),
                         frequencyChartData
                     )
                 }
 
-                if (chartsToCreate.includes(Charts.FrequencyDrift)) {
+                if (chartsToCreate.includes(ChartTypes.FrequencyDrift)) {
                     const frequencyDriftChartData =
                         phaseToFreqDriftWithObjectOutput(strippedPhaseData, tau)
 
                     resourcesMap.set(
                         getChartsDataMapKey(
                             resourceName,
-                            Charts.FrequencyDrift
+                            ChartTypes.FrequencyDrift
                         ),
                         frequencyDriftChartData
                     )
@@ -122,41 +155,41 @@ const useGetChartsData = () => {
             }
 
             if (
-                chartsToCreate.includes(Charts.ADEV) ||
-                chartsToCreate.includes(Charts.MDEV) ||
-                chartsToCreate.includes(Charts.ODEV) ||
-                chartsToCreate.includes(Charts.HDEV)
+                chartsToCreate.includes(ChartTypes.ADEV) ||
+                chartsToCreate.includes(ChartTypes.MDEV) ||
+                chartsToCreate.includes(ChartTypes.ODEV) ||
+                chartsToCreate.includes(ChartTypes.HDEV)
             ) {
                 const rawPhases = strippedPhaseData.map((obj) => obj.phase)
                 const freq = phaseToFreq(rawPhases, tau)
                 const phases = freqToPhase({ data: freq, tau: tau })
 
-                if (chartsToCreate.includes(Charts.ADEV)) {
+                if (chartsToCreate.includes(ChartTypes.ADEV)) {
                     const allanDevChartData = allanDev(phases)
 
                     resourcesMap.set(
-                        getChartsDataMapKey(resourceName, Charts.ADEV),
+                        getChartsDataMapKey(resourceName, ChartTypes.ADEV),
                         allanDevChartData
                     )
                 }
-                if (chartsToCreate.includes(Charts.MDEV)) {
+                if (chartsToCreate.includes(ChartTypes.MDEV)) {
                     const modAllanDevChartData = modAllanDev(phases)
                     resourcesMap.set(
-                        getChartsDataMapKey(resourceName, Charts.MDEV),
+                        getChartsDataMapKey(resourceName, ChartTypes.MDEV),
                         modAllanDevChartData
                     )
                 }
-                if (chartsToCreate.includes(Charts.ODEV)) {
+                if (chartsToCreate.includes(ChartTypes.ODEV)) {
                     const overAllanDevChartData = overAllanDev(phases)
                     resourcesMap.set(
-                        getChartsDataMapKey(resourceName, Charts.ODEV),
+                        getChartsDataMapKey(resourceName, ChartTypes.ODEV),
                         overAllanDevChartData
                     )
                 }
-                if (chartsToCreate.includes(Charts.HDEV)) {
+                if (chartsToCreate.includes(ChartTypes.HDEV)) {
                     const hadamardAllanDevChartData = hadamardDev(phases)
                     resourcesMap.set(
-                        getChartsDataMapKey(resourceName, Charts.HDEV),
+                        getChartsDataMapKey(resourceName, ChartTypes.HDEV),
                         hadamardAllanDevChartData
                     )
                 }
@@ -169,6 +202,8 @@ const useGetChartsData = () => {
     }
 
     return {
+        error,
+        warning,
         isLoading,
         downloadPorgress,
         chartsData,

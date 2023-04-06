@@ -1,7 +1,7 @@
 import * as types from '../constans'
 import { Actions } from '../actions/actions.model'
 import { Reducer } from 'redux'
-import { Charts, TauTypes } from '../../models/inputData.model'
+import { ChartTypes, TauTypes } from '../../models/inputData.model'
 import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 
 interface State {
@@ -13,7 +13,7 @@ interface State {
     mapReference: any
     startDate: number
     endDate: number
-    chartsToShow: Charts[]
+    chartsToShow: ChartTypes[]
     MADMultiply: number
     zoomFix: number
 }

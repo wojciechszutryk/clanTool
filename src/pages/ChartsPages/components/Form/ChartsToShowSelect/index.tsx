@@ -4,9 +4,9 @@ import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { setChartsToShow } from '../../../../../state/actions'
 import { StyledCheckboxesWrapper, StyledLabel } from './styles'
-import { Charts } from 'models/inputData.model'
+import { ChartTypes } from 'models/inputData.model'
 
-const availableCharts = Object.values(Charts)
+const availableCharts = Object.values(ChartTypes)
 
 const ChartsToShowSelect = (props: { disabled?: boolean }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)

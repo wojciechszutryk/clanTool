@@ -16,8 +16,6 @@ interface Props {
 const ClockNoises = ({ data }: Props) => {
     const clockNoises: JSX.Element[] = []
     data.forEach((chartData, key) => {
-        console.log(key)
-
         const yValuesArr = chartData.map((obj) => obj.y)
         const xyValueArrayLengthMinusOne = yValuesArr.length - 1
         const deltaY =
@@ -29,6 +27,7 @@ const ClockNoises = ({ data }: Props) => {
                 (chartData[index + 1].y - chartData[index].y) / deltaY
             return (
                 <ClockNoiseSquare
+                    key={index}
                     rageStart={chartData[index].x * TAU_VALUE}
                     rageEnd={chartData[index + 1].x * TAU_VALUE}
                     aParameter={aParameter}

@@ -20,19 +20,22 @@ const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
     )
+    const selectedStationName = useAppSelector(
+        (state) => state.app.selectedStationName
+    )
 
     return (
         <>
             <StyledFormHeader variant={'h2'}>Parameters</StyledFormHeader>
             {isStationPage ? (
-                <SatellitesAutocomplete />
-            ) : (
                 <>
                     <StyledStationsFormMapWrapper>
                         <OpenStreetMap />
                     </StyledStationsFormMapWrapper>
                     <StationsSelect />
                 </>
+            ) : (
+                <SatellitesAutocomplete />
             )}
             <DatePicker isStartDate />
             <DatePicker />
@@ -44,7 +47,11 @@ const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
             <StyledSatellitesFormSubmitButton
                 variant={'contained'}
                 onClick={handleSubmit}
-                disabled={selectedSatelliteNames.length === 0}
+                disabled={
+                    isStationPage
+                        ? !selectedStationName
+                        : selectedSatelliteNames.length === 0
+                }
             >
                 Calculate
             </StyledSatellitesFormSubmitButton>

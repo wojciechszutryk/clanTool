@@ -17,8 +17,8 @@ import {
     UIBackground,
     PointLineSeries,
 } from '@arction/lcjs'
-import ClockNoises from 'pages/ChartsPages/components/ClockNoises'
 import { useAppSelector } from 'hooks/useAppSelector'
+import ClockNoises from '../ClockNoises'
 
 const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {
     const zoomFix = useAppSelector((state) => state.app.zoomFix)

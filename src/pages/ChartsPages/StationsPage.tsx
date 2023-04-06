@@ -1,88 +1,63 @@
-import { Box, Grid, Typography } from '@mui/material'
-import React, { useEffect } from 'react'
-import { setChartsToShow } from '../../state/actions'
+import { Alert, Grid } from '@mui/material'
 import 'react-toastify/dist/ReactToastify.css'
-import DrawStationCharts from './StationsPage/DrawStationsCharts'
-import ChartsToShowSelect from 'pages/ChartsPages/components/Form/ChartsToShowSelect'
-import MADMultiplyInput from 'pages/ChartsPages/components/MADMultiplyInput'
-import OpenStreetMap from 'pages/ChartsPages/components/OpenStreetMap'
-import TauTypeSelect from 'pages/ChartsPages/components/TauTypeSelect'
-import StationsSelect from './components/Form/StationsSelect'
-import DatePicker from 'pages/ChartsPages/components/DatePicker'
-import { useAppDispatch } from 'hooks/useAppDispach'
+import Charts from './components/Charts'
 import { useAppSelector } from 'hooks/useAppSelector'
+import ChartsForm from './components/Form'
+import { StyledAlert, StyledChartsWrapper, StyledFormWrapper } from './styles'
+import useGetChartsData from 'hooks/useGetChartsData'
+import ChartsLoaders from './components/Charts/ChartsLoaders'
 
 function StationsPage() {
     const selectedStationName = useAppSelector(
         (state) => state.app.selectedStationName
     )
-    const dispatch = useAppDispatch()
+    const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
+    const {
+        isLoading,
+        downloadPorgress,
+        error,
+        warning,
+        chartsData,
+        createChartsData,
+    } = useGetChartsData()
 
-    useEffect(() => {
-        return () => {
-            dispatch(setChartsToShow([]))
-        }
-    }, [dispatch])
+    const handleSubmit = () => {
+        createChartsData(
+            [selectedStationName],
+            startDate,
+            endDate,
+            chartsToShow
+        )
+    }
+    let chatsSectionContent = null
+    if (error)
+        chatsSectionContent = (
+            <StyledAlert severity="error">{error}</StyledAlert>
+        )
+    else if (isLoading)
+        chatsSectionContent = (
+            <ChartsLoaders downloadPorgress={downloadPorgress} />
+        )
+    else if (chartsData)
+        chatsSectionContent = (
+            <>
+                {warning && (
+                    <StyledAlert severity="warning">{warning}</StyledAlert>
+                )}
+                <Charts chartsData={chartsData} />
+            </>
+        )
 
     return (
         <Grid container spacing={{ md: 3 }}>
-            <Grid
-                item
-                xs={12}
-                md={5}
-                lg={4}
-                sx={{
-                    display: 'flex',
-                    flexDirection: 'column',
-                    justifyContent: 'space-around',
-                    alignItems: 'center',
-                    height: 1100,
-                    '@media only screen and (min-width: 900px)': {
-                        backgroundColor: '#fff',
-                        borderRadius: 2,
-                        paddingTop: '0 !important',
-                        paddingLeft: '0 !important',
-                        boxShadow:
-                            '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
-                    },
-                }}
-            >
-                <Typography
-                    variant={'h2'}
-                    sx={{ fontSize: 30, color: '#25374a' }}
-                >
-                    Parameters
-                </Typography>
-                <Box sx={{ minWidth: 310, width: '95%' }}>
-                    <OpenStreetMap />
-                </Box>
-                <StationsSelect />
-                <DatePicker isStartDate />
-                <DatePicker />
-                <Box>
-                    <TauTypeSelect />
-                    <MADMultiplyInput />
-                </Box>
-                <ChartsToShowSelect
-                    disabled={selectedStationName.length === 0}
-                />
-            </Grid>
-            <Grid
-                item
-                xs={12}
-                md={7}
-                lg={8}
-                sx={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    flexDirection: 'column',
-                    '@media only screen and (min-width: 900px)': {
-                        paddingTop: '0 !important',
-                    },
-                }}
-            >
-                <DrawStationCharts />
-            </Grid>
+            <StyledFormWrapper item xs={12} md={5} lg={4} extendedHeight>
+                <ChartsForm handleSubmit={handleSubmit} isStationPage />
+            </StyledFormWrapper>
+            <StyledChartsWrapper item xs={12} md={7} lg={8}>
+                {chatsSectionContent}
+            </StyledChartsWrapper>
         </Grid>
     )
 }

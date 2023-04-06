@@ -1,11 +1,13 @@
-import { Grid, styled } from '@mui/material'
+import { Alert, Grid, styled } from '@mui/material'
 
-export const StyledSatellitesFormWrapper = styled(Grid)({
+export const StyledFormWrapper = styled(Grid, {
+    shouldForwardProp: (prop) => prop !== 'extendedHeight',
+})<{ extendedHeight?: boolean }>(({ extendedHeight }) => ({
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-around',
     alignItems: 'center',
-    height: 700,
+    height: extendedHeight ? 1100 : 700,
     '@media only screen and (min-width: 900px)': {
         backgroundColor: '#fff',
         borderRadius: 2,
@@ -14,13 +16,19 @@ export const StyledSatellitesFormWrapper = styled(Grid)({
         boxShadow:
             '1px -4px 9px 1px rgb(0 0 0 / 20%), 0px 4px 5px 0px rgb(0 0 0 / 14%), 0px 1px 10px 0px rgb(0 0 0 / 12%) !important',
     },
-})
+}))
 
-export const StyledSatellitesChartsWrapper = styled(Grid)({
+export const StyledChartsWrapper = styled(Grid)({
     display: 'flex',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
     flexDirection: 'column',
     '@media only screen and (min-width: 900px)': {
         paddingTop: '0 !important',
     },
+})
+
+export const StyledAlert = styled(Alert)({
+    marginBottom: 20,
+    boxShadow:
+        '1px -4px 9px 1px rgb(0 0 0 / 20%),0px 4px 5px 0px rgb(0 0 0 / 14%),0px 1px 10px 0px rgb(0 0 0 / 12%)',
 })

@@ -1,6 +1,6 @@
 import { Action } from 'redux'
 import * as types from '../constans'
-import { Charts, TauTypes } from '../../models/inputData.model'
+import { ChartTypes, TauTypes } from '../../models/inputData.model'
 
 export interface ActionSetStationsNames
     extends Action<typeof types.SET_STATIONS_NAMES> {
@@ -41,7 +41,7 @@ export interface ActionSetEndDate extends Action<typeof types.SET_END_DATE> {
 
 export interface ActionSetChartsToShow
     extends Action<typeof types.SET_CHARTS_TO_SHOW> {
-    chartsToShow: Charts[]
+    chartsToShow: ChartTypes[]
 }
 
 export interface ActionSetMADMultiply

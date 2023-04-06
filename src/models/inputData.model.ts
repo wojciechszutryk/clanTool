@@ -1,4 +1,4 @@
-export enum Charts {
+export enum ChartTypes {
     Phase = 'Phase',
     Frequency = 'Frequency',
     FrequencyDrift = 'Frequency Drift',

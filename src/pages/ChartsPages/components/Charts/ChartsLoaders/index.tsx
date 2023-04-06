@@ -19,7 +19,7 @@ const ChartsLoaders = ({ downloadPorgress }: Props): JSX.Element => {
             {downloadPorgress &&
                 Object.entries(downloadPorgress).map(
                     ([resourceName, progress]) => (
-                        <>
+                        <div key={resourceName}>
                             <StyledResourceName>
                                 {resourceName}
                             </StyledResourceName>
@@ -34,7 +34,7 @@ const ChartsLoaders = ({ downloadPorgress }: Props): JSX.Element => {
                                     resourceName={resourceName}
                                 />
                             )}
-                        </>
+                        </div>
                     )
                 )}
         </StyledLoaderWrapper>

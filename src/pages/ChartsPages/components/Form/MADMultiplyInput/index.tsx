@@ -2,7 +2,7 @@ import { TextField } from '@mui/material'
 import { useAppDispatch } from 'hooks/useAppDispach'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { useCallback } from 'react'
-import { setMADMultiply } from '../../../../state/actions'
+import { setMADMultiply } from 'state/actions'
 
 const MADMultiplyInput = () => {
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
