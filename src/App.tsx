@@ -1,6 +1,6 @@
 import InfoIcon from '@mui/icons-material/Info'
-import React, { lazy, Suspense } from 'react'
-import { Navigate, Route, Routes } from 'react-router-dom'
+import { lazy, Suspense } from 'react'
+import { Route, Routes } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
 import { toast, ToastContainer } from 'react-toastify/dist'
 import { Footer } from './components/Footer'
