@@ -5,7 +5,7 @@ import {
     StyledResourceName,
 } from './styles'
 import LinearProgressLoader from './LinearProgressLoader'
-import { IDownloadProgress } from 'hooks/useGetChartsData/downloadProgress.model'
+import { IDownloadProgress } from 'pages/ChartsPages/hooks/useGetChartsData/downloadProgress.model'
 import DownloadCompletedInfo from './DownloadCompletedInfo'
 
 interface Props {

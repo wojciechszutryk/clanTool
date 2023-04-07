@@ -4,7 +4,7 @@ import Charts from './components/Charts'
 import { useAppSelector } from 'hooks/useAppSelector'
 import ChartsForm from './components/Form'
 import { StyledAlert, StyledChartsWrapper, StyledFormWrapper } from './styles'
-import useGetChartsData from 'hooks/useGetChartsData'
+import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData'
 import ChartsLoaders from './components/Charts/ChartsLoaders'
 
 function StationsPage() {
@@ -48,7 +48,7 @@ function StationsPage() {
                 )}
                 <Charts chartsData={chartsData} />
             </>
-        )
+        ) //TODO: move to separate component
 
     return (
         <Grid container spacing={{ md: 3 }}>

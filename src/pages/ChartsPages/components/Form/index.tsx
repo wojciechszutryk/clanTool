@@ -5,7 +5,6 @@ import SatellitesAutocomplete from './SatellitesAutocomplete'
 import SatellitesChartsToShowSelect from './SatellitesChartsToShowSelect/SatellitesChartsToShowSelect'
 import { StyledFormHeader, StyledSatellitesFormSubmitButton } from './styles'
 import StationsSelect from './StationsSelect'
-import { StyledStationsFormMapWrapper } from 'pages/ChartsPages/StationsPage/StationsForm/styles'
 import OpenStreetMap from './OpenStreetMap'
 import MADMultiplyInput from './MADMultiplyInput'
 import TauTypeSelect from './TauTypeSelect'
@@ -29,9 +28,7 @@ const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
             <StyledFormHeader variant={'h2'}>Parameters</StyledFormHeader>
             {isStationPage ? (
                 <>
-                    <StyledStationsFormMapWrapper>
-                        <OpenStreetMap />
-                    </StyledStationsFormMapWrapper>
+                    <OpenStreetMap />
                     <StationsSelect />
                 </>
             ) : (

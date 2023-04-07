@@ -1,14 +1,15 @@
 import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet'
 import stations from 'assets/StationsBase.json'
-import { Box, Button } from '@mui/material'
+import { Button } from '@mui/material'
 import { setSelectedStationName } from 'state/actions'
 import { useAppDispatch } from 'hooks/useAppDispach'
+import { StyledMapWrapper } from './styles'
 
 const OpenStreetMap = () => {
     const dispatch = useAppDispatch()
 
     return (
-        <Box id="map" sx={{ m: 1, height: '400px', overflow: 'hidden' }}>
+        <StyledMapWrapper id="map">
             <MapContainer
                 style={{ height: '400px', overflow: 'hidden' }}
                 center={[51.505, -0.09]}
@@ -44,7 +45,7 @@ const OpenStreetMap = () => {
                     </Marker>
                 ))}
             </MapContainer>
-        </Box>
+        </StyledMapWrapper>
     )
 }
 

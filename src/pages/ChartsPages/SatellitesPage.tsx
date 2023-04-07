@@ -5,7 +5,7 @@ import Charts from './components/Charts'
 import { useAppSelector } from 'hooks/useAppSelector'
 import ChartsForm from './components/Form'
 import { StyledAlert, StyledChartsWrapper, StyledFormWrapper } from './styles'
-import useGetChartsData from 'hooks/useGetChartsData'
+import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData'
 import ChartsLoaders from './components/Charts/ChartsLoaders'
 
 function SatellitesPage() {
@@ -57,7 +57,9 @@ function SatellitesPage() {
     else if (chartsData)
         chatsSectionContent = (
             <>
-                {warning && <StyledAlert severity="warning">{warning}</StyledAlert>}
+                {warning && (
+                    <StyledAlert severity="warning">{warning}</StyledAlert>
+                )}
                 <Charts chartsData={chartsData} />
             </>
         )
