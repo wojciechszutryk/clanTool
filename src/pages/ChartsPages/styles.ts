@@ -1,9 +1,8 @@
 import { Grid, styled } from '@mui/material'
 
-
 export const StyledChartsPageWarpper = styled(Grid)({
     paddingLeft: 40,
-    paddingRight: 20
+    paddingRight: 20,
 })
 
 export const StyledFormWrapper = styled(Grid, {

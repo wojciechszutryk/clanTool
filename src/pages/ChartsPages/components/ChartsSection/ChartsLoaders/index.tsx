@@ -3,6 +3,7 @@ import {
     StyledLoaderHeader,
     StyledLoaderWrapper,
     StyledResourceName,
+    StyledSingleLoaderWrapper,
 } from './styles'
 import LinearProgressLoader from './LinearProgressLoader'
 import { IDownloadProgress } from 'pages/ChartsPages/hooks/useGetChartsData/downloadProgress.model'
@@ -19,7 +20,7 @@ const ChartsLoaders = ({ downloadPorgress }: Props): JSX.Element => {
             {downloadPorgress &&
                 Object.entries(downloadPorgress).map(
                     ([resourceName, progress]) => (
-                        <div key={resourceName}>
+                        <StyledSingleLoaderWrapper key={resourceName}>
                             <StyledResourceName>
                                 {resourceName}
                             </StyledResourceName>
@@ -34,7 +35,7 @@ const ChartsLoaders = ({ downloadPorgress }: Props): JSX.Element => {
                                     resourceName={resourceName}
                                 />
                             )}
-                        </div>
+                        </StyledSingleLoaderWrapper>
                     )
                 )}
         </StyledLoaderWrapper>

@@ -9,6 +9,10 @@ export const StyledLoaderWrapper = styled('div')({
     alignItems: 'center',
 })
 
+export const StyledSingleLoaderWrapper = styled('div')({
+    width: '100%',
+})
+
 export const StyledLoaderContentWrapper = styled('div')({
     height: '100px',
 })
@@ -48,4 +52,5 @@ export const StyledLinearProgressBarWrapper = styled('div')({
 
 export const StyledResourceName = styled(Typography)({
     marginTop: 10,
+    textAlign: 'center',
 })
