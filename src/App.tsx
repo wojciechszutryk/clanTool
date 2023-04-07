@@ -1,6 +1,6 @@
 import InfoIcon from '@mui/icons-material/Info'
 import { lazy, Suspense } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
 import { toast, ToastContainer } from 'react-toastify/dist'
 import { Footer } from './components/Footer'
@@ -22,9 +22,13 @@ function App() {
             <StyledAppWrapper>
                 <StyledAppContent>
                     <Routes>
-                        <Route path="/">
+                        <Route path="*">
                             <Route
-                                path="*"
+                                index
+                                element={<Navigate to={'/satellites'} />}
+                            />
+                            <Route
+                                path="satellites"
                                 element={
                                     <Suspense fallback={null}>
                                         <SatellitesPage />
