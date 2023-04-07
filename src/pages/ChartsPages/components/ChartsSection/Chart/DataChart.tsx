@@ -1,4 +1,4 @@
-import { ChartXY, PointMarker, UIBackground, LineSeries } from '@arction/lcjs'
+import { ChartXY, PointMarker, UIBackground, PointSeries } from '@arction/lcjs'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { ChartData } from 'models/data.model'
 import { useRef, useEffect, useMemo, memo } from 'react'
@@ -24,7 +24,7 @@ const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
     const chartRef = useRef<
         | {
               chart: ChartXY<PointMarker, UIBackground>
-              series: LineSeries
+              series: PointSeries
           }
         | undefined
     >(undefined)

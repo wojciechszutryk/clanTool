@@ -6,9 +6,10 @@ import {
     AxisTickStrategies,
     NumericTickStrategy,
     ChartXY,
-    LineSeries,
     PointMarker,
     UIBackground,
+    PointSeries,
+    PointShape,
 } from '@arction/lcjs'
 import { useEffect } from 'react'
 
@@ -18,7 +19,7 @@ const useInitializeDataChart = (
     chartRef: React.MutableRefObject<
         | {
               chart: ChartXY<PointMarker, UIBackground>
-              series: LineSeries
+              series: PointSeries
           }
         | undefined
     >,
@@ -75,7 +76,8 @@ const useInitializeDataChart = (
             )
 
         const series = chart
-            .addLineSeries()
+            .addPointSeries({ pointShape: PointShape.Triangle })
+            .setDataCleaning({ minDataPointCount: 1 })
             .setCursorResultTableFormatter((builder, _, xValue, yValue) => {
                 return builder
                     .addRow(
