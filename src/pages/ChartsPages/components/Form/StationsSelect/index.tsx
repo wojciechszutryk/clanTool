@@ -14,10 +14,12 @@ import {
 } from '../../../../../state/actions'
 import stations from 'assets/StationsBase.json'
 
+/**
+ * This component is responsible for rendering select with stations names.
+ */
 const StationsSelect = () => {
     const dispatch = useAppDispatch()
     const stationsNames = useAppSelector((state) => state.app.stationsNames)
-    const mapRef = useAppSelector((state) => state.app.mapReference)
     const selectedStationName = useAppSelector(
         (state) => state.app.selectedStationName
     )

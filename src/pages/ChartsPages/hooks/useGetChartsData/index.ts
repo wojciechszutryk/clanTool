@@ -15,6 +15,9 @@ import { useAppSelector } from 'hooks/useAppSelector'
 const downloadFileSize = 100000000 // TODO: get this value from server
 const downloadedDataTimeDiff = 300000 // 5 minutes
 
+/**
+ * This hook is responsible for fetching data from json files and calculating charts data
+ */
 const useGetChartsData = () => {
     const [isLoading, setIsLoading] = useState(false)
     const [error, setError] = useState<string | undefined>(undefined)

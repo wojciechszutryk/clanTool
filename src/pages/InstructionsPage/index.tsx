@@ -11,6 +11,9 @@ import {
     StyledSingleInstructionWrapper,
 } from './styles'
 
+/**
+ * This component is responsible for rendering instructions page. It contains two sections: Charts parameters and Chart.
+ */
 const InstructionsPage = () => {
     return (
         <Grid container spacing={{ md: 3 }}>

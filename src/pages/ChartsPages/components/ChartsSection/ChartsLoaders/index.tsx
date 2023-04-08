@@ -13,6 +13,9 @@ interface Props {
     downloadPorgress: IDownloadProgress
 }
 
+/**
+ * This component is responsible for displaying loaders (while fetching or calculating) for charts data
+ */
 const ChartsLoaders = ({ downloadPorgress }: Props): JSX.Element => {
     return (
         <StyledLoaderWrapper>

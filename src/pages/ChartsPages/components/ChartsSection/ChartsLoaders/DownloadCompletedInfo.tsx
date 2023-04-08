@@ -1,6 +1,9 @@
 import { memo } from 'react'
 import { StyledDownloadedCompleted } from './styles'
 
+/**
+ * This component is used to show the user that the download is completed and the results are being calculated
+ */
 const DownloadCompletedInfo = (): JSX.Element => {
     return (
         <StyledDownloadedCompleted>

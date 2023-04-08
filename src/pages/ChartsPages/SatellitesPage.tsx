@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material'
 import 'react-toastify/dist/ReactToastify.css'
 import { ChartTypes } from '../../models/inputData.model'
 import { useAppSelector } from 'hooks/useAppSelector'
@@ -11,6 +10,9 @@ import {
 import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData'
 import ChartsSection from './components/ChartsSection'
 
+/**
+ * This page is used to display form and charts for selected satellites
+ */
 function SatellitesPage() {
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
@@ -31,10 +33,7 @@ function SatellitesPage() {
                   )
                 : chartsToShow
 
-        createChartsData(
-            selectedSatelliteNames,
-            chartsDataToCreate,
-        )
+        createChartsData(selectedSatelliteNames, chartsDataToCreate)
     }
 
     return (

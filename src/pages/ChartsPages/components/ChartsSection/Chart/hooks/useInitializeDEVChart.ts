@@ -12,14 +12,17 @@ import {
     PointMarker,
     UIBackground,
 } from '@arction/lcjs'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 import { ChartsData } from 'models/data.model'
 import { useEffect } from 'react'
 
 const TAU_VALUE = 300 //current tau value, set to multiply x axis values | to be changed when data sets changes
 
+/**
+ * This hook initializes the chart and series for the DEV chart. It does all configuration for lightningCharts library and sets the data.
+ */
 const useInitializeDEVChart = (
     id: string,
-    zoomFix: number,
     chartRef: React.MutableRefObject<
         | {
               chart: ChartXY<PointMarker, UIBackground>
@@ -81,13 +84,17 @@ const useInitializeDEVChart = (
             (tickStrategy: NumericTickStrategy) =>
                 tickStrategy
                     .setMinorFormattingFunction((value, range) => {
-                        return (value / zoomFix).toExponential(3).toString()
+                        return (value / CHART_ZOOM_FIX)
+                            .toExponential(3)
+                            .toString()
                     })
                     .setMajorTickStyle((tickStyle) =>
                         tickStyle.setLabelFont((font) => font.setWeight('bold'))
                     )
                     .setMajorFormattingFunction((value, range) => {
-                        return (value / zoomFix).toExponential(4).toString()
+                        return (value / CHART_ZOOM_FIX)
+                            .toExponential(4)
+                            .toString()
                     })
         )
         axisY.setTickStrategy(
@@ -125,7 +132,9 @@ const useInitializeDEVChart = (
                         )
                         .addRow(
                             devName + ': ',
-                            (yValue / zoomFix).toExponential(7).toString()
+                            (yValue / CHART_ZOOM_FIX)
+                                .toExponential(7)
+                                .toString()
                         )
                 })
                 .setName(devName)
@@ -160,7 +169,7 @@ const useInitializeDEVChart = (
             chart.dispose()
             // chartRef.current = undefined
         }
-    }, [chartRef, data, id, zoomFix])
+    }, [chartRef, data, id])
 }
 
 export default useInitializeDEVChart

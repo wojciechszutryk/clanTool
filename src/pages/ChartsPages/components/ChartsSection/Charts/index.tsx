@@ -10,6 +10,9 @@ interface Props {
     chartsData: ChartsData
 }
 
+/**
+ * This component is responsible for rendering data and DEV charts based on chartsData prop.
+ */
 const Charts = ({ chartsData }: Props) => {
     const devChartsData = createDEVChartDataMap(chartsData)
 

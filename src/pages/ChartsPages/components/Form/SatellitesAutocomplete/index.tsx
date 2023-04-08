@@ -19,6 +19,9 @@ const Systems = {
     J: 'QZSS',
 } as const
 
+/**
+ * This component is responsible for rendering autocomplete with satellites names.
+ */
 const SatellitesAutocomplete = () => {
     const dispatch = useAppDispatch()
     const satellitesNames = useAppSelector((state) => state.app.satellitesNames)

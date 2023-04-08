@@ -10,6 +10,9 @@ interface Props {
     resourceName: string
 }
 
+/**
+ * This component is responsible for displaying progress bar of fetched data with percentage value
+ */
 const LinearProgressBar = ({ value, resourceName }: Props): JSX.Element => {
     return (
         <StyledProgressContentWrapper key={resourceName}>

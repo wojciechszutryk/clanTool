@@ -17,11 +17,13 @@ import {
     UIBackground,
     PointLineSeries,
 } from '@arction/lcjs'
-import { useAppSelector } from 'hooks/useAppSelector'
 import ClockNoises from '../ClockNoises'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 
+/**
+ * This component is responsible for rendering DEV chart. Chart contains data from all selected DEV charts.
+ */
 const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {
-    const zoomFix = useAppSelector((state) => state.app.zoomFix)
     const filename = useChartFileName({ id })
     const chartRef = useRef<
         | {
@@ -32,7 +34,7 @@ const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {
     >(undefined)
     const handleChartSaveToImage = useSaveChartToImage({ filename, chartRef })
 
-    useInitializeDEVChart(id, zoomFix, chartRef, data)
+    useInitializeDEVChart(id, chartRef, data)
 
     const csvData = useMemo(() => {
         if (data.size === 0) return []
@@ -42,13 +44,13 @@ const DEVChart = ({ data, id }: { data: ChartsData; id: string }) => {
 
         data.forEach((chartData, key) => {
             const devValues = chartData.map(
-                (chartData) => chartData.y / zoomFix
+                (chartData) => chartData.y / CHART_ZOOM_FIX
             )
             csvArray.push([key, ...devValues])
         })
 
         return csvArray
-    }, [data, zoomFix])
+    }, [data])
 
     return (
         <StyledWrapper>

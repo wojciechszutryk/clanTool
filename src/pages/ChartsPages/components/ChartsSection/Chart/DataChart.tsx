@@ -1,5 +1,6 @@
 import { ChartXY, PointMarker, UIBackground, PointSeries } from '@arction/lcjs'
 import { useAppSelector } from 'hooks/useAppSelector'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 import { ChartData } from 'models/data.model'
 import { useRef, useEffect, useMemo, memo } from 'react'
 import { CSVLink } from 'react-csv'
@@ -20,6 +21,9 @@ interface Props {
     xType?: 'Date' | 'Tau'
 }
 
+/**
+ * This component is responsible for rendering single 'data' (Frequency, Frequency or FrequencyDrift) chart.
+ */
 const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
     const chartRef = useRef<
         | {
@@ -29,12 +33,10 @@ const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
         | undefined
     >(undefined)
 
-    let zoomFix = useAppSelector((state) => state.app.zoomFix)
-    if (id === 'Phase') zoomFix = 1
     const filename = useChartFileName({ id })
     const handleChartSaveToImage = useSaveChartToImage({ filename, chartRef })
 
-    useInitializeDataChart(id, zoomFix, chartRef, xType)
+    useInitializeDataChart(id, chartRef, xType)
 
     useEffect(() => {
         const components = chartRef.current
@@ -51,11 +53,11 @@ const DataChart = ({ data, id, xType = 'Tau' }: Props) => {
         for (let i = 0; i < data.length; i++) {
             csvArray.push([
                 new Date(data[i].x).toLocaleString(),
-                data[i].y / zoomFix,
+                data[i].y / CHART_ZOOM_FIX,
             ])
         }
         return csvArray
-    }, [data, id, zoomFix])
+    }, [data, id])
 
     return (
         <StyledWrapper>

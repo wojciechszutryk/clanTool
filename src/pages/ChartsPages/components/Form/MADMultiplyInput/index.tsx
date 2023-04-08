@@ -4,6 +4,9 @@ import { useAppSelector } from 'hooks/useAppSelector'
 import { useCallback } from 'react'
 import { setMADMultiply } from 'state/actions'
 
+/**
+ * This component is responsible for rendering number input for MADMultiply parameter.
+ */
 const MADMultiplyInput = () => {
     const MADMultiply = useAppSelector((state) => state.app.MADMultiply)
     const dispatch = useAppDispatch()

@@ -1,4 +1,3 @@
-import { Grid } from '@mui/material'
 import 'react-toastify/dist/ReactToastify.css'
 import { useAppSelector } from 'hooks/useAppSelector'
 import ChartsForm from './components/Form'
@@ -10,6 +9,9 @@ import {
 import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData'
 import ChartsSection from './components/ChartsSection'
 
+/**
+ * This page is used to display form and charts for stations
+ */
 function StationsPage() {
     const selectedStationName = useAppSelector(
         (state) => state.app.selectedStationName

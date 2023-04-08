@@ -11,6 +11,9 @@ import { setTauType } from 'state/actions'
 import { TauTypes } from 'models/inputData.model'
 import { useStyles } from './styles'
 
+/**
+ * This component is responsible for rendering select with tau types.
+ */
 const TauTypeSelect = () => {
     const dispatch = useAppDispatch()
     const tauType = useAppSelector((state) => state.app.tauType)
@@ -28,7 +31,7 @@ const TauTypeSelect = () => {
         </div>
     )
     tauDisplayOptions[TauTypes.logarithmLike] = (
-        <div>10,20,30...100,200... - nazwa robocza</div>
+        <div>10,20,...100,200...</div>
     )
 
     const selectTauOptions = Object.values(TauTypes).map((name: string) => (

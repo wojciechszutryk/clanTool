@@ -2,7 +2,7 @@ import { Box } from '@mui/material'
 import { useAppSelector } from 'hooks/useAppSelector'
 import { memo } from 'react'
 import SatellitesAutocomplete from './SatellitesAutocomplete'
-import SatellitesChartsToShowSelect from './SatellitesChartsToShowSelect/SatellitesChartsToShowSelect'
+import ChartsToShowSelect from './ChartsToShowSelect'
 import { StyledFormHeader, StyledSatellitesFormSubmitButton } from './styles'
 import StationsSelect from './StationsSelect'
 import OpenStreetMap from './OpenStreetMap'
@@ -15,6 +15,9 @@ interface Props {
     isStationPage?: boolean
 }
 
+/**
+ * This component is responsible for rendering form with parameters for charts.
+ */
 const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
     const selectedSatelliteNames = useAppSelector(
         (state) => state.app.selectedSatelliteNames
@@ -40,7 +43,7 @@ const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
                 <TauTypeSelect />
                 <MADMultiplyInput />
             </Box>
-            <SatellitesChartsToShowSelect />
+            <ChartsToShowSelect />
             <StyledSatellitesFormSubmitButton
                 variant={'contained'}
                 onClick={handleSubmit}

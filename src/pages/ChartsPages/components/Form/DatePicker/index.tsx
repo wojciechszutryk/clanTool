@@ -12,6 +12,9 @@ interface Props {
     isStartDate?: boolean
 }
 
+/**
+ * This component is responsible for rendering date picker. It is used to set start and end date. It is also responsible for checking if start date is earlier than end date and vice versa. If not, it shows toast with error message. 
+ */
 const DatePicker = ({ isStartDate }: Props) => {
     const startDate = useAppSelector((state) => state.app.startDate)
     const endDate = useAppSelector((state) => state.app.endDate)

@@ -11,11 +11,14 @@ import {
     PointSeries,
     PointShape,
 } from '@arction/lcjs'
+import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 import { useEffect } from 'react'
 
+/**
+ * This hook initializes the chart and series for the data chart. It does all configuration for lightningCharts library and sets the data.
+ */
 const useInitializeDataChart = (
     id: string,
-    zoomFix: number,
     chartRef: React.MutableRefObject<
         | {
               chart: ChartXY<PointMarker, UIBackground>
@@ -57,7 +60,9 @@ const useInitializeDataChart = (
                 (tickStrategy: NumericTickStrategy) =>
                     tickStrategy
                         .setMinorFormattingFunction((value, range) => {
-                            return (value / zoomFix).toExponential(3).toString()
+                            return (value / CHART_ZOOM_FIX)
+                                .toExponential(3)
+                                .toString()
                         })
                         .setMajorTickStyle((tickStyle) =>
                             tickStyle.setLabelFont((font) =>
@@ -65,7 +70,9 @@ const useInitializeDataChart = (
                             )
                         )
                         .setMajorFormattingFunction((value, range) => {
-                            return (value / zoomFix).toExponential(4).toString()
+                            return (value / CHART_ZOOM_FIX)
+                                .toExponential(4)
+                                .toString()
                         })
             )
         chart
@@ -88,7 +95,7 @@ const useInitializeDataChart = (
                     )
                     .addRow(
                         id + ': ',
-                        (yValue / zoomFix).toExponential(7).toString()
+                        (yValue / CHART_ZOOM_FIX).toExponential(7).toString()
                     )
             })
         chartRef.current = { chart, series }

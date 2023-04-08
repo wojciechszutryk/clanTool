@@ -13,6 +13,9 @@ interface Props {
     chartsData: ChartsData | undefined
 }
 
+/**
+ * This component is responsible for displaying charts or loaders or error message
+ */
 const ChartsSection = ({
     error,
     warning,

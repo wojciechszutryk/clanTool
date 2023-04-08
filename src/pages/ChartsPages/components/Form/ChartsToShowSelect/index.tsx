@@ -8,6 +8,9 @@ import { ChartTypes } from 'models/inputData.model'
 
 const availableCharts = Object.values(ChartTypes)
 
+/**
+ * This component is responsible for rendering checkboxes for selecting charts to show.
+ */
 const ChartsToShowSelect = (props: { disabled?: boolean }) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const dispatch = useAppDispatch()

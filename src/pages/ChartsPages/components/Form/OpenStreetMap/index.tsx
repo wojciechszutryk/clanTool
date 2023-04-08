@@ -5,6 +5,9 @@ import { setSelectedStationName } from 'state/actions'
 import { useAppDispatch } from 'hooks/useAppDispach'
 import { StyledMapWrapper } from './styles'
 
+/**
+ * This component is responsible for rendering map (leaflet library) with markers for stations. It also renders popup with station data. When user clicks on button in popup, station name is set as selectedStationName in redux store.
+ */
 const OpenStreetMap = () => {
     const dispatch = useAppDispatch()
 
