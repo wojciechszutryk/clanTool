@@ -1,3 +1,6 @@
+/**
+ * This function converts a frequency data to a phase data
+ */
 export default function freqToPhase({
     data,
     tau,

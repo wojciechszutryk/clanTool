@@ -10,6 +10,9 @@ export const pages = [
     { url: 'about', name: 'About' },
 ]
 
+/**
+ * The header component. It contains the navigation bar and renders different content depending on the screen size.
+ */
 export const Header = (): JSX.Element => {
     return (
         <StyledNavBar>

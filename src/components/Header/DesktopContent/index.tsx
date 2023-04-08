@@ -4,6 +4,9 @@ import { useLocation } from 'react-router-dom'
 import { pages } from '..'
 import { StyledLink, StyledNavLink } from './styles'
 
+/**
+ * This component is responsible for rendering desktop content of the header.
+ */
 const DesktopContent = (): JSX.Element => {
     const location = useLocation()
     return (

@@ -6,6 +6,9 @@ import MenuIcon from '@mui/icons-material/Menu'
 import { StyledDrawer } from './styles'
 import { StyledListItem } from './styles'
 
+/**
+ * This component is used to render the mobile content of the header
+ */
 const MobileContent = (): JSX.Element => {
     let location = useLocation()
     const [anchorElNav, setAnchorElNav] = useState<null | HTMLElement>(null)

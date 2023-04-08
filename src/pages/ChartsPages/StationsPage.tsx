@@ -15,17 +15,10 @@ function StationsPage() {
         (state) => state.app.selectedStationName
     )
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
-    const startDate = useAppSelector((state) => state.app.startDate)
-    const endDate = useAppSelector((state) => state.app.endDate)
     const { createChartsData, ...rest } = useGetChartsData()
 
     const handleSubmit = () => {
-        createChartsData(
-            [selectedStationName],
-            startDate,
-            endDate,
-            chartsToShow
-        )
+        createChartsData([selectedStationName], chartsToShow)
     }
 
     return (

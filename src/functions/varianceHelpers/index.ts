@@ -1,8 +1,14 @@
 import { TauTypes } from 'models/inputData.model'
-import store from 'state/store'
 
-export function generateLogTauData(a: number, b: number, n: number) {
-    const tauType = store.getState().app.tauType
+/**
+ * This function is used to generate an array of tau values
+ */
+export function generateLogTauData(
+    tauType: TauTypes | undefined,
+    a: number,
+    b: number,
+    n: number
+) {
     let arr: number[] = []
 
     switch (tauType) {

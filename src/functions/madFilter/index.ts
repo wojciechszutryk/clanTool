@@ -1,6 +1,9 @@
 import { medianOfArr } from 'functions/medianOfArray'
 import store from 'state/store'
 
+/**
+ * This function filters out outliers from an array of numbers
+ */
 export const madFilter = (data: number[]) => {
     const medianOfNewData = medianOfArr(data)
 

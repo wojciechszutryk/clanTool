@@ -1,9 +1,13 @@
 import { generateLogTauData } from 'functions/varianceHelpers'
 import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
 import { ChartData } from 'models/data.model'
+import { TauTypes } from 'models/inputData.model'
 
 const SMALLEST_SIZE_VALUE = 3
 
+/**
+ * This is a helper function for calculating the Allan variance.
+ */
 function calculateAllanPhase(
     data: number[],
     m: number,
@@ -26,13 +30,18 @@ function calculateAllanPhase(
     return Math.sqrt(sigma / mult)
 }
 
+/**
+ * This function calculates the standard Allan variance for a given data set.
+ */
 export function allanDev(
     data: number[],
+    tauType?: TauTypes,
     rate = 1,
     tau_data = 300,
     zoomFix = CHART_ZOOM_FIX
 ) {
     const tauLogData = generateLogTauData(
+        tauType,
         1,
         Math.floor(data.length / 5),
         Number(tau_data)
@@ -40,8 +49,7 @@ export function allanDev(
 
     let tau0 = 1 / rate
     let result: ChartData = []
-    console.log(tau0);
-    
+    console.log(tau0)
 
     for (let m of tauLogData) {
         let tau = m * tau0
@@ -54,13 +62,18 @@ export function allanDev(
     return result
 }
 
+/**
+ * This function calculates the overlapped Allan variance for a given data set.
+ */
 export function overAllanDev(
     data: number[],
+    tauType?: TauTypes,
     rate = 1,
     tau_data = 300,
     zoomFix = CHART_ZOOM_FIX
 ) {
     const tauLogData = generateLogTauData(
+        tauType,
         1,
         Math.floor(data.length / 5),
         Number(tau_data)
@@ -80,13 +93,18 @@ export function overAllanDev(
     return result
 }
 
+/**
+ * This function calculates the modified Allan variance for a given data set.
+ */
 export function modAllanDev(
     data: number[],
+    tauType?: TauTypes,
     rate = 1,
     tau_data = 300,
     zoomFix = CHART_ZOOM_FIX
 ) {
     const tauLogData = generateLogTauData(
+        tauType,
         1,
         Math.floor(data.length / 5),
         Number(tau_data)

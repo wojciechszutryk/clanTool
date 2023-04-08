@@ -1,8 +1,12 @@
 import { generateLogTauData } from 'functions/varianceHelpers'
 import { CHART_ZOOM_FIX } from 'models/chartZoom.const'
+import { TauTypes } from 'models/inputData.model'
 
 const SMALLEST_SIZE_VALUE = 3
 
+/**
+ * This is a helper function for calculating the Allan variance.
+ */
 function calculateHadamardPhase(
     data: number[],
     m: number,
@@ -30,15 +34,19 @@ function calculateHadamardPhase(
     return Math.sqrt(sigma / mult)
 }
 
+/**
+ * This function calculates the Hadamard variance.
+ */
 export function hadamardDev(
     data: number[],
+    tauType?: TauTypes,
     rate = 1,
     tau_data = 300,
     zoomFix = CHART_ZOOM_FIX
 ) {
     const tauLogData = generateLogTauData(
+        tauType,
         1,
-        // Math.floor( (endDate - startDate) / 5 / MILISECOND_TO_SECOND ),
         Math.floor(data.length / 5),
         Number(tau_data)
     )

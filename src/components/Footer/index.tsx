@@ -7,6 +7,10 @@ import {
     StyledWrapper,
 } from './styles'
 
+/**
+ * This is a Footer component. It contains links to the AGH University of Science and Technology and the author of the project.
+ * @returns 
+ */
 export const Footer = (): JSX.Element => {
     return (
         <StyledWrapper>

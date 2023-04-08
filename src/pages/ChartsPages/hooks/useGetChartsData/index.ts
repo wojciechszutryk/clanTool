@@ -1,15 +1,16 @@
 import { useState } from 'react'
 import axios from 'axios'
 import { PhasePoint, ChartsData } from 'models/data.model'
-import phaseToFreqDriftWithObjectOutput from 'functions/phaseDataToFreqDriftChartData'
 import { ChartTypes } from 'models/inputData.model'
-import phaseToFreqWithObjectOutput from 'functions/phaseDataToFreqChartData'
 import { allanDev, modAllanDev, overAllanDev } from 'functions/allanVariance'
 import freqToPhase from 'functions/freqToPhase'
-import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
 import { hadamardDev } from 'functions/hadamardVariance'
 import { getChartsDataMapKey } from './getChartsDataMapKey.helper'
 import { IDownloadProgress } from './downloadProgress.model'
+import phaseToFreqDriftChartData from 'functions/phaseToFreqDriftChartData'
+import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
+import phaseToFreqChartData from 'functions/phaseToFreqChartData'
+import { useAppSelector } from 'hooks/useAppSelector'
 
 const downloadFileSize = 100000000 // TODO: get this value from server
 const downloadedDataTimeDiff = 300000 // 5 minutes
@@ -23,6 +24,11 @@ const useGetChartsData = () => {
     const [chartsData, setChartsData] = useState<ChartsData | undefined>(
         undefined
     )
+
+    const startDate = useAppSelector((state) => state.app.startDate)
+    const endDate = useAppSelector((state) => state.app.endDate)
+    const madMultiply = useAppSelector((state) => state.app.MADMultiply)
+    const tauType = useAppSelector((state) => state.app.tauType)
 
     const fetchSinglePhasesData = async (resourceName: string) => {
         const data = await axios
@@ -58,8 +64,6 @@ const useGetChartsData = () => {
 
     const createChartsData = async (
         resourcesNames: string[],
-        startDate: number,
-        endDate: number,
         chartsToCreate: ChartTypes[]
     ) => {
         setError(undefined)
@@ -129,9 +133,10 @@ const useGetChartsData = () => {
                 }
 
                 if (chartsToCreate.includes(ChartTypes.Frequency)) {
-                    const frequencyChartData = phaseToFreqWithObjectOutput(
+                    const frequencyChartData = phaseToFreqChartData(
                         strippedPhaseData,
-                        tau
+                        tau,
+                        madMultiply
                     )
 
                     resourcesMap.set(
@@ -141,8 +146,11 @@ const useGetChartsData = () => {
                 }
 
                 if (chartsToCreate.includes(ChartTypes.FrequencyDrift)) {
-                    const frequencyDriftChartData =
-                        phaseToFreqDriftWithObjectOutput(strippedPhaseData, tau)
+                    const frequencyDriftChartData = phaseToFreqDriftChartData(
+                        strippedPhaseData,
+                        tau,
+                        madMultiply
+                    )
 
                     resourcesMap.set(
                         getChartsDataMapKey(
@@ -165,7 +173,7 @@ const useGetChartsData = () => {
                 const phases = freqToPhase({ data: freq, tau: tau })
 
                 if (chartsToCreate.includes(ChartTypes.ADEV)) {
-                    const allanDevChartData = allanDev(phases)
+                    const allanDevChartData = allanDev(phases, tauType)
 
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, ChartTypes.ADEV),
@@ -173,21 +181,24 @@ const useGetChartsData = () => {
                     )
                 }
                 if (chartsToCreate.includes(ChartTypes.MDEV)) {
-                    const modAllanDevChartData = modAllanDev(phases)
+                    const modAllanDevChartData = modAllanDev(phases, tauType)
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, ChartTypes.MDEV),
                         modAllanDevChartData
                     )
                 }
                 if (chartsToCreate.includes(ChartTypes.ODEV)) {
-                    const overAllanDevChartData = overAllanDev(phases)
+                    const overAllanDevChartData = overAllanDev(phases, tauType)
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, ChartTypes.ODEV),
                         overAllanDevChartData
                     )
                 }
                 if (chartsToCreate.includes(ChartTypes.HDEV)) {
-                    const hadamardAllanDevChartData = hadamardDev(phases)
+                    const hadamardAllanDevChartData = hadamardDev(
+                        phases,
+                        tauType
+                    )
                     resourcesMap.set(
                         getChartsDataMapKey(resourceName, ChartTypes.HDEV),
                         hadamardAllanDevChartData

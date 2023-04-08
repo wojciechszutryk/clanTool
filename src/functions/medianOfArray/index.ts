@@ -1,3 +1,6 @@
+/**
+ * This function returns the median of an array of numbers.
+ */
 export function medianOfArr(arr: number[]) {
     const L = arr.length,
         halfL = L / 2

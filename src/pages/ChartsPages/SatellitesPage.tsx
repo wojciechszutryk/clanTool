@@ -16,8 +16,6 @@ function SatellitesPage() {
         (state) => state.app.selectedSatelliteNames
     )
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
-    const startDate = useAppSelector((state) => state.app.startDate)
-    const endDate = useAppSelector((state) => state.app.endDate)
     const { createChartsData, ...rest } = useGetChartsData()
 
     const handleSubmit = () => {
@@ -35,9 +33,7 @@ function SatellitesPage() {
 
         createChartsData(
             selectedSatelliteNames,
-            startDate,
-            endDate,
-            chartsDataToCreate
+            chartsDataToCreate,
         )
     }
 
