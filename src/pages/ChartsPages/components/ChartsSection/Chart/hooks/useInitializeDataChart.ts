@@ -71,7 +71,7 @@ const useInitializeDataChart = (
                         )
                         .setMajorFormattingFunction((value, range) => {
                             return (value / CHART_ZOOM_FIX)
-                                .toExponential(4)
+                                .toExponential(3)
                                 .toString()
                         })
             )

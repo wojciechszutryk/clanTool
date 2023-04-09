@@ -1,15 +1,24 @@
-import { Box, Grid, styled, Typography } from '@mui/material'
+import { styled, Typography } from '@mui/material'
 
-export const StyledSingleInstructionWrapper = styled(Grid)({
+export const StyledInstructionsWrapper = styled('div')({
     display: 'flex',
     flexDirection: 'column',
-    width: '100%',
     '@media only screen and (min-width: 900px)': {
         display: 'flex',
         flexDirection: 'row',
+        justifyContent: 'center',
     },
 })
-export const StyledListWrapper = styled(Box)({ flexGrow: 1 })
+
+export const StyledSingleInstructionWrapper = styled('div')({
+    width: 'min-content',
+    position: 'relative',
+    margin: '0 auto',
+    '& > img': {
+        maxWidth: '95vw',
+        height: 'auto',
+    },
+})
 
 export const StyledHeader = styled(Typography)({
     fontSize: 30,
@@ -17,17 +26,12 @@ export const StyledHeader = styled(Typography)({
     textAlign: 'center',
 })
 
-export const StyledList = styled('ul')({
-    fontSize: 20,
-    marginLeft: 'auto',
-    marginRight: 'auto',
+export const StyledIntructionsButtonWrapper = styled('div')({
+    position: 'relative',
 })
 
-export const StyledListItem = styled('li')({
-    marginTop: ' 10px !important',
-    textAlign: 'center',
-})
-
-export const StyledListNumber = styled('span')({
-    color: '#25374a',
-})
+// export const StyledInstructionImg = styled('img')({
+//     position: 'absolute',
+//     width: '100%',
+//     height: '100%',
+// })
