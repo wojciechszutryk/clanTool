@@ -8,7 +8,9 @@ This project is currently in development.
 
 ## Project Screen Shot(s) && Demo video
 
-TODO
+
+https://user-images.githubusercontent.com/72247608/231422303-53cf99da-8ebb-4d7f-96c3-8a0d258329c5.mp4
+
 
 ## Features
 
