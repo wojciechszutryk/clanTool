@@ -30,8 +30,19 @@ export const StyledIntructionsButtonWrapper = styled('div')({
     position: 'relative',
 })
 
-// export const StyledInstructionImg = styled('img')({
-//     position: 'absolute',
-//     width: '100%',
-//     height: '100%',
-// })
+export const StyledVideoWrapper = styled('div')(({ theme }) => ({
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    width: '100%',
+    padding: '0 20px',
+    '& > video': {
+        width: 'calc(100% - 40px)',
+    },
+    [theme.breakpoints.up('md')]: {
+        padding: '0 60px',
+        '& > video': {
+            width: 'calc(100% - 120px)',
+        },
+    },
+}))
