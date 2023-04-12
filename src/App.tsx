@@ -22,11 +22,8 @@ function App() {
             <StyledAppWrapper>
                 <StyledAppContent>
                     <Routes>
-                        <Route path="*">
-                            <Route
-                                index
-                                element={<Navigate to={'/satellites'} />}
-                            />
+                        <Route path="/">
+                            <Route index element={<Navigate to={'/about'} />} />
                             <Route
                                 path="satellites"
                                 element={

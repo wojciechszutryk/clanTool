@@ -11,6 +11,7 @@ import phaseToFreqDriftChartData from 'functions/phaseToFreqDriftChartData'
 import phaseToFreq from 'functions/phaseToFreq/phaseToFreq'
 import phaseToFreqChartData from 'functions/phaseToFreqChartData'
 import { useAppSelector } from 'hooks/useAppSelector'
+import phaseToPhaseChartData from 'functions/phaseToPhaseChartData'
 
 const downloadFileSize = 100000000 // TODO: get this value from server
 const downloadedDataTimeDiff = 300000 // 5 minutes
@@ -93,8 +94,6 @@ const useGetChartsData = () => {
                       )
                     : downloadedPhaseData
 
-            console.log('strippedPhaseData', strippedPhaseData)
-
             if (strippedPhaseData.length === 0) {
                 setError(
                     `No data for ${resourceName} in selected time range. Available data from ${new Date(
@@ -112,10 +111,10 @@ const useGetChartsData = () => {
             ) {
                 setWarning(
                     `Loaded data for resource ${resourceName} does not contain all points in time range from ${new Date(
-                        downloadedPhaseData[0].date
-                    ).toLocaleString()} to ${new Date(
-                        downloadedPhaseData[downloadedPhaseData.length - 1].date
-                    )}. Found ${strippedPhaseData.length} points, expected ${
+                        startDate
+                    ).toLocaleString()} to ${new Date(endDate)}. Found ${
+                        strippedPhaseData.length
+                    } points, expected ${
                         (endDate - startDate) / downloadedDataTimeDiff
                     } points. Please report this issue to the administrator.`
                 )

@@ -6,14 +6,19 @@ import { setChartsToShow } from '../../../../../state/actions'
 import { StyledCheckboxesWrapper, StyledLabel } from './styles'
 import { ChartTypes } from 'models/inputData.model'
 
-const availableCharts = Object.values(ChartTypes)
+interface Props {
+    hideDataOptions?: boolean
+}
 
 /**
  * This component is responsible for rendering checkboxes for selecting charts to show.
  */
-const ChartsToShowSelect = (props: { disabled?: boolean }) => {
+const ChartsToShowSelect = ({ hideDataOptions }: Props) => {
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const dispatch = useAppDispatch()
+    const availableCharts = hideDataOptions
+        ? Object.values(ChartTypes).filter((chart) => chart.includes('DEV'))
+        : Object.values(ChartTypes)
 
     const handleChartCheck = useCallback(
         (chart) => {
@@ -29,27 +34,22 @@ const ChartsToShowSelect = (props: { disabled?: boolean }) => {
         [chartsToShow, dispatch]
     )
 
-    const checkboxes = useMemo(() => {
-        return availableCharts.map((chart) => (
-            <FormControlLabel
-                key={chart}
-                control={
-                    <Checkbox
-                        disabled={props.disabled || false}
-                        checked={chartsToShow.includes(chart)}
-                        onChange={() => handleChartCheck(chart)}
-                        inputProps={{ 'aria-label': 'controlled' }}
-                    />
-                }
-                label={chart}
-            />
-        ))
-    }, [chartsToShow, handleChartCheck, props.disabled])
-
     return (
         <StyledCheckboxesWrapper>
             <StyledLabel>Select chart types</StyledLabel>
-            {checkboxes}
+            {availableCharts.map((chart) => (
+                <FormControlLabel
+                    key={chart}
+                    control={
+                        <Checkbox
+                            checked={chartsToShow.includes(chart)}
+                            onChange={() => handleChartCheck(chart)}
+                            inputProps={{ 'aria-label': 'controlled' }}
+                        />
+                    }
+                    label={chart}
+                />
+            ))}
         </StyledCheckboxesWrapper>
     )
 }

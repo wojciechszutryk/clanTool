@@ -43,7 +43,9 @@ const ChartsForm = ({ handleSubmit, isStationPage }: Props): JSX.Element => {
                 <TauTypeSelect />
                 <MADMultiplyInput />
             </Box>
-            <ChartsToShowSelect />
+            <ChartsToShowSelect
+                hideDataOptions={selectedSatelliteNames.length > 1}
+            />
             <StyledSatellitesFormSubmitButton
                 variant={'contained'}
                 onClick={handleSubmit}

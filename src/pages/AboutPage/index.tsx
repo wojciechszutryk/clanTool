@@ -43,7 +43,7 @@ function AboutPage() {
                     visualizing satellite and station data.
                 </Typography>
             </Grid>
-            <Grid item md={12} order={{ md: 3 }} spacing={6}>
+            <Grid item md={12} order={{ md: 3 }}>
                 <Typography mt={6}>
                     Our interactive charts are designed to provide users with a
                     comprehensive overview of the performance characteristics of

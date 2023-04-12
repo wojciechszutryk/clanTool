@@ -8,6 +8,7 @@ import {
 } from './styles'
 import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData'
 import ChartsSection from './components/ChartsSection'
+import useEnterChartPage from './hooks/useEnterChartPage'
 
 /**
  * This page is used to display form and charts for stations
@@ -18,6 +19,7 @@ function StationsPage() {
     )
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const { createChartsData, ...rest } = useGetChartsData()
+    useEnterChartPage()
 
     const handleSubmit = () => {
         createChartsData([selectedStationName], chartsToShow)

@@ -9,6 +9,7 @@ import {
 } from './styles'
 import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData'
 import ChartsSection from './components/ChartsSection'
+import useEnterChartPage from './hooks/useEnterChartPage'
 
 /**
  * This page is used to display form and charts for selected satellites
@@ -19,6 +20,7 @@ function SatellitesPage() {
     )
     const chartsToShow = useAppSelector((state) => state.app.chartsToShow)
     const { createChartsData, ...rest } = useGetChartsData()
+    useEnterChartPage()
 
     const handleSubmit = () => {
         const chartsDataToCreate =
