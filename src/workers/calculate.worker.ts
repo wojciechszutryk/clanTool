@@ -14,6 +14,8 @@ import { getChartsDataMapKey } from "pages/ChartsPages/hooks/useGetChartsData/ge
 const downloadedDataTimeDiff = 300000; // 5 minutes
 
 self.onmessage = (e: MessageEvent<string>) => {
+  console.log('message');
+  
   const {resourcesData, startDate, endDate, chartsToCreate, madMultiply, tauType} = JSON.parse(e.data) as WorkerReqMessage;
 
   

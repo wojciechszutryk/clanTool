@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import axios from 'axios';
 import { PhasePoint, ChartsData } from 'models/data.model';
 import { ChartTypes, TauTypes } from 'models/inputData.model';
@@ -53,7 +53,26 @@ const useGetChartsData = () => {
     chartsData:  undefined
   });
 
-  const calculateWorker: Worker = new Worker(new URL('src/workers/calculate.ts', import.meta.url));
+  const calculateWorker: Worker = useMemo( () => new Worker(new URL('workers/calculate.worker.ts', import.meta.url)), []);
+
+  useEffect(() => {
+    if (window.Worker) {
+      console.log(calculateWorker);
+      calculateWorker.postMessage(JSON.stringify({data: 'gdas'}));
+    }
+  }, [calculateWorker]);
+
+  useEffect(() => {
+    if (window.Worker) {
+      calculateWorker.onmessage = (e: MessageEvent<string>) => {
+        console.log(e);
+        
+      };
+    }
+  }, [calculateWorker]);
+
+
+  
 
   const fetchSinglePhasesData = async (resourceName: string) => {
     const data = await axios

@@ -1,5 +1,4 @@
-import { memo } from 'react';
-import { Box } from '@mui/material';
+import React,{ memo } from 'react';
 import { ChartsData } from 'models/data.model';
 import DEVChart from 'pages/ChartsPages/components/ChartsSection/Chart/DEVChart';
 import { createDEVChartDataMap } from 'pages/ChartsPages/hooks/useGetChartsData/createDEVChartDataMap.helper';
