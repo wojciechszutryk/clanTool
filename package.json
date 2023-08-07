@@ -44,7 +44,10 @@
     "start": "rimraf ./build && react-scripts --expose-gc start",
     "build": "react-scripts --max_old_space_size=4096 build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "lint": "eslint src/**/*.{js,jsx,ts,tsx,json}",
+    "lint:fix": "eslint --fix src/**/*.{js,jsx,ts,tsx,json}",
+    "format": "prettier --write src/**/*.{js,jsx,ts,tsx,css,md,json,scss} --config ./.prettierrc"
   },
   "eslintConfig": {
     "extends": [
@@ -64,8 +67,13 @@
     "@types/react": "^17.0.34",
     "@types/react-csv": "^1.1.2",
     "@types/react-dom": "^17.0.11",
+    "@typescript-eslint/eslint-plugin": "^6.2.1",
+    "@typescript-eslint/parser": "^6.2.1",
+    "eslint": "^8.46.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-react": "^7.33.1",
     "gh-pages": "^3.2.3",
-    "prettier": "^2.4.1",
+    "prettier": "2.8.8",
     "typescript": "^4.4.4"
   }
 }

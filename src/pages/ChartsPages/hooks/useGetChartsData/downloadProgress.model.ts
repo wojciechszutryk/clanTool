@@ -6,5 +6,5 @@
  * @property {boolean} completed - Whether the download is completed.
  */
 export type IDownloadProgress =
-    | Record<string, { downloaded: number; total: number; completed: boolean }>
-    | undefined
+  | Record<string, { downloaded: number; total: number; completed: boolean }>
+  | undefined;
