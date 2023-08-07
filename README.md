@@ -16,18 +16,18 @@ An application created for scientific and research purposes at the request of ag
 
 Clone down this repository. You will need `node` and `npm` installed globally on your machine.  
 
-#Installation:
+Installation:
 
 `npm install`  
 
-#To Upload Data:
+To Upload Data:
 
 Prepare required data (src/assets/SatelliteBase.ts, src/assets/StationSatelliteData.ts) in format defined in src/models/data.model.ts/PhasePoint and paste it to public/data, calling files: C06.json, C07.json ... BRUX.json ...
 
-#To Start Server:
+To Start Server:
 
 `npm start`  
 
-#To Visit App:
+To Visit App:
 
 `localhost:3000`  
