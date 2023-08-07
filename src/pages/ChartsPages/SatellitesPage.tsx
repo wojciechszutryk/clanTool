@@ -6,7 +6,8 @@ import { StyledChartsPageWarpper, StyledChartsWrapper, StyledFormWrapper } from 
 import useGetChartsData from 'pages/ChartsPages/hooks/useGetChartsData';
 import ChartsSection from './components/ChartsSection';
 import useEnterChartPage from './hooks/useEnterChartPage';
-import { useMemo } from 'react';
+import { useMemo, useState } from 'react';
+import { ChartsData } from 'models/data.model';
 
 /**
  * This page is used to display form and charts for selected satellites
@@ -14,6 +15,17 @@ import { useMemo } from 'react';
 function SatellitesPage() {
   const selectedSatelliteNames = useAppSelector((state) => state.app.selectedSatelliteNames);
   const chartsToShow = useAppSelector((state) => state.app.chartsToShow);
+  // const [workerState, setWorkerState] = useState<{
+  //   calculating: boolean;
+  //   warning: string | undefined;
+  //   error: string | undefined;
+  //   chartsData: ChartsData | undefined;
+  // }>({
+  //   calculating: false,
+  //   warning: undefined,
+  //   error: undefined,
+  //   chartsData:  undefined
+  // });
   const { createChartsData, ...rest } = useGetChartsData();
   useEnterChartPage();
 
