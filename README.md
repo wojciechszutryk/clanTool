@@ -1,9 +1,5 @@
 ### CLAN TOOL
 
-## Project Status
-
-Done.
-
 ## Reflection
 
 An application created for scientific and research purposes at the request of agh
@@ -22,13 +18,17 @@ PNG formats. This allows users to export the generated charts for further analys
 in reports, presentations, or publications. The CSV format provides raw data for further
 processing, while the PNG format provides high-quality images for visual presentations.
 
+## Demo video
+
+https://user-images.githubusercontent.com/72247608/231422303-53cf99da-8ebb-4d7f-96c3-8a0d258329c5.mp4
+
 ## Technical stack
 
 The application is built using a stack that combines React with TypeScript and leverages Web Workers to achieve maximum performance, especially when handling substantial datasets, reaching up to 100MB in size, for visualization on canvas charts.
 
-## Project Screen Shot(s) && Demo video
+## Project Status
 
-https://user-images.githubusercontent.com/72247608/231422303-53cf99da-8ebb-4d7f-96c3-8a0d258329c5.mp4
+Done.
 
 ## Installation and Setup Instructions
 
