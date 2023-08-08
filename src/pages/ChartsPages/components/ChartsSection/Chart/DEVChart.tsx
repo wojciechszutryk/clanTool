@@ -1,6 +1,6 @@
-import { memo, useEffect, useMemo, useRef } from 'react';
+import { memo, useMemo, useRef } from 'react';
 import { CSVLink } from 'react-csv';
-import { ChartPoint, ChartsData } from 'models/data.model';
+import { ChartsData } from 'models/data.model';
 import {
   StyledChartActionsWrapper,
   StyledChartBox,

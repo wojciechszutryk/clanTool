@@ -30,6 +30,7 @@ export interface ChartPoint {
 export type ChartData = ChartPoint[];
 
 /**
- * map of chart data for many stations/satellites
+ * map [name => data] of chart data for many stations/satellites. 
+ * Name is <RESOURCE_NAME>-<CHART_TYPE> e.g. C06-Phase
  */
 export type ChartsData = Map<string, ChartData>;
